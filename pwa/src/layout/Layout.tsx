@@ -27,7 +27,11 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
   return (
     <GatsbyProvider value={gatsbyContext}>
       <APIProvider value={API}>
-        <StylesProvider>{children}</StylesProvider>
+        <StylesProvider>
+          <h1>Top nav</h1>
+          {children}
+          <h1>Footer</h1>
+        </StylesProvider>
       </APIProvider>
     </GatsbyProvider>
   );

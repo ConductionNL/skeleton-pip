@@ -1,0 +1,15 @@
+.DashboardTemplate {
+  display: flex;
+}
+
+.DashboardTemplate > * {
+  background: #f5f5f5;
+}
+
+.DashboardTemplate > .DashboardTemplate-menu {
+  flex: 2;
+}
+
+.DashboardTemplate > .DashboardTemplate-content {
+  flex: 10;
+}
