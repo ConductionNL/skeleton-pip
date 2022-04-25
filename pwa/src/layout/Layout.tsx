@@ -4,6 +4,7 @@ import "./../translations/i18n";
 import APIContext, { APIProvider } from "../apiService/apiContext";
 import APIService from "../apiService/apiService";
 import { GatsbyProvider, IGatsbyContext } from "../context/gatsby";
+import { StylesProvider } from "@gemeente-denhaag/components-react";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -25,7 +26,9 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
 
   return (
     <GatsbyProvider value={gatsbyContext}>
-      <APIProvider value={API}>{children}</APIProvider>
+      <APIProvider value={API}>
+        <StylesProvider>{children}</StylesProvider>
+      </APIProvider>
     </GatsbyProvider>
   );
 };
