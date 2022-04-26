@@ -1,13 +1,13 @@
 .DashboardTemplate {
-  display: flex;
   padding-block-start: var(--nlportal-space-block-5xl, 4rem);
 }
 
 .DashboardTemplate > .DashboardTemplate-menu {
-  flex: 3;
+  position: fixed;
   margin-inline-end: var(--denhaag-space-inline-2xl);
 }
 
 .DashboardTemplate > .DashboardTemplate-content {
-  flex: 9;
+  width: calc(100% / 12 * 9);
+  margin-inline-start: calc(100% / 12 * 3);
 }

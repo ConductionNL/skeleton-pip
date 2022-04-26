@@ -5,7 +5,7 @@ import { LandingTemplate } from "../templates/landing/LandingTemplate";
 import { OverviewTemplate } from "../templates/templateParts/overview/OverviewTemplate";
 
 const IndexPage: React.FC = () => {
-  if (isLoggedIn()) return <AuthenticatedIndex />;
+  if (!isLoggedIn()) return <AuthenticatedIndex />;
 
   return <UnauthenticatedIndex />;
 };
