@@ -1,7 +1,5 @@
 import axios, { AxiosInstance, AxiosResponse } from "axios";
 import Login from "./services/login";
-import Notification from "./resources/notification";
-import Product from "./resources/product";
 
 export default class APIService {
   public JWT?: string;
