@@ -1,8 +1,8 @@
 {
-  "name": "skeleton-gatsby",
+  "name": "skeleton-pip",
   "version": "1.0.0",
   "private": true,
-  "description": "skeleton-gatsby",
+  "description": "skeleton-pip",
   "author": "Conduction",
   "keywords": [
     "gatsby"
