@@ -1,10 +1,10 @@
 import * as React from "react";
-import "./Footer.css";
+import "./FooterTemplate.css";
 import { Container } from "../../../components/container/Container";
 import { List, ListItem, ListSubheader } from "@gemeente-denhaag/list";
 import { navigate } from "gatsby";
 
-export const Footer: React.FC = () => {
+export const FooterTemplate: React.FC = () => {
   return (
     <footer className="Footer">
       <Container>

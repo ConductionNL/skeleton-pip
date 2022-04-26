@@ -5,7 +5,7 @@ import APIContext, { APIProvider } from "../apiService/apiContext";
 import APIService from "../apiService/apiService";
 import { GatsbyProvider, IGatsbyContext } from "../context/gatsby";
 import { StylesProvider } from "@gemeente-denhaag/components-react";
-import { Footer } from "../templates/templateParts/footer/Footer";
+import { FooterTemplate } from "../templates/templateParts/footer/FooterTemplate";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -30,7 +30,7 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
       <APIProvider value={API}>
         <StylesProvider>
           <div className="PageContent-wrapper">{children}</div>
-          <Footer />
+          <FooterTemplate />
         </StylesProvider>
       </APIProvider>
     </GatsbyProvider>
