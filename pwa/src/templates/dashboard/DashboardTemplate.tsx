@@ -5,6 +5,7 @@ import { Sidenav, SidenavItem, SidenavLink, SidenavList } from "@gemeente-denhaa
 import { Container } from "../../components/container/Container";
 import { PrivateRoute } from "../../components/privateRoute/privateRoute";
 import { GatsbyContext } from "../../context/gatsby";
+import { navigate } from "gatsby";
 
 export const DashboardTemplate: React.FC = ({ children }) => {
   return (
@@ -47,12 +48,17 @@ const Menu: React.FC = () => {
     { label: "My account", href: "/my-account", current: pathname === "/my-account", icon: <UserIcon /> },
   ];
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string): void => {
+    e.preventDefault();
+    navigate(href);
+  };
+
   return (
     <Sidenav>
       <SidenavList>
         {menuItems.map(({ href, label, icon, current }) => (
           <SidenavItem key={href}>
-            <SidenavLink href={href} current={current}>
+            <SidenavLink href="" onClick={(e) => handleClick(e, href)} current={current}>
               {icon}
               {label}
             </SidenavLink>
