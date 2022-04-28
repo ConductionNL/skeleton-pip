@@ -11,8 +11,8 @@
 
 .UnauthenticatedHeader .Header-denHaagLogo {
   align-items: center;
-  max-height: var(--unauthenticatedHeader-max-logo-height);
-  max-width: var(--unauthenticatedHeader-max-logo-width);
+  max-height: var(--conduction-unauthenticatedHeader-max-logo-height);
+  max-width: var(--conduction-unauthenticatedHeader-max-logo-width);
 }
 
 .Header .Header-inner {
