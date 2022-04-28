@@ -1,6 +1,6 @@
 import * as React from "react";
 import { DashboardTemplate } from "../templates/dashboard/DashboardTemplate";
-import { CurrentCasesTemplate } from "../templates/templateParts/currentCases/currentCasesTemplate";
+import { CurrentCasesTemplate } from "../templates/templateParts/currentCases/CurrentCasesTemplate";
 
 const CurrentCasesPage: React.FC = () => {
   return (
