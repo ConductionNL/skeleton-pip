@@ -1,6 +1,7 @@
 export const en = {
   Login: "Login",
-  changeLanguage: "nl",
+  Welcome: "Welcome",
+  Logout: "Logout",
   Translation: "Nederlands",
   Overview: "Overview",
   "My messages": "My messages",

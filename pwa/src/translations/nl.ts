@@ -1,6 +1,7 @@
 export const nl = {
   Login: "Inloggen",
-  changeLanguage: "en",
+  Welcome: "Welkom",
+  Logout: "Uitloggen",
   Translation: "English",
   Overview: "Overview",
   "My messages": "Mijn berichten",
