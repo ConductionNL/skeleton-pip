@@ -3,5 +3,4 @@ export const en = {
   Welcome: "Welcome",
   Logout: "Logout",
   Translation: "Nederlands",
-  changeLanguage: "nl",
 };

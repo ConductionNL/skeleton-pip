@@ -1,6 +1,5 @@
 :root {
-  --conduction-unauthenticatedHeader-max-logo-width: 230.38px;
-  --conduction-unauthenticatedHeader-max-logo-height: 97px;
+  --conduction-unauthenticated-header-logo-height: 100px;
   --condution-footer-secondary-background-color: #edbf07;
   --condution-footer-height: 115px;
 }
