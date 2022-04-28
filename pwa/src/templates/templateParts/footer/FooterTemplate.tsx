@@ -6,7 +6,7 @@ import { navigate } from "gatsby";
 
 export const AuthenticatedFooterTemplate: React.FC = () => {
   return (
-    <footer className="Footer-login">
+    <footer className="AuthenticatedFooterTemplate">
       <Container>
         <div className="Footer-inner">
           <List>
@@ -27,7 +27,5 @@ export const AuthenticatedFooterTemplate: React.FC = () => {
 };
 
 export const UnauthenticatedFooterTemplate: React.FC = () => {
-  return <footer className="Footer-logout">
-    loguot footer
-  </footer>;
+  return <footer className="UnauthenticatedFooterTemplate"></footer>;
 };

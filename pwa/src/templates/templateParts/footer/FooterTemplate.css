@@ -1,28 +1,28 @@
-.Footer-login {
+.AuthenticatedFooterTemplate {
   background-color: var(--nlportal-footer-background-color);
 }
 
-.Footer-logout {
+.UnauthenticatedFooterTemplate {
   background-color: var(--nlportal-footer-secondary-background-color);
-  height: 115px;
+  height: var(--nlportal-footer-height);
 }
 
-.Footer-login .Footer-inner {
+.AuthenticatedFooterTemplate .Footer-inner {
   display: flex;
   padding-block-start: var(--nlportal-space-block-2xl);
   padding-block-end: var(--nlportal-space-block-2xl);
 }
 
-.Footer-login .Footer-inner > *:not(:last-child) {
+.AuthenticatedFooterTemplate .Footer-inner > *:not(:last-child) {
   margin-inline-end: var(--denhaag-space-inline-5xl);
   color: var(--utrecht-heading-4-color);
 }
 
-.Footer-login .Footer-inner .denhaag-list__subheader {
+.AuthenticatedFooterTemplate .Footer-inner .denhaag-list__subheader {
   color: var(--nlportal-footer-header-color);
 }
 
-.Footer-login .Footer-inner .denhaag-list__item-text-primary,
-.Footer-login .Footer-inner .denhaag-list__secondary-action {
+.AuthenticatedFooterTemplate .Footer-inner .denhaag-list__item-text-primary,
+.AuthenticatedFooterTemplate .Footer-inner .denhaag-list__secondary-action {
   color: var(--nlportal-footer-link-color);
 }
