@@ -8,6 +8,8 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@gemeente-denhaag/components-react";
 import { getUsername } from "../../../services/auth";
 import { changeLanguage } from "i18next";
+import { ImageDivider } from "../../../components/imageDivider/imageDivider";
+import dividerImage from "./../../../assets/images/divider.png";
 
 export const AuthenticatedHeaderTemplate: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -31,6 +33,7 @@ export const AuthenticatedHeaderTemplate: React.FC = () => {
           </div>
         </div>
       </Container>
+      <ImageDivider image={dividerImage} layoutClassName="AuthenticatedHeaderTemplate-divider" />
     </header>
   );
 };
