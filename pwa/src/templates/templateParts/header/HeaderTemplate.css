@@ -1,11 +1,18 @@
-.Header {
-  text-align: center;
+.Sticky {
+  position: sticky;
+  top: 0;
 }
 
-.Header .Header-denHaagLogo {
+.UnauthenticatedHeader {
+  display: flex;
   align-items: center;
-  max-height: 97px;
-  max-width: 230.38px;
+  justify-content: center;
+}
+
+.UnauthenticatedHeader .Header-denHaagLogo {
+  align-items: center;
+  max-height: var(--unauthenticatedHeader-max-logo-height);
+  max-width: var(--unauthenticatedHeader-max-logo-width);
 }
 
 .Header .Header-inner {
@@ -14,7 +21,8 @@
   padding-block-start: var(--nlportal-space-block-xs);
   padding-block-end: var(--nlportal-space-block-xs);
   max-width: var(--nlportal-max-page-width);
-  height: 69px;
+  height: var(--nlportal-header-height-large);
+  align-items: center;
 }
 
 .Header .Header-inner .Header-inner-userManagement {
@@ -30,7 +38,7 @@
   margin-inline-end: var(--nlportal-space-inline-lg);
 }
 .Header .Header-inner .Header-inner-mijnDenHaagLogo {
-  display: flex;
-  align-items: center;
-  max-width: 150px;
+  max-width: var(--nlportal-header-max-logo-width);
+  width: 100%;
+  height: 100%;
 }

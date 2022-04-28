@@ -6,7 +6,11 @@ import APIService from "../apiService/apiService";
 import { GatsbyProvider, IGatsbyContext } from "../context/gatsby";
 import { StylesProvider } from "@gemeente-denhaag/components-react";
 import { FooterTemplate } from "../templates/templateParts/footer/FooterTemplate";
-import { HeaderTemplate } from "../templates/templateParts/header/HeaderTemplate";
+import {
+  AuthenticatedHeaderTemplate,
+  UnauthenticatedHeaderTemplate,
+} from "../templates/templateParts/header/HeaderTemplate";
+import { isLoggedIn } from "../services/auth";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -30,7 +34,7 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
     <GatsbyProvider value={gatsbyContext}>
       <APIProvider value={API}>
         <StylesProvider>
-          <HeaderTemplate />
+          {isLoggedIn() ? <AuthenticatedHeaderTemplate /> : <UnauthenticatedHeaderTemplate />}
           <div className="PageContent-wrapper">{children}</div>
           <FooterTemplate />
         </StylesProvider>
