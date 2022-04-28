@@ -4,7 +4,7 @@ import { Container } from "../../../components/container/Container";
 import { List, ListItem, ListSubheader } from "@gemeente-denhaag/list";
 import { navigate } from "gatsby";
 import { ImageDivider } from "../../../components/imageDivider/imageDivider";
-import { dividerImage } from "../../../assets/images/divider";
+import dividerImage from "./../../../assets/images/divider.png";
 
 export const FooterTemplate: React.FC = () => {
   return (
