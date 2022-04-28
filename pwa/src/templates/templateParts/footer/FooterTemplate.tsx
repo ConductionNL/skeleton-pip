@@ -4,9 +4,9 @@ import { Container } from "../../../components/container/Container";
 import { List, ListItem, ListSubheader } from "@gemeente-denhaag/list";
 import { navigate } from "gatsby";
 
-export const FooterTemplate: React.FC = () => {
+export const AuthenticatedFooterTemplate: React.FC = () => {
   return (
-    <footer className="Footer">
+    <footer className="AuthenticatedFooterTemplate">
       <Container>
         <div className="Footer-inner">
           <List>
@@ -24,4 +24,8 @@ export const FooterTemplate: React.FC = () => {
       </Container>
     </footer>
   );
+};
+
+export const UnauthenticatedFooterTemplate: React.FC = () => {
+  return <footer className="UnauthenticatedFooterTemplate"></footer>;
 };
