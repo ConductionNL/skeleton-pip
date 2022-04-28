@@ -5,7 +5,11 @@ import APIContext, { APIProvider } from "../apiService/apiContext";
 import APIService from "../apiService/apiService";
 import { GatsbyProvider, IGatsbyContext } from "../context/gatsby";
 import { StylesProvider } from "@gemeente-denhaag/components-react";
-import { FooterTemplate } from "../templates/templateParts/footer/FooterTemplate";
+import {
+  AuthenticatedFooterTemplate,
+  UnauthenticatedFooterTemplate,
+} from "../templates/templateParts/footer/FooterTemplate";
+import { isLoggedIn } from "../services/auth";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -30,7 +34,7 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
       <APIProvider value={API}>
         <StylesProvider>
           <div className="PageContent-wrapper">{children}</div>
-          <FooterTemplate />
+          {isLoggedIn() ? <AuthenticatedFooterTemplate /> : <UnauthenticatedFooterTemplate />}
         </StylesProvider>
       </APIProvider>
     </GatsbyProvider>
