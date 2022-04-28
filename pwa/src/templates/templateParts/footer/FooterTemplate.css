@@ -1,24 +1,29 @@
-.Footer {
+.AuthenticatedFooterTemplate {
   background-color: var(--nlportal-footer-background-color);
 }
 
-.Footer .Footer-inner {
+.UnauthenticatedFooterTemplate {
+  background-color: var(--condution-footer-secondary-background-color);
+  height: var(--condution-footer-height);
+}
+
+.AuthenticatedFooterTemplate .Footer-inner {
   display: flex;
   padding-block-start: var(--nlportal-space-block-2xl);
   padding-block-end: var(--nlportal-space-block-2xl);
 }
 
-.Footer .Footer-inner > *:not(:last-child) {
+.AuthenticatedFooterTemplate .Footer-inner > *:not(:last-child) {
   margin-inline-end: var(--denhaag-space-inline-5xl);
   color: var(--utrecht-heading-4-color);
 }
 
-.Footer .Footer-inner .denhaag-list__subheader {
+.AuthenticatedFooterTemplate .Footer-inner .denhaag-list__subheader {
   color: var(--nlportal-footer-header-color);
 }
 
-.Footer .Footer-inner .denhaag-list__item-text-primary,
-.Footer .Footer-inner .denhaag-list__secondary-action {
+.AuthenticatedFooterTemplate .Footer-inner .denhaag-list__item-text-primary,
+.AuthenticatedFooterTemplate .Footer-inner .denhaag-list__secondary-action {
   color: var(--nlportal-footer-link-color);
 }
 

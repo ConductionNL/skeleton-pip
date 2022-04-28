@@ -6,9 +6,9 @@ import { navigate } from "gatsby";
 import { ImageDivider } from "../../../components/imageDivider/imageDivider";
 import dividerImage from "./../../../assets/images/divider.png";
 
-export const FooterTemplate: React.FC = () => {
+export const AuthenticatedFooterTemplate: React.FC = () => {
   return (
-    <footer className="Footer">
+    <footer className="AuthenticatedFooterTemplate">
       <ImageDivider image={dividerImage} layoutClassName="Footer-divider" />
       <Container>
         <div className="Footer-inner">
@@ -27,4 +27,8 @@ export const FooterTemplate: React.FC = () => {
       </Container>
     </footer>
   );
+};
+
+export const UnauthenticatedFooterTemplate: React.FC = () => {
+  return <footer className="UnauthenticatedFooterTemplate"></footer>;
 };
