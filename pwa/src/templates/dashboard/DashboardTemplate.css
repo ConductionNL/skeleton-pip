@@ -1,5 +1,6 @@
 .DashboardTemplate {
   padding-block-start: var(--nlportal-space-block-5xl, 4rem);
+  padding-block-end: var(--nlportal-space-block-5xl, 4rem);
 }
 
 .DashboardTemplate > .DashboardTemplate-menu {
