@@ -1,4 +1,5 @@
-:root{
-    --condution-footer-secondary-background-color: #edbf07;
-    --condution-footer-height: 115px;
+:root {
+  --conduction-unauthenticated-header-logo-height: 100px;
+  --condution-footer-secondary-background-color: #edbf07;
+  --condution-footer-height: 115px;
 }
