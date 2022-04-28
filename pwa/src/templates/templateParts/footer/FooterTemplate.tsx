@@ -3,10 +3,13 @@ import "./FooterTemplate.css";
 import { Container } from "../../../components/container/Container";
 import { List, ListItem, ListSubheader } from "@gemeente-denhaag/list";
 import { navigate } from "gatsby";
+import { ImageDivider } from "../../../components/imageDivider/imageDivider";
+import dividerImage from "./../../../assets/images/divider.png";
 
 export const AuthenticatedFooterTemplate: React.FC = () => {
   return (
     <footer className="AuthenticatedFooterTemplate">
+      <ImageDivider image={dividerImage} layoutClassName="Footer-divider" />
       <Container>
         <div className="Footer-inner">
           <List>

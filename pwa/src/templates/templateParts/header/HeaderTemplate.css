@@ -54,3 +54,8 @@
   align-items: center;
   height: var(--conduction-unauthenticated-header-logo-height);
 }
+
+
+.Footer > .Footer-divider {
+  height: var(--nlportal-header-facet-height);
+}
