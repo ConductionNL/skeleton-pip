@@ -9,7 +9,7 @@ import dividerImage from "./../../../assets/images/divider.png";
 export const FooterTemplate: React.FC = () => {
   return (
     <footer className="Footer">
-      <ImageDivider image={dividerImage} type="small" />
+      <ImageDivider image={dividerImage} layoutClassName="Footer-divider" />
       <Container>
         <div className="Footer-inner">
           <List>

@@ -3,9 +3,9 @@ import "./imageDivider.css";
 
 interface ImageDividerProps {
   image: string;
-  type: "small" | "large";
+  layoutClassName: string;
 }
 
-export const ImageDivider: React.FC<ImageDividerProps> = ({ image, type }) => {
-  return <img src={image} className={`ImageDivider ImageDivider-${type}`} />;
+export const ImageDivider: React.FC<ImageDividerProps> = ({ image, layoutClassName }) => {
+  return <img src={image} className={`ImageDivider ${layoutClassName}`} />;
 };

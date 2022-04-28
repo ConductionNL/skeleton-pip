@@ -21,3 +21,7 @@
 .Footer .Footer-inner .denhaag-list__secondary-action {
   color: var(--nlportal-footer-link-color);
 }
+
+.Footer > .Footer-divider {
+  height: var(--nlportal-header-facet-height);
+}
