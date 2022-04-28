@@ -3,8 +3,8 @@
 }
 
 .UnauthenticatedFooterTemplate {
-  background-color: var(--nlportal-footer-secondary-background-color);
-  height: var(--nlportal-footer-height);
+  background-color: var(--condution-footer-secondary-background-color);
+  height: var(--condution-footer-height);
 }
 
 .AuthenticatedFooterTemplate .Footer-inner {
