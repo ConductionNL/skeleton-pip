@@ -1,0 +1,36 @@
+.Header {
+  text-align: center;
+}
+
+.Header .Header-denHaagLogo {
+  align-items: center;
+  max-height: 97px;
+  max-width: 230.38px;
+}
+
+.Header .Header-inner {
+  display: flex;
+  justify-content: space-between;
+  padding-block-start: var(--nlportal-space-block-xs);
+  padding-block-end: var(--nlportal-space-block-xs);
+  max-width: var(--nlportal-max-page-width);
+  height: 69px;
+}
+
+.Header .Header-inner .Header-inner-userManagement {
+  display: flex;
+  align-items: center;
+}
+
+.Header .Header-inner .Header-inner-userManagement > .Header-inner-username {
+  margin-inline-end: var(--nlportal-space-inline-2xl);
+}
+
+.Header .Header-inner .Header-inner-userManagement > button:not(:last-child) {
+  margin-inline-end: var(--nlportal-space-inline-lg);
+}
+.Header .Header-inner .Header-inner-mijnDenHaagLogo {
+  display: flex;
+  align-items: center;
+  max-width: 150px;
+}

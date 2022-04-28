@@ -3,6 +3,9 @@
 
   --nlportal-max-page-width: 1024px;
   --nlportal-space-block-2xl: 2rem;
+  --nlportal-space-block-xs: 0.5rem;
+  --nlportal-space-inline-lg: 1.5rem;
+  --nlportal-space-inline-2xl: 2rem;
   --nlportal-footer-header-color: #dbecfa;
   --nlportal-footer-background-color: #094b81;
   --nlportal-footer-link-color: #f2f2f2;
