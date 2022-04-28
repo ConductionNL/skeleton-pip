@@ -4,28 +4,27 @@ import { Container } from "../../../components/container/Container";
 import { List, ListItem, ListSubheader } from "@gemeente-denhaag/list";
 import { navigate } from "gatsby";
 import { ImageDivider } from "../../../components/imageDivider/imageDivider";
+import { dividerImage } from "../../../assets/images/divider";
 
 export const FooterTemplate: React.FC = () => {
   return (
-    <>
-      <footer className="Footer">
-        <ImageDivider />
-        <Container>
-          <div className="Footer-inner">
-            <List>
-              <ListSubheader>The Hague</ListSubheader>
-              <ListItem primaryText="Go to denhaag.nl" actionType="nav" onClick={() => navigate("#")} />
-            </List>
+    <footer className="Footer">
+      <ImageDivider image={dividerImage} type="small" />
+      <Container>
+        <div className="Footer-inner">
+          <List>
+            <ListSubheader>The Hague</ListSubheader>
+            <ListItem primaryText="Go to denhaag.nl" actionType="nav" onClick={() => navigate("#")} />
+          </List>
 
-            <List>
-              <ListSubheader>Disclaimers</ListSubheader>
-              <ListItem primaryText="Accessibility declaration" actionType="nav" onClick={() => navigate("#")} />
-              <ListItem primaryText="Data Protection declaration" actionType="nav" onClick={() => navigate("#")} />
-              <ListItem primaryText="Proclaimer" actionType="nav" onClick={() => navigate("#")} />
-            </List>
-          </div>
-        </Container>
-      </footer>
-    </>
+          <List>
+            <ListSubheader>Disclaimers</ListSubheader>
+            <ListItem primaryText="Accessibility declaration" actionType="nav" onClick={() => navigate("#")} />
+            <ListItem primaryText="Data Protection declaration" actionType="nav" onClick={() => navigate("#")} />
+            <ListItem primaryText="Proclaimer" actionType="nav" onClick={() => navigate("#")} />
+          </List>
+        </div>
+      </Container>
+    </footer>
   );
 };

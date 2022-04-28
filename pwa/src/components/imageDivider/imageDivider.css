@@ -1,5 +1,12 @@
-.imageDivider {
-  width: 100%;
-  height: 100%;
+.ImageDivider {
   object-fit: cover;
+  max-width: 100%;
+}
+
+.ImageDivider-small {
+  height: 17px;
+}
+
+.ImageDivider-large {
+  height: 48px;
 }
