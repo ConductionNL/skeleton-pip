@@ -3,4 +3,5 @@ export const nl = {
   Welcome: "Welkom",
   Logout: "Uitloggen",
   Translation: "English",
+  Download: "Downloaden",
 };

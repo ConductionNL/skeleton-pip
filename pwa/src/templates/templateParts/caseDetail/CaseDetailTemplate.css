@@ -1,13 +1,13 @@
 .CaseDetailTemplate > *:not(:last-child) {
-  margin-bottom: var(--nlportal-space-block-4xl);
+  margin-block-end: var(--nlportal-space-block-4xl);
 }
 
 .CaseDetailTemplate > .CaseDetailTemplate-status > *:not(:last-child) {
-  margin-bottom: var(--nlportal-space-block-xl);
+  margin-block-end: var(--nlportal-space-block-xl);
 }
 
 .CaseDetailTemplate > .CaseDetailTemplate-documents > *:not(:last-child) {
-  margin-bottom: var(--nlportal-space-block-xl);
+  margin-block-end: var(--nlportal-space-block-xl);
 }
 
 .CaseDetailTemplate
@@ -21,5 +21,5 @@
 .CaseDetailTemplate
   > .CaseDetailTemplate-documents
   > .CasedDetailTemplate-downloadCard:not(:last-child) {
-  margin-bottom: var(--nlportal-space-block-xl);
+  margin-block-end: var(--nlportal-space-block-xl);
 }

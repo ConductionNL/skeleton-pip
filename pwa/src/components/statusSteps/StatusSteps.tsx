@@ -13,14 +13,16 @@ import {
   SubStepMarker,
 } from "@gemeente-denhaag/process-steps";
 
+interface IStatusStep {
+  title: string;
+  checked?: boolean;
+  current?: boolean;
+  expanded?: boolean;
+  subSteps?: string[];
+}
+
 interface StatusStepsProps {
-  steps: {
-    title: string;
-    checked?: boolean;
-    current?: boolean;
-    expanded?: boolean;
-    subSteps?: string[];
-  }[];
+  steps: IStatusStep[];
 }
 
 export const StatusSteps: React.FC<StatusStepsProps> = ({ steps }) => {
