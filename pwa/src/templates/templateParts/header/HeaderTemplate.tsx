@@ -8,12 +8,19 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@gemeente-denhaag/components-react";
 import { getUsername } from "../../../services/auth";
 import { changeLanguage } from "i18next";
+import clsx from "clsx";
+import { ImageDivider } from "../../../components/imageDivider/imageDivider";
+import dividerImage from "./../../../assets/images/divider.png";
 
-export const AuthenticatedHeaderTemplate: React.FC = () => {
+interface AuthenticatedHeaderTemplateProps {
+  layoutClassName?: string;
+}
+
+export const AuthenticatedHeaderTemplate: React.FC<AuthenticatedHeaderTemplateProps> = ({ layoutClassName }) => {
   const { t, i18n } = useTranslation();
 
   return (
-    <header className="AuthenticatedHeaderTemplate">
+    <header className={clsx("AuthenticatedHeaderTemplate", [layoutClassName && layoutClassName])}>
       <Container>
         <div className="AuthenticatedHeaderTemplate-inner">
           <Link to="/">
@@ -30,6 +37,7 @@ export const AuthenticatedHeaderTemplate: React.FC = () => {
           </div>
         </div>
       </Container>
+      <ImageDivider image={dividerImage} layoutClassName="AuthenticatedHeaderTemplate-divider" />
     </header>
   );
 };
