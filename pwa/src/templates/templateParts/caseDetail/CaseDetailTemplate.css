@@ -1,3 +1,7 @@
 .CaseDetailTemplate > *:not(:last-child) {
-  margin-bottom: 50px;
+  margin-bottom: var(--nlportal-space-block-4xl);
+}
+
+.CaseDetailTemplate > .CaseDetailTemplate-status > *:not(:last-child) {
+  margin-bottom: var(--nlportal-space-block-xl);
 }
