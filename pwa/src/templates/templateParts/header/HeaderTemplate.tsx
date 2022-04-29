@@ -9,6 +9,8 @@ import { Button } from "@gemeente-denhaag/components-react";
 import { getUsername } from "../../../services/auth";
 import { changeLanguage } from "i18next";
 import clsx from "clsx";
+import { ImageDivider } from "../../../components/imageDivider/imageDivider";
+import dividerImage from "./../../../assets/images/divider.png";
 
 interface AuthenticatedHeaderTemplateProps {
   layoutClassName?: string;
@@ -36,6 +38,7 @@ export const AuthenticatedHeaderTemplate: React.FC<AuthenticatedHeaderTemplatePr
           </div>
         </div>
       </Container>
+      <ImageDivider image={dividerImage} layoutClassName="AuthenticatedHeaderTemplate-divider" />
     </header>
   );
 };
