@@ -1,0 +1,17 @@
+.MetaIcon {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.MetaIcon > *:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.MetaIcon > .MetaIcon-icon {
+  color: var(--nlportal-meta-icon-color);
+}
+
+.MetaIcon > .MetaIcon-value {
+  font-weight: bold;
+}
