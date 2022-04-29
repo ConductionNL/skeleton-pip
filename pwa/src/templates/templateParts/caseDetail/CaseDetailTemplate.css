@@ -1,0 +1,25 @@
+.CaseDetailTemplate > *:not(:last-child) {
+  margin-block-end: var(--nlportal-space-block-4xl);
+}
+
+.CaseDetailTemplate > .CaseDetailTemplate-status > *:not(:last-child) {
+  margin-block-end: var(--nlportal-space-block-xl);
+}
+
+.CaseDetailTemplate > .CaseDetailTemplate-documents > *:not(:last-child) {
+  margin-block-end: var(--nlportal-space-block-xl);
+}
+
+.CaseDetailTemplate
+  > .CaseDetailTemplate-documents
+  > .CaseDetailTemplate-documentsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.CaseDetailTemplate
+  > .CaseDetailTemplate-documents
+  > .CasedDetailTemplate-downloadCard:not(:last-child) {
+  margin-block-end: var(--nlportal-space-block-xl);
+}

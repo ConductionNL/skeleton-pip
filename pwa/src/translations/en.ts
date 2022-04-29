@@ -3,4 +3,13 @@ export const en = {
   Welcome: "Welcome",
   Logout: "Logout",
   Translation: "Nederlands",
+  Download: "Download",
+  "Show all documents": "Show all documents",
+  Documents: "Documents",
+  "Current status": "Current status",
+  "Case one": "Case one",
+  "Current cases": "Current cases",
+  Status: "Status",
+  "Application date": "Application date",
+  "Case number": "Case number",
 };
