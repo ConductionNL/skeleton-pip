@@ -6,7 +6,7 @@ export const en = {
   Overview: "Overview",
   "My messages": "My messages",
   "Current cases": "Current cases",
-  "Closed cases": "Closed zaken",
+  "Closed cases": "Closed cases",
   case: "Case",
   Themes: "Themes",
   Forms: "Forms",

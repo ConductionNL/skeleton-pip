@@ -6,7 +6,8 @@ import { Container } from "../../components/container/Container";
 import { PrivateRoute } from "../../components/privateRoute/privateRoute";
 import { GatsbyContext } from "../../context/gatsby";
 import { navigate } from "gatsby";
-import { t, TFunction } from "i18next";
+import i18next from "i18next";
+import { useTranslation } from "react-i18next";
 
 export const DashboardTemplate: React.FC = ({ children }) => {
   return (
@@ -36,6 +37,7 @@ interface MenuItem {
 }
 
 const Menu: React.FC = () => {
+  const { t } = useTranslation();
   const {
     location: { pathname },
   } = React.useContext(GatsbyContext);
