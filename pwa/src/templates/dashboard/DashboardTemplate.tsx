@@ -6,7 +6,7 @@ import { Container } from "../../components/container/Container";
 import { PrivateRoute } from "../../components/privateRoute/privateRoute";
 import { GatsbyContext } from "../../context/gatsby";
 import { navigate } from "gatsby";
-import { t } from "i18next";
+import { t, TFunction } from "i18next";
 
 export const DashboardTemplate: React.FC = ({ children }) => {
   return (
