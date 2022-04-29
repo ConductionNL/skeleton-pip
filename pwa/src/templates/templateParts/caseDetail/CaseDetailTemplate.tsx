@@ -13,35 +13,38 @@ import {
 import { MetaIconGridTemplate } from "../metaIconGrid/MetaIconGridTemplate";
 import { StatusSteps } from "../../../components/statusSteps/StatusSteps";
 import { DownloadCard } from "../../../components/card";
+import { useTranslation } from "react-i18next";
 
 interface CaseDetailTemplateProps {
   caseId: string;
 }
 
 export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="CaseDetailTemplate">
       <div onClick={() => navigate("/current-cases")}>
         <Link icon={<ChevronLeftIcon />} iconAlign="start">
-          Current cases
+          {t("Current cases")}
         </Link>
       </div>
 
-      <Heading2>Case 1</Heading2>
+      <Heading2>{t("Case one")}</Heading2>
 
       <MetaIconGridTemplate
         metaIcons={[
-          { icon: <ArchiveIcon />, label: "Case number", value: "ceb3b7cb-0da2" },
-          { icon: <CalendarIcon />, label: "Application date", value: "26 April 2022" },
-          { icon: <MegaphoneIcon />, label: "Status", value: "Registered" },
-          { icon: <DocumentIcon />, label: "Documents", value: "1" },
+          { icon: <ArchiveIcon />, label: t("Case number"), value: "ceb3b7cb-0da2" },
+          { icon: <CalendarIcon />, label: t("Application date"), value: "26 April 2022" },
+          { icon: <MegaphoneIcon />, label: t("Status"), value: "Registered" },
+          { icon: <DocumentIcon />, label: t("Documents"), value: "1" },
         ]}
       />
 
       <Divider />
 
       <div className="CaseDetailTemplate-status">
-        <Heading3>Current status</Heading3>
+        <Heading3>{t("Current status")}</Heading3>
 
         <StatusSteps
           steps={[
@@ -72,10 +75,10 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
 
       <div className="CaseDetailTemplate-documents">
         <div className="CaseDetailTemplate-documentsHeader">
-          <Heading3>Documents</Heading3>
+          <Heading3>{t("Documents")}</Heading3>
 
           <Link icon={<ArrowRightIcon />} iconAlign="end">
-            Show all documents
+            {t("Show all documents")}
           </Link>
         </div>
 

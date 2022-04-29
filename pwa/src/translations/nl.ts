@@ -4,4 +4,12 @@ export const nl = {
   Logout: "Uitloggen",
   Translation: "English",
   Download: "Downloaden",
+  "Show all documents": "Bekijk alle documenten",
+  Documents: "Documenten",
+  "Current status": "Huidige status",
+  "Case one": "Zaak één",
+  "Current cases": "Lopende zaken",
+  Status: "Status",
+  "Application date": "Aanvraag datum",
+  "Case number": "Zaaknummer",
 };
