@@ -2,9 +2,17 @@ import * as React from "react";
 import "./CaseDetailTemplate.css";
 import { Divider, Heading2, Heading3, Link } from "@gemeente-denhaag/components-react";
 import { navigate } from "gatsby";
-import { ChevronLeftIcon, ArchiveIcon, CalendarIcon, MegaphoneIcon, DocumentIcon } from "@gemeente-denhaag/icons";
+import {
+  ChevronLeftIcon,
+  ArchiveIcon,
+  CalendarIcon,
+  MegaphoneIcon,
+  DocumentIcon,
+  ArrowRightIcon,
+} from "@gemeente-denhaag/icons";
 import { MetaIconGridTemplate } from "../metaIconGrid/MetaIconGridTemplate";
 import { StatusSteps } from "../../../components/statusSteps/StatusSteps";
+import { DownloadCard } from "../../../components/card";
 
 interface CaseDetailTemplateProps {
   caseId: string;
@@ -45,7 +53,6 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
             {
               title: "Accepted",
               checked: true,
-              current: true,
               expanded: true,
               subSteps: ["Curabitur blandit tempus porttitor."],
             },
@@ -62,6 +69,23 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
       </div>
 
       <Divider />
+
+      <div className="CaseDetailTemplate-documents">
+        <div className="CaseDetailTemplate-documentsHeader">
+          <Heading3>Documents</Heading3>
+
+          <Link icon={<ArrowRightIcon />} iconAlign="end">
+            Show all documents
+          </Link>
+        </div>
+
+        <DownloadCard
+          layoutClassName="CasedDetailTemplate-downloadCard"
+          icon={<DocumentIcon />}
+          label="Bezwaar maken overige zaken - DigiD.pdf"
+          sizeKb="134"
+        />
+      </div>
     </div>
   );
 };
