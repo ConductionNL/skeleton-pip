@@ -1,5 +1,6 @@
 import * as React from "react";
 import "../styling/index.css";
+import "./Layout.css";
 import "./../translations/i18n";
 import APIContext, { APIProvider } from "../apiService/apiContext";
 import APIService from "../apiService/apiService";
@@ -34,16 +35,46 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
   }, [pageContext, location]);
 
   return (
-    <GatsbyProvider value={gatsbyContext}>
-      <APIProvider value={API}>
-        <StylesProvider>
-          {isLoggedIn() ? <AuthenticatedHeaderTemplate /> : <UnauthenticatedHeaderTemplate />}
-          <div className="PageContent-wrapper">{children}</div>
-          {isLoggedIn() ? <AuthenticatedFooterTemplate /> : <UnauthenticatedFooterTemplate />}
-        </StylesProvider>
-      </APIProvider>
-    </GatsbyProvider>
+    <div className="Layout">
+      <GatsbyProvider value={gatsbyContext}>
+        <APIProvider value={API}>
+          <StylesProvider>
+            {isLoggedIn() ? <AuthenticatedLayout {...{ children }} /> : <UnauthenticatedLayout {...{ children }} />}
+          </StylesProvider>
+        </APIProvider>
+      </GatsbyProvider>
+    </div>
   );
 };
 
 export default Layout;
+
+/**
+ * Authenticated Template
+ */
+interface AuthenticatedLayoutProps {
+  children: React.ReactNode;
+}
+
+const AuthenticatedLayout: React.FC<AuthenticatedLayoutProps> = ({ children }) => (
+  <>
+    <AuthenticatedHeaderTemplate layoutClassName="Layout-AuthenticatedHeader" />
+    <div className="PageContent-wrapper">{children}</div>
+    <AuthenticatedFooterTemplate />
+  </>
+);
+
+/**
+ * Unauthenticated Template
+ */
+interface UnauthenticatedLayoutProps {
+  children: React.ReactNode;
+}
+
+const UnauthenticatedLayout: React.FC<UnauthenticatedLayoutProps> = ({ children }) => (
+  <>
+    <UnauthenticatedHeaderTemplate />
+    <div className="PageContent-wrapper">{children}</div>
+    <UnauthenticatedFooterTemplate />
+  </>
+);
