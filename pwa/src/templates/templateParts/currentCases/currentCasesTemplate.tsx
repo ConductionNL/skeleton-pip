@@ -2,13 +2,15 @@ import * as React from "react";
 import "./CurrentCasesTemplate.css";
 import { Heading1, Tab, TabContext, TabPanel, Tabs, Card, CardProps } from "@gemeente-denhaag/components-react";
 import { navigate } from "gatsby";
+import { useTranslation } from "react-i18next";
 
 export const CurrentCasesTemplate: React.FC = () => {
   const [value, setValue] = React.useState(0);
+  const { t } = useTranslation();
 
   return (
     <div className="CurrentCasesTemplate">
-      <Heading1>Cases</Heading1>
+      <Heading1>{t("Current cases")}</Heading1>
 
       <TabContext value={value.toString()}>
         <Tabs
@@ -18,8 +20,8 @@ export const CurrentCasesTemplate: React.FC = () => {
           }}
           className="CurrentCasesTemplate-tabs"
         >
-          <Tab label="Current cases" value={0} />
-          <Tab label="Closed cases" value={1} />
+          <Tab label={t("Current cases")} value={0} />
+          <Tab label={t("Closed cases")} value={1} />
         </Tabs>
 
         <TabPanel value="0">
