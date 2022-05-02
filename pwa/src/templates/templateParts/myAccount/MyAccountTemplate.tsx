@@ -132,14 +132,14 @@ export const MyAccountTemplate: React.FC = () => {
               <TableCell className="MyAccountTemplate-th">
                 <b>Street</b>
               </TableCell>
-              <TableCell>Gagelplein 5</TableCell>
+              <TableCell>-</TableCell>
               <TableCell></TableCell>
             </TableRow>
             <TableRow>
               <TableCell className="MyAccountTemplate-th">
                 <b>Postal code and city</b>
               </TableCell>
-              <TableCell>2563TT Den Haag</TableCell>
+              <TableCell>-</TableCell>
               <TableCell></TableCell>
             </TableRow>
           </TableBody>
