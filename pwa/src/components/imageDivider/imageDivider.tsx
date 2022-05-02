@@ -6,6 +6,10 @@ interface ImageDividerProps {
   layoutClassName: string;
 }
 
-export const ImageDivider: React.FC<ImageDividerProps> = ({ image, layoutClassName }) => {
+export const AuthenticatedImageDivider: React.FC<ImageDividerProps> = ({ image, layoutClassName }) => {
+  return <img src={image} className={`ImageDivider ${layoutClassName}`} />;
+};
+
+export const UnauthenticatedImageDivider: React.FC<ImageDividerProps> = ({ image, layoutClassName }) => {
   return <img src={image} className={`ImageDivider ${layoutClassName}`} />;
 };
