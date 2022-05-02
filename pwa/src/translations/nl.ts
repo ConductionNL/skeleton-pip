@@ -12,7 +12,7 @@ export const nl = {
   Status: "Status",
   "Application date": "Aanvraag datum",
   "Case number": "Zaaknummer",
-  Overview: "Overview",
+  Overview: "Overzicht",
   "My messages": "Mijn berichten",
   "Closed cases": "Gesloten zaken",
   case: "Zaak",
