@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./DashboardTemplate.css";
+import * as styles from "./DashboardTemplate.module.css";
 import { GridIcon, InboxIcon, ArchiveIcon, DocumentIcon, UserIcon } from "@gemeente-denhaag/icons";
 import { Sidenav, SidenavItem, SidenavLink, SidenavList } from "@gemeente-denhaag/sidenav";
 import { Container } from "../../components/container/Container";
@@ -12,12 +12,12 @@ export const DashboardTemplate: React.FC = ({ children }) => {
   return (
     <PrivateRoute>
       <Container>
-        <div className="DashboardTemplate">
-          <div className="DashboardTemplate-menu">
+        <div className={styles.container}>
+          <div className={styles.menu}>
             <Menu />
           </div>
 
-          <div className="DashboardTemplate-content">{children}</div>
+          <div className={styles.content}>{children}</div>
         </div>
       </Container>
     </PrivateRoute>
