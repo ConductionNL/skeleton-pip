@@ -12,11 +12,15 @@ import {
 } from "@gemeente-denhaag/components-react";
 import "./LoginForm.css";
 import { useTranslation } from "react-i18next";
-import { InputPassword } from "../formFields/input";
+import { InputPassword, InputText } from "../formFields/input";
 
 export const LoginForm: React.FC = () => {
   const API = React.useContext(APIContext);
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const { t } = useTranslation();
 
   const onSubmit = async (data: any) => {
@@ -28,14 +32,14 @@ export const LoginForm: React.FC = () => {
       <Heading2 className="LoginForm-heading">{t("Login")}</Heading2>
       <FormField>
         <FormFieldInput>
-          <FormFieldLabel className="test">{t("Username")}</FormFieldLabel>
-          <TextField type="text" invalid {...register("username", { required: true })} />
+          <FormFieldLabel>{t("Username")}</FormFieldLabel>
+          <InputText {...{ register, errors }} name="username" validation={{ required: true }} />
         </FormFieldInput>
       </FormField>
       <FormField>
         <FormFieldLabel>{t("Password")}</FormFieldLabel>
         <FormFieldInput>
-          <InputPassword register={register} name="password" validation={{ required: true }} />
+          <InputPassword {...{ register, errors }} name="password" validation={{ required: true }} />
         </FormFieldInput>
       </FormField>
 
