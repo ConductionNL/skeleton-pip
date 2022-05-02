@@ -1,4 +1,5 @@
 .AuthenticatedFooterTemplate {
+  position: relative;
   background-color: var(--nlportal-footer-background-color);
 }
 
