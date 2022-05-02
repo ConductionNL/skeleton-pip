@@ -1,0 +1,23 @@
+.DownloadCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: var(--nlportal-document-border, 1px solid);
+  border-radius: var(--nlportal-document-border-radius);
+  padding-inline-end: var(--nlportal-space-inline-md);
+}
+
+.DownloadCard > .DownloadCard-iconAndLabel {
+  display: flex;
+  align-items: center;
+}
+
+.DownloadCard > .DownloadCard-iconAndLabel > *:not(:last-child) {
+  margin-inline-end: var(--nlportal-space-inline-md);
+}
+
+.DownloadCard .DownloadCard-icon {
+  padding-inline: var(--nlportal-space-inline-md);
+  padding-block: var(--nlportal-space-block-md);
+  background-color: var(--nlportal-document-icon-background-color);
+}

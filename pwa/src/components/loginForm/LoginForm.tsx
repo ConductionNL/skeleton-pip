@@ -2,14 +2,7 @@ import * as React from "react";
 import { useForm } from "react-hook-form";
 import { handleLogin } from "./../../services/auth";
 import APIContext from "../../apiService/apiContext";
-import {
-  Button,
-  FormField,
-  FormFieldInput,
-  FormFieldLabel,
-  Heading2,
-  TextField,
-} from "@gemeente-denhaag/components-react";
+import { Button, FormField, FormFieldInput, FormFieldLabel, Heading2 } from "@gemeente-denhaag/components-react";
 import "./LoginForm.css";
 import { useTranslation } from "react-i18next";
 import { InputPassword, InputText } from "../formFields/input";
