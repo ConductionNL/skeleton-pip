@@ -13,7 +13,7 @@ export const MyAccountTemplate: React.FC = () => {
         <Table>
           <TableBody>
             <TableRow>
-              <TableCell>
+              <TableCell className="MyAccountTemplate-th">
                 <b>Email address</b>
               </TableCell>
               <TableCell>test@gateway.local</TableCell>
@@ -24,7 +24,7 @@ export const MyAccountTemplate: React.FC = () => {
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>
+              <TableCell className="MyAccountTemplate-th">
                 <b>Phone number</b>
               </TableCell>
               <TableCell>-</TableCell>
@@ -42,21 +42,21 @@ export const MyAccountTemplate: React.FC = () => {
         <Table>
           <TableBody>
             <TableRow>
-              <TableCell>
+              <TableCell className="MyAccountTemplate-th">
                 <b>Case updates</b>
               </TableCell>
               <TableCell>-</TableCell>
               <TableCell></TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>
+              <TableCell className="MyAccountTemplate-th">
                 <b>News about my neighbourhood </b>
               </TableCell>
               <TableCell>-</TableCell>
               <TableCell></TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>
+              <TableCell className="MyAccountTemplate-th">
                 <b>Tips</b>
               </TableCell>
               <TableCell>-</TableCell>
@@ -70,49 +70,49 @@ export const MyAccountTemplate: React.FC = () => {
         <Table>
           <TableBody>
             <TableRow>
-              <TableCell>
+              <TableCell className="MyAccountTemplate-th">
                 <b>First names</b>
               </TableCell>
               <TableCell>test@gateway.local</TableCell>
               <TableCell></TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>
+              <TableCell className="MyAccountTemplate-th">
                 <b>Last name</b>
               </TableCell>
               <TableCell>-</TableCell>
               <TableCell></TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>
+              <TableCell className="MyAccountTemplate-th">
                 <b>Gender</b>
               </TableCell>
               <TableCell>-</TableCell>
               <TableCell></TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>
+              <TableCell className="MyAccountTemplate-th">
                 <b>Citizen service number</b>
               </TableCell>
               <TableCell>-</TableCell>
               <TableCell></TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>
+              <TableCell className="MyAccountTemplate-th">
                 <b>Date of birth</b>
               </TableCell>
               <TableCell>10 April 2022</TableCell>
               <TableCell></TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>
+              <TableCell className="MyAccountTemplate-th">
                 <b>Place of birth</b>
               </TableCell>
               <TableCell>localhost</TableCell>
               <TableCell></TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>
+              <TableCell className="MyAccountTemplate-th">
                 <b>Nationality</b>
               </TableCell>
               <TableCell>-</TableCell>
@@ -126,14 +126,14 @@ export const MyAccountTemplate: React.FC = () => {
         <Table>
           <TableBody>
             <TableRow>
-              <TableCell>
+              <TableCell className="MyAccountTemplate-th">
                 <b>Street</b>
               </TableCell>
               <TableCell>Gagelplein 5</TableCell>
               <TableCell></TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>
+              <TableCell className="MyAccountTemplate-th">
                 <b>Postal code and city</b>
               </TableCell>
               <TableCell>2563TT Den Haag</TableCell>
@@ -147,7 +147,7 @@ export const MyAccountTemplate: React.FC = () => {
         <Table>
           <TableBody>
             <TableRow>
-              <TableCell>
+              <TableCell className="MyAccountTemplate-th">
                 <b>Number of people on your address</b>
               </TableCell>
               <TableCell>-</TableCell>

@@ -15,3 +15,7 @@
 .MyAccountTemplate-spacing {
   margin-block-end: var(--nlportal-space-block-5xl);
 }
+
+.MyAccountTemplate-th {
+  width: 35%;
+}
