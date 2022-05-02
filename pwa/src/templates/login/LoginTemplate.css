@@ -1,17 +1,13 @@
 .LoginTemplate {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100%;
-  margin-top: 100px;
+  justify-content: center;
+  min-height: inherit;
 }
 
 .LoginTemplate-inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.LoginTemplate-inner > *:not(:last-child) {
-  margin-block-end: var(--utrecht-space-block-md);
+  position: relative;
+  margin-block-start: calc(
+    var(--conduction-unauthenticated-header-logo-height) * -1
+  );
 }
