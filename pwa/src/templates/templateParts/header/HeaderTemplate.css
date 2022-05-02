@@ -60,12 +60,3 @@
   align-items: center;
   height: var(--conduction-unauthenticated-header-logo-height);
 }
-
-.UnauthenticatedHeaderTemplate > .test {
-  content: "";
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 48px;
-  background: url(../../../assets/images/UnauthenticatedHeaderDivider.png) 18% 100%;
-}

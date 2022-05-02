@@ -26,14 +26,3 @@
 .AuthenticatedFooterTemplate .Footer-inner .denhaag-list__secondary-action {
   color: var(--nlportal-footer-link-color);
 }
-
-.UnauthenticatedFooterTemplate > .test {
-  content: "";
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 17px;
-  background: url(../../../assets/images/UnauthenticatedFooterDivider.png) 36% 100%;
-}
-
-

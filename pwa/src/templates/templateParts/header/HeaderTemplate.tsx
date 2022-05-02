@@ -9,8 +9,7 @@ import { Button } from "@gemeente-denhaag/components-react";
 import { getUsername } from "../../../services/auth";
 import { changeLanguage } from "i18next";
 import clsx from "clsx";
-import { AuthenticatedImageDivider } from "../../../components/imageDivider/imageDivider";
-import { UnauthenticatedImageDivider } from "../../../components/imageDivider/imageDivider";
+import { ImageDivider } from "../../../components/imageDivider/imageDivider";
 import AuthenticatedDividerImage from "./../../../assets/images/AuthenticatedDivider.png";
 import UnauthenticatedDividerImage from "./../../../assets/images/UnauthenticatedHeaderDivider.png";
 
@@ -37,10 +36,7 @@ export const AuthenticatedHeaderTemplate: React.FC<AuthenticatedHeaderTemplatePr
           </div>
         </div>
       </Container>
-      <AuthenticatedImageDivider
-        image={AuthenticatedDividerImage}
-        layoutClassName="AuthenticatedHeaderTemplate-divider"
-      />
+      <ImageDivider image={AuthenticatedDividerImage} layoutClassName="AuthenticatedHeaderTemplate-divider" />
     </header>
   );
 };
@@ -52,10 +48,6 @@ export const UnauthenticatedHeaderTemplate: React.FC = () => (
         <DenHaagLogo className="UnauthenticatedHeaderTemplate-denHaagLogo" />
       </div>
     </Container>
-    {/* <UnauthenticatedImageDivider
-      image={UnauthenticatedDividerImage}
-      layoutClassName="AuthenticatedHeaderTemplate-divider"
-    /> */}
-    <div className="test"></div>
+    <ImageDivider image={UnauthenticatedDividerImage} layoutClassName="AuthenticatedHeaderTemplate-divider" />
   </header>
 );
