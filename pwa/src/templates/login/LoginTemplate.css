@@ -1,0 +1,17 @@
+.LoginTemplate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: inherit;
+}
+
+.LoginTemplate-inner {
+  position: relative;
+  margin-block-start: calc(
+    var(--conduction-unauthenticated-header-logo-height) * -1
+  );
+}
+
+.LoginTemplate .LoginTemplate-inner .LoginTemplate-inner-heading {
+  margin-block-end: var(--nlportal-space-block-xl);
+}
