@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./CurrentCasesTemplate.css";
+import * as styles from "./CurrentCasesTemplate.module.css";
 import { Heading1, Tab, TabContext, TabPanel, Tabs, Card, CardProps } from "@gemeente-denhaag/components-react";
 import { navigate } from "gatsby";
 import { useTranslation } from "react-i18next";
@@ -9,7 +9,7 @@ export const CurrentCasesTemplate: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="CurrentCasesTemplate">
+    <div className={styles.container}>
       <Heading1>{t("Current cases")}</Heading1>
 
       <TabContext value={value.toString()}>
@@ -18,14 +18,14 @@ export const CurrentCasesTemplate: React.FC = () => {
           onChange={(_, newValue: number) => {
             setValue(newValue);
           }}
-          className="CurrentCasesTemplate-tabs"
+          className={styles.tabs}
         >
           <Tab label={t("Current cases")} value={0} />
           <Tab label={t("Closed cases")} value={1} />
         </Tabs>
 
         <TabPanel value="0">
-          <div className="CurrentCasesTemplate-casesGrid">
+          <div className={styles.grid}>
             {cases.map(({ title, subTitle, date, id }) => (
               <Card
                 key={id}
@@ -38,7 +38,7 @@ export const CurrentCasesTemplate: React.FC = () => {
         </TabPanel>
 
         <TabPanel value="1">
-          <div className="CurrentCasesTemplate-casesGrid">
+          <div className={styles.grid}>
             {cases.map(({ title, subTitle, date, id }) => (
               <Card
                 key={id}
