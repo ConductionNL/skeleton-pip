@@ -22,7 +22,6 @@ export const LoginForm: React.FC = () => {
 
   return (
     <form className="LoginForm" onSubmit={handleSubmit(onSubmit)}>
-      <Heading2 className="LoginForm-heading">{t("Login")}</Heading2>
       <FormField>
         <FormFieldInput>
           <FormFieldLabel>{t("Username")}</FormFieldLabel>

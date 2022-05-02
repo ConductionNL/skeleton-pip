@@ -15,3 +15,7 @@
 .LoginTemplate-inner > *:not(:last-child) {
   margin-block-end: var(--utrecht-space-block-md);
 }
+
+.LoginTemplate .LoginTemplate-inner .LoginTemplate-inner-heading {
+  margin-block-end: var(--nlportal-space-block-xl);
+}
