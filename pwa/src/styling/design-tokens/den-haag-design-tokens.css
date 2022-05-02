@@ -104,4 +104,5 @@
   --denhaag-menu-button-line-height: var(
     --denhaag-typography-scale-xl-font-size
   );
+  --nlportal-space-block-4xl: var(--denhaag-space-block-4xl);
 }

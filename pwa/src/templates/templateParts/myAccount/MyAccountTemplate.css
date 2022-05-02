@@ -3,3 +3,15 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.MyAccountTemplate-heading2 {
+  margin-block-end: var(--nlportal-space-block-4xl);
+}
+
+.MyAccountTemplate-heading3 {
+  margin-block-end: var(--nlportal-space-block-md);
+}
+
+.MyAccountTemplate-spacing {
+  margin-block-end: var(--nlportal-space-block-5xl);
+}
