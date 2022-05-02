@@ -6,9 +6,11 @@ import "./MyAccountTemplate.css";
 import { useTranslation } from "react-i18next";
 
 export const MyAccountTemplate: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="MyAccountTemplate">
-      <Heading2 className="MyAccountTemplate-heading2">My account</Heading2>
+      <Heading2 className="MyAccountTemplate-heading2">{t("My account")}</Heading2>
       <div className="MyAccountTemplate-spacing">
         <Heading3 className="MyAccountTemplate-heading3">Contact</Heading3>
         <Table>
@@ -164,8 +166,4 @@ export const MyAccountTemplate: React.FC = () => {
       </div>
     </div>
   );
-};
-  const { t } = useTranslation();
-
-  return <Heading1>{t("My account")}</Heading1>;
 };
