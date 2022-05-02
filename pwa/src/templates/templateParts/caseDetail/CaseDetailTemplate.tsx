@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./CaseDetailTemplate.css";
+import * as styles from "./CaseDetailTemplate.module.css";
 import { Divider, Heading2, Heading3, Link } from "@gemeente-denhaag/components-react";
 import { navigate } from "gatsby";
 import {
@@ -23,7 +23,7 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
   const { t } = useTranslation();
 
   return (
-    <div className="CaseDetailTemplate">
+    <div className={styles.container}>
       <div onClick={() => navigate("/current-cases")}>
         <Link icon={<ChevronLeftIcon />} iconAlign="start">
           {t("Current cases")}
@@ -43,7 +43,7 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
 
       <Divider />
 
-      <div className="CaseDetailTemplate-status">
+      <div className={styles.status}>
         <Heading3>{t("Current status")}</Heading3>
 
         <StatusSteps
@@ -73,8 +73,8 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
 
       <Divider />
 
-      <div className="CaseDetailTemplate-documents">
-        <div className="CaseDetailTemplate-documentsHeader">
+      <div className={styles.documents}>
+        <div className={styles.documentsHeader}>
           <Heading3>{t("Documents")}</Heading3>
 
           <Link icon={<ArrowRightIcon />} iconAlign="end">
@@ -83,7 +83,7 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
         </div>
 
         <DownloadCard
-          layoutClassName="CasedDetailTemplate-downloadCard"
+          layoutClassName={styles.downloadCard}
           icon={<DocumentIcon />}
           label="Bezwaar maken overige zaken - DigiD.pdf"
           sizeKb="134"
