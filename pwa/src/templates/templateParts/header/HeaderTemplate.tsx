@@ -31,7 +31,6 @@ export const AuthenticatedHeaderTemplate: React.FC<AuthenticatedHeaderTemplatePr
             <a className="AuthenticatedHeaderTemplate-inner-username">{`${t("Welcome")} ${getUsername()}`}</a>
 
             <Button onClick={() => navigate("/logout")}>{t("Logout")}</Button>
-
             <Button onClick={() => changeLanguage(i18n.language === "nl" ? "en" : "nl")} variant="secondary-action">
               {t("Translation")}
             </Button>

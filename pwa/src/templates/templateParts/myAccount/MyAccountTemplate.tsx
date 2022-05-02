@@ -3,6 +3,7 @@ import { Heading2, Heading3, Link, Button, Paragraph } from "@gemeente-denhaag/c
 import { Table, TableBody, TableRow, TableCell } from "@gemeente-denhaag/table";
 import { EditIcon } from "@gemeente-denhaag/icons";
 import "./MyAccountTemplate.css";
+import { useTranslation } from "react-i18next";
 
 export const MyAccountTemplate: React.FC = () => {
   return (
@@ -163,4 +164,8 @@ export const MyAccountTemplate: React.FC = () => {
       </div>
     </div>
   );
+};
+  const { t } = useTranslation();
+
+  return <Heading1>{t("My account")}</Heading1>;
 };
