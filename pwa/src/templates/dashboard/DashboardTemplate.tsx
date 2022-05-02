@@ -6,6 +6,8 @@ import { Container } from "../../components/container/Container";
 import { PrivateRoute } from "../../components/privateRoute/privateRoute";
 import { GatsbyContext } from "../../context/gatsby";
 import { navigate } from "gatsby";
+import i18next from "i18next";
+import { useTranslation } from "react-i18next";
 
 export const DashboardTemplate: React.FC = ({ children }) => {
   return (
@@ -35,17 +37,23 @@ interface MenuItem {
 }
 
 const Menu: React.FC = () => {
+  const { t } = useTranslation();
   const {
     location: { pathname },
   } = React.useContext(GatsbyContext);
 
   const menuItems: MenuItem[] = [
-    { label: "Overview", href: "/", current: pathname === "/", icon: <GridIcon /> },
-    { label: "My messages", href: "/my-messages", current: pathname === "/my-messages", icon: <InboxIcon /> },
-    { label: "Current cases", href: "/current-cases", current: pathname === "/current-cases", icon: <ArchiveIcon /> },
-    { label: "Themes", href: "/themes", current: pathname === "/themes", icon: <DocumentIcon /> },
-    { label: "Forms", href: "/forms", current: pathname === "/forms", icon: <DocumentIcon /> },
-    { label: "My account", href: "/my-account", current: pathname === "/my-account", icon: <UserIcon /> },
+    { label: t("Overview"), href: "/", current: pathname === "/", icon: <GridIcon /> },
+    { label: t("My messages"), href: "/my-messages", current: pathname === "/my-messages", icon: <InboxIcon /> },
+    {
+      label: t("Current cases"),
+      href: "/current-cases",
+      current: pathname === "/current-cases",
+      icon: <ArchiveIcon />,
+    },
+    { label: t("Themes"), href: "/themes", current: pathname === "/themes", icon: <DocumentIcon /> },
+    { label: t("Forms"), href: "/forms", current: pathname === "/forms", icon: <DocumentIcon /> },
+    { label: t("My account"), href: "/my-account", current: pathname === "/my-account", icon: <UserIcon /> },
   ];
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string): void => {
