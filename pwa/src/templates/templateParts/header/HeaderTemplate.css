@@ -45,16 +45,21 @@
 
 /* UnauthenticatedHeaderTemplate */
 .UnauthenticatedHeaderTemplate {
-  display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.UnauthenticatedHeaderTemplate .UnauthenticatedHeaderTemplate-denHaagLogo {
+.UnauthenticatedHeaderTemplate .UnauthenticatedHeaderTemplate-inner {
+  display: flex;
+  align-items: center;
+}
+
+.UnauthenticatedHeaderTemplate
+  .UnauthenticatedHeaderTemplate-inner
+  .UnauthenticatedHeaderTemplate-denHaagLogo {
   align-items: center;
   height: var(--conduction-unauthenticated-header-logo-height);
 }
-
 
 .Footer > .Footer-divider {
   height: var(--nlportal-header-facet-height);

@@ -26,12 +26,9 @@ export const AuthenticatedHeaderTemplate: React.FC<AuthenticatedHeaderTemplatePr
           <Link to="/">
             <MijnDenHaagLogo className="AuthenticatedHeaderTemplate-inner-mijnDenHaagLogo" />
           </Link>
-
           <div className="AuthenticatedHeaderTemplate-inner-userManagement">
             <a className="AuthenticatedHeaderTemplate-inner-username">{`${t("Welcome")} ${getUsername()}`}</a>
-
             <Button onClick={() => navigate("/logout")}>{t("Logout")}</Button>
-
             <Button onClick={() => changeLanguage(i18n.language === "nl" ? "en" : "nl")} variant="secondary-action">
               {t("Translation")}
             </Button>
@@ -45,6 +42,11 @@ export const AuthenticatedHeaderTemplate: React.FC<AuthenticatedHeaderTemplatePr
 
 export const UnauthenticatedHeaderTemplate: React.FC = () => (
   <header className="UnauthenticatedHeaderTemplate">
-    <DenHaagLogo className="UnauthenticatedHeaderTemplate-denHaagLogo" />
+    <Container>
+      <div className="UnauthenticatedHeaderTemplate-inner">
+        <DenHaagLogo className="UnauthenticatedHeaderTemplate-denHaagLogo" />
+      </div>
+    </Container>
+    <ImageDivider image={dividerImage} layoutClassName="AuthenticatedHeaderTemplate-divider" />
   </header>
 );

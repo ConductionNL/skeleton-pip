@@ -30,5 +30,9 @@ export const AuthenticatedFooterTemplate: React.FC = () => {
 };
 
 export const UnauthenticatedFooterTemplate: React.FC = () => {
-  return <footer className="UnauthenticatedFooterTemplate"></footer>;
+  return (
+    <footer className="UnauthenticatedFooterTemplate">
+      <ImageDivider image={dividerImage} layoutClassName="AuthenticatedHeaderTemplate-divider" />
+    </footer>
+  );
 };
