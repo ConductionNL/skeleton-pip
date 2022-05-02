@@ -1,0 +1,12 @@
+.LoginForm .LoginForm-heading {
+  margin-block-end: var(--nlportal-space-block-xl);
+}
+
+.LoginForm > *:not(:first-child) {
+  margin-block-start: var(--nlportal-space-block-md);
+}
+
+.LoginForm .LoginForm-form .icon:hover {
+  color: var(--denhaag-button-primary-action-background-color);
+  cursor: pointer;
+}

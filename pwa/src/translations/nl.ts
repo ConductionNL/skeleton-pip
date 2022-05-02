@@ -3,4 +3,7 @@ export const nl = {
   Welcome: "Welkom",
   Logout: "Uitloggen",
   Translation: "English",
+  Username: "Gebruikersnaam",
+  Password: "Wachtwoord",
+  Send: "Versturen",
 };

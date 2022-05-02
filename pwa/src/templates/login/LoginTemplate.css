@@ -1,0 +1,17 @@
+.LoginTemplate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 100px;
+}
+
+.LoginTemplate-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.LoginTemplate-inner > *:not(:last-child) {
+  margin-block-end: var(--utrecht-space-block-md);
+}
