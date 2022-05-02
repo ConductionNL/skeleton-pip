@@ -9,6 +9,8 @@
 }
 
 .DashboardTemplate > .DashboardTemplate-content {
+  z-index: 0;
+  position: relative;
   width: calc(100% / 12 * 9);
   margin-inline-start: calc(100% / 12 * 3);
 }
