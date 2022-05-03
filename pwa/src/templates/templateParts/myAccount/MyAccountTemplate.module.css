@@ -1,0 +1,15 @@
+.container > .block {
+  margin-block-end: var(--nlportal-space-block-5xl);
+}
+
+.container > .block > *:not(:last-child) {
+  margin-block-end: var(--nlportal-space-block-2xl);
+}
+
+.container > .heading {
+  margin-block-end: var(--nlportal-space-block-2xl);
+}
+
+.th {
+  width: 35%;
+}
