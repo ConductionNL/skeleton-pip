@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../styling/index.css";
-import "./Layout.css";
+import * as styles from "./Layout.module.css";
 import "./../translations/i18n";
 import APIContext, { APIProvider } from "../apiService/apiContext";
 import APIService from "../apiService/apiService";
@@ -35,7 +35,7 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
   }, [pageContext, location]);
 
   return (
-    <div className="Layout">
+    <div className={styles.container}>
       <GatsbyProvider value={gatsbyContext}>
         <APIProvider value={API}>
           <StylesProvider>
@@ -58,7 +58,7 @@ interface AuthenticatedLayoutProps {
 
 const AuthenticatedLayout: React.FC<AuthenticatedLayoutProps> = ({ children }) => (
   <>
-    <AuthenticatedHeaderTemplate layoutClassName="Layout-AuthenticatedHeader" />
+    <AuthenticatedHeaderTemplate layoutClassName={styles.authenticatedHeader} />
     <div className="PageContent-wrapper">{children}</div>
     <AuthenticatedFooterTemplate />
   </>
