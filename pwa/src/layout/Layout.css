@@ -1,8 +1,0 @@
-.Layout > .utrecht-document {
-  z-index: 0;
-  position: relative;
-}
-
-.Layout > .utrecht-document > .Layout-AuthenticatedHeader {
-  z-index: 1;
-}
