@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./HeaderTemplate.css";
+import * as styles from "./HeaderTemplate.module.css";
 import { Container } from "../../../components/container/Container";
 import { Link, navigate } from "gatsby";
 import MijnDenHaagLogo from "../../../assets/svgs/MijnDenHaag.svg";
@@ -20,15 +20,15 @@ export const AuthenticatedHeaderTemplate: React.FC<AuthenticatedHeaderTemplatePr
   const { t, i18n } = useTranslation();
 
   return (
-    <header className={clsx("AuthenticatedHeaderTemplate", [layoutClassName && layoutClassName])}>
+    <header className={clsx(styles.authenticatedContainer, [layoutClassName && layoutClassName])}>
       <Container>
-        <div className="AuthenticatedHeaderTemplate-inner">
+        <div className={styles.authenticatedContent}>
           <Link to="/">
-            <MijnDenHaagLogo className="AuthenticatedHeaderTemplate-inner-mijnDenHaagLogo" />
+            <MijnDenHaagLogo className={styles.authenticatedLogo} />
           </Link>
 
-          <div className="AuthenticatedHeaderTemplate-inner-userManagement">
-            <a className="AuthenticatedHeaderTemplate-inner-username">{`${t("Welcome")} ${getUsername()}`}</a>
+          <div className={styles.usermanagment}>
+            <a className={styles.username}>{`${t("Welcome")} ${getUsername()}`}</a>
 
             <Button onClick={() => navigate("/logout")}>{t("Logout")}</Button>
             <Button onClick={() => changeLanguage(i18n.language === "nl" ? "en" : "nl")} variant="secondary-action">
@@ -37,13 +37,13 @@ export const AuthenticatedHeaderTemplate: React.FC<AuthenticatedHeaderTemplatePr
           </div>
         </div>
       </Container>
-      <ImageDivider image={dividerImage} layoutClassName="AuthenticatedHeaderTemplate-divider" />
+      <ImageDivider image={dividerImage} layoutClassName={styles.authenticatedDivider} />
     </header>
   );
 };
 
 export const UnauthenticatedHeaderTemplate: React.FC = () => (
-  <header className="UnauthenticatedHeaderTemplate">
-    <DenHaagLogo className="UnauthenticatedHeaderTemplate-denHaagLogo" />
+  <header className={styles.unauthenticatedContainer}>
+    <DenHaagLogo className={styles.unauthenticatedLogo} />
   </header>
 );
