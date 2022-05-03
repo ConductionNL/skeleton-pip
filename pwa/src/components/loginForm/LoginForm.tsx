@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { handleLogin } from "./../../services/auth";
 import APIContext from "../../apiService/apiContext";
 import { Button, FormField, FormFieldInput, FormFieldLabel, Heading2 } from "@gemeente-denhaag/components-react";
-import "./LoginForm.css";
+import * as styles from "./LoginForm.module.css";
 import { useTranslation } from "react-i18next";
 import { InputPassword, InputText } from "../formFields/input";
 
@@ -21,7 +21,7 @@ export const LoginForm: React.FC = () => {
   };
 
   return (
-    <form className="LoginForm" onSubmit={handleSubmit(onSubmit)}>
+    <form className={styles.container} onSubmit={handleSubmit(onSubmit)}>
       <FormField>
         <FormFieldInput>
           <FormFieldLabel>{t("Username")}</FormFieldLabel>
