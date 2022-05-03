@@ -1,11 +1,7 @@
+/* AuthenticatedFooterTemplate */
 .AuthenticatedFooterTemplate {
   position: relative;
   background-color: var(--nlportal-footer-background-color);
-}
-
-.UnauthenticatedFooterTemplate {
-  background-color: var(--condution-footer-secondary-background-color);
-  height: var(--condution-footer-height);
 }
 
 .AuthenticatedFooterTemplate .Footer-inner {
@@ -26,4 +22,18 @@
 .AuthenticatedFooterTemplate .Footer-inner .denhaag-list__item-text-primary,
 .AuthenticatedFooterTemplate .Footer-inner .denhaag-list__secondary-action {
   color: var(--nlportal-footer-link-color);
+}
+
+.AuthenticatedFooterTemplate-divider {
+  height: var(--nlportal-header-facet-height);
+}
+
+/* UnauthenticatedFooterTemplate */
+.UnauthenticatedFooterTemplate {
+  background-color: var(--conduction-footer-secondary-background-color);
+  height: var(--conduction-footer-height);
+}
+
+.UnauthenticatedFooterTemplate-divider {
+  height: var(--nlportal-space-block-md);
 }

@@ -11,7 +11,7 @@
   padding-block-start: var(--nlportal-space-block-xs);
   padding-block-end: var(--nlportal-space-block-xs);
   max-width: var(--nlportal-max-page-width);
-  height: var(--nlportal-header-height-large);
+  height: var(--nlportal-header-height);
   align-items: center;
 }
 
@@ -43,6 +43,10 @@
   height: 100%;
 }
 
+.AuthenticatedHeaderTemplate-divider {
+  height: var(--nlportal-header-facet-height);
+}
+
 /* UnauthenticatedHeaderTemplate */
 .UnauthenticatedHeaderTemplate {
   align-items: center;
@@ -52,6 +56,7 @@
 .UnauthenticatedHeaderTemplate .UnauthenticatedHeaderTemplate-inner {
   display: flex;
   align-items: center;
+  height: var(--nlportal-header-height-large);
 }
 
 .UnauthenticatedHeaderTemplate
@@ -59,4 +64,8 @@
   .UnauthenticatedHeaderTemplate-denHaagLogo {
   align-items: center;
   height: var(--conduction-unauthenticated-header-logo-height);
+}
+
+.UnauthenticatedHeaderTemplate-divider {
+  height: var(--nlportal-space-block-4xl);
 }

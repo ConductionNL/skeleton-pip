@@ -48,6 +48,6 @@ export const UnauthenticatedHeaderTemplate: React.FC = () => (
         <DenHaagLogo className="UnauthenticatedHeaderTemplate-denHaagLogo" />
       </div>
     </Container>
-    <ImageDivider image={UnauthenticatedDividerImage} layoutClassName="AuthenticatedHeaderTemplate-divider" />
+    <ImageDivider image={UnauthenticatedDividerImage} layoutClassName="UnauthenticatedHeaderTemplate-divider" />
   </header>
 );

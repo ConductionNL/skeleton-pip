@@ -13,7 +13,7 @@ export const AuthenticatedFooterTemplate: React.FC = () => {
 
   return (
     <footer className="AuthenticatedFooterTemplate">
-      <ImageDivider image={AuthenticatedDividerImage} layoutClassName="Footer-divider" />
+      <ImageDivider image={AuthenticatedDividerImage} layoutClassName="AuthenticatedFooterTemplate-divider" />
       <Container>
         <div className="Footer-inner">
           <List>
@@ -36,7 +36,7 @@ export const AuthenticatedFooterTemplate: React.FC = () => {
 export const UnauthenticatedFooterTemplate: React.FC = () => {
   return (
     <footer className="UnauthenticatedFooterTemplate">
-      <ImageDivider image={UnauthenticatedDividerImage} layoutClassName="UnauthenticatedHeaderTemplate-divider" />
+      <ImageDivider image={UnauthenticatedDividerImage} layoutClassName="UnauthenticatedFooterTemplate-divider" />
     </footer>
   );
 };
