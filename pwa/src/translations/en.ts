@@ -9,6 +9,7 @@ export const en = {
   "Current status": "Current status",
   "Case one": "Case one",
   "Current cases": "Current cases",
+  "My cases": "My cases",
   Status: "Status",
   "Application date": "Application date",
   "Case number": "Case number",

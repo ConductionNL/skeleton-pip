@@ -24,9 +24,9 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
 
   return (
     <div className="CaseDetailTemplate">
-      <div onClick={() => navigate("/current-cases")}>
+      <div onClick={() => navigate("/my-cases")}>
         <Link icon={<ChevronLeftIcon />} iconAlign="start">
-          {t("Current cases")}
+          {t("My cases")}
         </Link>
       </div>
 
