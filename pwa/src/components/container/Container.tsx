@@ -1,4 +1,4 @@
 import * as React from "react";
-import "./Container.css";
+import * as styles from "./Container.module.css";
 
-export const Container: React.FC = ({ children }) => <div className="Container">{children}</div>;
+export const Container: React.FC = ({ children }) => <div className={styles.container}>{children}</div>;
