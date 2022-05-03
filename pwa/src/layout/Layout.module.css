@@ -6,3 +6,9 @@
 .authenticatedHeader {
   z-index: 1;
 }
+
+.pageContent {
+  min-height: calc(
+    100vh - var(--conduction-unauthenticated-header-logo-height)
+  );
+}

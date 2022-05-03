@@ -59,7 +59,7 @@ interface AuthenticatedLayoutProps {
 const AuthenticatedLayout: React.FC<AuthenticatedLayoutProps> = ({ children }) => (
   <>
     <AuthenticatedHeaderTemplate layoutClassName={styles.authenticatedHeader} />
-    <div className="PageContent-wrapper">{children}</div>
+    <div className={styles.pageContent}>{children}</div>
     <AuthenticatedFooterTemplate />
   </>
 );
@@ -74,7 +74,7 @@ interface UnauthenticatedLayoutProps {
 const UnauthenticatedLayout: React.FC<UnauthenticatedLayoutProps> = ({ children }) => (
   <>
     <UnauthenticatedHeaderTemplate />
-    <div className="PageContent-wrapper">{children}</div>
+    <div className={styles.pageContent}>{children}</div>
     <UnauthenticatedFooterTemplate />
   </>
 );

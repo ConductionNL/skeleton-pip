@@ -9,7 +9,7 @@ export const LoginTemplate: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.grid}>
+      <div className={styles.content}>
         <Heading1 className={styles.header}>{t("Login")}</Heading1>
         <LoginForm />
       </div>
