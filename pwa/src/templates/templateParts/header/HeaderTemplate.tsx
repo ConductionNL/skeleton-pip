@@ -46,10 +46,10 @@ export const AuthenticatedHeaderTemplate: React.FC<AuthenticatedHeaderTemplatePr
 export const UnauthenticatedHeaderTemplate: React.FC = () => (
   <header className={styles.unauthenticatedContainer}>
     <Container>
-      <div className="UnauthenticatedHeaderTemplate-inner">
+      <div className={styles.unauthenticatedContent}>
         <DenHaagLogo className={styles.unauthenticatedLogo} />
       </div>
     </Container>
-    <ImageDivider image={UnauthenticatedDividerImage} layoutClassName="UnauthenticatedHeaderTemplate-divider" />
+    <ImageDivider image={UnauthenticatedDividerImage} layoutClassName={styles.unauthenticatedDivider} />
   </header>
 );

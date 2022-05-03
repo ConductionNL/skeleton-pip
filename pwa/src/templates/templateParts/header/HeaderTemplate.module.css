@@ -44,7 +44,7 @@
   justify-content: center;
 }
 
-.UnauthenticatedHeaderTemplate .UnauthenticatedHeaderTemplate-inner {
+.unauthenticatedContent {
   display: flex;
   align-items: center;
   height: var(--nlportal-header-height-large);
@@ -55,6 +55,6 @@
   height: var(--conduction-unauthenticated-header-logo-height);
 }
 
-.UnauthenticatedHeaderTemplate-divider {
+.unauthenticatedDivider {
   height: var(--nlportal-space-block-4xl);
 }
