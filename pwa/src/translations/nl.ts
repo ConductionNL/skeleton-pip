@@ -52,4 +52,5 @@ export const nl = {
   "Is this not the number of people you expect? You can request an address investigation with your municipility. This investigation can also be cancelled.":
     "Staat er een ander aantal inwoners op uw address ingeschreven dan u verwacht? Dan kunt u een adresonderzoek aanvragen bij de gemeente. U kunt een adresonderzoek ook intrekken.",
   "Request research": "Vraag onderzoek aan",
+  "Oops, something went wrong": "Oops, er is iets fout gegaan",
 };
