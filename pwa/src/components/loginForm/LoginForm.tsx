@@ -2,26 +2,40 @@ import * as React from "react";
 import { useForm } from "react-hook-form";
 import { handleLogin } from "./../../services/auth";
 import APIContext from "../../apiService/apiContext";
-import { Button, FormField, FormFieldInput, FormFieldLabel, Heading2 } from "@gemeente-denhaag/components-react";
+import { Alert, Button, FormField, FormFieldInput, FormFieldLabel } from "@gemeente-denhaag/components-react";
 import * as styles from "./LoginForm.module.css";
 import { useTranslation } from "react-i18next";
 import { InputPassword, InputText } from "../formFields/input";
 
 export const LoginForm: React.FC = () => {
+  const { t } = useTranslation();
   const API = React.useContext(APIContext);
+  const [loading, setLoading] = React.useState<boolean>(false);
+  const [formError, setFormError] = React.useState<string>("");
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { t } = useTranslation();
 
   const onSubmit = async (data: any) => {
-    handleLogin(data, API);
+    setLoading(true);
+    setFormError("");
+
+    handleLogin(data, API)
+      .catch((err) => {
+        setFormError(err.message);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
     <form className={styles.container} onSubmit={handleSubmit(onSubmit)}>
+      {formError && <Alert text={formError} title={t("Oops, something went wrong")} variant="error" />}
+
       <FormField>
         <FormFieldInput>
           <FormFieldLabel>{t("Username")}</FormFieldLabel>
@@ -35,7 +49,7 @@ export const LoginForm: React.FC = () => {
         </FormFieldInput>
       </FormField>
 
-      <Button size="large" type="submit">
+      <Button size="large" type="submit" disabled={loading}>
         {t("Send")}
       </Button>
     </form>

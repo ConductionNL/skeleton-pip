@@ -1,16 +1,16 @@
 import * as React from "react";
-import * as styles from "./CurrentCasesTemplate.module.css";
+import * as styles from "./MyCasesTemplate.module.css";
 import { Heading1, Tab, TabContext, TabPanel, Tabs, Card, CardProps } from "@gemeente-denhaag/components-react";
 import { navigate } from "gatsby";
 import { useTranslation } from "react-i18next";
 
-export const CurrentCasesTemplate: React.FC = () => {
+export const MyCasesTemplate: React.FC = () => {
   const [value, setValue] = React.useState(0);
   const { t } = useTranslation();
 
   return (
     <div className={styles.container}>
-      <Heading1>{t("Current cases")}</Heading1>
+      <Heading1>{t("My cases")}</Heading1>
 
       <TabContext value={value.toString()}>
         <Tabs
@@ -30,7 +30,7 @@ export const CurrentCasesTemplate: React.FC = () => {
               <Card
                 key={id}
                 {...{ title, subTitle, date }}
-                onClick={() => navigate(`/current-cases/${id}`)}
+                onClick={() => navigate(`/my-cases/${id}`)}
                 variant="case"
               />
             ))}
@@ -43,7 +43,7 @@ export const CurrentCasesTemplate: React.FC = () => {
               <Card
                 key={id}
                 {...{ title, subTitle, date }}
-                onClick={() => navigate(`/current-cases/${id}`)}
+                onClick={() => navigate(`/my-cases/${id}`)}
                 variant="case"
                 archived
               />

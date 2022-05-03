@@ -11,7 +11,7 @@
   padding-block-start: var(--nlportal-space-block-xs);
   padding-block-end: var(--nlportal-space-block-xs);
   max-width: var(--nlportal-max-page-width);
-  height: var(--nlportal-header-height-large);
+  height: var(--nlportal-header-height);
   align-items: center;
 }
 
@@ -40,9 +40,14 @@
 
 /* UnauthenticatedHeaderTemplate */
 .unauthenticatedContainer {
-  display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.UnauthenticatedHeaderTemplate .UnauthenticatedHeaderTemplate-inner {
+  display: flex;
+  align-items: center;
+  height: var(--nlportal-header-height-large);
 }
 
 .unauthenticatedLogo {
@@ -50,4 +55,6 @@
   height: var(--conduction-unauthenticated-header-logo-height);
 }
 
-
+.UnauthenticatedHeaderTemplate-divider {
+  height: var(--nlportal-space-block-4xl);
+}

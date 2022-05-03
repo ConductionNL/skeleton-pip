@@ -10,7 +10,8 @@ import { getUsername } from "../../../services/auth";
 import { changeLanguage } from "i18next";
 import clsx from "clsx";
 import { ImageDivider } from "../../../components/imageDivider/imageDivider";
-import dividerImage from "./../../../assets/images/divider.png";
+import AuthenticatedDividerImage from "./../../../assets/images/AuthenticatedDivider.png";
+import UnauthenticatedDividerImage from "./../../../assets/images/UnauthenticatedHeaderDivider.png";
 
 interface AuthenticatedHeaderTemplateProps {
   layoutClassName?: string;
@@ -37,13 +38,18 @@ export const AuthenticatedHeaderTemplate: React.FC<AuthenticatedHeaderTemplatePr
           </div>
         </div>
       </Container>
-      <ImageDivider image={dividerImage} layoutClassName={styles.authenticatedDivider} />
+      <ImageDivider image={AuthenticatedDividerImage} layoutClassName={styles.authenticatedDivider} />
     </header>
   );
 };
 
 export const UnauthenticatedHeaderTemplate: React.FC = () => (
   <header className={styles.unauthenticatedContainer}>
-    <DenHaagLogo className={styles.unauthenticatedLogo} />
+    <Container>
+      <div className="UnauthenticatedHeaderTemplate-inner">
+        <DenHaagLogo className={styles.unauthenticatedLogo} />
+      </div>
+    </Container>
+    <ImageDivider image={UnauthenticatedDividerImage} layoutClassName="UnauthenticatedHeaderTemplate-divider" />
   </header>
 );
