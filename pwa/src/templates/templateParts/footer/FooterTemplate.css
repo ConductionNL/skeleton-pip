@@ -1,11 +1,7 @@
+/* AuthenticatedFooterTemplate */
 .AuthenticatedFooterTemplate {
   position: relative;
   background-color: var(--nlportal-footer-background-color);
-}
-
-.UnauthenticatedFooterTemplate {
-  background-color: var(--condution-footer-secondary-background-color);
-  height: var(--condution-footer-height);
 }
 
 .AuthenticatedFooterTemplate .Footer-inner {
@@ -28,6 +24,16 @@
   color: var(--nlportal-footer-link-color);
 }
 
-.Footer > .Footer-divider {
+.AuthenticatedFooterTemplate-divider {
   height: var(--nlportal-header-facet-height);
+}
+
+/* UnauthenticatedFooterTemplate */
+.UnauthenticatedFooterTemplate {
+  background-color: var(--conduction-footer-secondary-background-color);
+  height: var(--conduction-footer-height);
+}
+
+.UnauthenticatedFooterTemplate-divider {
+  height: var(--nlportal-space-block-md);
 }

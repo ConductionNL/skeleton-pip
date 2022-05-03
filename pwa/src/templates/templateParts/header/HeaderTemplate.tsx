@@ -10,7 +10,8 @@ import { getUsername } from "../../../services/auth";
 import { changeLanguage } from "i18next";
 import clsx from "clsx";
 import { ImageDivider } from "../../../components/imageDivider/imageDivider";
-import dividerImage from "./../../../assets/images/divider.png";
+import AuthenticatedDividerImage from "./../../../assets/images/AuthenticatedDivider.png";
+import UnauthenticatedDividerImage from "./../../../assets/images/UnauthenticatedHeaderDivider.png";
 
 interface AuthenticatedHeaderTemplateProps {
   layoutClassName?: string;
@@ -26,10 +27,8 @@ export const AuthenticatedHeaderTemplate: React.FC<AuthenticatedHeaderTemplatePr
           <Link to="/">
             <MijnDenHaagLogo className="AuthenticatedHeaderTemplate-inner-mijnDenHaagLogo" />
           </Link>
-
           <div className="AuthenticatedHeaderTemplate-inner-userManagement">
             <a className="AuthenticatedHeaderTemplate-inner-username">{`${t("Welcome")} ${getUsername()}`}</a>
-
             <Button onClick={() => navigate("/logout")}>{t("Logout")}</Button>
             <Button onClick={() => changeLanguage(i18n.language === "nl" ? "en" : "nl")} variant="secondary-action">
               {t("Translation")}
@@ -37,13 +36,18 @@ export const AuthenticatedHeaderTemplate: React.FC<AuthenticatedHeaderTemplatePr
           </div>
         </div>
       </Container>
-      <ImageDivider image={dividerImage} layoutClassName="AuthenticatedHeaderTemplate-divider" />
+      <ImageDivider image={AuthenticatedDividerImage} layoutClassName="AuthenticatedHeaderTemplate-divider" />
     </header>
   );
 };
 
 export const UnauthenticatedHeaderTemplate: React.FC = () => (
   <header className="UnauthenticatedHeaderTemplate">
-    <DenHaagLogo className="UnauthenticatedHeaderTemplate-denHaagLogo" />
+    <Container>
+      <div className="UnauthenticatedHeaderTemplate-inner">
+        <DenHaagLogo className="UnauthenticatedHeaderTemplate-denHaagLogo" />
+      </div>
+    </Container>
+    <ImageDivider image={UnauthenticatedDividerImage} layoutClassName="UnauthenticatedHeaderTemplate-divider" />
   </header>
 );
