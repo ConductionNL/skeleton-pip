@@ -57,4 +57,5 @@ export const en = {
   "Show all messages": "Show all messages",
   "Unread messages": "Unread messages",
   "Read messages": "Read messages",
+  "View case": "View case",
 };

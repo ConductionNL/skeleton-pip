@@ -57,4 +57,5 @@ export const nl = {
   "Show all messages": "Bekijk alle berichten",
   "Unread messages": "Ongelezen berichten",
   "Read messages": "Gelezen berichten",
+  "View case": "Bekijk zaak",
 };

@@ -4,6 +4,7 @@ import { Divider, Heading1, Heading3, Link, Tab, TabContext, TabPanel, Tabs } fr
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { useTranslation } from "react-i18next";
 import { navigate } from "gatsby";
+import { CasesTable, ICaseTableItem } from "../../../components/casesTable/CasesTable";
 
 export const OverviewTemplate: React.FC = () => {
   const { t } = useTranslation();
@@ -38,7 +39,7 @@ export const OverviewTemplate: React.FC = () => {
             <Tab label={t("Read messages")} value={1} />
           </Tabs>
 
-          <TabPanel value="0">dingen hieasdfr</TabPanel>
+          <TabPanel value="0">dingen hier</TabPanel>
           <TabPanel value="1">dingen hier</TabPanel>
         </TabContext>
       </div>
@@ -68,10 +69,27 @@ export const OverviewTemplate: React.FC = () => {
             <Tab label={t("Closed cases")} value={1} />
           </Tabs>
 
-          <TabPanel value="0">dingen hieasdfr</TabPanel>
-          <TabPanel value="1">dingen hier</TabPanel>
+          <TabPanel value="0">
+            <CasesTable {...{ cases }} />
+          </TabPanel>
+          <TabPanel value="1">
+            <CasesTable {...{ cases }} />
+          </TabPanel>
         </TabContext>
       </div>
     </div>
   );
 };
+
+const cases: ICaseTableItem[] = [
+  { title: "Case title", number: "ceb3b7cb-0da2-4fcb-a1a5-69ed38852a28", status: "Registered", date: "3 mei 2022" },
+  { title: "Case title", number: "f9aa6486-2ee9-4fc6-9c49-015ab4eb2afd", status: "Accepted", date: "3 mei 2022" },
+  { title: "Case title", number: "28661a53-5bb5-48e3-b055-7e2822e4f70f", status: "Rejected", date: "3 mei 2022" },
+  { title: "Case title", number: "7f4ca6d7-4b7e-4e3a-9b59-89087e6b1dab", status: "Registered", date: "3 mei 2022" },
+  {
+    title: "Case title",
+    number: "60aad570-71cd-4fcc-b441-3dacbed4619e",
+    status: "Under consideration",
+    date: "3 mei 2022",
+  },
+];
