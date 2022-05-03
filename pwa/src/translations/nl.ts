@@ -9,6 +9,7 @@ export const nl = {
   "Current status": "Huidige status",
   "Case one": "Zaak één",
   "Current cases": "Lopende zaken",
+  "My cases": "Mijn zaken",
   Status: "Status",
   "Application date": "Aanvraag datum",
   "Case number": "Zaaknummer",

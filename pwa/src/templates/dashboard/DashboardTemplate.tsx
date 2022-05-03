@@ -45,9 +45,9 @@ const Menu: React.FC = () => {
     { label: t("Overview"), href: "/", current: pathname === "/", icon: <GridIcon /> },
     { label: t("My messages"), href: "/my-messages", current: pathname === "/my-messages", icon: <InboxIcon /> },
     {
-      label: t("Current cases"),
-      href: "/current-cases",
-      current: pathname === "/current-cases",
+      label: t("My cases"),
+      href: "/my-cases",
+      current: pathname === "/my-cases",
       icon: <ArchiveIcon />,
     },
     { label: t("Themes"), href: "/themes", current: pathname === "/themes", icon: <DocumentIcon /> },
