@@ -53,4 +53,8 @@ export const en = {
     "Is this not the number of people you expect? You can request an address investigation with your municipility. This investigation can also be cancelled.",
   "Request research": "Request research",
   "Oops, something went wrong": "Oops, something went wrong",
+  Messages: "Messages",
+  "Unread messages": "Unread messages",
+  "Read messages": "Read messages",
+  "Send messages": "Send messages",
 };

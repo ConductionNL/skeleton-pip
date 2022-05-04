@@ -26,3 +26,7 @@ export const InputPassword: React.FC<InputProps> = ({ name, validation, register
 export const InputText: React.FC<InputProps> = ({ name, validation, register, errors }) => (
   <TextField type="text" {...register(name, { ...validation })} invalid={errors[name]} />
 );
+
+export const InputTextBox: React.FC<InputProps> = ({ name, validation, register, errors }) => (
+  <TextField type="text" {...register(name, { ...validation })} invalid={errors[name]} />
+);

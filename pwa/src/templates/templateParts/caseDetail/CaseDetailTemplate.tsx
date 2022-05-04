@@ -14,6 +14,7 @@ import { MetaIconGridTemplate } from "../metaIconGrid/MetaIconGridTemplate";
 import { StatusSteps } from "../../../components/statusSteps/StatusSteps";
 import { DownloadCard } from "../../../components/card";
 import { useTranslation } from "react-i18next";
+import { Messages } from "../../../components/messages/Messages";
 
 interface CaseDetailTemplateProps {
   caseId: string;
@@ -88,6 +89,12 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
           label="Bezwaar maken overige zaken - DigiD.pdf"
           sizeKb="134"
         />
+      </div>
+
+      <Divider />
+      <div className={styles.messages}>
+        <Heading3>{t("Messages")}</Heading3>
+        <Messages />
       </div>
     </div>
   );

@@ -47,14 +47,14 @@ const Menu: React.FC = () => {
     {
       label: t("My cases"),
       href: "/my-cases",
-      current: pathname === "/my-cases",
+      current: pathname === "/my-cases" || pathname.indexOf("/my-cases/") > -1,
       icon: <ArchiveIcon />,
     },
+
     { label: t("Themes"), href: "/themes", current: pathname === "/themes", icon: <DocumentIcon /> },
     { label: t("Forms"), href: "/forms", current: pathname === "/forms", icon: <DocumentIcon /> },
     { label: t("My account"), href: "/my-account", current: pathname === "/my-account", icon: <UserIcon /> },
   ];
-
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string): void => {
     e.preventDefault();
     navigate(href);

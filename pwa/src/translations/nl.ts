@@ -53,4 +53,8 @@ export const nl = {
     "Staat er een ander aantal inwoners op uw address ingeschreven dan u verwacht? Dan kunt u een adresonderzoek aanvragen bij de gemeente. U kunt een adresonderzoek ook intrekken.",
   "Request research": "Vraag onderzoek aan",
   "Oops, something went wrong": "Oops, er is iets fout gegaan",
+  Messages: "Berichten",
+  "Unread messages": "Ongelezen berichten",
+  "Read messages": "Gelezen berichten",
+  "Send messages": "Verstuurde berichten",
 };
