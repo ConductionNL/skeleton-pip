@@ -2,7 +2,3 @@ html,
 body {
   margin: 0;
 }
-
-.PageContent-wrapper {
-  min-height: 100vh;
-}

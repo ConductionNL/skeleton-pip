@@ -1,14 +1,16 @@
-.DashboardTemplate {
+.container {
   padding-block-start: var(--nlportal-space-block-5xl, 4rem);
   padding-block-end: var(--nlportal-space-block-5xl, 4rem);
 }
 
-.DashboardTemplate > .DashboardTemplate-menu {
+.menu {
   position: fixed;
   margin-inline-end: var(--denhaag-space-inline-2xl);
 }
 
-.DashboardTemplate > .DashboardTemplate-content {
+.content {
+  z-index: 0;
+  position: relative;
   width: calc(100% / 12 * 9);
   margin-inline-start: calc(100% / 12 * 3);
 }

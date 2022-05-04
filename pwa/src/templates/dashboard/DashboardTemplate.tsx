@@ -1,22 +1,23 @@
 import * as React from "react";
-import "./DashboardTemplate.css";
+import * as styles from "./DashboardTemplate.module.css";
 import { GridIcon, InboxIcon, ArchiveIcon, DocumentIcon, UserIcon } from "@gemeente-denhaag/icons";
 import { Sidenav, SidenavItem, SidenavLink, SidenavList } from "@gemeente-denhaag/sidenav";
 import { Container } from "../../components/container/Container";
 import { PrivateRoute } from "../../components/privateRoute/privateRoute";
 import { GatsbyContext } from "../../context/gatsby";
 import { navigate } from "gatsby";
+import { useTranslation } from "react-i18next";
 
 export const DashboardTemplate: React.FC = ({ children }) => {
   return (
     <PrivateRoute>
       <Container>
-        <div className="DashboardTemplate">
-          <div className="DashboardTemplate-menu">
+        <div className={styles.container}>
+          <div className={styles.menu}>
             <Menu />
           </div>
 
-          <div className="DashboardTemplate-content">{children}</div>
+          <div className={styles.content}>{children}</div>
         </div>
       </Container>
     </PrivateRoute>
@@ -35,17 +36,23 @@ interface MenuItem {
 }
 
 const Menu: React.FC = () => {
+  const { t } = useTranslation();
   const {
     location: { pathname },
   } = React.useContext(GatsbyContext);
 
   const menuItems: MenuItem[] = [
-    { label: "Overview", href: "/", current: pathname === "/", icon: <GridIcon /> },
-    { label: "My messages", href: "/my-messages", current: pathname === "/my-messages", icon: <InboxIcon /> },
-    { label: "Current cases", href: "/current-cases", current: pathname === "/current-cases", icon: <ArchiveIcon /> },
-    { label: "Themes", href: "/themes", current: pathname === "/themes", icon: <DocumentIcon /> },
-    { label: "Forms", href: "/forms", current: pathname === "/forms", icon: <DocumentIcon /> },
-    { label: "My account", href: "/my-account", current: pathname === "/my-account", icon: <UserIcon /> },
+    { label: t("Overview"), href: "/", current: pathname === "/", icon: <GridIcon /> },
+    { label: t("My messages"), href: "/my-messages", current: pathname === "/my-messages", icon: <InboxIcon /> },
+    {
+      label: t("My cases"),
+      href: "/my-cases",
+      current: pathname === "/my-cases",
+      icon: <ArchiveIcon />,
+    },
+    { label: t("Themes"), href: "/themes", current: pathname === "/themes", icon: <DocumentIcon /> },
+    { label: t("Forms"), href: "/forms", current: pathname === "/forms", icon: <DocumentIcon /> },
+    { label: t("My account"), href: "/my-account", current: pathname === "/my-account", icon: <UserIcon /> },
   ];
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string): void => {
