@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Container } from "../../components/container/Container";
-import { Card } from "@gemeente-denhaag/components-react";
+import { Card, Heading3, Paragraph } from "@gemeente-denhaag/components-react";
 import "./LandingTemplate.css";
 import { navigate } from "gatsby";
 export const LandingTemplate: React.FC = () => {
@@ -8,12 +8,12 @@ export const LandingTemplate: React.FC = () => {
     <Container>
       <div className="LandingTemplate">
         <div className="LandingTemplate-header">
-          <h1>Inloggen bij MijnDenHaag</h1>
-          <p>
+          <Heading3>Inloggen bij MijnDenHaag</Heading3>
+          <Paragraph>
             In de persoonlijke online omgeving MijnDenHaag kunt u makkelijk, snel en veilig zaken regelen bij de
             gemeente. Bewoners kunnen bijvoorbeeld een verhuizing doorgeven of extra parkeertegoed kopen via DigiD.
             Bedrijven kunnen eenvoudig online zaken regelen via eHerkenning.
-          </p>
+          </Paragraph>
         </div>
         <div className="LandingTemplate-body">
           <Card
