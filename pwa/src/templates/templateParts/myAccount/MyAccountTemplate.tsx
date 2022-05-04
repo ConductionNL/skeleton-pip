@@ -112,6 +112,12 @@ export const MyAccountTemplate: React.FC = () => {
             </TableRow>
           </TableBody>
         </Table>
+        <Paragraph>
+          {t(
+            "Have you recently moved and your address is no longer correct? You can request an address investigation with your municipility. This investigation can also be cancelled.",
+          )}
+        </Paragraph>
+        <Button>{t("Request research")}</Button>
       </div>
 
       <div className={styles.block}>
@@ -125,7 +131,6 @@ export const MyAccountTemplate: React.FC = () => {
             </TableRow>
           </TableBody>
         </Table>
-
         <Paragraph>
           {t(
             "Is this not the number of people you expect? You can request an address investigation with your municipility. This investigation can also be cancelled.",
