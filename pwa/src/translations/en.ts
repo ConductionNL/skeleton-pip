@@ -25,6 +25,7 @@ export const en = {
   "Read messages":"Read message",
   "Collaborator":"Collaborator",
   "Previous contact moment":"Previous contact moment",
+  "Initiator":"Initiator",
   case: "Case",
   Themes: "Themes",
   Forms: "Forms",

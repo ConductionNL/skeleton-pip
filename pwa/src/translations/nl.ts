@@ -24,6 +24,7 @@ export const nl = {
   "Unread messages":"Ongelezen berichten",
   "Read messages":"Gelezen berichten",
   "Collaborator":"Medewerker",
+  "Initiator":"Initiatiefnemer",
   "Previous contact moment":"Vorige contact moment",
   case: "Zaak",
   Themes: "Thema's",
