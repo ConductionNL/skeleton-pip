@@ -13,6 +13,8 @@ export const en = {
   Status: "Status",
   "Application date": "Application date",
   "Case number": "Case number",
+  "Registration date":"Registration date",
+  "Source organization":"Source organization",
   Username: "Username",
   Password: "Password",
   Send: "Send",

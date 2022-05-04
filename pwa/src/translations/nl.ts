@@ -13,6 +13,8 @@ export const nl = {
   Status: "Status",
   "Application date": "Aanvraag datum",
   "Case number": "Zaaknummer",
+  "Registration date":"Registratie datum",
+  "Source organization":"Bron organisatie",
   Username: "Gebruikersnaam",
   Password: "Wachtwoord",
   Send: "Versturen",
