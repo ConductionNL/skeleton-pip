@@ -53,6 +53,9 @@ export const en = {
     "Is this not the number of people you expect? You can request an address investigation with your municipility. This investigation can also be cancelled.",
   "Request research": "Request research",
   "Oops, something went wrong": "Oops, something went wrong",
+  "Have you recently moved and your address is no longer correct? You can request an address investigation with your municipility. This investigation can also be cancelled.":
+    "Have you recently moved and your address is no longer correct? You can request an address investigation with your municipility. This investigation can also be cancelled.",
+
   Messages: "Messages",
   "Unread messages": "Unread messages",
   "Read messages": "Read messages",

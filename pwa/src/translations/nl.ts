@@ -53,6 +53,9 @@ export const nl = {
     "Staat er een ander aantal inwoners op uw address ingeschreven dan u verwacht? Dan kunt u een adresonderzoek aanvragen bij de gemeente. U kunt een adresonderzoek ook intrekken.",
   "Request research": "Vraag onderzoek aan",
   "Oops, something went wrong": "Oops, er is iets fout gegaan",
+  "Have you recently moved and your address is no longer correct? You can request an address investigation with your municipility. This investigation can also be cancelled.":
+    "Ben je onlangs verhuisd en klopt je adres niet meer? Dan kunt u een adresonderzoek aanvragen bij de gemeente. U kunt een adresonderzoek ook intrekken.",
+
   Messages: "Berichten",
   "Unread messages": "Ongelezen berichten",
   "Read messages": "Gelezen berichten",
