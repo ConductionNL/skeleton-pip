@@ -1,9 +1,0 @@
-.LandingTemplate > .LandingTemplate-body {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-.LandingTemplate > .LandingTemplate-body > .LandingTemplate-body-card > :last-child svg  {
-  color:white ;
-
-}
