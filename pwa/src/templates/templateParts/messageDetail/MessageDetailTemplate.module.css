@@ -1,21 +1,7 @@
 .container > *:not(:last-child) {
   margin-block-end: var(--nlportal-space-block-4xl);
 }
-
-.status > *:not(:last-child) {
-  margin-block-end: var(--nlportal-space-block-xl);
-}
-
-.documents > *:not(:last-child) {
-  margin-block-end: var(--nlportal-space-block-xl);
-}
-
-.documentsHeader {
+.header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-}
-
-.downloadCard:not(:last-child) {
-  margin-block-end: var(--nlportal-space-block-xl);
 }
