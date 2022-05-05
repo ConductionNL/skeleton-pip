@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./DownloadCard.css";
+import * as styles from "./DownloadCard.module.css";
 import { DownloadIcon } from "@gemeente-denhaag/icons";
 import { Link } from "@gemeente-denhaag/components-react";
 import clsx from "clsx";
@@ -16,11 +16,11 @@ export const DownloadCard: React.FC<DownloadCardProps> = ({ icon, label, sizeKb,
   const { t } = useTranslation();
 
   return (
-    <div className={clsx("DownloadCard", [layoutClassName && layoutClassName])}>
-      <div className="DownloadCard-iconAndLabel">
-        <div className="DownloadCard-icon">{icon}</div>
-
-        <div className="DownloadCard-label">
+    <div className={clsx(styles.container, [layoutClassName && layoutClassName])}>
+      <div className={styles.content}>
+        <div className={styles.icon}>{icon}</div>
+        
+        <div>
           {label} ({sizeKb}kb)
         </div>
       </div>

@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./MetaIcon.css";
+import * as styles from "./MetaIcon.module.css";
 
 export interface MetaIconProps {
   icon: JSX.Element;
@@ -8,11 +8,11 @@ export interface MetaIconProps {
 }
 
 export const MetaIcon: React.FC<MetaIconProps> = ({ icon, label, value }) => (
-  <div className="MetaIcon">
-    <span className="MetaIcon-icon">{icon}</span>
+  <div className={styles.container}>
+    <span className={styles.icon}>{icon}</span>
 
-    <span className="MetaIcon-label">{label}</span>
+    <span>{label}</span>
 
-    <span className="MetaIcon-value">{value}</span>
+    <span className={styles.value}>{value}</span>
   </div>
 );
