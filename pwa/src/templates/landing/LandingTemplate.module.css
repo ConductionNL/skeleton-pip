@@ -1,28 +1,4 @@
 .container {
-  margin-top: var(--nlportal-header-bar-height-tablet);
+  margin-top: var(--nlportal-space-block-5xl);
 }
 
-.header {
-  margin-block-end: var(--nlportal-space-block-xl);
-
-}
-
-.paragraph {
-  font-size:  var(--conduction-paragraph-font-size);
-  color:var(--denhaag-color-grey-3);
-}
-
-.body {
-  display: flex;
-  justify-items: left;
-  align-content: space-between;
-  text-align: center;
-}
-
-.card {
-  color: var(--denhaag-color-grey-3);
-}
-
-.card :last-child svg {
-  color: var(--denhaag-color-grey-1);
-}
