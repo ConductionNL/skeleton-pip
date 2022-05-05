@@ -20,8 +20,6 @@ export const en = {
   "My messages": "My messages",
   "Closed cases": "Closed cases",
   case: "Case",
-  Themes: "Themes",
-  Forms: "Forms",
   "My account": "My account",
   "The Hague": "The Hague",
   "Go to website": "Go to denhaag.nl",
