@@ -41,7 +41,7 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
 
       <Divider />
 
-      <Paragraph className={styles.paragraph}>
+      <Paragraph>
         string Voer een voorwaardelijk verzoek uit. Deze header moet één of meerdere ETag-waardes bevatten van resources
         die de consumer gecached heeft. Indien de waarde van de ETag van de huidige resource voorkomt in deze set, dan
         antwoordt de provider met een lege HTTP 304 request. Zie MDN voor meer informatie.
