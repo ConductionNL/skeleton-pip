@@ -1,12 +1,6 @@
 import * as React from "react";
 import * as styles from "./MyMessagesTemplate.module.css";
-import {
-  Heading1,
-  Tab,
-  TabContext,
-  TabPanel,
-  Tabs,
-} from "@gemeente-denhaag/components-react";
+import { Heading1, Tab, TabContext, TabPanel, Tabs } from "@gemeente-denhaag/components-react";
 import { useTranslation } from "react-i18next";
 import { IMessageTableItem, MessagesTable } from "../../../components/messagesTable/MessagesTable";
 
@@ -19,7 +13,8 @@ export const MyMessagesTemplate: React.FC = () => {
       <Heading1>{t("My messages")}</Heading1>
 
       <TabContext value={currentMessagesTab.toString()}>
-        <Tabs className="tabs"
+        <Tabs
+          className="tabs"
           value={currentMessagesTab}
           onChange={(_, newValue: number) => {
             setCurrentMessagesTab(newValue);
@@ -62,4 +57,3 @@ const messages: IMessageTableItem[] = [
   { organisation: "Buren", date: "15 september 2021", id: "7f4ca6d7-4b7e-4e3a-9b59-89087e6b1dab" },
   { organisation: "Buren", date: "13 september 2021", id: "60aad570-71cd-4fcc-b441-3dacbed4619e" },
 ];
-
