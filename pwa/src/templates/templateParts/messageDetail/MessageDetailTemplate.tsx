@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as styles from "./MessageDetailTemplate.module.css";
-import { Divider, Heading2, Heading5, Link } from "@gemeente-denhaag/components-react";
+import { Divider, Heading2, Heading5, Link, TextField } from "@gemeente-denhaag/components-react";
 import { navigate } from "gatsby";
 import { CalendarIcon, ChevronLeftIcon, SettingsIcon, StaffIcon, StarterIcon } from "@gemeente-denhaag/icons";
 import { useTranslation } from "react-i18next";
@@ -22,7 +22,7 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
       </div>
       <div className={styles.header}>
         <Heading2>{t("Previous contact moment")}</Heading2>
-        <Heading5>NL</Heading5>
+        <Heading5>nld</Heading5>
       </div>
 
       <MetaIconGridTemplate
@@ -33,6 +33,10 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
           { icon: <CalendarIcon />, label: t("Registration date"), value: "26 April 2022" },
         ]}
       />
+
+      <Divider />
+
+      <TextField />
 
       <Divider />
     </div>
