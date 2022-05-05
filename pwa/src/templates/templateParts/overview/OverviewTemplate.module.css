@@ -7,7 +7,7 @@
   margin-block-end: var(--nlportal-space-block-4xl);
 }
 
-.container > .cases > *:not(:last-child),
+.container > .cases > *,
 .container > .messages > * {
   margin-block-end: var(--nlportal-space-block-xl);
 }
