@@ -15,7 +15,7 @@ export const OverviewTemplate: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <Heading1 className={styles.heading}>{t("Overview")}</Heading1>
+      <Heading1>{t("Overview")}</Heading1>
 
       <div className={styles.messages}>
         <div className={styles.messagesHeading}>
@@ -34,7 +34,6 @@ export const OverviewTemplate: React.FC = () => {
             onChange={(_, newValue: number) => {
               setCurrentMessagesTab(newValue);
             }}
-            className={styles.tabs}
           >
             <Tab label={t("Unread messages")} value={0} />
             <Tab label={t("Read messages")} value={1} />
@@ -66,7 +65,6 @@ export const OverviewTemplate: React.FC = () => {
             onChange={(_, newValue: number) => {
               setCurrentCasesTab(newValue);
             }}
-            className={styles.tabs}
           >
             <Tab label={t("Current cases")} value={0} />
             <Tab label={t("Closed cases")} value={1} />
