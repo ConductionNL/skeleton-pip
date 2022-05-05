@@ -5,6 +5,7 @@ import { navigate } from "gatsby";
 import { useTranslation } from "react-i18next";
 import { useQueryClient } from "react-query";
 import { useCase } from "../../../hooks/case";
+import Skeleton from "react-loading-skeleton";
 
 export const MyCasesTemplate: React.FC = () => {
   const [value, setValue] = React.useState(0);
@@ -40,7 +41,7 @@ export const MyCasesTemplate: React.FC = () => {
           <Tab label={t("Closed cases")} value={1} />
         </Tabs>
 
-        {getCases.isLoading && <>Loading...</>}
+        {getCases.isLoading && <Skeleton width="370px" height="220px" />}
 
         <TabPanel value="0">
           <div className={styles.grid}>
