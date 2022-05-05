@@ -1,5 +1,6 @@
 import * as React from "react";
 import { TextField } from "@gemeente-denhaag/components-react";
+import { TextArea } from "@gemeente-denhaag/textarea";
 import { ShowIcon, HideIcon } from "@gemeente-denhaag/icons";
 import { FieldErrors, FieldValues, RegisterOptions, UseFormRegister } from "react-hook-form";
 
@@ -8,7 +9,12 @@ interface InputProps {
   register: UseFormRegister<FieldValues>;
   validation?: Omit<RegisterOptions<FieldValues, any>, "valueAsNumber" | "valueAsDate" | "setValueAs" | "disabled">;
   errors: FieldErrors;
+  onChange?: any;
 }
+
+const handleConsLog = async () => {
+  return console.log("change");
+};
 
 export const InputPassword: React.FC<InputProps> = ({ name, validation, register, errors }) => {
   const [showPassword, setShowPassword] = React.useState<boolean>(false);
@@ -27,6 +33,6 @@ export const InputText: React.FC<InputProps> = ({ name, validation, register, er
   <TextField type="text" {...register(name, { ...validation })} invalid={errors[name]} />
 );
 
-export const InputTextBox: React.FC<InputProps> = ({ name, validation, register, errors }) => (
-  <TextField type="text" {...register(name, { ...validation })} invalid={errors[name]} />
+export const InputTextArea: React.FC<InputProps> = ({ name, validation, register, errors }) => (
+  <TextArea {...register(name, { ...validation, onChange: handleConsLog })} invalid={errors[name]} />
 );

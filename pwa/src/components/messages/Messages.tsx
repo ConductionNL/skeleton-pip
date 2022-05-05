@@ -1,8 +1,8 @@
 import * as React from "react";
 import * as styles from "./Messages.module.css";
 import {
+  Alert,
   Button,
-  Card,
   FormField,
   FormFieldInput,
   FormFieldLabel,
@@ -13,21 +13,34 @@ import {
   Tabs,
 } from "@gemeente-denhaag/components-react";
 import { useTranslation } from "react-i18next";
-import { InputTextBox } from "../formFields/input";
+import { InputTextArea } from "../formFields/input";
 import { useForm } from "react-hook-form";
+import { Table, TableBody, TableCell, TableHeader, TableRow } from "@gemeente-denhaag/table";
+import { useEndpoint } from "../../hooks/endpoint";
+import { useQueryClient } from "react-query";
 
-interface MessagesProps {}
 
-export const Messages: React.FC<MessagesProps> = ({}) => {
+interface MessagesProps {
+  messageId: string;
+}
+
+export const Messages: React.FC<MessagesProps> = ({messageId}) => {
   const { t } = useTranslation();
-  const [value, setValue] = React.useState(0);
+  const [tab, setTab] = React.useState(0);
   const [loading, setLoading] = React.useState<boolean>(false);
   const [formError, setFormError] = React.useState<string>("");
+
+  const queryClient = useQueryClient();
+
+  const _useEndpoint = useEndpoint(queryClient);
+  const getEndpoint = _useEndpoint.getOne(messageId);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
+    getValues,
   } = useForm();
 
   const handleConsLog = async () => {
@@ -47,14 +60,26 @@ export const Messages: React.FC<MessagesProps> = ({}) => {
         }, 1500);
       });
   };
+
+  const handleSetFormValues = (message: any): void => {
+    const basicFields: string[] = ["name", "path", "description", "applications"];
+    basicFields.forEach((field) => setValue(field, message[field]));
+  };
+
+  React.useEffect(() => {
+    if (getEndpoint.isSuccess) {
+      handleSetFormValues(getEndpoint.data);
+    }
+  }, [getEndpoint.isSuccess]);
+
   return (
     <div className={styles.container}>
-      <div className={styles.tabst}>
-        <TabContext value={value.toString()}>
+      <div>
+        <TabContext value={tab.toString()}>
           <Tabs
-            value={value}
+            value={tab}
             onChange={(_, newValue: number) => {
-              setValue(newValue);
+              setTab(newValue);
             }}
             className={styles.tabs}
           >
@@ -64,21 +89,59 @@ export const Messages: React.FC<MessagesProps> = ({}) => {
           </Tabs>
 
           <TabPanel value="0">
-            <div className={styles.grid}>Unread</div>
+            <Table>
+              <TableBody>
+                <TableRow>
+                  <TableHeader scope="row">Unread Message1</TableHeader>
+                  <TableCell>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, ipsam a, aut saepe assumenda
+                    explicabo harum amet provident ducimus minima doloremque magnam maxime quas! Debitis repellat
+                    laborum dolorem illo vitae.
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableHeader scope="row">Unread Message2</TableHeader>
+                  <TableCell>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Et soluta est quia possimus a excepturi,
+                    cum quos quaerat corrupti debitis vel numquam, at, facilis quo ea in explicabo! A, blanditiis?
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
           </TabPanel>
           <TabPanel value="1">
-            <div className={styles.grid}>Read</div>
+            <Table>
+              <TableBody>
+                <TableRow>
+                  <TableHeader scope="row">Read Message1</TableHeader>
+                  <TableCell>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, ipsam a, aut saepe assumenda
+                    explicabo harum amet provident ducimus minima doloremque magnam maxime quas! Debitis repellat
+                    laborum dolorem illo vitae.
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableHeader scope="row">Read Message2</TableHeader>
+                  <TableCell>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Et soluta est quia possimus a excepturi,
+                    cum quos quaerat corrupti debitis vel numquam, at, facilis quo ea in explicabo! A, blanditiis?
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
           </TabPanel>
           <TabPanel value="2">
             <div className={styles.grid}>Send</div>
           </TabPanel>
         </TabContext>
       </div>
-      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+      <form /*className={styles.form}*/ onSubmit={handleSubmit(onSubmit)}>
+        {formError && <Alert text={formError} title={t("Oops, something went wrong")} variant="error" />}
+
         <FormField>
           <FormFieldInput>
             <FormFieldLabel>{t("Send Message")}</FormFieldLabel>
-            <InputTextBox {...{ register, errors }} name="username" validation={{ required: true }} />
+            <InputTextArea {...{ register, errors }} name="message" validation={{ required: true }} />
           </FormFieldInput>
         </FormField>
         <Button size="large" type="submit" disabled={loading}>
