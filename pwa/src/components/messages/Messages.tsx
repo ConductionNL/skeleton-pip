@@ -16,8 +16,7 @@ import { useTranslation } from "react-i18next";
 import { InputTextArea } from "../formFields/input";
 import { useForm } from "react-hook-form";
 import { Table, TableBody, TableCell, TableHeader, TableRow } from "@gemeente-denhaag/table";
-import { useEndpoint } from "../../hooks/endpoint";
-import { useQueryClient } from "react-query";
+
 
 
 interface MessagesProps {
@@ -26,21 +25,15 @@ interface MessagesProps {
 
 export const Messages: React.FC<MessagesProps> = ({messageId}) => {
   const { t } = useTranslation();
-  const [tab, setTab] = React.useState(0);
+  const [value, setValue] = React.useState(0);
   const [loading, setLoading] = React.useState<boolean>(false);
   const [formError, setFormError] = React.useState<string>("");
 
-  const queryClient = useQueryClient();
-
-  const _useEndpoint = useEndpoint(queryClient);
-  const getEndpoint = _useEndpoint.getOne(messageId);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-    setValue,
-    getValues,
   } = useForm();
 
   const handleConsLog = async () => {
@@ -61,25 +54,14 @@ export const Messages: React.FC<MessagesProps> = ({messageId}) => {
       });
   };
 
-  const handleSetFormValues = (message: any): void => {
-    const basicFields: string[] = ["name", "path", "description", "applications"];
-    basicFields.forEach((field) => setValue(field, message[field]));
-  };
-
-  React.useEffect(() => {
-    if (getEndpoint.isSuccess) {
-      handleSetFormValues(getEndpoint.data);
-    }
-  }, [getEndpoint.isSuccess]);
-
   return (
     <div className={styles.container}>
       <div>
-        <TabContext value={tab.toString()}>
+        <TabContext value={value.toString()}>
           <Tabs
-            value={tab}
+            value={value}
             onChange={(_, newValue: number) => {
-              setTab(newValue);
+              setValue(newValue);
             }}
             className={styles.tabs}
           >

@@ -2,7 +2,6 @@ import * as React from "react";
 import { isLoggedIn } from "../services/auth";
 import { DashboardTemplate } from "../templates/dashboard/DashboardTemplate";
 import { LandingTemplate } from "../templates/landing/LandingTemplate";
-import { LoginTemplate } from "../templates/login/LoginTemplate";
 import { OverviewTemplate } from "../templates/templateParts/overview/OverviewTemplate";
 
 const IndexPage: React.FC = () => {
@@ -19,4 +18,4 @@ const AuthenticatedIndex: React.FC = () => (
   </DashboardTemplate>
 );
 
-const UnauthenticatedIndex: React.FC = () => <LoginTemplate />;
+const UnauthenticatedIndex: React.FC = () => <LandingTemplate />;

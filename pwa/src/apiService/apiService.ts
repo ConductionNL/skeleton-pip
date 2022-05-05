@@ -1,6 +1,5 @@
 import axios, { AxiosInstance, AxiosResponse } from "axios";
 import Login from "./services/login";
-import Message from "./resources/message"
 
 export default class APIService {
   public JWT?: string;
@@ -43,16 +42,10 @@ export default class APIService {
     });
   }
 
-  // Resources
-  public get Message(): Message {
-    return new Message(this.apiClient);
-  }
-
   // Services
   public get Login(): Login {
     return new Login(this.LoginClient);
   }
-
 }
 
 export const Send = (
