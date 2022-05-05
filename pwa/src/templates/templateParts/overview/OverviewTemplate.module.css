@@ -8,7 +8,7 @@
 }
 
 .container > .cases > *:not(:last-child),
-.container > .messages > *:not(:last-child) {
+.container > .messages > * {
   margin-block-end: var(--nlportal-space-block-xl);
 }
 
