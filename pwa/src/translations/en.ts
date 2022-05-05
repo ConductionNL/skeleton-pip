@@ -65,7 +65,5 @@ export const en = {
   "Have you recently moved and your address is no longer correct? You can request an address investigation with your municipility. This investigation can also be cancelled.":
     "Have you recently moved and your address is no longer correct? You can request an address investigation with your municipility. This investigation can also be cancelled.",
   Messages: "Messages",
-  "Unread messages": "Unread messages",
-  "Read messages": "Read messages",
-  "Send messages": "Send messages",
+  "Send message": "Send message",
 };

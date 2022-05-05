@@ -1,6 +1,20 @@
 import * as React from "react";
 import * as styles from "./CaseDetailTemplate.module.css";
-import { Divider, Heading2, Heading3, Link } from "@gemeente-denhaag/components-react";
+import {
+  Alert,
+  Button,
+  Divider,
+  FormField,
+  FormFieldInput,
+  FormFieldLabel,
+  Heading2,
+  Heading3,
+  Link,
+  Tab,
+  TabContext,
+  TabPanel,
+  Tabs,
+} from "@gemeente-denhaag/components-react";
 import { navigate } from "gatsby";
 import {
   ChevronLeftIcon,
@@ -14,7 +28,9 @@ import { MetaIconGridTemplate } from "../metaIconGrid/MetaIconGridTemplate";
 import { StatusSteps } from "../../../components/statusSteps/StatusSteps";
 import { DownloadCard } from "../../../components/card";
 import { useTranslation } from "react-i18next";
-import { Messages } from "../../../components/messages/Messages";
+import { IMessageTableItem, MessagesTable } from "../../../components/messagesTable/MessagesTable";
+import { InputTextArea } from "../../../components/formFields/input";
+import { useForm } from "react-hook-form";
 
 interface CaseDetailTemplateProps {
   caseId: string;
@@ -22,6 +38,18 @@ interface CaseDetailTemplateProps {
 
 export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }) => {
   const { t } = useTranslation();
+
+  const [currentMessagesTab, setCurrentMessagesTab] = React.useState<number>(0);
+  const [loading, setLoading] = React.useState<boolean>(false);
+  const [formError, setFormError] = React.useState<string>("");
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = async () => {};
 
   return (
     <div className={styles.container}>
@@ -92,10 +120,57 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
       </div>
 
       <Divider />
+
       <div className={styles.messages}>
-        <Heading3>{t("Messages")}</Heading3>
-        <Messages />
+        <div className={styles.messagesHeading}>
+          <Heading3>{t("Messages")}</Heading3>
+          <div onClick={() => navigate("/my-messages")}>
+            <Link icon={<ArrowRightIcon />} iconAlign="end">
+              {t("Show all messages")}
+            </Link>
+          </div>
+        </div>
+
+        <TabContext value={currentMessagesTab.toString()}>
+          <Tabs
+            value={currentMessagesTab}
+            onChange={(_, newValue: number) => {
+              setCurrentMessagesTab(newValue);
+            }}
+          >
+            <Tab label={t("Unread messages")} value={0} />
+            <Tab label={t("Read messages")} value={1} />
+          </Tabs>
+
+          <TabPanel value="0">
+            <MessagesTable {...{ messages }} />
+          </TabPanel>
+          <TabPanel value="1">
+            <MessagesTable messages={messages.map((message) => ({ ...message, isRead: false }))} />
+          </TabPanel>
+        </TabContext>
       </div>
+      <form /*className={styles.form}*/ onSubmit={handleSubmit(onSubmit)}>
+        {formError && <Alert text={formError} title={t("Oops, something went wrong")} variant="error" />}
+
+        <FormField>
+          <FormFieldInput>
+            <FormFieldLabel>{t("Send message")}</FormFieldLabel>
+            <InputTextArea {...{ register, errors }} name="message" validation={{ required: true }} />
+          </FormFieldInput>
+        </FormField>
+        <Button size="large" type="submit" disabled={loading}>
+          {t("Send")}
+        </Button>
+      </form>
     </div>
   );
 };
+
+const messages: IMessageTableItem[] = [
+  { organisation: "Buren", date: "3 mei 2022", id: "ceb3b7cb-0da2-4fcb-a1a5-69ed38852a28" },
+  { organisation: "Utrecht", date: "12 oktober 2021", id: "f9aa6486-2ee9-4fc6-9c49-015ab4eb2afd" },
+  { organisation: "Utrecht", date: "10 oktober 2021", id: "28661a53-5bb5-48e3-b055-7e2822e4f70f" },
+  { organisation: "Buren", date: "15 september 2021", id: "7f4ca6d7-4b7e-4e3a-9b59-89087e6b1dab" },
+  { organisation: "Buren", date: "13 september 2021", id: "60aad570-71cd-4fcc-b441-3dacbed4619e" },
+];
