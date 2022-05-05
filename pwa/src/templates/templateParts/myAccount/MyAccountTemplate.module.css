@@ -3,11 +3,11 @@
 }
 
 .container > .block > *:not(:last-child) {
-  margin-block-end: var(--nlportal-space-block-2xl);
+  margin-block-end: var(--nlportal-space-block-4xl);
 }
 
 .container > .heading {
-  margin-block-end: var(--nlportal-space-block-2xl);
+  margin-block-end: var(--nlportal-space-block-4xl);
 }
 
 .th {
