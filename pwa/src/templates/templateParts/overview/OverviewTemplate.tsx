@@ -97,4 +97,3 @@ export const OverviewTemplate: React.FC = () => {
     </div>
   );
 };
-];
