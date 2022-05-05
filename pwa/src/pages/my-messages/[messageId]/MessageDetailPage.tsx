@@ -6,7 +6,7 @@ import { MessageDetailTemplate } from "../../../templates/templateParts/messageD
 const CurrentCasesPage: React.FC<PageProps> = (props: PageProps) => {
   return (
     <DashboardTemplate>
-      <MessageDetailTemplate caseId={props.params.caseId} />
+      <MessageDetailTemplate messagesId={props.params.messagesId} />
     </DashboardTemplate>
   );
 };

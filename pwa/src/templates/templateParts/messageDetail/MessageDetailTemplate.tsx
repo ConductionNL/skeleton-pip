@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as styles from "./MessageDetailTemplate.module.css";
-import { Divider, Heading2, Heading3, Link, Paragraph } from "@gemeente-denhaag/components-react";
+import { Divider, Heading1, Link, Paragraph } from "@gemeente-denhaag/components-react";
 import { navigate } from "gatsby";
 import {
   ArrowRightIcon,
@@ -14,10 +14,10 @@ import { useTranslation } from "react-i18next";
 import { MetaIconGridTemplate } from "../metaIconGrid/MetaIconGridTemplate";
 
 interface MessageDetailTemplateProps {
-  messagesId: string;
+  messageId: string;
 }
 
-export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ messagesId }) => {
+export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ messageId }) => {
   const { t } = useTranslation();
 
   return (
@@ -28,7 +28,7 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
         </Link>
       </div>
 
-      <Heading2>{t("Previous contact moment")}</Heading2>
+      <Heading1>{t("Previous contact moment")}</Heading1>
 
       <MetaIconGridTemplate
         metaIcons={[
@@ -54,7 +54,6 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
           {t("View case")}
         </Link>
       </div>
-
     </div>
   );
 };

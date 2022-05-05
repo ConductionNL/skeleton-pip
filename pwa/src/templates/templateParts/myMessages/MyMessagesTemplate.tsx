@@ -19,7 +19,7 @@ export const MyMessagesTemplate: React.FC = () => {
       <Heading1>{t("My messages")}</Heading1>
 
       <TabContext value={currentMessagesTab.toString()}>
-        <Tabs
+        <Tabs className={"tabs"}
           value={currentMessagesTab}
           onChange={(_, newValue: number) => {
             setCurrentMessagesTab(newValue);
