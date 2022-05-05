@@ -22,8 +22,6 @@ export const en = {
   "Log in to MijnDenHaag":"Log in to MijnDenHaag",
   Account:"Account",
   case: "Case",
-  Themes: "Themes",
-  Forms: "Forms",
   "My account": "My account",
   "The Hague": "The Hague",
   "Go to website": "Go to denhaag.nl",
