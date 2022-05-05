@@ -6,15 +6,8 @@ import { useTranslation } from "react-i18next";
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { navigate } from "gatsby";
 
-export interface ICaseTableItem {
-  title: string;
-  number: string;
-  date: string;
-  status: string;
-}
-
 interface CasesTableProps {
-  cases: ICaseTableItem[];
+  cases: any[];
 }
 
 export const CasesTable: React.FC<CasesTableProps> = ({ cases }) => {
@@ -29,13 +22,13 @@ export const CasesTable: React.FC<CasesTableProps> = ({ cases }) => {
           <TableHeader>{t("Date")}</TableHeader>
           <TableHeader />
         </TableRow>
-        {cases.map(({ title, number, date, status }) => (
+        {cases.map((_case) => (
           <TableRow className={styles.contentRow}>
-            <TableCell>{title}</TableCell>
-            <TableCell>{status}</TableCell>
-            <TableCell>{date}</TableCell>
+            <TableCell>{_case.omschrijving}</TableCell>
+            <TableCell>{_case.status}</TableCell>
+            <TableCell>{_case.startdatum}</TableCell>
 
-            <TableCell onClick={() => navigate(`/my-cases/${number}`)}>
+            <TableCell onClick={() => navigate(`/my-cases/${_case.id}`)}>
               <Link icon={<ArrowRightIcon />} iconAlign="start">
                 {t("View case")}
               </Link>
