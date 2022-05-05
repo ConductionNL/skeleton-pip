@@ -47,11 +47,12 @@ const Menu: React.FC = () => {
     {
       label: t("My cases"),
       href: "/my-cases",
-      current: pathname === "/my-cases" || pathname.indexOf("/my-cases/") > -1,
+      current: pathname === "/my-cases" || pathname.includes("my-cases"),
       icon: <ArchiveIcon />,
     },
     { label: t("My account"), href: "/my-account", current: pathname === "/my-account", icon: <UserIcon /> },
   ];
+  
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string): void => {
     e.preventDefault();
     navigate(href);

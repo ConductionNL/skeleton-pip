@@ -13,10 +13,10 @@ export interface IMessageTableItem {
 }
 
 interface MessagesTableProps {
-  MessageData: IMessageTableItem[];
+  messages: IMessageTableItem[];
 }
 
-export const MessagesTable: React.FC<MessagesTableProps> = ({ MessageData }) => {
+export const MessagesTable: React.FC<MessagesTableProps> = ({ messages }) => {
   const { t } = useTranslation();
 
   return (
@@ -27,7 +27,7 @@ export const MessagesTable: React.FC<MessagesTableProps> = ({ MessageData }) => 
           <TableHeader>{t("Date")}</TableHeader>
           <TableHeader />
         </TableRow>
-        {MessageData.map(({ organisation, date, id }) => (
+        {messages.map(({ organisation, date, id }) => (
           <TableRow className={styles.contentRow}>
             <TableCell>{organisation}</TableCell>
             <TableCell>{date}</TableCell>

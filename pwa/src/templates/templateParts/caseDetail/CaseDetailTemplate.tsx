@@ -1,20 +1,6 @@
 import * as React from "react";
 import * as styles from "./CaseDetailTemplate.module.css";
-import {
-  Alert,
-  Button,
-  Divider,
-  FormField,
-  FormFieldInput,
-  FormFieldLabel,
-  Heading2,
-  Heading3,
-  Link,
-  Tab,
-  TabContext,
-  TabPanel,
-  Tabs,
-} from "@gemeente-denhaag/components-react";
+import { Divider, Heading2, Heading3, Link, Tab, TabContext, TabPanel, Tabs } from "@gemeente-denhaag/components-react";
 import { navigate } from "gatsby";
 import {
   ChevronLeftIcon,
@@ -29,9 +15,8 @@ import { StatusSteps } from "../../../components/statusSteps/StatusSteps";
 import { DownloadCard } from "../../../components/card";
 import { useTranslation } from "react-i18next";
 import { MessagesTable } from "../../../components/messagesTable/MessagesTable";
-import { InputTextArea } from "../../../components/formFields/input";
-import { useForm } from "react-hook-form";
-import MessageData from "../../../data/messageData";
+import DummyMessages from "../../../data/DummyMessages";
+import { SendMessageForm } from "../../../components/sendMessageForm/SendMessageForm";
 
 interface CaseDetailTemplateProps {
   caseId: string;
@@ -39,18 +24,7 @@ interface CaseDetailTemplateProps {
 
 export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }) => {
   const { t } = useTranslation();
-
   const [currentMessagesTab, setCurrentMessagesTab] = React.useState<number>(0);
-  const [loading, setLoading] = React.useState<boolean>(false);
-  const [formError, setFormError] = React.useState<string>("");
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
-  const onSubmit = async () => {};
 
   return (
     <div className={styles.container}>
@@ -144,26 +118,15 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
           </Tabs>
 
           <TabPanel value="0">
-            <MessagesTable {...{ MessageData }} />
+            <MessagesTable messages={DummyMessages} />
           </TabPanel>
           <TabPanel value="1">
-            <MessagesTable MessageData={MessageData.map((message) => ({ ...message, isRead: false }))} />
+            <MessagesTable messages={DummyMessages.map((message) => ({ ...message, isRead: false }))} />
           </TabPanel>
         </TabContext>
       </div>
-      <form /*className={styles.form}*/ onSubmit={handleSubmit(onSubmit)}>
-        {formError && <Alert text={formError} title={t("Oops, something went wrong")} variant="error" />}
 
-        <FormField>
-          <FormFieldInput>
-            <FormFieldLabel>{t("Send message")}</FormFieldLabel>
-            <InputTextArea {...{ register, errors }} name="message" validation={{ required: true }} />
-          </FormFieldInput>
-        </FormField>
-        <Button size="large" type="submit" disabled={loading}>
-          {t("Send")}
-        </Button>
-      </form>
+      <SendMessageForm />
     </div>
   );
 };

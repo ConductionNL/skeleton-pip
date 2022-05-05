@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { navigate } from "gatsby";
 import { CasesTable, ICaseTableItem } from "../../../components/casesTable/CasesTable";
 import { MessagesTable } from "../../../components/messagesTable/MessagesTable";
-import MessageData from "../../../data/messageData";
+import DummyMessages from "../../../data/DummyMessages";
 
 export const OverviewTemplate: React.FC = () => {
   const { t } = useTranslation();
@@ -41,10 +41,10 @@ export const OverviewTemplate: React.FC = () => {
           </Tabs>
 
           <TabPanel value="0">
-            <MessagesTable {...{ MessageData }} />
+            <MessagesTable messages={DummyMessages} />
           </TabPanel>
           <TabPanel value="1">
-            <MessagesTable MessageData={MessageData.map((message) => ({ ...message, isRead: false }))} />
+            <MessagesTable messages={DummyMessages.map((message) => ({ ...message, isRead: false }))} />
           </TabPanel>
         </TabContext>
       </div>

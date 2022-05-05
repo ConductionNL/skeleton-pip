@@ -16,5 +16,5 @@
 }
 
 .downloadCard:not(:last-child) {
-  margin-block-end: var(--nlportal-space-block-4xl);
+  margin-block-end: var(--nlportal-space-block-xl);
 }

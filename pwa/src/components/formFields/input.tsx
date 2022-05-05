@@ -1,6 +1,5 @@
 import * as React from "react";
 import { TextField } from "@gemeente-denhaag/components-react";
-import { TextArea } from "@gemeente-denhaag/textarea";
 import { ShowIcon, HideIcon } from "@gemeente-denhaag/icons";
 import { FieldErrors, FieldValues, RegisterOptions, UseFormRegister } from "react-hook-form";
 
@@ -26,8 +25,4 @@ export const InputPassword: React.FC<InputProps> = ({ name, validation, register
 
 export const InputText: React.FC<InputProps> = ({ name, validation, register, errors }) => (
   <TextField type="text" {...register(name, { ...validation })} invalid={errors[name]} />
-);
-
-export const InputTextArea: React.FC<InputProps> = ({ name, validation, register, errors }) => (
-  <TextArea {...register(name, { ...validation })} invalid={errors[name]} />
 );
