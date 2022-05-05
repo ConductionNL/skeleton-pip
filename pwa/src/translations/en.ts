@@ -28,8 +28,6 @@ export const en = {
   "Previous contact moment":"Previous contact moment",
   "Initiator":"Initiator",
   case: "Case",
-  Themes: "Themes",
-  Forms: "Forms",
   "My account": "My account",
   "The Hague": "The Hague",
   "Go to website": "Go to denhaag.nl",

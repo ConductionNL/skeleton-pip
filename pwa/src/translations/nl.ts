@@ -28,8 +28,6 @@ export const nl = {
   "Initiator":"Initiatiefnemer",
   "Previous contact moment":"Vorige contact moment",
   case: "Zaak",
-  Themes: "Thema's",
-  Forms: "Formulieren",
   "My account": "Mijn account",
   "The Hague": "Den Haag",
   "Go to website": "Ga naar denhaag.nl",
