@@ -58,4 +58,8 @@ export const nl = {
   "Unread messages": "Ongelezen berichten",
   "Read messages": "Gelezen berichten",
   "View case": "Bekijk zaak",
+  Date: "Datum",
+  Organisation: "Organisatie",
+  Read: "Gelezen",
+  "View message": "Bekijk bericht",
 };

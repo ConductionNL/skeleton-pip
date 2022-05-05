@@ -58,4 +58,8 @@ export const en = {
   "Unread messages": "Unread messages",
   "Read messages": "Read messages",
   "View case": "View case",
+  Date: "Date",
+  Organisation: "Organisation",
+  Read: "Read",
+  "View message": "View message",
 };
