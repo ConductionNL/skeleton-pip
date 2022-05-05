@@ -1,4 +1,7 @@
 import axios, { AxiosInstance, AxiosResponse } from "axios";
+
+import Case from "./resources/case";
+
 import Login from "./services/login";
 
 export default class APIService {
@@ -19,16 +22,11 @@ export default class APIService {
   public get apiClient(): AxiosInstance {
     return axios.create({
       baseURL: process.env.GATSBY_API_URL,
-      headers: this.JWT
-        ? {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            Authorization: this.JWT,
-          }
-        : {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + this.JWT,
+      },
     });
   }
 
@@ -40,6 +38,11 @@ export default class APIService {
         "Content-Type": "application/json",
       },
     });
+  }
+
+  // Resources
+  public get Case(): Case {
+    return new Case(this.apiClient);
   }
 
   // Services
