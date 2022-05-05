@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./imageDivider.css";
+import * as styles from "./imageDivider.module.css";
 
 interface ImageDividerProps {
   image: string;
@@ -7,5 +7,5 @@ interface ImageDividerProps {
 }
 
 export const ImageDivider: React.FC<ImageDividerProps> = ({ image, layoutClassName }) => {
-  return <img src={image} className={`ImageDivider ${layoutClassName}`} />;
+  return <img src={image} className={`${styles.divider} ${layoutClassName}`} />;
 };

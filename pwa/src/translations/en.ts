@@ -62,4 +62,6 @@ export const en = {
   Organisation: "Organisation",
   Read: "Read",
   "View message": "View message",
+  "Have you recently moved and your address is no longer correct? You can request an address investigation with your municipility. This investigation can also be cancelled.":
+    "Have you recently moved and your address is no longer correct? You can request an address investigation with your municipility. This investigation can also be cancelled.",
 };

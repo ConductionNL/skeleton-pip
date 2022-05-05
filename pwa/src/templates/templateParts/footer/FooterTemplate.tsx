@@ -4,7 +4,8 @@ import { Container } from "../../../components/container/Container";
 import { List, ListItem, ListSubheader } from "@gemeente-denhaag/list";
 import { navigate } from "gatsby";
 import { ImageDivider } from "../../../components/imageDivider/imageDivider";
-import dividerImage from "./../../../assets/images/divider.png";
+import AuthenticatedDividerImage from "./../../../assets/images/AuthenticatedDivider.png";
+import UnauthenticatedDividerImage from "./../../../assets/images/UnauthenticatedFooterDivider.png";
 import { useTranslation } from "react-i18next";
 
 export const AuthenticatedFooterTemplate: React.FC = () => {
@@ -12,7 +13,7 @@ export const AuthenticatedFooterTemplate: React.FC = () => {
 
   return (
     <footer className="AuthenticatedFooterTemplate">
-      <ImageDivider image={dividerImage} layoutClassName="Footer-divider" />
+      <ImageDivider image={AuthenticatedDividerImage} layoutClassName="AuthenticatedFooterTemplate-divider" />
       <Container>
         <div className="Footer-inner">
           <List>
@@ -33,5 +34,9 @@ export const AuthenticatedFooterTemplate: React.FC = () => {
 };
 
 export const UnauthenticatedFooterTemplate: React.FC = () => {
-  return <footer className="UnauthenticatedFooterTemplate"></footer>;
+  return (
+    <footer className="UnauthenticatedFooterTemplate">
+      <ImageDivider image={UnauthenticatedDividerImage} layoutClassName="UnauthenticatedFooterTemplate-divider" />
+    </footer>
+  );
 };

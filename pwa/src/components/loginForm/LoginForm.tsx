@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { handleLogin } from "./../../services/auth";
 import APIContext from "../../apiService/apiContext";
 import { Alert, Button, FormField, FormFieldInput, FormFieldLabel } from "@gemeente-denhaag/components-react";
-import "./LoginForm.css";
+import * as styles from "./LoginForm.module.css";
 import { useTranslation } from "react-i18next";
 import { InputPassword, InputText } from "../formFields/input";
 
@@ -33,7 +33,7 @@ export const LoginForm: React.FC = () => {
   };
 
   return (
-    <form className="LoginForm" onSubmit={handleSubmit(onSubmit)}>
+    <form className={styles.container} onSubmit={handleSubmit(onSubmit)}>
       {formError && <Alert text={formError} title={t("Oops, something went wrong")} variant="error" />}
 
       <FormField>

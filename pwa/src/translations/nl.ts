@@ -62,4 +62,6 @@ export const nl = {
   Organisation: "Organisatie",
   Read: "Gelezen",
   "View message": "Bekijk bericht",
+  "Have you recently moved and your address is no longer correct? You can request an address investigation with your municipility. This investigation can also be cancelled.":
+    "Ben je onlangs verhuisd en klopt je adres niet meer? Dan kunt u een adresonderzoek aanvragen bij de gemeente. U kunt een adresonderzoek ook intrekken.",
 };
