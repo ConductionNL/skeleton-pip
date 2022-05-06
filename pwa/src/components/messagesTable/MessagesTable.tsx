@@ -28,7 +28,7 @@ export const MessagesTable: React.FC<MessagesTableProps> = ({ messages }) => {
           <TableHeader />
         </TableRow>
         {messages.map(({ organisation, date, id }) => (
-          <TableRow className={styles.contentRow}>
+          <TableRow key={id} className={styles.contentRow}>
             <TableCell>{organisation}</TableCell>
             <TableCell>{date}</TableCell>
 
