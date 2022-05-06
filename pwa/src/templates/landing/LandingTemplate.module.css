@@ -1,5 +1,5 @@
 .container {
-  margin-top: var(--nlportal-space-block-4xl);
+  margin-block-start: var(--nlportal-space-block-4xl);
 }
 
 .container > *:not(:last-child) {
