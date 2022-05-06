@@ -70,7 +70,10 @@ export const en = {
   "View message": "View message",
   "Have you recently moved and your address is no longer correct? You can request an address investigation with your municipility. This investigation can also be cancelled.":
     "Have you recently moved and your address is no longer correct? You can request an address investigation with your municipility. This investigation can also be cancelled.",
+  Messages: "Messages",
   "View the linked case": "View the linked case",
   "In the personal online environment MijnDenHaag you can easily, quickly and safely arrange matters with the municipality. For example, residents can report a move or buy extra parking credit via DigiD. Companies can easily arrange business online via eHerkenning.":
     "In the personal online environment MijnDenHaag you can easily, quickly and safely arrange matters with the municipality. Bewoners kunnen bijvoorbeeld een verhuizing doorgeven of extra parkeertegoed kopen via DigiD. Bedrijven kunnen eenvoudig online zaken regelen via eHerkenning.",
+    Message: "Message",
+    "Add another message to this case": "Add another message to this case",
 };
