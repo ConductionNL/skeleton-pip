@@ -55,6 +55,10 @@
   height: var(--conduction-unauthenticated-header-logo-height);
 }
 
+.unauthenticatedLogo:hover {
+  cursor: pointer;
+}
+
 .unauthenticatedDivider {
   height: var(--nlportal-space-block-4xl);
 }
