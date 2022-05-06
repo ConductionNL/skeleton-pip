@@ -1,9 +1,7 @@
 .container {
-  margin-top: var(--nlportal-space-block-5xl);
+  margin-top: var(--nlportal-space-block-4xl);
 }
 
-.container > :last-child {
-  margin-top: var(--nlportal-space-block-3xl);
-  display: flex;
-  justify-content: right;
+.container > *:not(:last-child) {
+  margin-block-end: var(--nlportal-space-block-4xl);
 }
