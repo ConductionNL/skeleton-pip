@@ -4,12 +4,13 @@ import { Card, Heading3, Paragraph } from "@gemeente-denhaag/components-react";
 import * as styles from "./LandingTemplate.module.css";
 import { navigate } from "gatsby";
 import { t } from "i18next";
+import { redirectToDigiD } from "../../services/auth";
 
 export const LandingTemplate: React.FC = () => {
   return (
     <Container>
       <div className={styles.container}>
-        <div className={styles.introduction}>
+        <div>
           <Heading3>{t("Log in to MijnDenHaag")}</Heading3>
           <Paragraph>
             {t(
@@ -20,6 +21,7 @@ export const LandingTemplate: React.FC = () => {
 
         <div className={styles.loginCards}>
           <Card title={t("Login")} subTitle={t("Account")} onClick={() => navigate("/login")} />
+          <Card title={t("DigiDLogin")} subTitle={t("Account")} onClick={() => redirectToDigiD()} />
         </div>
       </div>
     </Container>
