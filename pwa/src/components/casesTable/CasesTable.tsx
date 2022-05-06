@@ -23,7 +23,7 @@ export const CasesTable: React.FC<CasesTableProps> = ({ cases }) => {
           <TableHeader />
         </TableRow>
         {cases.map((_case) => (
-          <TableRow className={styles.contentRow}>
+          <TableRow key={_case.id} className={styles.contentRow}>
             <TableCell>{_case.omschrijving}</TableCell>
             <TableCell>{_case.status}</TableCell>
             <TableCell>{_case.startdatum}</TableCell>
