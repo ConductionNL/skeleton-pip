@@ -46,7 +46,7 @@ export const AuthenticatedHeaderTemplate: React.FC<AuthenticatedHeaderTemplatePr
 export const UnauthenticatedHeaderTemplate: React.FC = () => (
   <header className={styles.unauthenticatedContainer}>
     <Container>
-      <div className={styles.unauthenticatedContent}>
+      <div onClick={() => navigate("/")} className={styles.unauthenticatedContent}>
         <DenHaagLogo className={styles.unauthenticatedLogo} />
       </div>
     </Container>
