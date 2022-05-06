@@ -19,7 +19,7 @@ export const LandingTemplate: React.FC = () => {
         </div>
 
         <div className={styles.loginCards}>
-          <Card title={t("Login")} onClick={() => navigate("/login")} subTitle={t("Account")} />
+          <Card title={t("Login")} subTitle={t("Account")} onClick={() => navigate("/login")} />
         </div>
       </div>
     </Container>
