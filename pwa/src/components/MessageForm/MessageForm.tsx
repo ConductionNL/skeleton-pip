@@ -4,7 +4,7 @@ import { Button, FormField, FormFieldInput, FormFieldLabel } from "@gemeente-den
 import { useTranslation } from "react-i18next";
 import { Textarea } from "../formFields";
 
-export const SendMessageForm: React.FC = () => {
+export const MessageForm: React.FC = () => {
   const { t } = useTranslation();
 
   const {
@@ -20,7 +20,7 @@ export const SendMessageForm: React.FC = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <FormField>
         <FormFieldInput>
-          <FormFieldLabel>{t("Send message")}</FormFieldLabel>
+          <FormFieldLabel>{t("Message")}</FormFieldLabel>
           <Textarea {...{ register, errors }} name="message" validation={{ required: true }} />
         </FormFieldInput>
       </FormField>

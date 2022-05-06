@@ -1,6 +1,16 @@
 import * as React from "react";
 import * as styles from "./CaseDetailTemplate.module.css";
-import { Divider, Heading2, Heading3, Link, Tab, TabContext, TabPanel, Tabs } from "@gemeente-denhaag/components-react";
+import {
+  Divider,
+  Heading2,
+  Heading3,
+  Heading4,
+  Link,
+  Tab,
+  TabContext,
+  TabPanel,
+  Tabs,
+} from "@gemeente-denhaag/components-react";
 import { navigate } from "gatsby";
 import {
   ChevronLeftIcon,
@@ -16,7 +26,7 @@ import { DownloadCard } from "../../../components/card";
 import { useTranslation } from "react-i18next";
 import { MessagesTable } from "../../../components/messagesTable/MessagesTable";
 import DummyMessages from "../../../data/DummyMessages";
-import { SendMessageForm } from "../../../components/sendMessageForm/SendMessageForm";
+import { MessageForm } from "../../../components/MessageForm/MessageForm";
 
 interface CaseDetailTemplateProps {
   caseId: string;
@@ -125,8 +135,12 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
           </TabPanel>
         </TabContext>
       </div>
-
-      <SendMessageForm />
+      <div className={styles.messages}>
+        <div className={styles.messagesHeading}>
+          <Heading4>{t("Add another message to this case")}</Heading4>
+        </div>
+        <MessageForm />
+      </div>
     </div>
   );
 };

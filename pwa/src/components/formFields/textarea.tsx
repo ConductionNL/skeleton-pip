@@ -1,14 +1,7 @@
 import * as React from "react";
 import { TextArea } from "@gemeente-denhaag/textarea";
-import { FieldErrors, FieldValues, RegisterOptions, UseFormRegister } from "react-hook-form";
+import { IFormFieldProps, IReactHookFormProps } from "./types";
 
-interface InputProps {
-  name: string;
-  register: UseFormRegister<FieldValues>;
-  validation?: Omit<RegisterOptions<FieldValues, any>, "valueAsNumber" | "valueAsDate" | "setValueAs" | "disabled">;
-  errors: FieldErrors;
-}
-
-export const Textarea: React.FC<InputProps> = ({ name, validation, register, errors }) => (
+export const Textarea: React.FC<IFormFieldProps & IReactHookFormProps> = ({ name, validation, register, errors }) => (
   <TextArea {...register(name, { ...validation })} invalid={errors[name]} />
 );

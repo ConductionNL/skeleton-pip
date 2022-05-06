@@ -68,4 +68,6 @@ export const nl = {
   "Send message": "Stuur bericht",
   "In the personal online environment MijnDenHaag you can easily, quickly and safely arrange matters with the municipality. For example, residents can report a move or buy extra parking credit via DigiD. Companies can easily arrange business online via eHerkenning.":
     "In de persoonlijke online omgeving MijnDenHaag kunt u makkelijk, snel en veilig zaken regelen bij de gemeente. Bewoners kunnen bijvoorbeeld een verhuizing doorgeven of extra parkeertegoed kopen via DigiD. Bedrijven kunnen eenvoudig online zaken regelen via eHerkenning.",
+  Message: "Bericht",
+  "Add another message to this case": "Voeg nog een bericht toe aan deze zaak",
 };
