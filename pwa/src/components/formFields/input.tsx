@@ -1,16 +1,9 @@
 import * as React from "react";
 import { TextField } from "@gemeente-denhaag/components-react";
 import { ShowIcon, HideIcon } from "@gemeente-denhaag/icons";
-import { FieldErrors, FieldValues, RegisterOptions, UseFormRegister } from "react-hook-form";
+import { IFormFieldProps, IReactHookFormProps } from "./types";
 
-interface InputProps {
-  name: string;
-  register: UseFormRegister<FieldValues>;
-  validation?: Omit<RegisterOptions<FieldValues, any>, "valueAsNumber" | "valueAsDate" | "setValueAs" | "disabled">;
-  errors: FieldErrors;
-}
-
-export const InputPassword: React.FC<InputProps> = ({ name, validation, register, errors }) => {
+export const InputPassword: React.FC<IFormFieldProps & IReactHookFormProps > = ({ name, validation, register, errors }) => {
   const [showPassword, setShowPassword] = React.useState<boolean>(false);
 
   return (
@@ -23,6 +16,6 @@ export const InputPassword: React.FC<InputProps> = ({ name, validation, register
   );
 };
 
-export const InputText: React.FC<InputProps> = ({ name, validation, register, errors }) => (
+export const InputText: React.FC<IFormFieldProps & IReactHookFormProps> = ({ name, validation, register, errors }) => (
   <TextField type="text" {...register(name, { ...validation })} invalid={errors[name]} />
 );
