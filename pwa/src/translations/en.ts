@@ -7,7 +7,6 @@ export const en = {
   "Show all documents": "Show all documents",
   Documents: "Documents",
   "Current status": "Current status",
-  "Case one": "Case one",
   "My case": "My case",
   "Current cases": "Current cases",
   "My cases": "My cases",
@@ -73,4 +72,5 @@ export const en = {
   "View the linked case": "View the linked case",
   "In the personal online environment MijnDenHaag you can easily, quickly and safely arrange matters with the municipality. For example, residents can report a move or buy extra parking credit via DigiD. Companies can easily arrange business online via eHerkenning.":
     "In the personal online environment MijnDenHaag you can easily, quickly and safely arrange matters with the municipality. Bewoners kunnen bijvoorbeeld een verhuizing doorgeven of extra parkeertegoed kopen via DigiD. Bedrijven kunnen eenvoudig online zaken regelen via eHerkenning.",
+  Unknown: "Unknown",
 };
