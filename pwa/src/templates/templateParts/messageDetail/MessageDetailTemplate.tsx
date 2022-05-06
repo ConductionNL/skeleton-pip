@@ -42,16 +42,26 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
       <Divider />
 
       <Paragraph>
-        string Voer een voorwaardelijk verzoek uit. Deze header moet één of meerdere ETag-waardes bevatten van resources
-        die de consumer gecached heeft. Indien de waarde van de ETag van de huidige resource voorkomt in deze set, dan
-        antwoordt de provider met een lege HTTP 304 request. Zie MDN voor meer informatie.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo.
+        Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet
+        risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus
+        porttitor.
+        <br /> <br />
+        Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes,
+        nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor
+        fringilla.
+        <br /> <br />
+        Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+        auctor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam quis risus eget urna mollis ornare vel eu
+        leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sociis natoque penatibus et magnis dis
+        parturient montes, nascetur ridiculus mus.
       </Paragraph>
 
       <Divider />
 
       <div onClick={() => navigate("/my-cases")}>
         <Link icon={<ArrowRightIcon />} iconAlign="end">
-          {t("View case")}
+          {t("View the linked case")}
         </Link>
       </div>
     </div>

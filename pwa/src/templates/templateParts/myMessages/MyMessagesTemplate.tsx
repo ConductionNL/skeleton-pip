@@ -14,7 +14,7 @@ export const MyMessagesTemplate: React.FC = () => {
 
       <TabContext value={currentMessagesTab.toString()}>
         <Tabs
-          className="tabs"
+          className={styles.tabs}
           value={currentMessagesTab}
           onChange={(_, newValue: number) => {
             setCurrentMessagesTab(newValue);
