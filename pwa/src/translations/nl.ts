@@ -17,10 +17,10 @@ export const nl = {
   Password: "Wachtwoord",
   Send: "Versturen",
   Overview: "Overzicht",
-  Account:"Account",
+  Account: "Account",
   "My messages": "Mijn berichten",
   "Closed cases": "Gesloten zaken",
-  "Log in to MijnDenHaag":"Inloggen bij MijnDenHaag",
+  "Log in to MijnDenHaag": "Inloggen bij MijnDenHaag",
   case: "Zaak",
   "My account": "Mijn account",
   "The Hague": "Den Haag",
@@ -64,6 +64,6 @@ export const nl = {
   "View message": "Bekijk bericht",
   "Have you recently moved and your address is no longer correct? You can request an address investigation with your municipility. This investigation can also be cancelled.":
     "Ben je onlangs verhuisd en klopt je adres niet meer? Dan kunt u een adresonderzoek aanvragen bij de gemeente. U kunt een adresonderzoek ook intrekken.",
-  "In the personal online environment MijnDenHaag you can easily, quickly and safely arrange matters with the municipality. Bewoners kunnen bijvoorbeeld een verhuizing doorgeven of extra parkeertegoed kopen via DigiD. Bedrijven kunnen eenvoudig online zaken regelen via eHerkenning.":
-    " In de persoonlijke online omgeving MijnDenHaag kunt u makkelijk, snel en veilig zaken regelen bij de gemeente. Bewoners kunnen bijvoorbeeld een verhuizing doorgeven of extra parkeertegoed kopen via DigiD. Bedrijven kunnen eenvoudig online zaken regelen via eHerkenning.",
+  "In the personal online environment MijnDenHaag you can easily, quickly and safely arrange matters with the municipality. For example, residents can report a move or buy extra parking credit via DigiD. Companies can easily arrange business online via eHerkenning.":
+    "In de persoonlijke online omgeving MijnDenHaag kunt u makkelijk, snel en veilig zaken regelen bij de gemeente. Bewoners kunnen bijvoorbeeld een verhuizing doorgeven of extra parkeertegoed kopen via DigiD. Bedrijven kunnen eenvoudig online zaken regelen via eHerkenning.",
 };
