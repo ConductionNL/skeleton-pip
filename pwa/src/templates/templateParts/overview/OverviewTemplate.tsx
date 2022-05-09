@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as styles from "./OverviewTemplate.module.css";
-import { Heading1, Heading3, Link, Tab, TabContext, TabPanel, Tabs } from "@gemeente-denhaag/components-react";
+import { Heading1, Heading3, Link, Tab, TabContext, TabPanel, Tabs, Card } from "@gemeente-denhaag/components-react";
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { useTranslation } from "react-i18next";
 import { navigate } from "gatsby";
@@ -10,6 +10,7 @@ import DummyMessages from "../../../data/DummyMessages";
 import { useQueryClient } from "react-query";
 import { useCase } from "../../../hooks/case";
 import Skeleton from "react-loading-skeleton";
+import { Container } from "../../../components/container/Container";
 
 export const OverviewTemplate: React.FC = () => {
   const { t } = useTranslation();
@@ -34,6 +35,25 @@ export const OverviewTemplate: React.FC = () => {
   return (
     <div className={styles.container}>
       <Heading1>{t("Overview")}</Heading1>
+
+      <div className={styles.services}>
+        <div className={styles.servicesHeading}>
+          <Heading3>{t("Self services")}</Heading3>
+
+          <div onClick={() => navigate("/self-services")}>
+            <Link icon={<ArrowRightIcon />} iconAlign="end">
+              {t("Show all services")}
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.grid}>
+        <Card title={t("Marriage / Partnership")} />
+        <Card title={t("Moving away")} />
+        <Card title={t("Birth registration")} />
+        <Card title={t("1st Registration")} />
+      </div>
 
       <div className={styles.messages}>
         <div className={styles.messagesHeading}>

@@ -7,11 +7,13 @@
   margin-block-end: var(--nlportal-space-block-4xl);
 }
 
+.container > .services > *,
 .container > .cases > *,
 .container > .messages > * {
   margin-block-end: var(--nlportal-space-block-xl);
 }
-
+.container > .grid ,
+.container > .services > .servicesHeading,
 .container > .cases > .casesHeading,
 .container > .messages > .messagesHeading {
   display: flex;

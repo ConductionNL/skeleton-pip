@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as styles from "./DashboardTemplate.module.css";
-import { GridIcon, InboxIcon, ArchiveIcon, DocumentIcon, UserIcon } from "@gemeente-denhaag/icons";
+import { GridIcon, InboxIcon, ArchiveIcon, UserIcon, ListIcon } from "@gemeente-denhaag/icons";
 import { Sidenav, SidenavItem, SidenavLink, SidenavList } from "@gemeente-denhaag/sidenav";
 import { Container } from "../../components/container/Container";
 import { PrivateRoute } from "../../components/privateRoute/privateRoute";
@@ -43,6 +43,7 @@ const Menu: React.FC = () => {
 
   const menuItems: MenuItem[] = [
     { label: t("Overview"), href: "/", current: pathname === "/", icon: <GridIcon /> },
+    { label: t("Self services"), href: "/self-services", current: pathname === "/self-services", icon: <ListIcon /> },
     { label: t("My messages"), href: "/my-messages", current: pathname === "/my-messages", icon: <InboxIcon /> },
     {
       label: t("My cases"),
@@ -52,7 +53,7 @@ const Menu: React.FC = () => {
     },
     { label: t("My account"), href: "/my-account", current: pathname === "/my-account", icon: <UserIcon /> },
   ];
-  
+
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string): void => {
     e.preventDefault();
     navigate(href);
