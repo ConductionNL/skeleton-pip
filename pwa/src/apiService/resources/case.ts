@@ -8,6 +8,11 @@ export default class Case {
     this._instance = _instance;
   }
 
+  public getOne = async (id: string): Promise<any> => {
+    const { data } = await Send(this._instance, "GET", `/zaken/${id}`);
+    return data;
+  };
+
   public getAll = async (): Promise<any> => {
     const {
       data: { results },
