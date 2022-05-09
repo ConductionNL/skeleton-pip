@@ -1,6 +1,16 @@
 import * as React from "react";
 import * as styles from "./CaseDetailTemplate.module.css";
-import { Divider, Heading2, Heading3, Link } from "@gemeente-denhaag/components-react";
+import {
+  Divider,
+  Heading2,
+  Heading3,
+  Heading4,
+  Link,
+  Tab,
+  TabContext,
+  TabPanel,
+  Tabs,
+} from "@gemeente-denhaag/components-react";
 import { navigate } from "gatsby";
 import {
   ChevronLeftIcon,
@@ -17,6 +27,9 @@ import { useTranslation } from "react-i18next";
 import { useCase } from "../../../hooks/case";
 import { useQueryClient } from "react-query";
 import Skeleton from "react-loading-skeleton";
+import { MessagesTable } from "../../../components/messagesTable/MessagesTable";
+import dummyMessages from "../../../data/DummyMessages";
+import { MessageForm } from "../../../components/MessageForm/MessageForm";
 
 interface CaseDetailTemplateProps {
   caseId: string;
@@ -24,6 +37,7 @@ interface CaseDetailTemplateProps {
 
 export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }) => {
   const { t } = useTranslation();
+  const [currentMessagesTab, setCurrentMessagesTab] = React.useState<number>(0);
 
   const queryClient = useQueryClient();
 
@@ -107,6 +121,45 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
       )}
 
       {getCase.isLoading && <Skeleton height="300px" />}
+
+      <Divider />
+
+      <div className={styles.messages}>
+        <div className={styles.messagesHeading}>
+          <Heading3>{t("Messages")}</Heading3>
+          <div onClick={() => navigate("/my-messages")}>
+            <Link icon={<ArrowRightIcon />} iconAlign="end">
+              {t("Show all messages")}
+            </Link>
+          </div>
+        </div>
+
+        <TabContext value={currentMessagesTab.toString()}>
+          <Tabs
+            value={currentMessagesTab}
+            onChange={(_, newValue: number) => {
+              setCurrentMessagesTab(newValue);
+            }}
+          >
+            <Tab label={t("Unread messages")} value={0} />
+            <Tab label={t("Read messages")} value={1} />
+          </Tabs>
+
+          <TabPanel value="0">
+            <MessagesTable messages={dummyMessages} />
+          </TabPanel>
+          <TabPanel value="1">
+            <MessagesTable messages={dummyMessages.map((message: any) => ({ ...message, isRead: false }))} />
+          </TabPanel>
+        </TabContext>
+      </div>
+      <div className={styles.messages}>
+        <div className={styles.messagesHeading}>
+          <Heading4>{t("Add another message to this case")}</Heading4>
+        </div>
+
+        <MessageForm />
+      </div>
     </div>
   );
 };

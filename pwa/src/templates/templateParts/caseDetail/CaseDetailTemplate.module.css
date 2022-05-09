@@ -2,15 +2,14 @@
   margin-block-end: var(--nlportal-space-block-4xl);
 }
 
-.status > *:not(:last-child) {
+.status > *:not(:last-child),
+.documents > *:not(:last-child),
+.messages > *:not(:last-child) {
   margin-block-end: var(--nlportal-space-block-xl);
 }
 
-.documents > *:not(:last-child) {
-  margin-block-end: var(--nlportal-space-block-xl);
-}
-
-.documentsHeader {
+.container > .documents > .documentsHeader,
+.container > .messages > .messagesHeading {
   display: flex;
   align-items: center;
   justify-content: space-between;
