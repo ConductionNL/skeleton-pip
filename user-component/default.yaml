@@ -1,4 +1,11 @@
 App\Entity\Group:
+    digid:
+        name: DIGID
+        description: Digid group
+        organization: http://api/admin/organizations/a1c8e0b6-2f78-480d-a9fb-9792142f4761
+        scopes:
+            - '@zaken_read'
+
     anonymous:
         name: ANONYMOUS
         description: Anonymous group
@@ -34,6 +41,10 @@ App\Entity\Scope:
         name: 'Read products'
         code: 'GET.product'
 
+    zaken_read:
+        code: 'GET.zaak'
+        name: 'Read zaken'
+    
 App\Entity\User:
     someUser:
         id: 2ac800cc-b844-458d-87e1-b206fa80113a

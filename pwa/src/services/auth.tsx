@@ -34,6 +34,8 @@ export const setDigiDToken = async (username?: string, jwt?: string) => {
     get: (searchParams, prop: string) => searchParams.get(prop),
   });
   let token = params.token ?? null;
+  token = window.atob(token);
+
   if (token) {
     SetsessionStorage((username = "Digid"), (jwt = token));
   } else {
