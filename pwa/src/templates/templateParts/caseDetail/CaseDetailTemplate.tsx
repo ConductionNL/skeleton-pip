@@ -27,9 +27,9 @@ import { useTranslation } from "react-i18next";
 import { useCase } from "../../../hooks/case";
 import { useQueryClient } from "react-query";
 import Skeleton from "react-loading-skeleton";
-import { MessagesTable } from "../../../components/messagesTable/MessagesTable";
-import dummyMessages from "../../../data/DummyMessages";
+import { IMessageTableItem, MessagesTable } from "../../../components/messagesTable/MessagesTable";
 import { MessageForm } from "../../../components/MessageForm/MessageForm";
+import { useMessage } from "../../../hooks/message";
 
 interface CaseDetailTemplateProps {
   caseId: string;
@@ -38,11 +38,27 @@ interface CaseDetailTemplateProps {
 export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }) => {
   const { t } = useTranslation();
   const [currentMessagesTab, setCurrentMessagesTab] = React.useState<number>(0);
+  const [messages, setMessages] = React.useState<IMessageTableItem[]>([]);
 
   const queryClient = useQueryClient();
 
   const _useCase = useCase(queryClient);
   const getCase = _useCase.getOne(caseId);
+
+  const _useMessage = useMessage();
+  const getMessages = _useMessage.getAll();
+
+  React.useEffect(() => {
+    if (!getMessages.isSuccess) return;
+
+    const _messages: IMessageTableItem[] = getMessages.data.map((message) => ({
+      organisation: message.bronorganisatie,
+      date: message.registratiedatum,
+      id: message.id,
+    }));
+
+    setMessages(_messages);
+  }, [getMessages.isSuccess]);
 
   return (
     <div className={styles.container}>
@@ -145,12 +161,10 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
             <Tab label={t("Read messages")} value={1} />
           </Tabs>
 
-          <TabPanel value="0">
-            <MessagesTable messages={dummyMessages} />
-          </TabPanel>
-          <TabPanel value="1">
-            <MessagesTable messages={dummyMessages.map((message: any) => ({ ...message, isRead: false }))} />
-          </TabPanel>
+          {getMessages.isLoading && <Skeleton height="100px" />}
+
+          <TabPanel value="0">{!getMessages.isLoading && <MessagesTable {...{ messages }} />}</TabPanel>
+          <TabPanel value="1">{!getMessages.isLoading && <MessagesTable {...{ messages }} />}</TabPanel>
         </TabContext>
       </div>
       <div className={styles.messages}>
