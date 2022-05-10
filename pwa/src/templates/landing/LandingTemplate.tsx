@@ -9,7 +9,7 @@ export const LandingTemplate: React.FC = () => {
   return (
     <Container>
       <div className={styles.container}>
-        <div className={styles.introduction}>
+        <div>
           <Heading3>{t("Log in to MijnDenHaag")}</Heading3>
           <Paragraph>
             {t(
