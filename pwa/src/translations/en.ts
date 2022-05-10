@@ -74,6 +74,21 @@ export const en = {
   "In the personal online environment MijnDenHaag you can easily, quickly and safely arrange matters with the municipality. For example, residents can report a move or buy extra parking credit via DigiD. Companies can easily arrange business online via eHerkenning.":
     "In the personal online environment MijnDenHaag you can easily, quickly and safely arrange matters with the municipality. Bewoners kunnen bijvoorbeeld een verhuizing doorgeven of extra parkeertegoed kopen via DigiD. Bedrijven kunnen eenvoudig online zaken regelen via eHerkenning.",
   Unknown: "Unknown",
-    Message: "Message",
-    "Add another message to this case": "Add another message to this case",
+  Message: "Message",
+  "Add another message to this case": "Add another message to this case",
+  "Mariage / Partnership": "Mariage / Partnership",
+  Moving: "Moving",
+  "More Information": "More Information",
+  "What steps can you expect": "What steps can you expect",
+
+  MarriageSub:
+    "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.",
+  MovingSub:
+    "Are you moving to a different house? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.",
+  MarriageProcess:
+    "Choose between getting married or registered partnership. Choose a date and time for the meeting. Log in with DigiID. Your partner also logs in with DigID. Invite witnesses. Pay with IDEAL. Your date is set!",
+  MovingProcess: "Choose your current addres. Choose your new address. Log in with DigiID. and your set!",
+  MarriageInfo:
+    "What are the differences between a marriage, a registered partnership and a cohabitation contract? What is an emergency marriage and how can you arrange it?",
+  MovingInfo: "What is a zipcode? What do I do when I settle in a different municipality? What is the meaning of life?",
 };

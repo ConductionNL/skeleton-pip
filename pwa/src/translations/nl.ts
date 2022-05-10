@@ -76,4 +76,20 @@ export const nl = {
   Unknown: "Onbekend",
   Message: "Bericht",
   "Add another message to this case": "Voeg nog een bericht toe aan deze zaak",
+  "Mariage / Partnership": "Huwelijk / Partnerschap",
+  Moving: "Verhuizen",
+  "More Information": "Meer Informatie",
+  "What steps can you expect": "Welke stappen kun je verwachten",
+
+  MarriageSub:
+    "Gaat u trouwen of gaat u een geregistreerd partnerschap aan? Plan een datum en tijd. En doe de officiële melding bij de gemeente. Let op: hou je DigID bij de hand.",
+  MovingSub:
+    "Gaat u verhuizen? Plan een datum en tijd. En doe de officiële melding bij de gemeente. Let op: hou je DigID bij de hand.",
+  MarriageProcess:
+    "Kies tussen trouwen of geregistreerd partnerschap. Kies een datum en tijd voor de bijeenkomst. Log in met DigiID. Je partner logt ook in met DigiID. Nodig getuigen uit. Betaal met IDEAL. Je datum is geregeld!",
+  MovingProcess: "Kies je huidige adres. Kies je nieuwe adres. Log in met DigiID. Je bent nu klaar!",
+  MarriageInfo:
+    "Wat zijn de verschillen tussen een huwelijk, een geregistreerd partnerschap en een samenlevingscontract? Wat is een spoedhuwelijk en hoe kun je dat regelen?",
+  MovingInfo:
+    "Wat is een Postcode? Wat moet ik doen als ik naar een andere gemeente verhuis? Wat is de betekenis van het leven?",
 };
