@@ -8,6 +8,10 @@
   margin-block-end: var(--nlportal-space-block-4xl);
 }
 
+.listItem {
+  margin-block-end: var(--nlportal-space-block-md);
+}
+
 .container > .process > {
   display: flex;
   align-items: center;

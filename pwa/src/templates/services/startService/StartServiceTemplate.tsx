@@ -5,16 +5,31 @@ import { useTranslation } from "react-i18next";
 import { navigate } from "gatsby";
 import { ArrowRightIcon, ChevronRightIcon } from "@gemeente-denhaag/icons";
 
-export const StartServiceTemplate: React.FC = () => {
+// export interface IStartServices {
+//   title: string;
+//   description: string;
+
+// }
+
+// interface StartServicesProps {
+//   serviceProps: IStartServices[];
+// }
+
+export interface IProcessSteps {
+  step: string;
+}
+
+interface MessagesTableProps {
+  processSteps: IProcessSteps[];
+}
+
+export const StartServiceTemplate: React.FC<MessagesTableProps> = ({ processSteps }) => {
   const { t } = useTranslation();
   const bool = true;
   const title = bool ? "Mariage / Partnership" : "Moving";
   const subheader = bool ? "MarriageSub" : "MovingSub";
   const processExplanation = bool ? "MarriageProcess" : "MovingProcess";
   const moreInformation = bool ? "MarriageInfo" : "MovingInfo";
-
-  const processSteps = t(`${processExplanation}`).split(".");
-  console.log(processSteps);
 
   const moreInformationLinks = t(`${moreInformation}`).split("? ");
   console.log(moreInformationLinks);
@@ -32,8 +47,8 @@ export const StartServiceTemplate: React.FC = () => {
         <div className={styles.process}>
           <Heading1>{t("What steps can you expect")}</Heading1>
           <ul>
-            {processSteps.map((processStep: string) => (
-              <li>{processStep}</li>
+            {processSteps.map(({ step }) => (
+              <li className={styles.listItem}>{t(`${step}`)}</li>
             ))}
           </ul>
           <div onClick={() => navigate("/services/form")}>
@@ -50,10 +65,8 @@ export const StartServiceTemplate: React.FC = () => {
           <Paragraph>{t(`${moreInformation}`)}</Paragraph>
           <ul>
             {moreInformationLinks.map((moreInformationLink: string) => (
-              <li>
-                <Link icon={<ChevronRightIcon />} iconAlign="end">
-                  {moreInformationLink}
-                </Link>
+              <li className={styles.listItem}>
+                <Link>{moreInformationLink}</Link>
               </li>
             ))}
           </ul>

@@ -86,8 +86,8 @@ export const nl = {
   MovingSub:
     "Gaat u verhuizen? Plan een datum en tijd. En doe de officiële melding bij de gemeente. Let op: hou je DigID bij de hand.",
   MarriageProcess:
-    "Kies tussen trouwen of geregistreerd partnerschap. Kies een datum en tijd voor de bijeenkomst. Log in met DigiID. Je partner logt ook in met DigiID. Nodig getuigen uit. Betaal met IDEAL. Je datum is geregeld!",
-  MovingProcess: "Kies je huidige adres. Kies je nieuwe adres. Log in met DigiID. Je bent nu klaar!",
+    "Kies tussen trouwen of geregistreerd partnerschap. Kies een datum en tijd voor de bijeenkomst. Log in met DigID. Je partner logt ook in met DigID. Nodig getuigen uit. Betaal met IDEAL. Je datum is geregeld!",
+  MovingProcess: "Kies je huidige adres. Kies je nieuwe adres. Log in met DigID. Je bent nu klaar!",
   MarriageInfo:
     "Wat zijn de verschillen tussen een huwelijk, een geregistreerd partnerschap en een samenlevingscontract? Wat is een spoedhuwelijk en hoe kun je dat regelen?",
   MovingInfo:
