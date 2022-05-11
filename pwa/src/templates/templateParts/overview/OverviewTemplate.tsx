@@ -38,7 +38,7 @@ export const OverviewTemplate: React.FC = () => {
 
       <div className={styles.services}>
         <div className={styles.servicesHeading}>
-          <Heading3>{t("Self services")}</Heading3>
+          <Heading3>{t("Self service")}</Heading3>
 
           <div onClick={() => navigate("/self-services")}>
             <Link icon={<ArrowRightIcon />} iconAlign="end">
@@ -46,14 +46,15 @@ export const OverviewTemplate: React.FC = () => {
             </Link>
           </div>
         </div>
+        <div className={styles.grid}>
+          <Card className={styles.card} title={t("Marriage / Partnership")} />
+          <Card className={styles.card} title={t("Moving away")} />
+          <Card className={styles.card} title={t("Birth registration")} />
+          <Card className={styles.card} title={t("1st Registration")} />
+        </div>
       </div>
 
-      <div className={styles.grid}>
-        <Card title={t("Marriage / Partnership")} />
-        <Card title={t("Moving away")} />
-        <Card title={t("Birth registration")} />
-        <Card title={t("1st Registration")} />
-      </div>
+
 
       <div className={styles.messages}>
         <div className={styles.messagesHeading}>
