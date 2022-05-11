@@ -46,3 +46,11 @@ App\Entity\CollectionEntity:
     testDataLocation: https://raw.githubusercontent.com/ConductionNL/brp_publiccode/main/data/brp.yml
     loadTestData: true
     autoLoad: true
+
+  contactmomentenCollection:
+    name: contactmomenten collection
+    sourceType: GitHub
+    locationOAS: https://raw.githubusercontent.com/VNG-Realisatie/contactmomenten-api/master/src/openapi.yaml
+    testDataLocation: https://raw.githubusercontent.com/ConductionNL/contactmomenten_publiccode/main/data/contactmomenten.json
+    loadTestData: true
+    autoLoad: true
