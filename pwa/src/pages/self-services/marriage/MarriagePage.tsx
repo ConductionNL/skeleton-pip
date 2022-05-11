@@ -4,13 +4,13 @@ import {
   IMoreInformationLinks,
   IProcessSteps,
   StartServiceTemplate,
-} from "../../../templates/services/startService/StartServiceTemplate";
+} from "../../../templates/templateParts/startService/StartServiceTemplate";
 
 const MarriagePage: React.FC = () => {
   return (
     <DashboardTemplate>
       <StartServiceTemplate
-        title="Mariage / Partnership"
+        title="Marriage / Partnership"
         description="Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand."
         processSteps={ProcessSteps}
         moreInformationLinks={moreInformation}
@@ -32,11 +32,9 @@ const ProcessSteps: IProcessSteps[] = [
 ];
 
 const moreInformation: IMoreInformationLinks[] = [
-  { description: "Choose between getting married or registered partnership", link: "/services/marriage" },
-  { description: "Choose a date and time for the meeting", link: "/services/marriage" },
-  { description: "Log in with DigID", link: "/services/marriage" },
-  { description: "Your partner also logs in with DigID", link: "/services/marriage" },
-  { description: "Invite witnesses", link: "/services/marriage" },
-  { description: "Pay with IDEAL", link: "/services/marriage" },
-  { description: "Your date is set!", link: "/services/marriage" },
+  {
+    description: "What are the differences between a marriage, a registered partnership and a cohabitation contract?",
+    link: "/self-services/marriage",
+  },
+  { description: "What is an emergency marriage and how can you arrange it?", link: "/self-services/marriage" },
 ];

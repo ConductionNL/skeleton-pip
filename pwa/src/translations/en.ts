@@ -23,7 +23,7 @@ export const en = {
   "Closed cases": "Closed cases",
   "Unread messages": "Unread message",
   "Read messages": "Read message",
-  "Self services":"Self services",
+  "Self services": "Self services",
   Collaborator: "Collaborator",
   "Previous contact moment": "Previous contact moment",
   Initiator: "Initiator",
@@ -76,12 +76,12 @@ export const en = {
   "In the personal online environment MijnDenHaag you can easily, quickly and safely arrange matters with the municipality. For example, residents can report a move or buy extra parking credit via DigiD. Companies can easily arrange business online via eHerkenning.":
     "In the personal online environment MijnDenHaag you can easily, quickly and safely arrange matters with the municipality. Bewoners kunnen bijvoorbeeld een verhuizing doorgeven of extra parkeertegoed kopen via DigiD. Bedrijven kunnen eenvoudig online zaken regelen via eHerkenning.",
   Unknown: "Unknown",
-    Message: "Message",
-    "Add another message to this case": "Add another message to this case",
-  "Marriage / Partnership":"Marriage / Partnership",
-  "Moving away":"Moving away",
-  "1st Registration":"1st Registration",
-  "Birth registration":"Birth registration",
+  Message: "Message",
+  "Add another message to this case": "Add another message to this case",
+  "Marriage / Partnership": "Marriage / Partnership",
+  "Moving away": "Moving away",
+  "1st Registration": "1st Registration",
+  "Birth registration": "Birth registration",
   "More Information": "More Information",
   "What steps can you expect": "What steps can you expect",
 
@@ -107,8 +107,8 @@ export const en = {
   "Are you moving to a different house? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
     "Are you moving to a different house? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.",
   //Moving  steps
-  "Choose your current addres.": "Choose your current addres.",
-  "Choose your new address.": "Choose your new address.",
+  "Choose your current addres": "Choose your current addres",
+  "Choose your new address": "Choose your new address",
   "And your set!": "And your set!",
   //Moving links
   "What is a zipcode?": "What is a zipcode?",

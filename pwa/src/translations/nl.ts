@@ -23,7 +23,7 @@ export const nl = {
   "My messages": "Mijn berichten",
   "Closed cases": "Gesloten zaken",
   "Unread messages": "Ongelezen berichten",
-  "Self services":"Zelf regelen",
+  "Self services": "Zelf regelen",
   "Read messages": "Gelezen berichten",
   Collaborator: "Medewerker",
   Initiator: "Initiatiefnemer",
@@ -78,10 +78,10 @@ export const nl = {
   Unknown: "Onbekend",
   Message: "Bericht",
   "Add another message to this case": "Voeg nog een bericht toe aan deze zaak",
-  "Marriage / Partnership":"Huwelijk / Partnerschap",
-  "Moving away":"Verhuizen",
-  "1st Registration":"1e Inschrijving",
-  "Birth registration":"Geboorte aangifte",
+  "Marriage / Partnership": "Huwelijk / Partnerschap",
+  "Moving away": "Verhuizen",
+  "1st Registration": "1e Inschrijving",
+  "Birth registration": "Geboorte aangifte",
   "More Information": "Meer Informatie",
   "What steps can you expect": "Welke stappen kun je verwachten",
 
@@ -105,8 +105,8 @@ export const nl = {
   "Are you moving to a different house? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
     "Gaat u verhuizen? Plan een datum en tijd. En doe de officiële melding bij de gemeente. Let op: hou je DigID bij de hand.",
   //Moving steps
-  "Choose your current addres.": "Kies je huidige adres.",
-  "Choose your new address.": "Kies je nieuwe adres.",
+  "Choose your current addres": "Kies je huidige adres",
+  "Choose your new address": "Kies je nieuwe adres",
   "And your set!": "Je bent nu klaar!",
   //Moving links
   "What is a zipcode?": "Wat is een Postcode?",

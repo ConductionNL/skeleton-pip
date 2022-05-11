@@ -70,8 +70,12 @@ export const StartServiceTemplate: React.FC<
         <div className={styles.info}>
           <Heading1>{t("More Information")}</Heading1>
           <ul>
-            {moreInformationLinks.map((description, link) => (
-              <li className={styles.listItem}>{t(`${description}`)}</li>
+            {moreInformationLinks.map((links) => (
+              <li className={styles.listItem}>
+                <div onClick={() => navigate(`${t(`${links.link}`)}`)}>
+                  <Link>{t(`${links.description}`)}</Link>
+                </div>
+              </li>
             ))}
           </ul>
         </div>
