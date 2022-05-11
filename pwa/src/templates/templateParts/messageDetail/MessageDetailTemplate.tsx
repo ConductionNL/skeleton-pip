@@ -34,7 +34,7 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
         metaIcons={[
           { icon: <StarterIcon />, label: t("Initiator"), value: "Gemeente" },
           { icon: <StaffIcon />, label: t("Collaborator"), value: "H. van de Ren" },
-          { icon: <SettingsIcon />, label: t("Source organization"), value: "252852369" },
+          { icon: <SettingsIcon />, label: t("Organization"), value: "252852369" },
           { icon: <CalendarIcon />, label: t("Registration date"), value: "26 April 2022" },
         ]}
       />
