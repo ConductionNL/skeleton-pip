@@ -54,3 +54,19 @@ App\Entity\CollectionEntity:
     testDataLocation: https://raw.githubusercontent.com/ConductionNL/contactmomenten_publiccode/main/data/contactmomenten.json
     loadTestData: true
     autoLoad: true
+
+  pdcCollection:
+    name: producten en diensten collection
+    sourceType: GitHub
+    locationOAS: https://raw.githubusercontent.com/ConductionNL/PDC_publiccode/main/PDC_OAS.json
+    testDataLocation: https://raw.githubusercontent.com/ConductionNL/PDC_publiccode/main/data/PDC.json
+    loadTestData: true
+    autoLoad: true
+
+  pubCollection:
+    name: Pub collection
+    sourceType: GitHub
+    locationOAS: https://raw.githubusercontent.com/ConductionNL/PUB_publiccode/main/PUB_OAS.json
+    testDataLocation: https://raw.githubusercontent.com/ConductionNL/PUB_publiccode/main/data/PUB.json
+    loadTestData: true
+    autoLoad: true

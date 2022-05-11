@@ -2,6 +2,8 @@ import axios, { AxiosInstance, AxiosResponse } from "axios";
 
 import Case from "./resources/case";
 import Message from "./resources/message";
+import Product from "./resources/product";
+import News from "./resources/news";
 
 import Login from "./services/login";
 
@@ -48,6 +50,14 @@ export default class APIService {
 
   public get Message(): Message {
     return new Message(this.apiClient);
+  }
+
+  public get Product(): Product {
+    return new Product(this.apiClient);
+  }
+
+  public get News(): News {
+    return new News(this.apiClient);
   }
 
   // Services
