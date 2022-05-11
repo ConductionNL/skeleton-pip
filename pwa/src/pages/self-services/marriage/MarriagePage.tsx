@@ -4,7 +4,7 @@ import {
   IMoreInformationLinks,
   IProcessSteps,
   StartServiceTemplate,
-} from "../../../templates/templateParts/startService/StartServiceTemplate";
+} from "../../../templates/templateParts/selfServices/startService/StartServiceTemplate";
 
 const MarriagePage: React.FC = () => {
   return (

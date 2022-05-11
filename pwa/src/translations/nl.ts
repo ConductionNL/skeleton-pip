@@ -84,6 +84,7 @@ export const nl = {
   "Birth registration": "Geboorte aangifte",
   "More Information": "Meer Informatie",
   "What steps can you expect": "Welke stappen kun je verwachten",
+  Back: "Terug",
 
   //Marriage desc
   "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":

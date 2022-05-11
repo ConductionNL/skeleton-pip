@@ -84,6 +84,7 @@ export const en = {
   "Birth registration": "Birth registration",
   "More Information": "More Information",
   "What steps can you expect": "What steps can you expect",
+  Back: "Back",
 
   //Marriage desc
   "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
