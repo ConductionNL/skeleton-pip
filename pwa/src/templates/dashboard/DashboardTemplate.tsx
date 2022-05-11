@@ -43,7 +43,12 @@ const Menu: React.FC = () => {
 
   const menuItems: MenuItem[] = [
     { label: t("Overview"), href: "/", current: pathname === "/", icon: <GridIcon /> },
-    { label: t("Self services"), href: "/self-services", current: pathname === "/self-services", icon: <ListIcon /> },
+    {
+      label: t("Self services"),
+      href: "/self-services",
+      current: pathname === "/self-services" || pathname.includes("self-services"),
+      icon: <ListIcon />,
+    },
     { label: t("My messages"), href: "/my-messages", current: pathname === "/my-messages", icon: <InboxIcon /> },
     {
       label: t("My cases"),
