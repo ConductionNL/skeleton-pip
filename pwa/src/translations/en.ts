@@ -81,23 +81,42 @@ export const en = {
   "More Information": "More Information",
   "What steps can you expect": "What steps can you expect",
 
-  //Marriage
-  "Choose between getting married or registered partnership.":
-    "Choose between getting married or registered partnership.",
-  "Choose a date and time for the meeting.": "Choose a date and time for the meeting.",
-  "Log in with DigID.": "Log in with DigID.",
-  "Your partner also logs in with DigID.": "Your partner also logs in with DigID.",
-  "Invite witnesses. Pay with IDEAL.": "Invite witnesses. Pay with IDEAL.",
-  "Your date is set!": "Your date is set!",
-
-  MarriageSub:
+  //Marriage desc
+  "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
     "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.",
+  //Marriage  steps
+  "Choose between getting married or registered partnership":
+    "Choose between getting married or registered partnership",
+  "Choose a date and time for the meeting": "Choose a date and time for the meeting",
+  "Log in with DigID": "Log in with DigID",
+  "Your partner also logs in with DigID": "Your partner also logs in with DigID",
+  "Invite witnesses": "Invite witnesses",
+  "Pay with IDEAL": "Pay with IDEAL",
+  "Your date is set!": "Your date is set!",
+  //Marriage links
+  "What are the differences between a marriage, a registered partnership and a cohabitation contract?":
+    "What are the differences between a marriage, a registered partnership and a cohabitation contract?",
+  "What is an emergency marriage and how can you arrange it?":
+    " What is an emergency marriage and how can you arrange it?",
+  //Marriage desc
+  "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
+    "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.",
+  //Marriage  steps
+  "Choose between getting married or registered partnership":
+    "Choose between getting married or registered partnership",
+  "Choose a date and time for the meeting": "Choose a date and time for the meeting",
+  "Log in with DigID": "Log in with DigID",
+  "Your partner also logs in with DigID": "Your partner also logs in with DigID",
+  "Invite witnesses": "Invite witnesses",
+  "Pay with IDEAL": "Pay with IDEAL",
+  "Your date is set!": "Your date is set!",
+  //Marriage links
+  "What are the differences between a marriage, a registered partnership and a cohabitation contract?":
+    "What are the differences between a marriage, a registered partnership and a cohabitation contract?",
+  "What is an emergency marriage and how can you arrange it?":
+    " What is an emergency marriage and how can you arrange it?",
   MovingSub:
     "Are you moving to a different house? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.",
-  MarriageProcess:
-    "Choose between getting married or registered partnership. Choose a date and time for the meeting. Log in with DigID. Your partner also logs in with DigID. Invite witnesses. Pay with IDEAL. Your date is set!",
   MovingProcess: "Choose your current addres. Choose your new address. Log in with DigID. and your set!",
-  MarriageInfo:
-    "What are the differences between a marriage, a registered partnership and a cohabitation contract? What is an emergency marriage and how can you arrange it?",
   MovingInfo: "What is a zipcode? What do I do when I settle in a different municipality? What is the meaning of life?",
 };

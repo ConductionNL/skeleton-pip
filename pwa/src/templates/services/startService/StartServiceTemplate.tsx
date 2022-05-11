@@ -19,20 +19,29 @@ export interface IProcessSteps {
   step: string;
 }
 
-interface MessagesTableProps {
+interface ProcessListProps {
   processSteps: IProcessSteps[];
 }
 
-export const StartServiceTemplate: React.FC<MessagesTableProps> = ({ processSteps }) => {
+export interface IMoreInformationLinks {
+  description: string;
+  link: string;
+}
+
+interface IMoreInformationListProps {
+  moreInformationLinks: IMoreInformationLinks[];
+}
+
+export const StartServiceTemplate: React.FC<ProcessListProps & IMoreInformationListProps> = ({
+  processSteps,
+  moreInformationLinks,
+}) => {
   const { t } = useTranslation();
   const bool = true;
   const title = bool ? "Mariage / Partnership" : "Moving";
   const subheader = bool ? "MarriageSub" : "MovingSub";
   const processExplanation = bool ? "MarriageProcess" : "MovingProcess";
   const moreInformation = bool ? "MarriageInfo" : "MovingInfo";
-
-  const moreInformationLinks = t(`${moreInformation}`).split("? ");
-  console.log(moreInformationLinks);
 
   return (
     <div className={styles.container}>
@@ -62,11 +71,14 @@ export const StartServiceTemplate: React.FC<MessagesTableProps> = ({ processStep
 
         <div className={styles.info}>
           <Heading1>{t("More Information")}</Heading1>
-          <Paragraph>{t(`${moreInformation}`)}</Paragraph>
           <ul>
-            {moreInformationLinks.map((moreInformationLink: string) => (
+            {moreInformationLinks.map((description, link) => (
               <li className={styles.listItem}>
-                <Link>{moreInformationLink}</Link>
+                <div onClick={() => navigate(link)}>
+                  <Link icon={<ArrowRightIcon />} iconAlign="end">
+                    {t(`${description}`)}
+                  </Link>
+                </div>
               </li>
             ))}
           </ul>
