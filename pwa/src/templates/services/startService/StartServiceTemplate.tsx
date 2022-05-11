@@ -14,6 +14,10 @@ import { ArrowRightIcon, ChevronRightIcon } from "@gemeente-denhaag/icons";
 // interface StartServicesProps {
 //   serviceProps: IStartServices[];
 // }
+interface StartServiceTemplateProps {
+  title: string;
+  description: string;
+}
 
 export interface IProcessSteps {
   step: string;
@@ -32,23 +36,17 @@ interface IMoreInformationListProps {
   moreInformationLinks: IMoreInformationLinks[];
 }
 
-export const StartServiceTemplate: React.FC<ProcessListProps & IMoreInformationListProps> = ({
-  processSteps,
-  moreInformationLinks,
-}) => {
+export const StartServiceTemplate: React.FC<
+  StartServiceTemplateProps & ProcessListProps & IMoreInformationListProps
+> = ({ processSteps, moreInformationLinks, title, description }) => {
   const { t } = useTranslation();
-  const bool = true;
-  const title = bool ? "Mariage / Partnership" : "Moving";
-  const subheader = bool ? "MarriageSub" : "MovingSub";
-  const processExplanation = bool ? "MarriageProcess" : "MovingProcess";
-  const moreInformation = bool ? "MarriageInfo" : "MovingInfo";
 
   return (
     <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.title}>
           <Heading1>{t(`${title}`)}</Heading1>
-          <Paragraph>{t(`${subheader}`)}</Paragraph>
+          <Paragraph>{t(`${description}`)}</Paragraph>
         </div>
 
         <Divider />
@@ -73,13 +71,7 @@ export const StartServiceTemplate: React.FC<ProcessListProps & IMoreInformationL
           <Heading1>{t("More Information")}</Heading1>
           <ul>
             {moreInformationLinks.map((description, link) => (
-              <li className={styles.listItem}>
-                <div onClick={() => navigate(link)}>
-                  <Link icon={<ArrowRightIcon />} iconAlign="end">
-                    {t(`${description}`)}
-                  </Link>
-                </div>
-              </li>
+              <li className={styles.listItem}>{t(`${description}`)}</li>
             ))}
           </ul>
         </div>

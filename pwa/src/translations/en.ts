@@ -98,25 +98,16 @@ export const en = {
     "What are the differences between a marriage, a registered partnership and a cohabitation contract?",
   "What is an emergency marriage and how can you arrange it?":
     " What is an emergency marriage and how can you arrange it?",
-  //Marriage desc
-  "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
-    "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.",
-  //Marriage  steps
-  "Choose between getting married or registered partnership":
-    "Choose between getting married or registered partnership",
-  "Choose a date and time for the meeting": "Choose a date and time for the meeting",
-  "Log in with DigID": "Log in with DigID",
-  "Your partner also logs in with DigID": "Your partner also logs in with DigID",
-  "Invite witnesses": "Invite witnesses",
-  "Pay with IDEAL": "Pay with IDEAL",
-  "Your date is set!": "Your date is set!",
-  //Marriage links
-  "What are the differences between a marriage, a registered partnership and a cohabitation contract?":
-    "What are the differences between a marriage, a registered partnership and a cohabitation contract?",
-  "What is an emergency marriage and how can you arrange it?":
-    " What is an emergency marriage and how can you arrange it?",
-  MovingSub:
+
+  //Moving desc
+  "Are you moving to a different house? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
     "Are you moving to a different house? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.",
-  MovingProcess: "Choose your current addres. Choose your new address. Log in with DigID. and your set!",
-  MovingInfo: "What is a zipcode? What do I do when I settle in a different municipality? What is the meaning of life?",
+  //Moving  steps
+  "Choose your current addres.": "Choose your current addres.",
+  "Choose your new address.": "Choose your new address.",
+  "And your set!": "And your set!",
+  //Moving links
+  "What is a zipcode?": "What is a zipcode?",
+  "What do I do when I settle in a different municipality?": " What do I do when I settle in a different municipality?",
+  "What is the meaning of life?": " What is the meaning of life?",
 };

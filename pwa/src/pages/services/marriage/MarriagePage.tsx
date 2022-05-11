@@ -1,11 +1,20 @@
 import * as React from "react";
 import { DashboardTemplate } from "../../../templates/dashboard/DashboardTemplate";
-import { IMoreInformationLinks, IProcessSteps, StartServiceTemplate } from "../../../templates/services/startService/StartServiceTemplate";
+import {
+  IMoreInformationLinks,
+  IProcessSteps,
+  StartServiceTemplate,
+} from "../../../templates/services/startService/StartServiceTemplate";
 
 const MarriagePage: React.FC = () => {
   return (
     <DashboardTemplate>
-      <StartServiceTemplate processSteps={ProcessSteps} />
+      <StartServiceTemplate
+        title="Mariage / Partnership"
+        description="Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand."
+        processSteps={ProcessSteps}
+        moreInformationLinks={moreInformation}
+      />
     </DashboardTemplate>
   );
 };
@@ -23,11 +32,11 @@ const ProcessSteps: IProcessSteps[] = [
 ];
 
 const moreInformation: IMoreInformationLinks[] = [
-  { description: "Choose between getting married or registered partnership", link: ""},
-  { description: "Choose a date and time for the meeting", link: ""},
-  { description: "Log in with DigID", link: ""},
-  { description: "Your partner also logs in with DigID", link: ""},
-  { description: "Invite witnesses", link: ""},
-  { description: "Pay with IDEAL", link: ""},
-  { description: "Your date is set!", link: ""},
+  { description: "Choose between getting married or registered partnership", link: "/services/marriage" },
+  { description: "Choose a date and time for the meeting", link: "/services/marriage" },
+  { description: "Log in with DigID", link: "/services/marriage" },
+  { description: "Your partner also logs in with DigID", link: "/services/marriage" },
+  { description: "Invite witnesses", link: "/services/marriage" },
+  { description: "Pay with IDEAL", link: "/services/marriage" },
+  { description: "Your date is set!", link: "/services/marriage" },
 ];

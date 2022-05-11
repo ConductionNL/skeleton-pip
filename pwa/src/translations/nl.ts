@@ -98,17 +98,15 @@ export const nl = {
   "What is an emergency marriage and how can you arrange it?": "Wat is een spoedhuwelijk en hoe kun je dat regelen?",
 
   //Moving desc
-  "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
+  "Are you moving to a different house? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
     "Gaat u verhuizen? Plan een datum en tijd. En doe de officiële melding bij de gemeente. Let op: hou je DigID bij de hand.",
   //Moving steps
-  "Choose between getting married or registered partnership": "Kies je huidige adres.",
-  "Choose a date and time for the meeting": "Kies je nieuwe adres.",
-  "Log in with DigID": "Log in met DigID",
-  "Your date is set!": "Je bent nu klaar!",
+  "Choose your current addres.": "Kies je huidige adres.",
+  "Choose your new address.": "Kies je nieuwe adres.",
+  "And your set!": "Je bent nu klaar!",
   //Moving links
-  "What are the differences between a marriage, a registered partnership and a cohabitation contract?":
-    "Wat is een Postcode?",
-  "What is an emergency marriage and how can you arrange it?": "Wat moet ik doen als ik naar een andere gemeente verhuis?",
-  "": "Wat is de betekenis van het leven?",
-
+  "What is a zipcode?": "Wat is een Postcode?",
+  "What do I do when I settle in a different municipality?":
+    "Wat moet ik doen als ik naar een andere gemeente verhuis?",
+  "What is the meaning of life?": "Wat is de betekenis van het leven?",
 };
