@@ -1,11 +1,13 @@
 import * as React from "react";
 import * as styles from "./MyAccountTemplate.module.css";
-import { Heading1, Heading3, Link, Button, Paragraph } from "@gemeente-denhaag/components-react";
-import { Table, TableBody, TableRow, TableCell, TableHead, TableHeader } from "@gemeente-denhaag/table";
-import { EditIcon } from "@gemeente-denhaag/icons";
+import { Heading1, Heading3, Link, Button, Paragraph, TextField } from "@gemeente-denhaag/components-react";
+import { Table, TableBody, TableRow, TableCell, TableHeader } from "@gemeente-denhaag/table";
+import { CheckCircleIcon, CloseIcon, EditIcon } from "@gemeente-denhaag/icons";
 import { useTranslation } from "react-i18next";
 
 export const MyAccountTemplate: React.FC = () => {
+  const [editEmail, setEditEmail] = React.useState<boolean>(false);
+  const [editTelephone, setEditTelephone] = React.useState<boolean>(false);
   const { t } = useTranslation();
 
   return (
@@ -19,20 +21,64 @@ export const MyAccountTemplate: React.FC = () => {
           <TableBody>
             <TableRow>
               <TableHeader className={styles.th}>{t("Email address")}</TableHeader>
-              <TableCell>john@doe.com</TableCell>
+
               <TableCell>
-                <Link icon={<EditIcon />} iconAlign="start">
-                  {t("Edit")}
-                </Link>
+                {editEmail ? (
+                  <TextField placeholder="Jons@gmail.com" defaultValue={"Jons@gmail.com"} />
+                ) : (
+                  "Jons@gmail.com"
+                )}
+              </TableCell>
+
+              <TableCell>
+                {editEmail ? (
+                  <div>
+                    <div onClick={() => setEditEmail(editEmail)}>
+                      <Link icon={<CheckCircleIcon />} iconAlign="start" className={styles.save}>
+                        {t("Save")}
+                      </Link>
+                    </div>
+                    <div onClick={() => setEditEmail(!editEmail)}>
+                      <Link icon={<CloseIcon />} iconAlign="start" className={styles.cancel}>
+                        {t("Cancel")}
+                      </Link>
+                    </div>
+                  </div>
+                ) : (
+                  <div className={styles.edit} onClick={() => setEditEmail(!editEmail)}>
+                    <Link icon={<EditIcon />} iconAlign="start">
+                      {t("Edit")}
+                    </Link>
+                  </div>
+                )}
               </TableCell>
             </TableRow>
             <TableRow>
               <TableHeader className={styles.th}>{t("Phone number")}</TableHeader>
-              <TableCell>06 000 000 00</TableCell>
               <TableCell>
-                <Link icon={<EditIcon />} iconAlign="start">
-                  {t("Edit")}
-                </Link>
+                {editTelephone ? <TextField placeholder="060 000 00" defaultValue={"060 000 00"} /> : "060 000 00"}
+              </TableCell>
+              <TableCell>
+                {editTelephone ? (
+                  <div>
+                    <div onClick={() => setEditTelephone(editTelephone)}>
+                      <Link icon={<CheckCircleIcon />} iconAlign="start" className={styles.save}>
+                        {t("Save")}
+                      </Link>
+                    </div>
+                    <div onClick={() => setEditTelephone(!editTelephone)}>
+                      <Link icon={<CloseIcon />} iconAlign="start" className={styles.cancel}>
+                        {t("Cancel")}
+                      </Link>
+                    </div>
+                  </div>
+                ) : (
+                  <div className={styles.edit} onClick={() => setEditTelephone(!editTelephone)}>
+                    <Link icon={<EditIcon />} iconAlign="start">
+                      {t("Edit")}
+                    </Link>
+                  </div>
+                )}
               </TableCell>
             </TableRow>
           </TableBody>

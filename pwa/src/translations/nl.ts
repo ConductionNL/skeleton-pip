@@ -41,6 +41,8 @@ export const nl = {
   "Email address": "E-mailadres",
   "Phone number": "Telefoonnummer",
   Edit: "Aanpassen",
+  Cancel:"Annuleren",
+  Save:"Opslaan",
   "Notifications and updates": "Notificaties en updates",
   "Case updates": "Updates over zaken",
   "News about my neighbourhood": "Nieuws over mijn wijk",

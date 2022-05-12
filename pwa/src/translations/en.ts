@@ -41,6 +41,8 @@ export const en = {
   "Email address": "Email address",
   "Phone number": "Phone number",
   Edit: "Edit",
+  Cancel:"Cancel",
+  Save:"Save",
   "Notifications and updates": "Notifications and updates",
   "Case updates": "Case updates",
   "News about my neighbourhood": "News about my neighbourhood",
