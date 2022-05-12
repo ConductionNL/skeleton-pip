@@ -63,7 +63,7 @@ export const en = {
   "Show all messages": "Show all messages",
   "View case": "View case",
   "Report incorrect registrations": "Report incorrect registrations",
-  "Report your move": "Report your move",
+  "Report relocation": "Report relocation",
   Date: "Date",
   Organisation: "Organisation",
   Read: "Read",

@@ -107,14 +107,14 @@ export const MyAccountTemplate: React.FC = () => {
               <TableCell>Gagelplein 5</TableCell>
               <TableCell>
                 <Link icon={<ArrowRightIcon />} iconAlign="start">
-                  {t("Report your move")}
+                  {t("Report relocation")}
                 </Link>
               </TableCell>
             </TableRow>
             <TableRow>
               <TableHeader className={styles.th}>{t("Postal code and city")}</TableHeader>
               <TableCell>2563 TT Den Haag</TableCell>
-              <TableCell></TableCell>
+              <TableCell />
             </TableRow>
             <TableRow>
               <TableHeader className={styles.th}>{t("Number of people on your address")}</TableHeader>

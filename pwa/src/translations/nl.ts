@@ -63,7 +63,7 @@ export const nl = {
   "Show all messages": "Bekijk alle berichten",
   "View case": "Bekijk zaak",
   "Report incorrect registrations": "Onjuiste inschrijvingen melden",
-  "Report your move": "Verhuizing doorgeven",
+  "Report relocation": "Verhuizing doorgeven",
   Date: "Datum",
   Organisation: "Organisatie",
   Read: "Gelezen",
