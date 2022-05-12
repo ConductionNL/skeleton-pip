@@ -86,10 +86,9 @@ export const nl = {
   "What steps can you expect": "Welke stappen kun je verwachten",
   Back: "Terug",
 
-  //Marriage desc
+  //Marriage translations
   "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
     "Gaat u trouwen of gaat u een geregistreerd partnerschap aan? Plan een datum en tijd. En doe de officiële melding bij de gemeente. Let op: hou je DigID bij de hand.",
-  //Marriage steps
   "Choose between getting married or registered partnership": "Kies tussen trouwen of geregistreerd partnerschap",
   "Choose a date and time for the meeting": "Kies een datum en tijd voor de bijeenkomst",
   "Log in with DigID": "Log in met DigID",
@@ -97,19 +96,16 @@ export const nl = {
   "Invite witnesses": "Nodig getuigen uit",
   "Pay with IDEAL": "Betaal met IDEAL",
   "Your date is set!": "Je datum is geregeld!",
-  //Marriage links
   "What are the differences between a marriage, a registered partnership and a cohabitation contract?":
     "Wat zijn de verschillen tussen een huwelijk, een geregistreerd partnerschap en een samenlevingscontract?",
   "What is an emergency marriage and how can you arrange it?": "Wat is een spoedhuwelijk en hoe kun je dat regelen?",
 
-  //Moving desc
+  //Moving translations
   "Are you moving to a different house? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
     "Gaat u verhuizen? Plan een datum en tijd. En doe de officiële melding bij de gemeente. Let op: hou je DigID bij de hand.",
-  //Moving steps
   "Choose your current addres": "Kies je huidige adres",
   "Choose your new address": "Kies je nieuwe adres",
   "And your set!": "Je bent nu klaar!",
-  //Moving links
   "What is a zipcode?": "Wat is een Postcode?",
   "What do I do when I settle in a different municipality?":
     "Wat moet ik doen als ik naar een andere gemeente verhuis?",

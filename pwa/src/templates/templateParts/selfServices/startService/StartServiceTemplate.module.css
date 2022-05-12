@@ -8,16 +8,8 @@
   margin-block-end: var(--nlportal-space-block-4xl);
 }
 
-.listItem {
-  margin-block-end: var(--nlportal-space-block-md);
-}
-
-.container > .process > {
+.process > {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.downloadCard:not(:last-child) {
-  margin-block-end: var(--nlportal-space-block-xl);
 }
