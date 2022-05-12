@@ -1,8 +1,8 @@
 import * as React from "react";
 import * as styles from "./MyAccountTemplate.module.css";
 import { Heading1, Heading3, Link, Button, Paragraph, TextField } from "@gemeente-denhaag/components-react";
-import { Table, TableBody, TableRow, TableCell, TableHeader } from "@gemeente-denhaag/table";
-import { CheckCircleIcon, CloseIcon, EditIcon } from "@gemeente-denhaag/icons";
+import { Table, TableBody, TableRow, TableCell, TableHeader, TableHead } from "@gemeente-denhaag/table";
+import { CheckCircleIcon, CloseIcon, EditIcon, ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { useTranslation } from "react-i18next";
 
 export const MyAccountTemplate: React.FC = () => {
@@ -151,38 +151,28 @@ export const MyAccountTemplate: React.FC = () => {
             <TableRow>
               <TableHeader className={styles.th}>Street</TableHeader>
               <TableCell>Gagelplein 5</TableCell>
+              <TableCell>
+                <Link icon={<ArrowRightIcon />} iconAlign="start">
+                  {t("Report relocation")}
+                </Link>
+              </TableCell>
             </TableRow>
             <TableRow>
               <TableHeader className={styles.th}>{t("Postal code and city")}</TableHeader>
-              <TableCell>2563TT Den Haag</TableCell>
+              <TableCell>2563 TT Den Haag</TableCell>
+              <TableCell />
             </TableRow>
-          </TableBody>
-        </Table>
-        <Paragraph>
-          {t(
-            "Have you recently moved and your address is no longer correct? You can request an address investigation with your municipility. This investigation can also be cancelled.",
-          )}
-        </Paragraph>
-        <Button>{t("Request research")}</Button>
-      </div>
-
-      <div className={styles.block}>
-        <Heading3>{t("Number of inhabitants address")}</Heading3>
-
-        <Table>
-          <TableBody>
             <TableRow>
               <TableHeader className={styles.th}>{t("Number of people on your address")}</TableHeader>
               <TableCell>3</TableCell>
+              <TableCell>
+                <Link icon={<ArrowRightIcon />} iconAlign="start">
+                  {t("Report incorrect registrations")}
+                </Link>
+              </TableCell>
             </TableRow>
           </TableBody>
         </Table>
-        <Paragraph>
-          {t(
-            "Is this not the number of people you expect? You can request an address investigation with your municipility. This investigation can also be cancelled.",
-          )}
-        </Paragraph>
-        <Button>{t("Request research")}</Button>
       </div>
     </div>
   );
