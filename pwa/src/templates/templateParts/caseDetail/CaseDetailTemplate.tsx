@@ -45,7 +45,7 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
   const _useCase = useCase(queryClient);
   const getCase = _useCase.getOne(caseId);
 
-  const _useMessage = useMessage();
+  const _useMessage = useMessage(queryClient);
   const getMessages = _useMessage.getAll();
 
   React.useEffect(() => {

@@ -12,7 +12,6 @@ import Skeleton from "react-loading-skeleton";
 import { Container } from "../../../components/container/Container";
 import { useMessage } from "../../../hooks/message";
 
-
 export const OverviewTemplate: React.FC = () => {
   const { t } = useTranslation();
 
@@ -25,10 +24,11 @@ export const OverviewTemplate: React.FC = () => {
   const [messages, setMessages] = React.useState<IMessageTableItem[]>([]);
 
   const queryClient = useQueryClient();
+
   const _useCase = useCase(queryClient);
   const getCases = _useCase.getAll();
 
-  const _useMessage = useMessage();
+  const _useMessage = useMessage(queryClient);
   const getMessages = _useMessage.getAll();
 
   React.useEffect(() => {
@@ -71,8 +71,6 @@ export const OverviewTemplate: React.FC = () => {
           <Card className={styles.card} title={t("1st Registration")} />
         </div>
       </div>
-
-
 
       <div className={styles.messages}>
         <div className={styles.messagesHeading}>
