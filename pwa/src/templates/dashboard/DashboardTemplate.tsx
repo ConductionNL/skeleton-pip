@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as styles from "./DashboardTemplate.module.css";
-import { GridIcon, InboxIcon, ArchiveIcon, UserIcon, ListIcon } from "@gemeente-denhaag/icons";
+import { GridIcon, InboxIcon, ArchiveIcon, UserIcon, ListIcon ,Breadcrumbs } from "@gemeente-denhaag/icons";
 import { Sidenav, SidenavItem, SidenavLink, SidenavList } from "@gemeente-denhaag/sidenav";
 import { Container } from "../../components/container/Container";
 import { PrivateRoute } from "../../components/privateRoute/privateRoute";
@@ -9,6 +9,12 @@ import { navigate } from "gatsby";
 import { useTranslation } from "react-i18next";
 
 export const DashboardTemplate: React.FC = ({ children }) => {
+  const gatsbyContext = React.useContext(GatsbyContext);
+
+  const {
+    breadcrumb: { crumbs },
+  } = gatsbyContext.pageContext;
+
   return (
     <PrivateRoute>
       <Container>
@@ -17,7 +23,10 @@ export const DashboardTemplate: React.FC = ({ children }) => {
             <Menu />
           </div>
 
-          <div className={styles.content}>{children}</div>
+          <div className={styles.content}>
+            <Breadcrumbs {...{ crumbs }} />
+            {children}
+          </div>
         </div>
       </Container>
     </PrivateRoute>
