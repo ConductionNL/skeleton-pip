@@ -14,7 +14,7 @@ export const en = {
   "Application date": "Application date",
   "Case number": "Case number",
   "Registration date": "Registration date",
-  "Source organization": "Source organization",
+  "Organization": "Organization",
   Username: "Username",
   Password: "Password",
   Send: "Send",
