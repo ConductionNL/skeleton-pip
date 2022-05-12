@@ -60,7 +60,7 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
       <Divider />
 
       <div onClick={() => navigate("/my-cases")}>
-        <Link icon={<ArrowRightIcon />} iconAlign="end">
+        <Link icon={<ArrowRightIcon />} iconAlign="start">
           {t("View the linked case")}
         </Link>
       </div>
