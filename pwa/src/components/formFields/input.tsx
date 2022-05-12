@@ -3,7 +3,12 @@ import { TextField } from "@gemeente-denhaag/components-react";
 import { ShowIcon, HideIcon } from "@gemeente-denhaag/icons";
 import { IFormFieldProps, IReactHookFormProps } from "./types";
 
-export const InputPassword: React.FC<IFormFieldProps & IReactHookFormProps > = ({ name, validation, register, errors }) => {
+export const InputPassword: React.FC<IFormFieldProps & IReactHookFormProps> = ({
+  name,
+  validation,
+  register,
+  errors,
+}) => {
   const [showPassword, setShowPassword] = React.useState<boolean>(false);
 
   return (
@@ -16,6 +21,18 @@ export const InputPassword: React.FC<IFormFieldProps & IReactHookFormProps > = (
   );
 };
 
-export const InputText: React.FC<IFormFieldProps & IReactHookFormProps> = ({ name, validation, register, errors }) => (
-  <TextField type="text" {...register(name, { ...validation })} invalid={errors[name]} />
-);
+export const InputText: React.FC<IFormFieldProps & IReactHookFormProps> = ({
+  name,
+  defaultValue,
+  validation,
+  register,
+  errors,
+}) => <TextField type="text" {...{ defaultValue }} {...register(name, { ...validation })} invalid={errors[name]} />;
+
+export const InputEmail: React.FC<IFormFieldProps & IReactHookFormProps> = ({
+  name,
+  defaultValue,
+  validation,
+  register,
+  errors,
+}) => <TextField type="email" {...{ defaultValue }} {...register(name, { ...validation })} invalid={errors[name]} />;

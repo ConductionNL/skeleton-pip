@@ -9,6 +9,14 @@ import { EditableTableRow } from "../../../components/editableTableRow/EditableT
 export const MyAccountTemplate: React.FC = () => {
   const { t } = useTranslation();
 
+  const handleSaveEmail = (value: string) => {
+    // add logic to API
+  };
+
+  const handleSavePhoneNumber = (value: string) => {
+    // add logic to API
+  };
+
   return (
     <div className={styles.container}>
       <Heading1 className={styles.heading}>{t("My account")}</Heading1>
@@ -18,8 +26,18 @@ export const MyAccountTemplate: React.FC = () => {
 
         <Table>
           <TableBody>
-            <EditableTableRow thead={t("Email address")} value="jane@doe.com" />
-            <EditableTableRow thead={t("Phone number")} value="060 000 00 00" />
+            <EditableTableRow
+              inputType="email"
+              handleSave={handleSaveEmail}
+              thead={t("Email address")}
+              value="jane@doe.com"
+            />
+            <EditableTableRow
+              inputType="text"
+              handleSave={handleSavePhoneNumber}
+              thead={t("Phone number")}
+              value="060 000 00 00"
+            />
           </TableBody>
         </Table>
       </div>

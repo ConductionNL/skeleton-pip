@@ -8,5 +8,5 @@ export interface IReactHookFormProps {
 
 export interface IFormFieldProps {
   name: string;
+  defaultValue?: string;
 }
-

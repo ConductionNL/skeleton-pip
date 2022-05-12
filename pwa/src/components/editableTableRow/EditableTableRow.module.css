@@ -14,3 +14,7 @@
 .editButtonsContainer > *:not(:last-child) {
   margin-inline-end: var(--nlportal-space-inline-md);
 }
+
+.submit {
+  all: unset;
+}
