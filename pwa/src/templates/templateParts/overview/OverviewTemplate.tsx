@@ -59,7 +59,7 @@ export const OverviewTemplate: React.FC = () => {
           <Heading3>{t("Self service")}</Heading3>
 
           <div onClick={() => navigate("/self-services")}>
-            <Link icon={<ArrowRightIcon />} iconAlign="end">
+            <Link icon={<ArrowRightIcon />} iconAlign="start">
               {t("Show all services")}
             </Link>
           </div>
@@ -79,7 +79,7 @@ export const OverviewTemplate: React.FC = () => {
           <Heading3>{t("My messages")}</Heading3>
 
           <div onClick={() => navigate("/my-messages")}>
-            <Link icon={<ArrowRightIcon />} iconAlign="end">
+            <Link icon={<ArrowRightIcon />} iconAlign="start">
               {t("Show all messages")}
             </Link>
           </div>
@@ -108,7 +108,7 @@ export const OverviewTemplate: React.FC = () => {
           <Heading3>{t("My cases")}</Heading3>
 
           <div onClick={() => navigate("/my-cases")}>
-            <Link icon={<ArrowRightIcon />} iconAlign="end">
+            <Link icon={<ArrowRightIcon />} iconAlign="start">
               {t("Show all cases")}
             </Link>
           </div>

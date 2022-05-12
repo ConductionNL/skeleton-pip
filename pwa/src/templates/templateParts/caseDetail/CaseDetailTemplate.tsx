@@ -121,7 +121,7 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
             <div className={styles.documentsHeader}>
               <Heading3>{t("Documents")}</Heading3>
 
-              <Link icon={<ArrowRightIcon />} iconAlign="end">
+              <Link icon={<ArrowRightIcon />} iconAlign="start">
                 {t("Show all documents")}
               </Link>
             </div>
@@ -144,7 +144,7 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
         <div className={styles.messagesHeading}>
           <Heading3>{t("Messages")}</Heading3>
           <div onClick={() => navigate("/my-messages")}>
-            <Link icon={<ArrowRightIcon />} iconAlign="end">
+            <Link icon={<ArrowRightIcon />} iconAlign="start">
               {t("Show all messages")}
             </Link>
           </div>
