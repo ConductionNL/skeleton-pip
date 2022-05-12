@@ -10,11 +10,11 @@ export const MyAccountTemplate: React.FC = () => {
   const { t } = useTranslation();
 
   const handleSaveEmail = (value: string) => {
-    // add logic to API
+    // Add logic to send new e-mail to gateawy
   };
 
   const handleSavePhoneNumber = (value: string) => {
-    // add logic to API
+    // Add logic to send new phone number to gateawy
   };
 
   return (
