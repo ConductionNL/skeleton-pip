@@ -18,3 +18,8 @@
 .submit {
   all: unset;
 }
+
+.edit{
+  display: flex;
+  justify-content: end;
+}
