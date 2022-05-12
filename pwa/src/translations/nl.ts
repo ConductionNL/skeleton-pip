@@ -14,7 +14,7 @@ export const nl = {
   "Application date": "Aanvraag datum",
   "Case number": "Zaaknummer",
   "Registration date": "Registratie datum",
-  "Source organization": "Bron organisatie",
+  "Organization": "Organisatie",
   Username: "Gebruikersnaam",
   Password: "Wachtwoord",
   Send: "Versturen",
