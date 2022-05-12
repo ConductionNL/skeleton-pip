@@ -1,23 +1,20 @@
 import * as React from "react";
-import * as styles from "./LoginTemplate.module.css";
+import * as styles from "./ProductsTemplate.module.css";
 import { Heading1 } from "@gemeente-denhaag/components-react";
 import { useTranslation } from "react-i18next";
-import { IProductTableItem, ProductsTable } from "../../../components/productsTable/ProductsTable";
-import { useQueryClient } from "react-query";
+import { IProductCardItem, ProductsCard } from "../../../components/productsCard/ProductsCard";
 import { useProduct } from "../../../hooks/product";
 
 export const ProductsTemplate: React.FC = () => {
   const { t } = useTranslation();
-  const [products, setProducts] = React.useState<IProductTableItem[]>([]);
+  const [products, setProducts] = React.useState<IProductCardItem[]>([]);
 
   const _useProducts = useProduct();
   const getProducts = _useProducts.getAll();
-  console.log(getProducts);
 
   React.useEffect(() => {
     if (!getProducts.isSuccess) return;
-    console.log(getProducts.data);
-    const _products: IProductTableItem[] = getProducts.data.map((product) => ({
+    const _products: IProductCardItem[] = getProducts.data.map((product) => ({
       title: product.title,
       date: product.date,
       id: product.id,
@@ -31,7 +28,7 @@ export const ProductsTemplate: React.FC = () => {
     <div className={styles.container}>
       <div>
         <Heading1>{t("Products")}</Heading1>
-        <ProductsTable products={products} />
+        <ProductsCard products={products} />
       </div>
     </div>
   );
