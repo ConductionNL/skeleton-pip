@@ -1,5 +1,7 @@
 :root {
-  --conduction-unauthenticated-header-logo-height: 100px;
+  --conduction-unauthenticated-header-logo-width: 200px;
   --conduction-footer-secondary-background-color: #edbf07;
   --conduction-footer-height: 115px;
+  --conduction-authenticated-logo-asset-path: url(../../assets/svgs/MijnDenHaag.svg);
+  --conduction-unauthenticated-logo-asset-path: url(../../assets/svgs/DenHaag.svg);
 }

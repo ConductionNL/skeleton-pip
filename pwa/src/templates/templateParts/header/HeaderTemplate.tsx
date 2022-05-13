@@ -1,9 +1,7 @@
 import * as React from "react";
 import * as styles from "./HeaderTemplate.module.css";
 import { Container } from "../../../components/container/Container";
-import { Link, navigate } from "gatsby";
-import MijnDenHaagLogo from "../../../assets/svgs/MijnDenHaag.svg";
-import DenHaagLogo from "../../../assets/svgs/DenHaag.svg";
+import { navigate } from "gatsby";
 import { useTranslation } from "react-i18next";
 import { Button } from "@gemeente-denhaag/components-react";
 import { getUsername } from "../../../services/auth";
@@ -12,6 +10,7 @@ import clsx from "clsx";
 import { ImageDivider } from "../../../components/imageDivider/imageDivider";
 import AuthenticatedDividerImage from "./../../../assets/images/AuthenticatedDivider.png";
 import UnauthenticatedDividerImage from "./../../../assets/images/UnauthenticatedHeaderDivider.png";
+import { AuthenticatedLogo, UnauthenticatedLogo } from "../../../components/logo/Logo";
 
 interface AuthenticatedHeaderTemplateProps {
   layoutClassName?: string;
@@ -24,9 +23,7 @@ export const AuthenticatedHeaderTemplate: React.FC<AuthenticatedHeaderTemplatePr
     <header className={clsx(styles.authenticatedContainer, [layoutClassName && layoutClassName])}>
       <Container>
         <div className={styles.authenticatedContent}>
-          <Link to="/">
-            <MijnDenHaagLogo className={styles.authenticatedLogo} />
-          </Link>
+          <AuthenticatedLogo href="/" layoutClassName={styles.authenticatedLogo} />
 
           <div className={styles.usermanagment}>
             <a className={styles.username}>{`${t("Welcome")} ${getUsername()}`}</a>
@@ -47,7 +44,7 @@ export const UnauthenticatedHeaderTemplate: React.FC = () => (
   <header className={styles.unauthenticatedContainer}>
     <Container>
       <div onClick={() => navigate("/")} className={styles.unauthenticatedContent}>
-        <DenHaagLogo className={styles.unauthenticatedLogo} />
+        <UnauthenticatedLogo href="/" layoutClassName={styles.unauthenticatedLogo} />
       </div>
     </Container>
     <ImageDivider image={UnauthenticatedDividerImage} layoutClassName={styles.unauthenticatedDivider} />
