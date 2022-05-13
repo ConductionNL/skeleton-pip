@@ -9,7 +9,6 @@ import { IMessageTableItem, MessagesTable } from "../../../components/messagesTa
 import { useQueryClient } from "react-query";
 import { useCase } from "../../../hooks/case";
 import Skeleton from "react-loading-skeleton";
-import { Container } from "../../../components/container/Container";
 import { useMessage } from "../../../hooks/message";
 
 export const OverviewTemplate: React.FC = () => {

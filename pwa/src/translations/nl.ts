@@ -81,6 +81,7 @@ export const nl = {
   "Moving away": "Verhuizen",
   "1st Registration": "1e Inschrijving",
   "Birth registration": "Geboorte aangifte",
+  Case: "Zaak",
   "More Information": "Meer Informatie",
   "What steps can you expect": "Welke stappen kun je verwachten",
   Back: "Terug",

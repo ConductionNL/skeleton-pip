@@ -7,8 +7,19 @@ import { PrivateRoute } from "../../components/privateRoute/privateRoute";
 import { GatsbyContext } from "../../context/gatsby";
 import { navigate } from "gatsby";
 import { useTranslation } from "react-i18next";
+import { Breadcrumbs } from "../../components/denhaag-wrappers/breadcrumbs/Breadcrumbs";
 
 export const DashboardTemplate: React.FC = ({ children }) => {
+  const { t } = useTranslation();
+
+  const {
+    pageContext: {
+      breadcrumb: { crumbs },
+    },
+  } = React.useContext(GatsbyContext);
+
+  const translatedCrumbs = crumbs.map((crumb: any) => ({ ...crumb, crumbLabel: t(crumb.crumbLabel) }));
+
   return (
     <PrivateRoute>
       <Container>
@@ -17,7 +28,10 @@ export const DashboardTemplate: React.FC = ({ children }) => {
             <Menu />
           </div>
 
-          <div className={styles.content}>{children}</div>
+          <div className={styles.content}>
+            <Breadcrumbs crumbs={translatedCrumbs} />
+            {children}
+          </div>
         </div>
       </Container>
     </PrivateRoute>

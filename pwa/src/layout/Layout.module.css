@@ -8,7 +8,5 @@
 }
 
 .pageContent {
-  min-height: calc(
-    100vh - var(--conduction-unauthenticated-header-logo-height)
-  );
+  min-height: 100vh;
 }

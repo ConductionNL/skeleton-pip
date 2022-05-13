@@ -81,6 +81,7 @@ export const en = {
   "Moving away": "Moving away",
   "1st Registration": "1st Registration",
   "Birth registration": "Birth registration",
+  Case: "Case",
   "More Information": "More Information",
   "What steps can you expect": "What steps can you expect",
   Back: "Back",
