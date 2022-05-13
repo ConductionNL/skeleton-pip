@@ -54,7 +54,7 @@ export const OverviewTemplate: React.FC = () => {
 
       <div className={styles.services}>
         <div className={styles.servicesHeading}>
-          <Heading3>{t("Self service")}</Heading3>
+          <Heading3>{t("Self services")}</Heading3>
 
           <div onClick={() => navigate("/self-services")}>
             <Link icon={<ArrowRightIcon />} iconAlign="start">
