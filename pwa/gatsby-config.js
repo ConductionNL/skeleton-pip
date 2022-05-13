@@ -4,7 +4,6 @@ require("dotenv").config({
 
 module.exports = {
   plugins: [
-    "gatsby-plugin-react-svg",
     {
       resolve: `gatsby-plugin-layout`,
       options: {
