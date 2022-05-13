@@ -12,6 +12,7 @@ import {
 } from "@gemeente-denhaag/icons";
 import { useTranslation } from "react-i18next";
 import { MetaIconGridTemplate } from "../metaIconGrid/MetaIconGridTemplate";
+import dateFormat from "dateformat";
 
 interface MessageDetailTemplateProps {
   messageId: string;
@@ -35,7 +36,7 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
           { icon: <StarterIcon />, label: t("Initiator"), value: "Gemeente" },
           { icon: <StaffIcon />, label: t("Collaborator"), value: "H. van de Ren" },
           { icon: <SettingsIcon />, label: t("Organization"), value: "252852369" },
-          { icon: <CalendarIcon />, label: t("Registration date"), value: "26 April 2022" },
+          { icon: <CalendarIcon />, label: t("Registration date"), value: dateFormat(new Date(), "dd-mm-yyyy") },
         ]}
       />
 

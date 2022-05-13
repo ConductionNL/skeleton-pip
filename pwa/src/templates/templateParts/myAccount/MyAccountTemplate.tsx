@@ -5,6 +5,7 @@ import { Table, TableBody, TableRow, TableCell, TableHeader } from "@gemeente-de
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { useTranslation } from "react-i18next";
 import { EditableTableRow } from "../../../components/editableTableRow/EditableTableRow";
+import dateFormat from "dateformat";
 
 export const MyAccountTemplate: React.FC = () => {
   const { t } = useTranslation();
@@ -86,7 +87,7 @@ export const MyAccountTemplate: React.FC = () => {
             </TableRow>
             <TableRow>
               <TableHeader className={styles.th}>{t("Date of birth")}</TableHeader>
-              <TableCell>6 juni 1967</TableCell>
+              <TableCell>{dateFormat(new Date(), "dd-mm-yyyy")}</TableCell>
             </TableRow>
             <TableRow>
               <TableHeader className={styles.th}>{t("Place of birth")}</TableHeader>
