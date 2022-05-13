@@ -22,12 +22,6 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
 
   return (
     <div className={styles.container}>
-      <div onClick={() => navigate("/my-messages")}>
-        <Link icon={<ChevronLeftIcon />} iconAlign="start">
-          {t("My messages")}
-        </Link>
-      </div>
-
       <Heading1>{t("Previous contact moment")}</Heading1>
 
       <MetaIconGridTemplate
