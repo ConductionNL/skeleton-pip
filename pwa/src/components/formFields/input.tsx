@@ -4,6 +4,7 @@ import { ShowIcon, HideIcon } from "@gemeente-denhaag/icons";
 import { IFormFieldProps, IReactHookFormProps } from "./types";
 
 export const InputPassword: React.FC<IFormFieldProps & IReactHookFormProps> = ({
+  disabled,
   name,
   validation,
   register,
@@ -14,6 +15,7 @@ export const InputPassword: React.FC<IFormFieldProps & IReactHookFormProps> = ({
   return (
     <TextField
       type={showPassword ? "text" : "password"}
+      {...{ disabled }}
       {...register(name, { ...validation })}
       invalid={errors[name]}
       icon={<span onClick={() => setShowPassword(!showPassword)}>{showPassword ? <HideIcon /> : <ShowIcon />}</span>}
@@ -22,17 +24,33 @@ export const InputPassword: React.FC<IFormFieldProps & IReactHookFormProps> = ({
 };
 
 export const InputText: React.FC<IFormFieldProps & IReactHookFormProps> = ({
+  disabled,
   name,
   defaultValue,
   validation,
   register,
   errors,
-}) => <TextField type="text" {...{ defaultValue }} {...register(name, { ...validation })} invalid={errors[name]} />;
+}) => (
+  <TextField
+    type="text"
+    {...{ defaultValue, disabled }}
+    {...register(name, { ...validation })}
+    invalid={errors[name]}
+  />
+);
 
 export const InputEmail: React.FC<IFormFieldProps & IReactHookFormProps> = ({
+  disabled,
   name,
   defaultValue,
   validation,
   register,
   errors,
-}) => <TextField type="email" {...{ defaultValue }} {...register(name, { ...validation })} invalid={errors[name]} />;
+}) => (
+  <TextField
+    type="email"
+    {...{ defaultValue, disabled }}
+    {...register(name, { ...validation })}
+    invalid={errors[name]}
+  />
+);

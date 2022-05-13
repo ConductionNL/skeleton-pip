@@ -39,13 +39,13 @@ export const LoginForm: React.FC = () => {
       <FormField>
         <FormFieldInput>
           <FormFieldLabel>{t("Username")}</FormFieldLabel>
-          <InputText {...{ register, errors }} name="username" validation={{ required: true }} />
+          <InputText {...{ register, errors }} name="username" validation={{ required: true }} disabled={loading} />
         </FormFieldInput>
       </FormField>
       <FormField>
         <FormFieldLabel>{t("Password")}</FormFieldLabel>
         <FormFieldInput>
-          <InputPassword {...{ register, errors }} name="password" validation={{ required: true }} />
+          <InputPassword {...{ register, errors }} name="password" validation={{ required: true }} disabled={loading} />
         </FormFieldInput>
       </FormField>
 
