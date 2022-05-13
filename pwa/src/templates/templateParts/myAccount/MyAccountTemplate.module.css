@@ -13,3 +13,8 @@
 .th {
   width: 35%;
 }
+
+.link {
+  display: flex;
+  justify-content: right;
+}

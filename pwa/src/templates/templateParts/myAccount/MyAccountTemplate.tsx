@@ -108,7 +108,7 @@ export const MyAccountTemplate: React.FC = () => {
             <TableRow>
               <TableHeader className={styles.th}>Street</TableHeader>
               <TableCell>Gagelplein 5</TableCell>
-              <TableCell>
+              <TableCell className={styles.link}>
                 <Link icon={<ArrowRightIcon />} iconAlign="start">
                   {t("Report relocation")}
                 </Link>
@@ -122,7 +122,7 @@ export const MyAccountTemplate: React.FC = () => {
             <TableRow>
               <TableHeader className={styles.th}>{t("Number of people on your address")}</TableHeader>
               <TableCell>3</TableCell>
-              <TableCell>
+              <TableCell className={styles.link}>
                 <Link icon={<ArrowRightIcon />} iconAlign="start">
                   {t("Report incorrect registrations")}
                 </Link>
