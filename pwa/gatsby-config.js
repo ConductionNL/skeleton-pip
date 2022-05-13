@@ -49,6 +49,14 @@ module.exports = {
             pathname: "/my-account",
             crumbLabel: "My account",
           },
+          {
+            pathname: "/self-services/marriage",
+            crumbLabel: "Marriage / Partnership",
+          },
+          {
+            pathname: "/self-services/moving",
+            crumbLabel: "Moving away",
+          },
         ],
       },
     },

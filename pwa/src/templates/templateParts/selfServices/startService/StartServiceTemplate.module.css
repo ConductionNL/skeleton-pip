@@ -13,3 +13,10 @@
   align-items: center;
   justify-content: space-between;
 }
+.bulletPoint > div > span {
+  display: list-item;
+  list-style-type: disc;
+}
+.listItem > button > div > span {
+  text-align: left;
+}

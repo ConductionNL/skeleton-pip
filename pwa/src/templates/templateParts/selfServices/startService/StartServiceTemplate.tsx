@@ -37,11 +37,6 @@ export const StartServiceTemplate: React.FC<StartServiceTemplateProps> = ({
 
   return (
     <div className={styles.container}>
-      <div onClick={() => navigate("/self-services")}>
-        <Link icon={<ArrowLeftIcon />} iconAlign="start">
-          {t("Back")}
-        </Link>
-      </div>
       <div className={styles.title}>
         <Heading1>{title}</Heading1>
         <Paragraph>{description}</Paragraph>
@@ -54,7 +49,7 @@ export const StartServiceTemplate: React.FC<StartServiceTemplateProps> = ({
 
         <List>
           {processSteps.map((step, idx) => (
-            <ListItem key={idx} primaryText={t(step)}></ListItem>
+            <ListItem className={styles.bulletPoint} key={idx} primaryText={t(step)}></ListItem>
           ))}
         </List>
         <div onClick={() => navigate("/self-services/form")}>
@@ -71,6 +66,7 @@ export const StartServiceTemplate: React.FC<StartServiceTemplateProps> = ({
         <List>
           {moreInformationLinks.map((links, idx) => (
             <ListItem
+              className={styles.listItem}
               key={idx}
               primaryText={t(links.label)}
               actionType="nav"
