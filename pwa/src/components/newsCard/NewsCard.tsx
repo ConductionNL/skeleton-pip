@@ -1,7 +1,6 @@
 import * as React from "react";
 import * as styles from "./NewsCard.module.css";
 import { Heading2, Paragraph } from "@gemeente-denhaag/components-react";
-import { useTranslation } from "react-i18next";
 
 export interface INewsCardItem {
   id: string;
@@ -16,13 +15,13 @@ interface NewsCardProps {
 }
 
 export const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
-  const { t } = useTranslation();
-
   return (
     <div>
       {news.map((_news) => (
-        <div className={styles.title}>
-          <Heading2>{_news.title}</Heading2>
+        <div className={styles.card}>
+          <div className={styles.title}>
+            <Heading2>{_news.title}</Heading2>
+          </div>
           <div
             className={styles.image}
             dangerouslySetInnerHTML={{

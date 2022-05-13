@@ -1,9 +1,9 @@
 import * as React from "react";
-import * as styles from "./NewsTemplate.module.css";
 import { Heading1 } from "@gemeente-denhaag/components-react";
 import { useTranslation } from "react-i18next";
 import { INewsCardItem, NewsCard } from "../../../components/newsCard/NewsCard";
 import { useNews } from "../../../hooks/news";
+import Skeleton from "react-loading-skeleton";
 
 export const NewsTemplate: React.FC = () => {
   const { t } = useTranslation();
@@ -24,13 +24,13 @@ export const NewsTemplate: React.FC = () => {
     }));
     setNews(_news);
   }, [getNews.isSuccess]);
+
   return (
     <div>
       <div>
         <Heading1>{t("News")}</Heading1>
-        <div >
-          <NewsCard news={news} />
-        </div>
+        {getNews.isLoading && <Skeleton height="100px" />}
+        <>{!getNews.isLoading && <NewsCard news={news} />}</>
       </div>
     </div>
   );

@@ -1,9 +1,9 @@
 import * as React from "react";
-import * as styles from "./ProductsTemplate.module.css";
 import { Heading1 } from "@gemeente-denhaag/components-react";
 import { useTranslation } from "react-i18next";
 import { IProductCardItem, ProductsCard } from "../../../components/productsCard/ProductsCard";
 import { useProduct } from "../../../hooks/product";
+import Skeleton from "react-loading-skeleton";
 
 export const ProductsTemplate: React.FC = () => {
   const { t } = useTranslation();
@@ -14,21 +14,22 @@ export const ProductsTemplate: React.FC = () => {
 
   React.useEffect(() => {
     if (!getProducts.isSuccess) return;
+
     const _products: IProductCardItem[] = getProducts.data.map((product) => ({
       title: product.title,
       date: product.date,
       id: product.id,
       content: product.content,
     }));
-
     setProducts(_products);
   }, [getProducts.isSuccess]);
 
   return (
-    <div className={styles.container}>
+    <div>
       <div>
         <Heading1>{t("Products")}</Heading1>
-        <ProductsCard products={products} />
+        {getProducts.isLoading && <Skeleton height="100px" />}
+        <>{!getProducts.isLoading && <ProductsCard products={products} />}</>
       </div>
     </div>
   );

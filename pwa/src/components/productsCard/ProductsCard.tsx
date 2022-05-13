@@ -1,7 +1,6 @@
 import * as React from "react";
 import * as styles from "./ProductsCard.module.css";
 import { Heading2, Paragraph } from "@gemeente-denhaag/components-react";
-import { useTranslation } from "react-i18next";
 
 export interface IProductCardItem {
   id: string;
@@ -14,13 +13,14 @@ interface ProductCardProps {
   products: IProductCardItem[];
 }
 export const ProductsCard: React.FC<ProductCardProps> = ({ products }) => {
-  const { t } = useTranslation();
 
   return (
     <div>
       {products.map((_products) => (
-        <div className={styles.title}>
-          <Heading2>{_products.title}</Heading2>
+        <div className={styles.card}>
+          <div className={styles.title}>
+            <Heading2>{_products.title}</Heading2>
+          </div>
           <Paragraph>
             <div
               dangerouslySetInnerHTML={{
