@@ -62,12 +62,6 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
 
   return (
     <div className={styles.container}>
-      <div onClick={() => navigate("/my-cases")}>
-        <Link icon={<ChevronLeftIcon />} iconAlign="start">
-          {t("My cases")}
-        </Link>
-      </div>
-
       {!getCase.isLoading && (
         <>
           <Heading1>{getCase.data.omschrijving}</Heading1>
