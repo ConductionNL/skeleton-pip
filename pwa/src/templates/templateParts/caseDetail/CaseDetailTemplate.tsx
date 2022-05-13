@@ -2,9 +2,9 @@ import * as React from "react";
 import * as styles from "./CaseDetailTemplate.module.css";
 import {
   Divider,
+  Heading1,
   Heading2,
   Heading3,
-  Heading4,
   Link,
   Tab,
   TabContext,
@@ -70,7 +70,7 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
 
       {!getCase.isLoading && (
         <>
-          <Heading2>{getCase.data.omschrijving}</Heading2>
+          <Heading1>{getCase.data.omschrijving}</Heading1>
 
           <MetaIconGridTemplate
             metaIcons={[
@@ -88,7 +88,7 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
           <Divider />
 
           <div className={styles.status}>
-            <Heading3>{t("Current status")}</Heading3>
+            <Heading2>{t("Current status")}</Heading2>
 
             <StatusSteps
               steps={[
@@ -119,9 +119,9 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
 
           <div className={styles.documents}>
             <div className={styles.documentsHeader}>
-              <Heading3>{t("Documents")}</Heading3>
+              <Heading2>{t("Documents")}</Heading2>
 
-              <Link icon={<ArrowRightIcon />} iconAlign="end">
+              <Link icon={<ArrowRightIcon />} iconAlign="start">
                 {t("Show all documents")}
               </Link>
             </div>
@@ -142,9 +142,9 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
 
       <div className={styles.messages}>
         <div className={styles.messagesHeading}>
-          <Heading3>{t("Messages")}</Heading3>
+          <Heading2>{t("Messages")}</Heading2>
           <div onClick={() => navigate("/my-messages")}>
-            <Link icon={<ArrowRightIcon />} iconAlign="end">
+            <Link icon={<ArrowRightIcon />} iconAlign="start">
               {t("Show all messages")}
             </Link>
           </div>
@@ -169,7 +169,7 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
       </div>
       <div className={styles.messages}>
         <div className={styles.messagesHeading}>
-          <Heading4>{t("Add another message to this case")}</Heading4>
+          <Heading3>{t("Add another message to this case")}</Heading3>
         </div>
 
         <MessageForm />

@@ -1,12 +1,21 @@
 import * as React from "react";
 import * as styles from "./MyAccountTemplate.module.css";
-import { Heading1, Heading3, Link, Button, Paragraph } from "@gemeente-denhaag/components-react";
-import { Table, TableBody, TableRow, TableCell, TableHead, TableHeader } from "@gemeente-denhaag/table";
-import { EditIcon } from "@gemeente-denhaag/icons";
+import { Heading1, Heading3, Link } from "@gemeente-denhaag/components-react";
+import { Table, TableBody, TableRow, TableCell, TableHeader } from "@gemeente-denhaag/table";
+import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { useTranslation } from "react-i18next";
+import { EditableTableRow } from "../../../components/editableTableRow/EditableTableRow";
 
 export const MyAccountTemplate: React.FC = () => {
   const { t } = useTranslation();
+
+  const handleSaveEmail = (value: string) => {
+    // Add logic to send new e-mail to gateawy
+  };
+
+  const handleSavePhoneNumber = (value: string) => {
+    // Add logic to send new phone number to gateawy
+  };
 
   return (
     <div className={styles.container}>
@@ -17,24 +26,18 @@ export const MyAccountTemplate: React.FC = () => {
 
         <Table>
           <TableBody>
-            <TableRow>
-              <TableHeader className={styles.th}>{t("Email address")}</TableHeader>
-              <TableCell>john@doe.com</TableCell>
-              <TableCell>
-                <Link icon={<EditIcon />} iconAlign="start">
-                  {t("Edit")}
-                </Link>
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableHeader className={styles.th}>{t("Phone number")}</TableHeader>
-              <TableCell>06 000 000 00</TableCell>
-              <TableCell>
-                <Link icon={<EditIcon />} iconAlign="start">
-                  {t("Edit")}
-                </Link>
-              </TableCell>
-            </TableRow>
+            <EditableTableRow
+              inputType="email"
+              handleSave={handleSaveEmail}
+              thead={t("Email address")}
+              value="jane@doe.com"
+            />
+            <EditableTableRow
+              inputType="text"
+              handleSave={handleSavePhoneNumber}
+              thead={t("Phone number")}
+              value="060 000 00 00"
+            />
           </TableBody>
         </Table>
       </div>
@@ -105,38 +108,28 @@ export const MyAccountTemplate: React.FC = () => {
             <TableRow>
               <TableHeader className={styles.th}>Street</TableHeader>
               <TableCell>Gagelplein 5</TableCell>
+              <TableCell>
+                <Link icon={<ArrowRightIcon />} iconAlign="start">
+                  {t("Report relocation")}
+                </Link>
+              </TableCell>
             </TableRow>
             <TableRow>
               <TableHeader className={styles.th}>{t("Postal code and city")}</TableHeader>
-              <TableCell>2563TT Den Haag</TableCell>
+              <TableCell>2563 TT Den Haag</TableCell>
+              <TableCell />
             </TableRow>
-          </TableBody>
-        </Table>
-        <Paragraph>
-          {t(
-            "Have you recently moved and your address is no longer correct? You can request an address investigation with your municipility. This investigation can also be cancelled.",
-          )}
-        </Paragraph>
-        <Button>{t("Request research")}</Button>
-      </div>
-
-      <div className={styles.block}>
-        <Heading3>{t("Number of inhabitants address")}</Heading3>
-
-        <Table>
-          <TableBody>
             <TableRow>
               <TableHeader className={styles.th}>{t("Number of people on your address")}</TableHeader>
               <TableCell>3</TableCell>
+              <TableCell>
+                <Link icon={<ArrowRightIcon />} iconAlign="start">
+                  {t("Report incorrect registrations")}
+                </Link>
+              </TableCell>
             </TableRow>
           </TableBody>
         </Table>
-        <Paragraph>
-          {t(
-            "Is this not the number of people you expect? You can request an address investigation with your municipility. This investigation can also be cancelled.",
-          )}
-        </Paragraph>
-        <Button>{t("Request research")}</Button>
       </div>
     </div>
   );
