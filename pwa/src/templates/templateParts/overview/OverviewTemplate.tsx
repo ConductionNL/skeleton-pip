@@ -9,9 +9,7 @@ import { IMessageTableItem, MessagesTable } from "../../../components/messagesTa
 import { useQueryClient } from "react-query";
 import { useCase } from "../../../hooks/case";
 import Skeleton from "react-loading-skeleton";
-import { Container } from "../../../components/container/Container";
 import { useMessage } from "../../../hooks/message";
-
 
 export const OverviewTemplate: React.FC = () => {
   const { t } = useTranslation();
@@ -59,7 +57,7 @@ export const OverviewTemplate: React.FC = () => {
           <Heading3>{t("Self service")}</Heading3>
 
           <div onClick={() => navigate("/self-services")}>
-            <Link icon={<ArrowRightIcon />} iconAlign="end">
+            <Link icon={<ArrowRightIcon />} iconAlign="start">
               {t("Show all services")}
             </Link>
           </div>
@@ -79,7 +77,7 @@ export const OverviewTemplate: React.FC = () => {
           <Heading3>{t("My messages")}</Heading3>
 
           <div onClick={() => navigate("/my-messages")}>
-            <Link icon={<ArrowRightIcon />} iconAlign="end">
+            <Link icon={<ArrowRightIcon />} iconAlign="start">
               {t("Show all messages")}
             </Link>
           </div>
@@ -108,7 +106,7 @@ export const OverviewTemplate: React.FC = () => {
           <Heading3>{t("My cases")}</Heading3>
 
           <div onClick={() => navigate("/my-cases")}>
-            <Link icon={<ArrowRightIcon />} iconAlign="end">
+            <Link icon={<ArrowRightIcon />} iconAlign="start">
               {t("Show all cases")}
             </Link>
           </div>

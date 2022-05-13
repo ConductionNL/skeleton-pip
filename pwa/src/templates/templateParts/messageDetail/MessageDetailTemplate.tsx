@@ -12,22 +12,17 @@ import {
 } from "@gemeente-denhaag/icons";
 import { useTranslation } from "react-i18next";
 import { MetaIconGridTemplate } from "../metaIconGrid/MetaIconGridTemplate";
+import { translateDate } from "../../../services/dateFormat";
 
 interface MessageDetailTemplateProps {
   messageId: string;
 }
 
 export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ messageId }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <div className={styles.container}>
-      <div onClick={() => navigate("/my-messages")}>
-        <Link icon={<ChevronLeftIcon />} iconAlign="start">
-          {t("My messages")}
-        </Link>
-      </div>
-
       <Heading1>{t("Previous contact moment")}</Heading1>
 
       <MetaIconGridTemplate
@@ -35,7 +30,7 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
           { icon: <StarterIcon />, label: t("Initiator"), value: "Gemeente" },
           { icon: <StaffIcon />, label: t("Collaborator"), value: "H. van de Ren" },
           { icon: <SettingsIcon />, label: t("Organization"), value: "252852369" },
-          { icon: <CalendarIcon />, label: t("Registration date"), value: "26 April 2022" },
+          { icon: <CalendarIcon />, label: t("Registration date"), value: translateDate(i18n.language, new Date()) },
         ]}
       />
 
@@ -60,7 +55,7 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
       <Divider />
 
       <div onClick={() => navigate("/my-cases")}>
-        <Link icon={<ArrowRightIcon />} iconAlign="end">
+        <Link icon={<ArrowRightIcon />} iconAlign="start">
           {t("View the linked case")}
         </Link>
       </div>

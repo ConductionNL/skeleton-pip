@@ -1,4 +1,4 @@
-import { InputText, InputPassword } from "./input";
+import { InputText, InputPassword, InputEmail } from "./input";
 import { Textarea } from "./textarea";
 
-export { InputText, InputPassword, Textarea };
+export { InputText, InputPassword, InputEmail, Textarea };
