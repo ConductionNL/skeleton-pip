@@ -81,4 +81,5 @@ export const nl = {
   "Moving away": "Verhuizen",
   "1st Registration": "1e Inschrijving",
   "Birth registration": "Geboorte aangifte",
+  Case: "Zaak",
 };
