@@ -19,7 +19,7 @@
   all: unset;
 }
 
-.edit{
+.editButton {
   display: flex;
   justify-content: end;
 }

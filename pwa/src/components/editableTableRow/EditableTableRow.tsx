@@ -52,7 +52,7 @@ const RegularTableRow: React.FC<SpecificRowsProps> = ({ value, setEditing }) => 
       <TableCell>{value}</TableCell>
 
       <TableCell>
-        <div className={styles.edit} onClick={() => setEditing(true)}>
+        <div className={styles.editButton} onClick={() => setEditing(true)}>
           <Link icon={<EditIcon />} iconAlign="start">
             {t("Edit")}
           </Link>
