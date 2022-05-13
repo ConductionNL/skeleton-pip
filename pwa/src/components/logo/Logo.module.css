@@ -7,9 +7,9 @@
 }
 
 .authenticatedLogo {
-  background-image: var(--conduction-authenticated-logo-asset-path);
+  background-image: var(--conduction-authenticated-logo-background);
 }
 
 .unauthenticatedLogo {
-  background-image: var(--conduction-unauthenticated-logo-asset-path);
+  background-image: var(--conduction-unauthenticated-logo-background);
 }
