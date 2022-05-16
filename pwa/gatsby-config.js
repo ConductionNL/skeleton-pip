@@ -49,6 +49,14 @@ module.exports = {
             pathname: "/my-account",
             crumbLabel: "My account",
           },
+          {
+            pathname: "/products",
+            crumbLabel: "Products",
+          },
+          {
+            pathname: "/news",
+            crumbLabel: "News",
+          },
         ],
       },
     },

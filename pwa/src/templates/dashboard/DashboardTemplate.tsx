@@ -66,8 +66,8 @@ const Menu: React.FC = () => {
       icon: <ArchiveIcon />,
     },
     { label: t("My account"), href: "/my-account", current: pathname === "/my-account", icon: <UserIcon /> },
-    { label: t("Producten"), href: "/products", current: pathname === "/products", icon: <CoronaIcon /> },
-    { label: t("Nieuws"), href: "/news", current: pathname === "/news", icon: <MessageIcon /> },
+    { label: t("Products"), href: "/products", current: pathname === "/products", icon: <CoronaIcon /> },
+    { label: t("News"), href: "/news", current: pathname === "/news", icon: <MessageIcon /> },
   ];
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string): void => {
