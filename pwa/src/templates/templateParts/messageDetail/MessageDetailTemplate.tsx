@@ -1,17 +1,14 @@
 import * as React from "react";
 import * as styles from "./MessageDetailTemplate.module.css";
-import { Divider, Heading1, Link, Paragraph } from "@gemeente-denhaag/components-react";
+import { Divider, Heading3, Link, Paragraph, TabContext, TabPanel, Tabs } from "@gemeente-denhaag/components-react";
 import { navigate } from "gatsby";
-import {
-  ArrowRightIcon,
-  CalendarIcon,
-  ChevronLeftIcon,
-  SettingsIcon,
-  StaffIcon,
-  StarterIcon,
-} from "@gemeente-denhaag/icons";
+import { CalendarIcon, ChevronLeftIcon, SettingsIcon, StaffIcon, StarterIcon } from "@gemeente-denhaag/icons";
 import { useTranslation } from "react-i18next";
 import { MetaIconGridTemplate } from "../metaIconGrid/MetaIconGridTemplate";
+import { CasesTable } from "../../../components/casesTable/CasesTable";
+import { useQueryClient } from "react-query";
+import { useCase } from "../../../hooks/case";
+import Skeleton from "react-loading-skeleton";
 
 interface MessageDetailTemplateProps {
   messageId: string;
@@ -19,6 +16,19 @@ interface MessageDetailTemplateProps {
 
 export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ messageId }) => {
   const { t } = useTranslation();
+  const [currentCasesTab, setCurrentCasesTab] = React.useState<number>(0);
+  const [linkedCases, setLinkedCases] = React.useState<any[]>([]);
+
+  const queryClient = useQueryClient();
+
+  const _useCase = useCase(queryClient);
+  const getCases = _useCase.getAll();
+
+  React.useEffect(() => {
+    if (!getCases.isSuccess) return;
+
+    setLinkedCases(getCases.data.filter((_case) => _case.archiefstatus === "nog_te_archiveren"));
+  }, [getCases.isSuccess]);
 
   return (
     <div className={styles.container}>
@@ -27,8 +37,6 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
           {t("My messages")}
         </Link>
       </div>
-
-      <Heading1>{t("Previous contact moment")}</Heading1>
 
       <MetaIconGridTemplate
         metaIcons={[
@@ -57,13 +65,18 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
         parturient montes, nascetur ridiculus mus.
       </Paragraph>
 
-      <Divider />
+      <TabContext value={currentCasesTab.toString()}>
+        <Tabs
+          value={currentCasesTab}
+          onChange={(_, newValue: number) => {
+            setCurrentCasesTab(newValue);
+          }}
+        ></Tabs>
+        <Heading3>{t("The linked cases")}</Heading3>
+        {getCases.isLoading && <Skeleton height="100px" />}
 
-      <div onClick={() => navigate("/my-cases")}>
-        <Link icon={<ArrowRightIcon />} iconAlign="start">
-          {t("View the linked case")}
-        </Link>
-      </div>
+        <TabPanel value="0">{!getCases.isLoading && <CasesTable cases={linkedCases} />}</TabPanel>
+      </TabContext>
     </div>
   );
 };
