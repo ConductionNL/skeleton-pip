@@ -21,9 +21,9 @@ const MarriageTemplate: React.FC = () => {
   const moreInformationLinks: IMoreInformationLink[] = [
     {
       label: t("What are the differences between a marriage, a registered partnership and a cohabitation contract?"),
-      href: "/self-services/marriage",
+      href: "#",
     },
-    { label: t("What is an emergency marriage and how can you arrange it?"), href: "/self-services/marriage" },
+    { label: t("What is an emergency marriage and how can you arrange it?"), href: "#" },
   ];
 
   return (
