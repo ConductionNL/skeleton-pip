@@ -57,15 +57,15 @@ const Menu: React.FC = () => {
 
   const menuItems: MenuItem[] = [
     { label: t("Overview"), href: "/", current: pathname === "/", icon: <GridIcon /> },
-    { label: t("Self services"), href: "/self-services", current: pathname === "/self-services", icon: <ListIcon /> },
-    { label: t("My messages"), href: "/my-messages", current: pathname === "/my-messages", icon: <InboxIcon /> },
     {
-      label: t("My cases"),
-      href: "/my-cases",
-      current: pathname === "/my-cases" || pathname.includes("my-cases"),
-      icon: <ArchiveIcon />,
+      label: t("Self services"),
+      href: "/self-services",
+      current: pathname.includes("self-services"),
+      icon: <ListIcon />,
     },
-    { label: t("My account"), href: "/my-account", current: pathname === "/my-account", icon: <UserIcon /> },
+    { label: t("My messages"), href: "/my-messages", current: pathname.includes("my-messages"), icon: <InboxIcon /> },
+    { label: t("My cases"), href: "/my-cases", current: pathname.includes("my-cases"), icon: <ArchiveIcon /> },
+    { label: t("My account"), href: "/my-account", current: pathname.includes("my-account"), icon: <UserIcon /> },
   ];
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string): void => {

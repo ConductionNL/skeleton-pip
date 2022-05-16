@@ -82,4 +82,32 @@ export const en = {
   "1st Registration": "1st Registration",
   "Birth registration": "Birth registration",
   Case: "Case",
+  "More Information": "More Information",
+  "What steps can you expect": "What steps can you expect",
+  Back: "Back",
+
+  //Marriage translations
+  "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
+    "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.",
+  "Choose between getting married or registered partnership":
+    "Choose between getting married or registered partnership",
+  "Choose a date and time for the meeting": "Choose a date and time for the meeting",
+  "Log in with DigID": "Log in with DigID",
+  "Your partner also logs in with DigID": "Your partner also logs in with DigID",
+  "Invite witnesses": "Invite witnesses",
+  "Pay with IDEAL": "Pay with IDEAL",
+  "Your date is set!": "Your date is set!",
+  "What are the differences between a marriage, a registered partnership and a cohabitation contract?":
+    "What are the differences between a marriage, a registered partnership and a cohabitation contract?",
+  "What is an emergency marriage and how can you arrange it?":
+    " What is an emergency marriage and how can you arrange it?",
+
+  //Moving translations
+  "Are you moving to a different house? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
+    "Are you moving to a different house? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.",
+  "Choose your current addres": "Choose your current addres",
+  "Choose your new address": "Choose your new address",
+  "And your set!": "And your set!",
+  "What is a zipcode?": "What is a zipcode?",
+  "What do I do when I settle in a different municipality?": " What do I do when I settle in a different municipality?",
 };
