@@ -57,6 +57,14 @@ module.exports = {
             pathname: "/news",
             crumbLabel: "News",
           },
+          {            
+            pathname: "/self-services/marriage",
+            crumbLabel: "Marriage / Partnership",
+          },
+          {
+            pathname: "/self-services/moving",
+            crumbLabel: "Moving away",
+          },
         ],
       },
     },

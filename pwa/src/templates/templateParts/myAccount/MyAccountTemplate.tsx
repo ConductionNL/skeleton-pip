@@ -6,6 +6,7 @@ import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { useTranslation } from "react-i18next";
 import { EditableTableRow } from "../../../components/editableTableRow/EditableTableRow";
 import dateFormat from "dateformat";
+import { navigate } from "gatsby";
 
 export const MyAccountTemplate: React.FC = () => {
   const { t } = useTranslation();
@@ -110,9 +111,11 @@ export const MyAccountTemplate: React.FC = () => {
               <TableHeader className={styles.th}>Street</TableHeader>
               <TableCell>Gagelplein 5</TableCell>
               <TableCell className={styles.link}>
-                <Link icon={<ArrowRightIcon />} iconAlign="start">
-                  {t("Report relocation")}
-                </Link>
+                <div onClick={() => navigate("/self-services/moving")}>
+                  <Link icon={<ArrowRightIcon />} iconAlign="start">
+                    {t("Report relocation")}
+                  </Link>
+                </div>
               </TableCell>
             </TableRow>
             <TableRow>
