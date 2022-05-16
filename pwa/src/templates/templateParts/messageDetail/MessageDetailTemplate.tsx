@@ -1,6 +1,15 @@
 import * as React from "react";
 import * as styles from "./MessageDetailTemplate.module.css";
-import { Divider, Heading3, Link, Paragraph, TabContext, TabPanel, Tabs } from "@gemeente-denhaag/components-react";
+import {
+  Divider,
+  Heading3,
+  Link,
+  Paragraph,
+  Tab,
+  TabContext,
+  TabPanel,
+  Tabs,
+} from "@gemeente-denhaag/components-react";
 import { navigate } from "gatsby";
 import { CalendarIcon, ChevronLeftIcon, SettingsIcon, StaffIcon, StarterIcon } from "@gemeente-denhaag/icons";
 import { useTranslation } from "react-i18next";
@@ -17,7 +26,8 @@ interface MessageDetailTemplateProps {
 export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ messageId }) => {
   const { t } = useTranslation();
   const [currentCasesTab, setCurrentCasesTab] = React.useState<number>(0);
-  const [linkedCases, setLinkedCases] = React.useState<any[]>([]);
+  const [currentCases, setCurrentCases] = React.useState<any[]>([]);
+  const [closedCases, setClosedCases] = React.useState<any[]>([]);
 
   const queryClient = useQueryClient();
 
@@ -27,7 +37,8 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
   React.useEffect(() => {
     if (!getCases.isSuccess) return;
 
-    setLinkedCases(getCases.data.filter((_case) => _case.archiefstatus === "nog_te_archiveren"));
+    setCurrentCases(getCases.data.filter((_case) => _case.archiefstatus === "nog_te_archiveren"));
+    setClosedCases(getCases.data.filter((_case) => _case.archiefstatus !== "nog_te_archiveren"));
   }, [getCases.isSuccess]);
 
   return (
@@ -65,17 +76,24 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
         parturient montes, nascetur ridiculus mus.
       </Paragraph>
 
+      <Divider />
+
       <TabContext value={currentCasesTab.toString()}>
+        <Heading3>{t("The linked cases")}</Heading3>
         <Tabs
           value={currentCasesTab}
           onChange={(_, newValue: number) => {
             setCurrentCasesTab(newValue);
           }}
-        ></Tabs>
-        <Heading3>{t("The linked cases")}</Heading3>
+        >
+          <Tab label={t("Current cases")} value={0} />
+          <Tab label={t("Closed cases")} value={1} />
+        </Tabs>
+
         {getCases.isLoading && <Skeleton height="100px" />}
 
-        <TabPanel value="0">{!getCases.isLoading && <CasesTable cases={linkedCases} />}</TabPanel>
+        <TabPanel value="0">{!getCases.isLoading && <CasesTable cases={currentCases} />}</TabPanel>
+        <TabPanel value="1">{!getCases.isLoading && <CasesTable cases={closedCases} />}</TabPanel>
       </TabContext>
     </div>
   );
