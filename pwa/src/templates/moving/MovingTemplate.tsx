@@ -18,10 +18,9 @@ const MovingTemplate: React.FC = () => {
   const moreInformationLinks: IMoreInformationLink[] = [
     {
       label: t("What is a zipcode?"),
-      href: "/self-services/moving",
+      href: "#",
     },
-    { label: t("What do I do when I settle in a different municipality?"), href: "/self-services/moving" },
-    { label: t("What is the meaning of life?"), href: "https://en.wikipedia.org/wiki/42_(number)" },
+    { label: t("What do I do when I settle in a different municipality?"), href: "#" },
   ];
 
   return (

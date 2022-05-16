@@ -109,5 +109,4 @@ export const nl = {
   "What is a zipcode?": "Wat is een Postcode?",
   "What do I do when I settle in a different municipality?":
     "Wat moet ik doen als ik naar een andere gemeente verhuis?",
-  "What is the meaning of life?": "Wat is de betekenis van het leven?",
 };

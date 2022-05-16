@@ -8,15 +8,11 @@
   margin-block-end: var(--nlportal-space-block-4xl);
 }
 
-.process > {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.bulletPoint > div > span {
+.listItem > div > span {
   display: list-item;
   list-style-type: disc;
 }
+
 .listItem > button > div > span {
   text-align: left;
 }

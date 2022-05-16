@@ -1,19 +1,9 @@
 import * as React from "react";
 import * as styles from "./StartServiceTemplate.module.css";
-import {
-  Button,
-  Divider,
-  Heading1,
-  Heading2,
-  Link,
-  List,
-  ListItem,
-  ListSubheader,
-  Paragraph,
-} from "@gemeente-denhaag/components-react";
+import { Button, Divider, Heading1, Heading2, List, ListItem, Paragraph } from "@gemeente-denhaag/components-react";
 import { useTranslation } from "react-i18next";
 import { navigate } from "gatsby";
-import { ArrowRightIcon, ArrowLeftIcon } from "@gemeente-denhaag/icons";
+import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 
 interface StartServiceTemplateProps {
   title: string;
@@ -44,15 +34,15 @@ export const StartServiceTemplate: React.FC<StartServiceTemplateProps> = ({
 
       <Divider />
 
-      <div className={styles.process}>
+      <div>
         <Heading2>{t("What steps can you expect")}</Heading2>
 
         <List>
           {processSteps.map((step, idx) => (
-            <ListItem className={styles.bulletPoint} key={idx} primaryText={t(step)}></ListItem>
+            <ListItem className={styles.listItem} key={idx} primaryText={t(step)}></ListItem>
           ))}
         </List>
-        <div onClick={() => navigate("/self-services/form")}>
+        <div onClick={() => navigate("#")}>
           <Button icon={<ArrowRightIcon />} iconAlign="start">
             {t("Start")}
           </Button>
@@ -71,7 +61,7 @@ export const StartServiceTemplate: React.FC<StartServiceTemplateProps> = ({
               primaryText={t(links.label)}
               actionType="nav"
               onClick={() => navigate(links.href)}
-            ></ListItem>
+            />
           ))}
         </List>
       </div>

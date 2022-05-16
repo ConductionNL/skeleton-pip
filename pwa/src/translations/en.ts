@@ -110,5 +110,4 @@ export const en = {
   "And your set!": "And your set!",
   "What is a zipcode?": "What is a zipcode?",
   "What do I do when I settle in a different municipality?": " What do I do when I settle in a different municipality?",
-  "What is the meaning of life?": " What is the meaning of life?",
 };
