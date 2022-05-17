@@ -14,3 +14,7 @@
   width: calc(100% / 12 * 9);
   margin-inline-start: calc(100% / 12 * 3);
 }
+
+.content > :first-child {
+  margin-block-end: var(--nlportal-space-block-2xl);
+}

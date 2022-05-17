@@ -18,6 +18,8 @@ import { CasesTable } from "../../../components/casesTable/CasesTable";
 import { useQueryClient } from "react-query";
 import { useCase } from "../../../hooks/case";
 import Skeleton from "react-loading-skeleton";
+import { translateDate } from "../../../services/dateFormat";
+
 
 interface MessageDetailTemplateProps {
   messageId: string;
@@ -48,13 +50,20 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
           {t("My messages")}
         </Link>
       </div>
+      
+  const { t, i18n } = useTranslation();
+
+  return (
+    <div className={styles.container}>
+      <Heading1>{t("Previous contact moment")}</Heading1>
+
 
       <MetaIconGridTemplate
         metaIcons={[
           { icon: <StarterIcon />, label: t("Initiator"), value: "Gemeente" },
           { icon: <StaffIcon />, label: t("Collaborator"), value: "H. van de Ren" },
           { icon: <SettingsIcon />, label: t("Organization"), value: "252852369" },
-          { icon: <CalendarIcon />, label: t("Registration date"), value: "26 April 2022" },
+          { icon: <CalendarIcon />, label: t("Registration date"), value: translateDate(i18n.language, new Date()) },
         ]}
       />
 

@@ -5,6 +5,8 @@ import { Table, TableBody, TableRow, TableCell, TableHeader } from "@gemeente-de
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { useTranslation } from "react-i18next";
 import { EditableTableRow } from "../../../components/editableTableRow/EditableTableRow";
+import dateFormat from "dateformat";
+import { navigate } from "gatsby";
 
 export const MyAccountTemplate: React.FC = () => {
   const { t } = useTranslation();
@@ -86,7 +88,7 @@ export const MyAccountTemplate: React.FC = () => {
             </TableRow>
             <TableRow>
               <TableHeader className={styles.th}>{t("Date of birth")}</TableHeader>
-              <TableCell>6 juni 1967</TableCell>
+              <TableCell>{dateFormat(new Date(), "dd-mm-yyyy")}</TableCell>
             </TableRow>
             <TableRow>
               <TableHeader className={styles.th}>{t("Place of birth")}</TableHeader>
@@ -108,10 +110,12 @@ export const MyAccountTemplate: React.FC = () => {
             <TableRow>
               <TableHeader className={styles.th}>Street</TableHeader>
               <TableCell>Gagelplein 5</TableCell>
-              <TableCell>
-                <Link icon={<ArrowRightIcon />} iconAlign="start">
-                  {t("Report relocation")}
-                </Link>
+              <TableCell className={styles.link}>
+                <div onClick={() => navigate("/self-services/moving")}>
+                  <Link icon={<ArrowRightIcon />} iconAlign="start">
+                    {t("Report relocation")}
+                  </Link>
+                </div>
               </TableCell>
             </TableRow>
             <TableRow>
@@ -122,7 +126,7 @@ export const MyAccountTemplate: React.FC = () => {
             <TableRow>
               <TableHeader className={styles.th}>{t("Number of people on your address")}</TableHeader>
               <TableCell>3</TableCell>
-              <TableCell>
+              <TableCell className={styles.link}>
                 <Link icon={<ArrowRightIcon />} iconAlign="start">
                   {t("Report incorrect registrations")}
                 </Link>

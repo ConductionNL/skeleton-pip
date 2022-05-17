@@ -5,7 +5,7 @@ import { Table, TableBody, TableCell, TableHeader, TableRow } from "@gemeente-de
 import { useTranslation } from "react-i18next";
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { navigate } from "gatsby";
-import dateFormat from "dateformat";
+import { translateDate } from "../../services/dateFormat";
 
 export interface IMessageTableItem {
   organisation: string;
@@ -18,7 +18,7 @@ interface MessagesTableProps {
 }
 
 export const MessagesTable: React.FC<MessagesTableProps> = ({ messages }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <Table>
@@ -31,7 +31,7 @@ export const MessagesTable: React.FC<MessagesTableProps> = ({ messages }) => {
         {messages.map(({ organisation, date, id }) => (
           <TableRow key={id} className={styles.contentRow}>
             <TableCell>{organisation}</TableCell>
-            <TableCell>{dateFormat(date, "dd-mm-yyyy")}</TableCell>
+            <TableCell>{translateDate(i18n.language, date)}</TableCell>
 
             <TableCell onClick={() => navigate(`/my-messages/${id}`)}>
               <Link icon={<ArrowRightIcon />} iconAlign="start">

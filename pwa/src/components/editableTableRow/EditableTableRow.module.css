@@ -18,3 +18,8 @@
 .submit {
   all: unset;
 }
+
+.editButton {
+  display: flex;
+  justify-content: flex-end;
+}
