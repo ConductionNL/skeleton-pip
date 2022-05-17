@@ -54,3 +54,35 @@ export const InputEmail: React.FC<IFormFieldProps & IReactHookFormProps> = ({
     invalid={errors[name]}
   />
 );
+
+export const InputDate: React.FC<IFormFieldProps & IReactHookFormProps> = ({
+  disabled,
+  name,
+  defaultValue,
+  validation,
+  register,
+  errors,
+}) => (
+  <TextField
+    type="date"
+    {...{ defaultValue, disabled }}
+    {...register(name, { ...validation })}
+    invalid={errors[name]}
+  />
+);
+
+export const InputNumber: React.FC<IFormFieldProps & IReactHookFormProps> = ({
+  disabled,
+  name,
+  defaultValue,
+  validation,
+  register,
+  errors,
+}) => (
+  <TextField
+    type="number"
+    {...{ defaultValue, disabled }}
+    {...register(name, { ...validation })}
+    invalid={errors[name]}
+  />
+);
