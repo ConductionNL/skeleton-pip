@@ -85,6 +85,9 @@ export const nl = {
   "More Information": "Meer Informatie",
   "What steps can you expect": "Welke stappen kun je verwachten",
   Back: "Terug",
+  Form: "Formulier",
+  "Next step": "Volgende stap",
+  "Previous step": "Vorige stap",
 
   //Marriage translations
   "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
@@ -99,6 +102,7 @@ export const nl = {
   "What are the differences between a marriage, a registered partnership and a cohabitation contract?":
     "Wat zijn de verschillen tussen een huwelijk, een geregistreerd partnerschap en een samenlevingscontract?",
   "What is an emergency marriage and how can you arrange it?": "Wat is een spoedhuwelijk en hoe kun je dat regelen?",
+  "Start Marriage / Partnership": "Start Huwelijk / Partnerschap",
 
   //Moving translations
   "Are you moving to a different house? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
@@ -109,4 +113,8 @@ export const nl = {
   "What is a zipcode?": "Wat is een Postcode?",
   "What do I do when I settle in a different municipality?":
     "Wat moet ik doen als ik naar een andere gemeente verhuis?",
+  "Start moving away": "Start verhuizing",
+  "Moving date": "Verhuisdatum",
+  "Zip code": "Postcode",
+  "House number": "Huisnummer",
 };
