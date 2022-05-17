@@ -13,8 +13,6 @@ export const FormStepTemplate: React.FC<FormStepTemplateProps> = ({ children, se
 
   return (
     <div className={styles.container}>
-      <div>nav-ballen hier</div>
-
       <div className={styles.formContainer}>
         {children}
 
