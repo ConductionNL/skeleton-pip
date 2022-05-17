@@ -54,11 +54,19 @@ App\Entity\CollectionEntity:
     testDataLocation: https://raw.githubusercontent.com/ConductionNL/contactmomenten_publiccode/main/data/contactmomenten.json
     loadTestData: true
     autoLoad: true
-        
+
   pdcCollection:
-      name: pdc collection 
-      sourceType: GitHub
-      locationOAS: https://raw.githubusercontent.com/ConductionNL/PDC_publiccode/main/PDC_OAS.json
-      testDataLocation: https://raw.githubusercontent.com/ConductionNL/PDC_publiccode/main/data/PDC.json
-      loadTestData: true
-      autoLoad: true
+    name: pdc collection
+    sourceType: GitHub
+    locationOAS: https://raw.githubusercontent.com/ConductionNL/PDC_publiccode/main/PDC_OAS.json
+    testDataLocation: https://raw.githubusercontent.com/ConductionNL/PDC_publiccode/main/data/PDC.json
+    loadTestData: true
+    autoLoad: true
+
+  bagCollection:
+    name: bag collection
+    sourceType: GitHub
+    locationOAS: https://raw.githubusercontent.com/lvbag/BAG-API/master/Technische%20specificatie/Archief/Yaml's/BAG%20API%20Individuele%20Bevragingen/resolved/individuelebevragingen/v2/openapi.yaml
+    testDataLocation: https://raw.githubusercontent.com/ConductionNL/bag_publiccode/main/data/bag.yml
+    loadTestData: true
+    autoLoad: true
