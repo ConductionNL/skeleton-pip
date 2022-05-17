@@ -64,6 +64,7 @@ export const en = {
   "Show all cases": "Show all cases",
   "Show all messages": "Show all messages",
   "View case": "View case",
+  "The linked cases": "The linked cases",
   "Report incorrect registrations": "Report incorrect registrations",
   "Report relocation": "Report relocation",
   Date: "Date",
