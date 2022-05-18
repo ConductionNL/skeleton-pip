@@ -1,16 +1,6 @@
 import * as React from "react";
 import * as styles from "./MessageDetailTemplate.module.css";
-import {
-  Divider,
-  Heading3,
-  Link,
-  Paragraph,
-  Tab,
-  TabContext,
-  TabPanel,
-  Tabs,
-} from "@gemeente-denhaag/components-react";
-import { navigate } from "gatsby";
+import { Divider, Heading3, Paragraph, Tab, TabContext, TabPanel, Tabs } from "@gemeente-denhaag/components-react";
 import { CalendarIcon, ChevronLeftIcon, SettingsIcon, StaffIcon, StarterIcon } from "@gemeente-denhaag/icons";
 import { useTranslation } from "react-i18next";
 import { MetaIconGridTemplate } from "../metaIconGrid/MetaIconGridTemplate";
@@ -20,16 +10,15 @@ import { useCase } from "../../../hooks/case";
 import Skeleton from "react-loading-skeleton";
 import { translateDate } from "../../../services/dateFormat";
 
-
 interface MessageDetailTemplateProps {
   messageId: string;
 }
 
 export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ messageId }) => {
-  const { t } = useTranslation();
   const [currentCasesTab, setCurrentCasesTab] = React.useState<number>(0);
   const [currentCases, setCurrentCases] = React.useState<any[]>([]);
   const [closedCases, setClosedCases] = React.useState<any[]>([]);
+  const { t, i18n } = useTranslation();
 
   const queryClient = useQueryClient();
 
@@ -45,19 +34,6 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
 
   return (
     <div className={styles.container}>
-      <div onClick={() => navigate("/my-messages")}>
-        <Link icon={<ChevronLeftIcon />} iconAlign="start">
-          {t("My messages")}
-        </Link>
-      </div>
-      
-  const { t, i18n } = useTranslation();
-
-  return (
-    <div className={styles.container}>
-      <Heading1>{t("Previous contact moment")}</Heading1>
-
-
       <MetaIconGridTemplate
         metaIcons={[
           { icon: <StarterIcon />, label: t("Initiator"), value: "Gemeente" },
