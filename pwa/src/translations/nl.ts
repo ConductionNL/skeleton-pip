@@ -67,6 +67,7 @@ export const nl = {
   "Report incorrect registrations": "Onjuiste inschrijvingen melden",
   "Report relocation": "Verhuizing doorgeven",
   Date: "Datum",
+  "The linked cases": "De gekoppelde zaken",
   Organisation: "Organisatie",
   Read: "Gelezen",
   "View message": "Bekijk bericht",
