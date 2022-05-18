@@ -1,9 +1,11 @@
 import * as React from "react";
 import { Container } from "../../components/container/Container";
-import { Card, Heading3, Paragraph } from "@gemeente-denhaag/components-react";
+import { Heading3, Paragraph } from "@gemeente-denhaag/components-react";
 import * as styles from "./LandingTemplate.module.css";
-import { navigate } from "gatsby";
 import { t } from "i18next";
+import { LandingPageCard } from "../../components/card/landingPageCard/LandingPageCard";
+import { UserIcon } from "@gemeente-denhaag/icons";
+import DigidImage from "../../assets/svgs/digid.svg";
 
 export const LandingTemplate: React.FC = () => {
   return (
@@ -19,7 +21,13 @@ export const LandingTemplate: React.FC = () => {
         </div>
 
         <div className={styles.loginCards}>
-          <Card title={t("Login")} subTitle={t("Account")} onClick={() => navigate("/login")} />
+          <LandingPageCard title={t("Inloggen met je DigID")} label={t("Login")} img={DigidImage} link={"#"} external />
+          <LandingPageCard
+            icon={<UserIcon />}
+            label={t("Login")}
+            title={t("Log in with your account")}
+            link={"/login"}
+          />
         </div>
       </div>
     </Container>

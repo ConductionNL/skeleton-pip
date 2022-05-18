@@ -85,7 +85,8 @@ export const nl = {
   "More Information": "Meer Informatie",
   "What steps can you expect": "Welke stappen kun je verwachten",
   Back: "Terug",
-
+  "Log in with your account":"Inloggen met je account",
+  "Log in with your DigID":"Inloggen met je DigID",
   //Marriage translations
   "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
     "Gaat u trouwen of gaat u een geregistreerd partnerschap aan? Plan een datum en tijd. En doe de officiële melding bij de gemeente. Let op: hou je DigID bij de hand.",
