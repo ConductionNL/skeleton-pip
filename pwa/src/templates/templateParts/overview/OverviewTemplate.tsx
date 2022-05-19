@@ -10,6 +10,8 @@ import { useQueryClient } from "react-query";
 import { useCase } from "../../../hooks/case";
 import Skeleton from "react-loading-skeleton";
 import { useMessage } from "../../../hooks/message";
+import { ImageAndDetailsCard } from "../../../components/card/imageAndDetailsCard/ImageAndDetailsCard";
+import Testimage from "../../../assets/images/AuthenticatedDivider.png";
 
 export const OverviewTemplate: React.FC = () => {
   const { t } = useTranslation();
@@ -63,10 +65,15 @@ export const OverviewTemplate: React.FC = () => {
           </div>
         </div>
         <div className={styles.grid}>
-          <Card
-            className={styles.card}
+          <ImageAndDetailsCard
+            image={<img src={Testimage} />}
+            button={{
+              href: "/self-services/marriage",
+              label: "Meer lezen ..",
+            }}
             title={t("Marriage / Partnership")}
-            onClick={() => navigate("/self-services/marriage")}
+            date={"18 nov 2021"}
+            paragraph={"Gaat u trouwen of gaat u een geregistreerd partnerschap aan? Plan een datum en tijd...."}
           />
           <Card className={styles.card} title={t("Moving away")} onClick={() => navigate("/self-services/moving")} />
           <Card className={styles.card} title={t("Birth registration")} />

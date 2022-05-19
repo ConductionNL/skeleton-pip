@@ -1,7 +1,6 @@
 .container {
   width: var(--conduction-component-ImageAndDetailsCard-block-width);
   border: var(--nlportal-document-border, 1px solid);
-
 }
 
 .context {
@@ -9,11 +8,15 @@
   padding: var(--nlportal-space-inline-md);
 }
 
-.date{
+.date {
   color: var(--denhaag-color-grey-3);
-  font-size:var(--conduction-component-ImageAndDetailsCard-font-size);
+  font-size: var(--conduction-component-ImageAndDetailsCard-font-size);
 }
 
-.button{
+.button {
   margin-top: var(--denhaag-space-block-md);
+}
+.image > :first-child {
+  width: var(--conduction-component-ImageAndDetailsCard-block-width);
+  height: var(--conduction-component-ImageAndDetailsCard-block-height) ;
 }
