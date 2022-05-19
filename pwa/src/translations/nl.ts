@@ -60,7 +60,7 @@ export const nl = {
   "Number of people on your address": "Aantal inwoners op uw woonadres",
   "Request research": "Vraag onderzoek aan",
   "Oops, something went wrong": "Oops, er is iets fout gegaan",
-  "Show all services": "Bekijk alle e-diensten",
+  "View all products and services": "Bekijk alle producten en diensten",
   "Show all cases": "Bekijk alle zaken",
   "Show all messages": "Bekijk alle berichten",
   "View case": "Bekijk zaak",
