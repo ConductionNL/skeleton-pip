@@ -2,7 +2,7 @@ import axios, { AxiosInstance, AxiosResponse } from "axios";
 
 import Case from "./resources/case";
 import Message from "./resources/message";
-
+import Bag from "./resources/bag"
 import Login from "./services/login";
 
 export default class APIService {
@@ -44,6 +44,10 @@ export default class APIService {
   // Resources
   public get Case(): Case {
     return new Case(this.apiClient);
+  }
+
+  public get Bag(): Bag {
+    return new Bag(this.apiClient);
   }
 
   public get Message(): Message {
