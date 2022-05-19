@@ -1,0 +1,19 @@
+.container {
+  width: var(--conduction-component-ImageAndDetailsCard-block-width);
+  border: var(--nlportal-document-border, 1px solid);
+
+}
+
+.context {
+  border-radius: var(--nlportal-document-border-radius);
+  padding: var(--nlportal-space-inline-md);
+}
+
+.date{
+  color: var(--denhaag-color-grey-3);
+  font-size:var(--conduction-component-ImageAndDetailsCard-font-size);
+}
+
+.button{
+  margin-top: var(--denhaag-space-block-md);
+}
