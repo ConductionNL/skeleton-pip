@@ -30,7 +30,7 @@ export const ImageAndDetailsCard: React.FC<ImageAndDetailsCardProps> = ({
       <div className={styles.content} onClick={() => navigate(link.href)}>
         <div className={styles.image}>{image}</div>
         <div className={styles.context}>
-          <span>{title}</span>
+          <span className={styles.title}>{title}</span>
           <span className={styles.date}>{date}</span>
           <span className={styles.introduction}>{introduction}</span>
           <div className={styles.link}>

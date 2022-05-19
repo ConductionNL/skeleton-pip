@@ -10,14 +10,19 @@
   flex-direction: column;
 }
 
+.title {
+  font-weight: var(--conduction-component-ImageAndDetailsCard-font-weight);
+}
+
 .date {
   color: var(--denhaag-color-grey-3);
-  font-size: var(--conduction-component-ImageAndDetailsCard-font-size);
+  font-size: var(--conduction-component-ImageAndDetailsCard-font-size-date);
 }
 
 .introduction {
   margin-top: var(--denhaag-space-block-md);
   margin-bottom: var(--denhaag-space-block-md);
+  font-size: var(--conduction-component-ImageAndDetailsCard-font-size);
 }
 
 .link {
@@ -29,3 +34,4 @@
   width: var(--conduction-component-ImageAndDetailsCard-block-width);
   height: var(--conduction-component-ImageAndDetailsCard-block-height);
 }
+
