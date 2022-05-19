@@ -1,14 +1,25 @@
 import * as React from "react";
 import * as styles from "./DashboardTemplate.module.css";
-import { GridIcon, InboxIcon, ArchiveIcon, DocumentIcon, UserIcon } from "@gemeente-denhaag/icons";
+import { GridIcon, InboxIcon, ArchiveIcon, UserIcon, ListIcon } from "@gemeente-denhaag/icons";
 import { Sidenav, SidenavItem, SidenavLink, SidenavList } from "@gemeente-denhaag/sidenav";
 import { Container } from "../../components/container/Container";
 import { PrivateRoute } from "../../components/privateRoute/privateRoute";
 import { GatsbyContext } from "../../context/gatsby";
 import { navigate } from "gatsby";
 import { useTranslation } from "react-i18next";
+import { Breadcrumbs } from "../../components/denhaag-wrappers/breadcrumbs/Breadcrumbs";
 
 export const DashboardTemplate: React.FC = ({ children }) => {
+  const { t } = useTranslation();
+
+  const {
+    pageContext: {
+      breadcrumb: { crumbs },
+    },
+  } = React.useContext(GatsbyContext);
+
+  const translatedCrumbs = crumbs.map((crumb: any) => ({ ...crumb, crumbLabel: t(crumb.crumbLabel) }));
+
   return (
     <PrivateRoute>
       <Container>
@@ -17,7 +28,10 @@ export const DashboardTemplate: React.FC = ({ children }) => {
             <Menu />
           </div>
 
-          <div className={styles.content}>{children}</div>
+          <div className={styles.content}>
+            <Breadcrumbs crumbs={translatedCrumbs} />
+            {children}
+          </div>
         </div>
       </Container>
     </PrivateRoute>
@@ -43,16 +57,17 @@ const Menu: React.FC = () => {
 
   const menuItems: MenuItem[] = [
     { label: t("Overview"), href: "/", current: pathname === "/", icon: <GridIcon /> },
-    { label: t("My messages"), href: "/my-messages", current: pathname === "/my-messages", icon: <InboxIcon /> },
     {
-      label: t("My cases"),
-      href: "/my-cases",
-      current: pathname === "/my-cases" || pathname.includes("my-cases"),
-      icon: <ArchiveIcon />,
+      label: t("Self services"),
+      href: "/self-services",
+      current: pathname.includes("self-services"),
+      icon: <ListIcon />,
     },
-    { label: t("My account"), href: "/my-account", current: pathname === "/my-account", icon: <UserIcon /> },
+    { label: t("My messages"), href: "/my-messages", current: pathname.includes("my-messages"), icon: <InboxIcon /> },
+    { label: t("My cases"), href: "/my-cases", current: pathname.includes("my-cases"), icon: <ArchiveIcon /> },
+    { label: t("My account"), href: "/my-account", current: pathname.includes("my-account"), icon: <UserIcon /> },
   ];
-  
+
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string): void => {
     e.preventDefault();
     navigate(href);

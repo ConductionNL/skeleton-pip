@@ -5,13 +5,14 @@ import { Table, TableBody, TableCell, TableHeader, TableRow } from "@gemeente-de
 import { useTranslation } from "react-i18next";
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { navigate } from "gatsby";
+import { translateDate } from "../../services/dateFormat";
 
 interface CasesTableProps {
   cases: any[];
 }
 
 export const CasesTable: React.FC<CasesTableProps> = ({ cases }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <Table>
@@ -26,7 +27,7 @@ export const CasesTable: React.FC<CasesTableProps> = ({ cases }) => {
           <TableRow key={_case.id} className={styles.contentRow}>
             <TableCell>{_case.omschrijving}</TableCell>
             <TableCell>{_case.status}</TableCell>
-            <TableCell>{_case.startdatum}</TableCell>
+            <TableCell>{translateDate(i18n.language, _case.startdatum)}</TableCell>
 
             <TableCell onClick={() => navigate(`/my-cases/${_case.uuid}`)}>
               <Link icon={<ArrowRightIcon />} iconAlign="start">

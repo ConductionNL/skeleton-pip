@@ -8,5 +8,6 @@ export interface IReactHookFormProps {
 
 export interface IFormFieldProps {
   name: string;
+  disabled?: boolean;
+  defaultValue?: string;
 }
-

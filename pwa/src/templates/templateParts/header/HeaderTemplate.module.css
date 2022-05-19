@@ -29,9 +29,8 @@
 }
 
 .authenticatedLogo {
-  max-width: var(--nlportal-header-max-logo-width);
-  width: 100%;
   height: 100%;
+  width: var(--nlportal-header-max-logo-width);
 }
 
 .authenticatedDivider {
@@ -47,12 +46,13 @@
 .unauthenticatedContent {
   display: flex;
   align-items: center;
+  justify-content: center;
   height: var(--nlportal-header-height-large);
 }
 
 .unauthenticatedLogo {
-  align-items: center;
-  height: var(--conduction-unauthenticated-header-logo-height);
+  height: 100%;
+  width: var(--conduction-unauthenticated-header-logo-width);
 }
 
 .unauthenticatedLogo:hover {

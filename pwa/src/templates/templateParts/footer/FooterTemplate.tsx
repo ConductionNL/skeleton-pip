@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./FooterTemplate.css";
+import * as styles from "./FooterTemplate.module.css";
 import { Container } from "../../../components/container/Container";
 import { List, ListItem, ListSubheader } from "@gemeente-denhaag/list";
 import { navigate } from "gatsby";
@@ -12,20 +12,40 @@ export const AuthenticatedFooterTemplate: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="AuthenticatedFooterTemplate">
-      <ImageDivider image={AuthenticatedDividerImage} layoutClassName="AuthenticatedFooterTemplate-divider" />
+    <footer className={styles.authenticated}>
+      <ImageDivider image={AuthenticatedDividerImage} layoutClassName={styles.authenticatedImageDivider} />
       <Container>
-        <div className="Footer-inner">
+        <div className={styles.inner}>
           <List>
-            <ListSubheader>{t("The Hague")}</ListSubheader>
-            <ListItem primaryText={t("Go to website")} actionType="nav" onClick={() => navigate("#")} />
+            <ListSubheader className={styles.subHeader}>{t("The Hague")}</ListSubheader>
+            <ListItem
+              className={styles.listItem}
+              primaryText={t("Go to website")}
+              actionType="nav"
+              onClick={() => navigate("#")}
+            />
           </List>
 
           <List>
-            <ListSubheader>{t("Disclaimers")}</ListSubheader>
-            <ListItem primaryText={t("Accessibility declaration")} actionType="nav" onClick={() => navigate("#")} />
-            <ListItem primaryText={t("Data Protection declaration")} actionType="nav" onClick={() => navigate("#")} />
-            <ListItem primaryText={t("Proclaimer")} actionType="nav" onClick={() => navigate("#")} />
+            <ListSubheader className={styles.subHeader}>{t("Disclaimers")}</ListSubheader>
+            <ListItem
+              className={styles.listItem}
+              primaryText={t("Accessibility declaration")}
+              actionType="nav"
+              onClick={() => navigate("#")}
+            />
+            <ListItem
+              className={styles.listItem}
+              primaryText={t("Data Protection declaration")}
+              actionType="nav"
+              onClick={() => navigate("#")}
+            />
+            <ListItem
+              className={styles.listItem}
+              primaryText={t("Proclaimer")}
+              actionType="nav"
+              onClick={() => navigate("#")}
+            />
           </List>
         </div>
       </Container>
@@ -35,8 +55,8 @@ export const AuthenticatedFooterTemplate: React.FC = () => {
 
 export const UnauthenticatedFooterTemplate: React.FC = () => {
   return (
-    <footer className="UnauthenticatedFooterTemplate">
-      <ImageDivider image={UnauthenticatedDividerImage} layoutClassName="UnauthenticatedFooterTemplate-divider" />
+    <footer className={styles.unauthenticated}>
+      <ImageDivider image={UnauthenticatedDividerImage} layoutClassName={styles.unauthenticatedImageDivider} />
     </footer>
   );
 };

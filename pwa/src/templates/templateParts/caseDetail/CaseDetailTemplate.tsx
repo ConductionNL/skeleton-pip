@@ -2,9 +2,9 @@ import * as React from "react";
 import * as styles from "./CaseDetailTemplate.module.css";
 import {
   Divider,
+  Heading1,
   Heading2,
   Heading3,
-  Heading4,
   Link,
   Tab,
   TabContext,
@@ -27,9 +27,9 @@ import { useTranslation } from "react-i18next";
 import { useCase } from "../../../hooks/case";
 import { useQueryClient } from "react-query";
 import Skeleton from "react-loading-skeleton";
-import { MessagesTable } from "../../../components/messagesTable/MessagesTable";
-import dummyMessages from "../../../data/DummyMessages";
+import { IMessageTableItem, MessagesTable } from "../../../components/messagesTable/MessagesTable";
 import { MessageForm } from "../../../components/MessageForm/MessageForm";
+import { useMessage } from "../../../hooks/message";
 
 interface CaseDetailTemplateProps {
   caseId: string;
@@ -38,23 +38,33 @@ interface CaseDetailTemplateProps {
 export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }) => {
   const { t } = useTranslation();
   const [currentMessagesTab, setCurrentMessagesTab] = React.useState<number>(0);
+  const [messages, setMessages] = React.useState<IMessageTableItem[]>([]);
 
   const queryClient = useQueryClient();
 
   const _useCase = useCase(queryClient);
   const getCase = _useCase.getOne(caseId);
 
+  const _useMessage = useMessage();
+  const getMessages = _useMessage.getAll();
+
+  React.useEffect(() => {
+    if (!getMessages.isSuccess) return;
+
+    const _messages: IMessageTableItem[] = getMessages.data.map((message) => ({
+      organisation: message.bronorganisatie,
+      date: message.registratiedatum,
+      id: message.id,
+    }));
+
+    setMessages(_messages);
+  }, [getMessages.isSuccess]);
+
   return (
     <div className={styles.container}>
-      <div onClick={() => navigate("/my-cases")}>
-        <Link icon={<ChevronLeftIcon />} iconAlign="start">
-          {t("My cases")}
-        </Link>
-      </div>
-
       {!getCase.isLoading && (
         <>
-          <Heading2>{getCase.data.omschrijving}</Heading2>
+          <Heading1>{getCase.data.omschrijving}</Heading1>
 
           <MetaIconGridTemplate
             metaIcons={[
@@ -72,7 +82,7 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
           <Divider />
 
           <div className={styles.status}>
-            <Heading3>{t("Current status")}</Heading3>
+            <Heading2>{t("Current status")}</Heading2>
 
             <StatusSteps
               steps={[
@@ -103,9 +113,9 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
 
           <div className={styles.documents}>
             <div className={styles.documentsHeader}>
-              <Heading3>{t("Documents")}</Heading3>
+              <Heading2>{t("Documents")}</Heading2>
 
-              <Link icon={<ArrowRightIcon />} iconAlign="end">
+              <Link icon={<ArrowRightIcon />} iconAlign="start">
                 {t("Show all documents")}
               </Link>
             </div>
@@ -126,9 +136,9 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
 
       <div className={styles.messages}>
         <div className={styles.messagesHeading}>
-          <Heading3>{t("Messages")}</Heading3>
+          <Heading2>{t("Messages")}</Heading2>
           <div onClick={() => navigate("/my-messages")}>
-            <Link icon={<ArrowRightIcon />} iconAlign="end">
+            <Link icon={<ArrowRightIcon />} iconAlign="start">
               {t("Show all messages")}
             </Link>
           </div>
@@ -145,17 +155,15 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
             <Tab label={t("Read messages")} value={1} />
           </Tabs>
 
-          <TabPanel value="0">
-            <MessagesTable messages={dummyMessages} />
-          </TabPanel>
-          <TabPanel value="1">
-            <MessagesTable messages={dummyMessages.map((message: any) => ({ ...message, isRead: false }))} />
-          </TabPanel>
+          {getMessages.isLoading && <Skeleton height="100px" />}
+
+          <TabPanel value="0">{!getMessages.isLoading && <MessagesTable {...{ messages }} />}</TabPanel>
+          <TabPanel value="1">{!getMessages.isLoading && <MessagesTable {...{ messages }} />}</TabPanel>
         </TabContext>
       </div>
       <div className={styles.messages}>
         <div className={styles.messagesHeading}>
-          <Heading4>{t("Add another message to this case")}</Heading4>
+          <Heading3>{t("Add another message to this case")}</Heading3>
         </div>
 
         <MessageForm />
