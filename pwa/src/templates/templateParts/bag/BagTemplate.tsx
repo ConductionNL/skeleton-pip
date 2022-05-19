@@ -17,7 +17,6 @@ export const BagTemplate: React.FC = () => {
     if (!getAdres.isSuccess) return;
 
     setAdres(getAdres.data);
-    console.log(getAdres.data);
   }, [getAdres.isSuccess]);
 
   React.useEffect(() => {
