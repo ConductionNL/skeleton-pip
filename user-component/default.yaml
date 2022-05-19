@@ -5,6 +5,7 @@ App\Entity\Group:
         organization: http://api/admin/organizations/a1c8e0b6-2f78-480d-a9fb-9792142f4761
         scopes:
             - '@zaken_read'
+            - '@contactmomenten_read'
 
     anonymous:
         name: ANONYMOUS
@@ -44,6 +45,10 @@ App\Entity\Scope:
     zaken_read:
         code: 'GET.zaak'
         name: 'Read zaken'
+
+    contactmomenten_read:
+        code: 'GET.contactmoment'
+        name: 'Read contactmomenten'
     
 App\Entity\User:
     someUser:
