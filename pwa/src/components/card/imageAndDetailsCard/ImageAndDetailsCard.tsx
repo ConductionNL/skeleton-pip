@@ -1,16 +1,17 @@
 import * as React from "react";
 import * as styles from "./ImageAndDetailsCard.module.css";
 import clsx from "clsx";
-import { Button, Heading5, Paragraph } from "@gemeente-denhaag/components-react";
+import { Link } from "@gemeente-denhaag/components-react";
 import { navigate } from "gatsby";
+import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 
 interface ImageAndDetailsCardProps {
   image?: JSX.Element;
   title: string;
   date?: string;
-  paragraph: string;
+  introduction?: string;
   layoutClassName?: string;
-  button: {
+  link: {
     href: string;
     label: string;
   };
@@ -20,19 +21,23 @@ export const ImageAndDetailsCard: React.FC<ImageAndDetailsCardProps> = ({
   image,
   title,
   date,
-  paragraph,
-  button,
+  introduction,
+  link,
   layoutClassName,
 }) => {
   return (
     <div className={clsx(styles.container, [layoutClassName && layoutClassName])}>
-      <div className={styles.content} onClick={() => navigate(button.href)}>
+      <div className={styles.content} onClick={() => navigate(link.href)}>
         <div className={styles.image}>{image}</div>
         <div className={styles.context}>
-          <Heading5>{title}</Heading5>
-          <Paragraph className={styles.date}>{date}</Paragraph>
-          <Paragraph className={styles.paragraph}>{paragraph}</Paragraph>
-          <Button className={styles.button}>{button.label}</Button>
+          <span>{title}</span>
+          <span className={styles.date}>{date}</span>
+          <span className={styles.introduction}>{introduction}</span>
+          <div className={styles.link}>
+            <Link icon={<ArrowRightIcon />} iconAlign="start">
+              {link.label}
+            </Link>
+          </div>
         </div>
       </div>
     </div>

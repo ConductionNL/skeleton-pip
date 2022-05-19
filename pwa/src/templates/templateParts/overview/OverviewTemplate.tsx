@@ -67,13 +67,13 @@ export const OverviewTemplate: React.FC = () => {
         <div className={styles.grid}>
           <ImageAndDetailsCard
             image={<img src={Testimage} />}
-            button={{
+            link={{
               href: "/self-services/marriage",
               label: "Meer lezen ..",
             }}
             title={t("Marriage / Partnership")}
             date={"18 nov 2021"}
-            paragraph={"Gaat u trouwen of gaat u een geregistreerd partnerschap aan? Plan een datum en tijd...."}
+            introduction={"Gaat u trouwen of gaat u een geregistreerd partnerschap aan? Plan een datum en tijd...."}
           />
           <Card className={styles.card} title={t("Moving away")} onClick={() => navigate("/self-services/moving")} />
           <Card className={styles.card} title={t("Birth registration")} />

@@ -6,6 +6,8 @@
 .context {
   border-radius: var(--nlportal-document-border-radius);
   padding: var(--nlportal-space-inline-md);
+  display: flex;
+  flex-direction: column;
 }
 
 .date {
@@ -13,10 +15,17 @@
   font-size: var(--conduction-component-ImageAndDetailsCard-font-size);
 }
 
-.button {
+.introduction {
   margin-top: var(--denhaag-space-block-md);
+  margin-bottom: var(--denhaag-space-block-md);
 }
+
+.link {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .image > :first-child {
   width: var(--conduction-component-ImageAndDetailsCard-block-width);
-  height: var(--conduction-component-ImageAndDetailsCard-block-height) ;
+  height: var(--conduction-component-ImageAndDetailsCard-block-height);
 }
