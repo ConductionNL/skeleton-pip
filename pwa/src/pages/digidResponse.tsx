@@ -1,7 +1,9 @@
-import { setDigiDToken } from "../services/auth";
+import { navigate } from "gatsby";
+import * as React from "react";
+import { useDigiD } from "../hooks/useDigiD";
 
-const digidResponse = () => {
-  setDigiDToken();
+const digidResponse: React.FC = () => {
+  useDigiD().authenticate();
   return <></>;
 };
 
