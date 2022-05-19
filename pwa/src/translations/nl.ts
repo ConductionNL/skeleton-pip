@@ -86,14 +86,13 @@ export const nl = {
   "More Information": "Meer Informatie",
   "What steps can you expect": "Welke stappen kun je verwachten",
   Back: "Terug",
-  "Log in with your account":"Inloggen met je account",
-  "Log in with your DigID":"Inloggen met je DigID",
+  "Login with your account": "Inloggen met je account",
+  "Login with DigID": "Inloggen met DigID",
   //Marriage translations
   "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
     "Gaat u trouwen of gaat u een geregistreerd partnerschap aan? Plan een datum en tijd. En doe de officiële melding bij de gemeente. Let op: hou je DigID bij de hand.",
   "Choose between getting married or registered partnership": "Kies tussen trouwen of geregistreerd partnerschap",
   "Choose a date and time for the meeting": "Kies een datum en tijd voor de bijeenkomst",
-  "Log in with DigID": "Log in met DigID",
   "Your partner also logs in with DigID": "Je partner logt ook in met DigID",
   "Invite witnesses": "Nodig getuigen uit",
   "Pay with IDEAL": "Betaal met IDEAL",

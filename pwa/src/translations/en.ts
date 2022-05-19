@@ -1,5 +1,5 @@
 export const en = {
-  Login: "Log in",
+  Login: "Login",
   Welcome: "Welcome",
   Logout: "Log out",
   Translation: "Nederlands",
@@ -85,9 +85,9 @@ export const en = {
   Case: "Case",
   "More Information": "More Information",
   "What steps can you expect": "What steps can you expect",
-  "Log in with your DigID":"Log in with your DigID",
+  "Login with DigID": "Login with DigID",
   Back: "Back",
-  "Log in with your account":"Log in with your account",
+  "Login with your account": "Login with your account",
   //Marriage translations
   "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
     "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.",
