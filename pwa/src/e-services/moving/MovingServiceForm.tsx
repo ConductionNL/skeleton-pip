@@ -1,6 +1,6 @@
 import * as React from "react";
 import { IMovingServiceData, movingServiceData, MovingServiceProvider } from "./MovingServiceContext";
-import { DateFormStep, NewAdressFormStep, CoMoversStep } from "./steps";
+import { DateFormStep, NewAdressFormStep, CoMoversStep, ConfirmFormStep } from "./steps";
 import { useTranslation } from "react-i18next";
 
 type TMovingFormServiceSteps = "date" | "newAdress" | "coMovers" | "confirm";
@@ -35,6 +35,6 @@ const MovingServiceFormStep: React.FC<MovingServiceFormStepProps> = ({ step, set
       return <CoMoversStep setNextStep={() => setStep("confirm")} setPreviousStep={() => setStep("newAdress")} />;
 
     case "confirm":
-      return <>Todo: generic confirm page here</>;
+      return <ConfirmFormStep setPreviousStep={() => setStep("coMovers")} />;
   }
 };

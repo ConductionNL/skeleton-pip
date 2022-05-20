@@ -86,7 +86,7 @@ export const nl = {
   "More Information": "Meer Informatie",
   "What steps can you expect": "Welke stappen kun je verwachten",
   Back: "Terug",
-  form: "Formulier",
+  Form: "Formulier",
   "Next step": "Volgende stap",
   "Previous step": "Vorige stap",
   "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
@@ -117,4 +117,7 @@ export const nl = {
   "On what date are you moving?": "Op welke datum verhuis je?",
   "What is your new address?": "Wat is je nieuwe adres?",
   "Who will move with you?": "Wie verhuizen er mee?",
+  "Confirm your move": "Bevestig je verhuizing",
+  "Information entered by you": "Door jou ingevulde gegevens",
+  Confirm: "Bevestigen",
 };
