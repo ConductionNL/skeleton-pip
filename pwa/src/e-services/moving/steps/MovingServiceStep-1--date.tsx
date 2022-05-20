@@ -32,7 +32,7 @@ export const DateFormStep: React.FC<MovingStepProps> = ({ setNextStep }) => {
   };
 
   return (
-    <FormStepTemplate>
+    <FormStepTemplate title={t("On what date are you moving?")}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormFieldInput>
           <FormFieldLabel htmlFor="date">{t("Moving date")}</FormFieldLabel>

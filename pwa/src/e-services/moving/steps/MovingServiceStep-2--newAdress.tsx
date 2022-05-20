@@ -34,7 +34,7 @@ export const NewAdressFormStep: React.FC<MovingStepProps> = ({ setNextStep, setP
   };
 
   return (
-    <FormStepTemplate {...{ setPreviousStep }}>
+    <FormStepTemplate title={t("What is your new address?")} {...{ setPreviousStep }}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormFieldInput>
           <FormFieldLabel htmlFor="zipCode">{t("Zip code")}</FormFieldLabel>

@@ -88,8 +88,6 @@ export const en = {
   Form: "Form",
   "Next step": "Next step",
   "Previous step": "Previous stap",
-
-  //Marriage translations
   "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
     "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.",
   "Choose between getting married or registered partnership":
@@ -105,8 +103,6 @@ export const en = {
   "What is an emergency marriage and how can you arrange it?":
     " What is an emergency marriage and how can you arrange it?",
   "Start Marriage / Partnership": "Start Marriage / Partnership",
-
-  //Moving translations
   "Are you moving to a different house? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
     "Are you moving to a different house? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.",
   "Choose your current addres": "Choose your current addres",
@@ -118,4 +114,7 @@ export const en = {
   "Moving date": "Moving date",
   "Zip code": "Zip code",
   "House number": "House number",
+  "On what date are you moving?": "On what date are you moving?",
+  "What is your new address?": "What is your new address?",
+  "Who will move with you?": "Who will move with you?",
 };

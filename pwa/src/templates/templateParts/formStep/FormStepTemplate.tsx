@@ -5,14 +5,17 @@ import { ArrowLeftIcon } from "@gemeente-denhaag/icons";
 import { useTranslation } from "react-i18next";
 
 interface FormStepTemplateProps {
+  title: string;
   setPreviousStep?: () => void;
 }
 
-export const FormStepTemplate: React.FC<FormStepTemplateProps> = ({ children, setPreviousStep }) => {
+export const FormStepTemplate: React.FC<FormStepTemplateProps> = ({ children, setPreviousStep, title }) => {
   const { t } = useTranslation();
 
   return (
     <div className={styles.container}>
+      <h2>{title}</h2>
+
       <div className={styles.formContainer}>
         {children}
 

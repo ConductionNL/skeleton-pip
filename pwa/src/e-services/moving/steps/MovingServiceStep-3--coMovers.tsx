@@ -50,7 +50,7 @@ export const CoMoversStep: React.FC<MovingStepProps> = ({ setNextStep, setPrevio
   };
 
   return (
-    <FormStepTemplate {...{ setPreviousStep }}>
+    <FormStepTemplate title={t("Who will move with you?")} {...{ setPreviousStep }}>
       <form onSubmit={handleSubmit(onSubmit)}>
         {coMovers.map(({ uuid, label }) => (
           <InputCheckbox key={uuid} name={uuid} {...{ register, errors, label }} />

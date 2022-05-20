@@ -88,8 +88,6 @@ export const nl = {
   Form: "Formulier",
   "Next step": "Volgende stap",
   "Previous step": "Vorige stap",
-
-  //Marriage translations
   "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
     "Gaat u trouwen of gaat u een geregistreerd partnerschap aan? Plan een datum en tijd. En doe de officiële melding bij de gemeente. Let op: hou je DigID bij de hand.",
   "Choose between getting married or registered partnership": "Kies tussen trouwen of geregistreerd partnerschap",
@@ -103,8 +101,6 @@ export const nl = {
     "Wat zijn de verschillen tussen een huwelijk, een geregistreerd partnerschap en een samenlevingscontract?",
   "What is an emergency marriage and how can you arrange it?": "Wat is een spoedhuwelijk en hoe kun je dat regelen?",
   "Start Marriage / Partnership": "Start Huwelijk / Partnerschap",
-
-  //Moving translations
   "Are you moving to a different house? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
     "Gaat u verhuizen? Plan een datum en tijd. En doe de officiële melding bij de gemeente. Let op: hou je DigID bij de hand.",
   "Choose your current addres": "Kies je huidige adres",
@@ -117,4 +113,7 @@ export const nl = {
   "Moving date": "Verhuisdatum",
   "Zip code": "Postcode",
   "House number": "Huisnummer",
+  "On what date are you moving?": "Op welke datum verhuis je?",
+  "What is your new address?": "Wat is je nieuwe adres?",
+  "Who will move with you?": "Wie verhuizen er mee?",
 };
