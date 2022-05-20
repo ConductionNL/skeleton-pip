@@ -110,5 +110,5 @@ export const nl = {
   "What is a zipcode?": "Wat is een Postcode?",
   "What do I do when I settle in a different municipality?":
     "Wat moet ik doen als ik naar een andere gemeente verhuis?",
-  DigiDLogin: "Inloggen met DigiD",
+  "Login with DigiD": "Inloggen met DigiD",
 };
