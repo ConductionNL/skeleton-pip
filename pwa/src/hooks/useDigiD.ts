@@ -21,5 +21,5 @@ export const useDigiD = () => {
 };
 
 export const redirectToDigiD = () => {
-  location.href = `${process.env.GATSBY_BASE_URL}/digid/login?returnUrl=${process.env.GATSBY_FRONTEND_URL}/digidResponse`;
+  location.href = `${process.env.GATSBY_BASE_URL}/digid/login?returnUrl=${process.env.GATSBY_FRONTEND_URL}/callbacks/digid`;
 };
