@@ -20,7 +20,7 @@ export const FormStepTemplate: React.FC<FormStepTemplateProps> = ({ children, se
         {children}
 
         <div className={styles.previousStep} onClick={setPreviousStep}>
-          <Link icon={<ArrowLeftIcon />} iconAlign="start" disabled={setPreviousStep ? false : true}>
+          <Link icon={<ArrowLeftIcon />} iconAlign="start" disabled={!setPreviousStep}>
             {t("Previous step")}
           </Link>
         </div>

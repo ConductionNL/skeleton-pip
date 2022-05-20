@@ -8,8 +8,8 @@
 
 .formContainer > form button {
   all: unset;
-  margin-left: auto;
   display: flex;
+  margin-inline-start: auto;
 }
 
 .previousStep {

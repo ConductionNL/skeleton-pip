@@ -85,7 +85,7 @@ export const en = {
   "More Information": "More Information",
   "What steps can you expect": "What steps can you expect",
   Back: "Back",
-  Form: "Form",
+  form: "Form",
   "Next step": "Next step",
   "Previous step": "Previous stap",
   "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":

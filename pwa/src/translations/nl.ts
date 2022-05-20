@@ -85,7 +85,7 @@ export const nl = {
   "More Information": "Meer Informatie",
   "What steps can you expect": "Welke stappen kun je verwachten",
   Back: "Terug",
-  Form: "Formulier",
+  form: "Formulier",
   "Next step": "Volgende stap",
   "Previous step": "Vorige stap",
   "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":

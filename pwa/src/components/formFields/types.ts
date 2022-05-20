@@ -22,7 +22,3 @@ export interface ICheckboxProps {
   label: string;
   name: string;
 }
-
-export interface IControlledInput {
-  control: Control<FieldValues, any>;
-}
