@@ -1,11 +1,11 @@
-import { FormFieldInput, FormFieldLabel, Link, FormControlLabel } from "@gemeente-denhaag/components-react";
 import * as React from "react";
+import { Link } from "@gemeente-denhaag/components-react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { FormStepTemplate } from "../../../templates/templateParts/formStep/FormStepTemplate";
-import { InputCheckbox } from "../../../components/formFields/checkbox";
 import { MovingServiceContext } from "../MovingServiceContext";
+import { InputCheckbox } from "../../../components/formFields";
 
 interface MovingStepProps {
   setNextStep: () => void;
@@ -15,37 +15,45 @@ interface MovingStepProps {
 interface ICoMover {
   label: string;
   uuid: string;
-  selected?: boolean;
 }
 
 export const CoMoversStep: React.FC<MovingStepProps> = ({ setNextStep, setPreviousStep }) => {
-  const { t } = useTranslation();
+  const [coMovers] = React.useState<ICoMover[]>(testCoMovers);
   const [formData, setFormData] = React.useContext(MovingServiceContext);
-  const [coMovers, setCoMovers] = React.useState([{ name: "name1" }, { name: "name2" }]);
-  const [checked, setChekced] = React.useState<boolean>(false);
+  const { t } = useTranslation();
 
   const {
     register,
-    control,
     handleSubmit,
     setValue,
     formState: { errors },
   } = useForm();
 
   React.useEffect(() => {
-    setValue("name1", true);
-  }, [checked]);
+    if (!formData.coMovers) return;
+
+    formData.coMovers.forEach((coMover) => {
+      setValue(coMover, true);
+    });
+  }, [formData]);
 
   const onSubmit = (data: any): void => {
-    console.log(data);
+    const selectedCoMovers: string[] = [];
+
+    for (const [key, value] of Object.entries(data)) {
+      value && selectedCoMovers.push(key);
+    }
+
+    setFormData({ ...formData, coMovers: selectedCoMovers });
+
+    setNextStep();
   };
 
   return (
     <FormStepTemplate {...{ setPreviousStep }}>
-      <button onClick={() => setChekced(!checked)}>toggle</button>
       <form onSubmit={handleSubmit(onSubmit)}>
-        {coMovers.map((coMover) => (
-          <InputCheckbox name={coMover.name} label={coMover.name} {...{ register, errors, control }} />
+        {coMovers.map(({ uuid, label }) => (
+          <InputCheckbox key={uuid} name={uuid} {...{ register, errors, label }} />
         ))}
 
         <button type="submit">
@@ -57,3 +65,9 @@ export const CoMoversStep: React.FC<MovingStepProps> = ({ setNextStep, setPrevio
     </FormStepTemplate>
   );
 };
+
+const testCoMovers: ICoMover[] = [
+  { label: "Co mover: 1", uuid: "df24af62-8aaf-4057-8ede-c12045e0cc74" },
+  { label: "Co mover: 2", uuid: "e293dff2-ae51-4606-86bd-36919c2e204f" },
+  { label: "Co mover: 3", uuid: "ef26907d-388b-430f-8e26-36a3c3c55fb9" },
+];

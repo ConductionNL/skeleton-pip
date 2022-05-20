@@ -21,8 +21,6 @@ export interface ITextAreaProps {
 export interface ICheckboxProps {
   label: string;
   name: string;
-  disabled?: boolean;
-  defaultChecked?: boolean;
 }
 
 export interface IControlledInput {
