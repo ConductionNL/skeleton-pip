@@ -1,4 +1,4 @@
-import { Control, FieldErrors, FieldValues, RegisterOptions, UseFormRegister } from "react-hook-form";
+import { FieldErrors, FieldValues, RegisterOptions, UseFormRegister } from "react-hook-form";
 
 export interface IReactHookFormProps {
   register: UseFormRegister<FieldValues>;
