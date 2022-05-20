@@ -86,8 +86,9 @@ export const en = {
   "More Information": "More Information",
   "What steps can you expect": "What steps can you expect",
   Back: "Back",
-
-  //Marriage translations
+  form: "Form",
+  "Next step": "Next step",
+  "Previous step": "Previous stap",
   "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
     "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.",
   "Choose between getting married or registered partnership":
@@ -102,8 +103,7 @@ export const en = {
     "What are the differences between a marriage, a registered partnership and a cohabitation contract?",
   "What is an emergency marriage and how can you arrange it?":
     " What is an emergency marriage and how can you arrange it?",
-
-  //Moving translations
+  "Start Marriage / Partnership": "Start Marriage / Partnership",
   "Are you moving to a different house? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
     "Are you moving to a different house? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.",
   "Choose your current addres": "Choose your current addres",
@@ -111,4 +111,11 @@ export const en = {
   "And your set!": "And your set!",
   "What is a zipcode?": "What is a zipcode?",
   "What do I do when I settle in a different municipality?": " What do I do when I settle in a different municipality?",
+  "Start moving away": "Start moving away",
+  "Moving date": "Moving date",
+  "Zip code": "Zip code",
+  "House number": "House number",
+  "On what date are you moving?": "On what date are you moving?",
+  "What is your new address?": "What is your new address?",
+  "Who will move with you?": "Who will move with you?",
 };
