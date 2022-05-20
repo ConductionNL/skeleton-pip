@@ -120,4 +120,5 @@ export const nl = {
   "Confirm your move": "Bevestig je verhuizing",
   "Information entered by you": "Door jou ingevulde gegevens",
   Confirm: "Bevestigen",
+  "Login with DigiD": "Inloggen met DigiD",
 };

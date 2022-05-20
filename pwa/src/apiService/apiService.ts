@@ -4,15 +4,18 @@ import Case from "./resources/case";
 import Message from "./resources/message";
 
 import Login from "./services/login";
+import Me from "./services/me";
 
 export default class APIService {
   public JWT?: string;
 
   public removeAuthentication(): void {
+    window.sessionStorage.removeItem("JWT");
     this.JWT = undefined;
   }
 
   public setAuthentication(_JWT: string): void {
+    window.sessionStorage.setItem("JWT", _JWT);
     this.JWT = _JWT;
   }
 
@@ -41,6 +44,17 @@ export default class APIService {
     });
   }
 
+  public get BaseClient(): AxiosInstance {
+    return axios.create({
+      baseURL: process.env.GATSBY_BASE_URL,
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + this.JWT,
+      },
+    });
+  }
+
   // Resources
   public get Case(): Case {
     return new Case(this.apiClient);
@@ -53,6 +67,10 @@ export default class APIService {
   // Services
   public get Login(): Login {
     return new Login(this.LoginClient);
+  }
+
+  public get Me(): Me {
+    return new Me(this.BaseClient);
   }
 }
 

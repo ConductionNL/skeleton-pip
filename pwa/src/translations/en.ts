@@ -121,4 +121,5 @@ export const en = {
   "Confirm your move": "Confirm your move",
   "Information entered by you": "Information entered by you",
   Confirm: "Confirm",
+  "Login with DigiD": "Login with DigiD",
 };
