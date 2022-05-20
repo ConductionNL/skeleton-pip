@@ -58,7 +58,7 @@ export const OverviewTemplate: React.FC = () => {
 
           <div onClick={() => navigate("/self-services")}>
             <Link icon={<ArrowRightIcon />} iconAlign="start">
-              {t("Show all services")}
+              {t("View all products and services")}
             </Link>
           </div>
         </div>

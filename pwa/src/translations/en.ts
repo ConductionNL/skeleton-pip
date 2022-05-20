@@ -60,7 +60,7 @@ export const en = {
   "Number of people on your address": "Number of people on your address",
   "Request research": "Request research",
   "Oops, something went wrong": "Oops, something went wrong",
-  "Show all services": "Show all services",
+  "View all products and services": "View all products and services",
   "Show all cases": "Show all cases",
   "Show all messages": "Show all messages",
   "View case": "View case",
