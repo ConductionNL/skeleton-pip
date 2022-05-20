@@ -86,7 +86,7 @@ export const en = {
   "More Information": "More Information",
   "What steps can you expect": "What steps can you expect",
   Back: "Back",
-  form: "Form",
+  Form: "Form",
   "Next step": "Next step",
   "Previous step": "Previous stap",
   "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
@@ -118,4 +118,7 @@ export const en = {
   "On what date are you moving?": "On what date are you moving?",
   "What is your new address?": "What is your new address?",
   "Who will move with you?": "Who will move with you?",
+  "Confirm your move": "Confirm your move",
+  "Information entered by you": "Information entered by you",
+  Confirm: "Confirm",
 };
