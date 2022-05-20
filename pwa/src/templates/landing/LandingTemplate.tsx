@@ -4,7 +4,7 @@ import { Card, Heading3, Paragraph } from "@gemeente-denhaag/components-react";
 import * as styles from "./LandingTemplate.module.css";
 import { navigate } from "gatsby";
 import { t } from "i18next";
-import { redirectToDigiD } from "../../services/auth";
+import { redirectToDigiD } from "../../hooks/useDigiD";
 
 export const LandingTemplate: React.FC = () => {
   return (

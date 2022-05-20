@@ -1,7 +1,6 @@
 import * as React from "react";
 import APIService from "../apiService/apiService";
 import APIContext from "../apiService/apiContext";
-import { navigate } from "gatsby";
 
 export const useDigiD = () => {
   const API: APIService = React.useContext(APIContext);
@@ -10,13 +9,17 @@ export const useDigiD = () => {
     const params = new URLSearchParams(location.search);
     const undecodedToken: string | null = params.get("token");
 
-    if (!undecodedToken) return;
+    if (!undecodedToken) return false;
 
     const JWT: string = window.atob(undecodedToken);
   
     API.setAuthentication(JWT);
-    navigate('/');
+    return true;
   };
 
   return { authenticate };
+};
+
+export const redirectToDigiD = () => {
+  location.href = `${process.env.GATSBY_BASE_URL}/digid/login?returnUrl=${process.env.GATSBY_FRONTEND_URL}/digidResponse`;
 };

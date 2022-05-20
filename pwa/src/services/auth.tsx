@@ -17,10 +17,6 @@ export const handleLogin = async (data: IUnvalidatedUser, API: APIService) => {
   });
 };
 
-export const redirectToDigiD = () => {
-  location.href = `${process.env.GATSBY_BASE_URL}/digid/login?returnUrl=${process.env.GATSBY_FRONTEND_URL}/digidResponse`;
-};
-
 export const isLoggedIn = (): boolean | void => {
   if (!isBrowser()) return;
 
