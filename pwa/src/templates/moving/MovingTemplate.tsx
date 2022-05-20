@@ -29,6 +29,7 @@ const MovingTemplate: React.FC = () => {
       description={t(
         "Are you moving to a different house? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.",
       )}
+      startServiceButton={{ label: t("Start moving away"), href: "/self-services/moving/form" }}
       {...{ processSteps, moreInformationLinks }}
     />
   );

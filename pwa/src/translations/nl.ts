@@ -60,7 +60,7 @@ export const nl = {
   "Number of people on your address": "Aantal inwoners op uw woonadres",
   "Request research": "Vraag onderzoek aan",
   "Oops, something went wrong": "Oops, er is iets fout gegaan",
-  "Show all services": "Bekijk alle e-diensten",
+  "View all products and services": "Bekijk alle producten en diensten",
   "Show all cases": "Bekijk alle zaken",
   "Show all messages": "Bekijk alle berichten",
   "View case": "Bekijk zaak",
@@ -86,8 +86,9 @@ export const nl = {
   "More Information": "Meer Informatie",
   "What steps can you expect": "Welke stappen kun je verwachten",
   Back: "Terug",
-
-  //Marriage translations
+  Form: "Formulier",
+  "Next step": "Volgende stap",
+  "Previous step": "Vorige stap",
   "Are you getting married or getting a registerd partnership? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
     "Gaat u trouwen of gaat u een geregistreerd partnerschap aan? Plan een datum en tijd. En doe de officiële melding bij de gemeente. Let op: hou je DigID bij de hand.",
   "Choose between getting married or registered partnership": "Kies tussen trouwen of geregistreerd partnerschap",
@@ -100,8 +101,7 @@ export const nl = {
   "What are the differences between a marriage, a registered partnership and a cohabitation contract?":
     "Wat zijn de verschillen tussen een huwelijk, een geregistreerd partnerschap en een samenlevingscontract?",
   "What is an emergency marriage and how can you arrange it?": "Wat is een spoedhuwelijk en hoe kun je dat regelen?",
-
-  //Moving translations
+  "Start Marriage / Partnership": "Start Huwelijk / Partnerschap",
   "Are you moving to a different house? Schedule a date and time. And make the official report to the municipality. Note: keep your DigiD to hand.":
     "Gaat u verhuizen? Plan een datum en tijd. En doe de officiële melding bij de gemeente. Let op: hou je DigID bij de hand.",
   "Choose your current addres": "Kies je huidige adres",
@@ -110,5 +110,15 @@ export const nl = {
   "What is a zipcode?": "Wat is een Postcode?",
   "What do I do when I settle in a different municipality?":
     "Wat moet ik doen als ik naar een andere gemeente verhuis?",
+  "Start moving away": "Start verhuizing",
+  "Moving date": "Verhuisdatum",
+  "Zip code": "Postcode",
+  "House number": "Huisnummer",
+  "On what date are you moving?": "Op welke datum verhuis je?",
+  "What is your new address?": "Wat is je nieuwe adres?",
+  "Who will move with you?": "Wie verhuizen er mee?",
+  "Confirm your move": "Bevestig je verhuizing",
+  "Information entered by you": "Door jou ingevulde gegevens",
+  Confirm: "Bevestigen",
   "Login with DigiD": "Inloggen met DigiD",
 };
