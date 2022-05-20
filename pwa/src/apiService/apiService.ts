@@ -44,7 +44,7 @@ export default class APIService {
     });
   }
 
-  public get MeClient(): AxiosInstance {
+  public get BaseClient(): AxiosInstance {
     return axios.create({
       baseURL: process.env.GATSBY_BASE_URL,
       headers: {
@@ -70,7 +70,7 @@ export default class APIService {
   }
 
   public get Me(): Me {
-    return new Me(this.MeClient);
+    return new Me(this.BaseClient);
   }
 }
 
