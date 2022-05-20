@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { InputDate } from "../../../components/formFields";
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { FormStepTemplate } from "../../../templates/templateParts/formStep/FormStepTemplate";
+import { MovingServiceContext } from "../MovingServiceContext";
 
 interface MovingStepProps {
   setNextStep: () => void;
@@ -12,14 +13,21 @@ interface MovingStepProps {
 
 export const DateFormStep: React.FC<MovingStepProps> = ({ setNextStep }) => {
   const { t } = useTranslation();
+  const [formData, setFormData] = React.useContext(MovingServiceContext);
 
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (): void => {
+  React.useEffect(() => {
+    setValue("date", formData.date);
+  }, [formData]);
+
+  const onSubmit = (data: any): void => {
+    setFormData({ ...formData, date: data.date });
     setNextStep();
   };
 
