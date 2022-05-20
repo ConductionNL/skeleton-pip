@@ -1,6 +1,9 @@
 import * as React from "react";
 import { IMovingServiceData, movingServiceData, MovingServiceProvider } from "./MovingServiceContext";
 import { DateFormStep, NewAdressFormStep, CoMoversStep } from "./steps";
+import { ArrowLeftIcon } from "@gemeente-denhaag/icons";
+import { Link } from "@gemeente-denhaag/components-react";
+import { useTranslation } from "react-i18next";
 
 type TMovingFormServiceSteps = "date" | "newAdress" | "coMovers" | "confirm";
 
@@ -21,6 +24,8 @@ interface MovingServiceFormStepProps {
 }
 
 const MovingServiceFormStep: React.FC<MovingServiceFormStepProps> = ({ step, setStep }) => {
+  const { t } = useTranslation();
+
   switch (step) {
     case "date":
       return <DateFormStep setNextStep={() => setStep("newAdress")} />;
@@ -32,6 +37,15 @@ const MovingServiceFormStep: React.FC<MovingServiceFormStepProps> = ({ step, set
       return <CoMoversStep setNextStep={() => setStep("confirm")} setPreviousStep={() => setStep("newAdress")} />;
 
     case "confirm":
-      return <>Confirm page here</>;
+      return (
+        <div>
+          <div>Generic confirm page here!</div>
+          <button onClick={() => setStep("coMovers")} style={{ all: "unset" }}>
+            <Link icon={<ArrowLeftIcon />} iconAlign="start">
+              {t("Previous step")}
+            </Link>
+          </button>
+        </div>
+      );
   }
 };
