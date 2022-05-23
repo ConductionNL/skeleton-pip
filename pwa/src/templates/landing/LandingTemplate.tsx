@@ -2,12 +2,11 @@ import * as React from "react";
 import { Container } from "../../components/container/Container";
 import { Heading3, Paragraph } from "@gemeente-denhaag/components-react";
 import * as styles from "./LandingTemplate.module.css";
-import { t } from "i18next";=
+import { t } from "i18next";
 import { HorizontalImageCard } from "../../components/card/HorizontalImageCard/HorizontalImageCard";
 import { UserIcon } from "@gemeente-denhaag/icons";
 import DigidImage from "../../assets/svgs/digid.svg";
 import { redirectToDigiD } from "../../hooks/useDigiD";
-
 
 export const LandingTemplate: React.FC = () => {
   return (
@@ -26,8 +25,8 @@ export const LandingTemplate: React.FC = () => {
             iconOrImage={<img src={DigidImage} />}
             title={t("Login")}
             link={{
-              href: "redirectToDigiD()",
-              label: t("Login with DigID"),
+              href: `redirectToDigiD()`,
+              label: t("Login with DigiD"),
             }}
             external
           />
@@ -39,7 +38,7 @@ export const LandingTemplate: React.FC = () => {
               label: t("Login with your account"),
             }}
           />
-       </div>
+        </div>
       </div>
     </Container>
   );

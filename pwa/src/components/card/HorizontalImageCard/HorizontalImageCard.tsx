@@ -24,15 +24,13 @@ export const HorizontalImageCard: React.FC<HorizontalImageCardProps> = ({
   iconOrImage,
 }) => {
   return (
-    <div className={clsx(styles.container, [layoutClassName && layoutClassName])}>
-      <div className={styles.content} onClick={() => navigate(link.href)}>
-        <div className={styles.image}>{iconOrImage}</div>
-        <div className={styles.context}>
-          <div className={styles.title}>{title}</div>
-          <Link icon={external ? <ExternalLinkIcon /> : <ArrowRightIcon />} iconAlign="start">
-            {link.label}
-          </Link>
-        </div>
+    <div className={clsx(styles.container, [layoutClassName && layoutClassName])} onClick={() => navigate(link.href)}>
+      <div className={styles.image}>{iconOrImage}</div>
+      <div className={styles.context}>
+        <div className={styles.title}>{title}</div>
+        <Link icon={external ? <ExternalLinkIcon /> : <ArrowRightIcon />} iconAlign="start">
+          {link.label}
+        </Link>
       </div>
     </div>
   );

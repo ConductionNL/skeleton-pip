@@ -85,7 +85,6 @@ export const en = {
   Case: "Case",
   "More Information": "More Information",
   "What steps can you expect": "What steps can you expect",
-  "Login with DigID": "Login with DigID",
   Back: "Back",
   "Login with your account": "Login with your account",
   //Marriage translations

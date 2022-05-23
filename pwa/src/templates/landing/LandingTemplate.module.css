@@ -1,5 +1,6 @@
 .container {
   margin-block-start: var(--nlportal-space-block-4xl);
+  cursor: pointer;
 }
 
 .container > *:not(:last-child) {
@@ -9,5 +10,5 @@
 .container > .loginCards {
   display: grid;
   grid-gap: var(--nlportal-space-inline-xl);
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
