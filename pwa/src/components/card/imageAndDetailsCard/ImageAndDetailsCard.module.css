@@ -1,32 +1,25 @@
-.context {
+.content {
   display: flex;
   flex-direction: column;
-  border-radius: var(--nlportal-document-border-radius);
-  padding: var(--nlportal-space-inline-md);
 }
 
 .title {
   font-weight: var(--denhaag-menu-button-active-font-weight);
+  font-size: var(--denhaag-typography-scale-lg-font-size);
 }
 
 .date {
   color: var(--denhaag-color-grey-3);
-  font-size: var(--denhaag-typography-scale-base-font-size);
+  font-size: var(--conduction-component-image-and-details-card-font-size-date);
 }
 
 .introduction {
   margin-top: var(--denhaag-space-block-md);
   margin-bottom: var(--denhaag-space-block-md);
-  font-size: var(--denhaag-typography-scale-lg-font-size);
+  font-size: var(--denhaag-typography-scale-s-font-size);
 }
 
 .link {
   display: flex;
   justify-content: flex-end;
 }
-
-.image > :first-child {
-  width: var(--conduction-component-ImageAndDetailsCard-block-width);
-  height: var(--conduction-component-ImageAndDetailsCard-block-height);
-}
-
