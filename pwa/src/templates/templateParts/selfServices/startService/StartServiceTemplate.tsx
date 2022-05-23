@@ -10,6 +10,10 @@ interface StartServiceTemplateProps {
   description: string;
   processSteps: string[];
   moreInformationLinks: IMoreInformationLink[];
+  startServiceButton: {
+    label: string;
+    href: string;
+  };
 }
 
 export interface IMoreInformationLink {
@@ -22,6 +26,7 @@ export const StartServiceTemplate: React.FC<StartServiceTemplateProps> = ({
   moreInformationLinks,
   title,
   description,
+  startServiceButton,
 }) => {
   const { t } = useTranslation();
 
@@ -42,9 +47,9 @@ export const StartServiceTemplate: React.FC<StartServiceTemplateProps> = ({
             <ListItem className={styles.listItem} key={idx} primaryText={t(step)}></ListItem>
           ))}
         </List>
-        <div onClick={() => navigate("#")}>
+        <div onClick={() => navigate(startServiceButton.href)}>
           <Button icon={<ArrowRightIcon />} iconAlign="start">
-            {t("Start")}
+            {startServiceButton.label}
           </Button>
         </div>
       </div>

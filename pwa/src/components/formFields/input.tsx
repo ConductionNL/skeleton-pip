@@ -1,9 +1,9 @@
 import * as React from "react";
 import { TextField } from "@gemeente-denhaag/components-react";
 import { ShowIcon, HideIcon } from "@gemeente-denhaag/icons";
-import { IFormFieldProps, IReactHookFormProps } from "./types";
+import { IInputProps, IReactHookFormProps } from "./types";
 
-export const InputPassword: React.FC<IFormFieldProps & IReactHookFormProps> = ({
+export const InputPassword: React.FC<IInputProps & IReactHookFormProps> = ({
   disabled,
   name,
   validation,
@@ -23,7 +23,7 @@ export const InputPassword: React.FC<IFormFieldProps & IReactHookFormProps> = ({
   );
 };
 
-export const InputText: React.FC<IFormFieldProps & IReactHookFormProps> = ({
+export const InputText: React.FC<IInputProps & IReactHookFormProps> = ({
   disabled,
   name,
   defaultValue,
@@ -39,7 +39,7 @@ export const InputText: React.FC<IFormFieldProps & IReactHookFormProps> = ({
   />
 );
 
-export const InputEmail: React.FC<IFormFieldProps & IReactHookFormProps> = ({
+export const InputEmail: React.FC<IInputProps & IReactHookFormProps> = ({
   disabled,
   name,
   defaultValue,
@@ -49,6 +49,38 @@ export const InputEmail: React.FC<IFormFieldProps & IReactHookFormProps> = ({
 }) => (
   <TextField
     type="email"
+    {...{ defaultValue, disabled }}
+    {...register(name, { ...validation })}
+    invalid={errors[name]}
+  />
+);
+
+export const InputDate: React.FC<IInputProps & IReactHookFormProps> = ({
+  disabled,
+  name,
+  defaultValue,
+  validation,
+  register,
+  errors,
+}) => (
+  <TextField
+    type="date"
+    {...{ defaultValue, disabled }}
+    {...register(name, { ...validation })}
+    invalid={errors[name]}
+  />
+);
+
+export const InputNumber: React.FC<IInputProps & IReactHookFormProps> = ({
+  disabled,
+  name,
+  defaultValue,
+  validation,
+  register,
+  errors,
+}) => (
+  <TextField
+    type="number"
     {...{ defaultValue, disabled }}
     {...register(name, { ...validation })}
     invalid={errors[name]}
