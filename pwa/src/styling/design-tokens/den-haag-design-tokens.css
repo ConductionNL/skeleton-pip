@@ -105,7 +105,4 @@
     --denhaag-typography-scale-xl-font-size
   );
   --nlportal-space-block-4xl: var(--denhaag-space-block-4xl);
-  --denhaag-typography-scale-s-font-size: var(
-    --denhaag-typography-scale-s-font-size
-  );
 }
