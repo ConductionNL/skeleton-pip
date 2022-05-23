@@ -1,3 +1,8 @@
+.container {
+  margin-block-start: var(--nlportal-space-block-4xl);
+  cursor: pointer;
+}
+
 .content {
   display: flex;
   flex-direction: column;
