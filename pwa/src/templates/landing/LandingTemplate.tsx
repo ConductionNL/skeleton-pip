@@ -6,7 +6,7 @@ import { t } from "i18next";
 import { HorizontalImageCard } from "../../components/card/HorizontalImageCard/HorizontalImageCard";
 import { UserIcon } from "@gemeente-denhaag/icons";
 import DigidImage from "../../assets/svgs/digid.svg";
-import { redirectToDigiD } from "../../hooks/useDigiD";
+import { useDigiD } from "../../hooks/useDigiD";
 
 export const LandingTemplate: React.FC = () => {
   return (
@@ -25,7 +25,7 @@ export const LandingTemplate: React.FC = () => {
             iconOrImage={<img src={DigidImage} />}
             title={t("Login")}
             link={{
-              href: `redirectToDigiD()`,
+              href: useDigiD().getRedirectURL(),
               label: t("Login with DigiD"),
             }}
             external
