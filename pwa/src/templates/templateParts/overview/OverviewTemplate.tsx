@@ -10,8 +10,6 @@ import { useQueryClient } from "react-query";
 import { useCase } from "../../../hooks/case";
 import Skeleton from "react-loading-skeleton";
 import { useMessage } from "../../../hooks/message";
-import { ImageAndDetailsCard } from "../../../components/card/imageAndDetailsCard/ImageAndDetailsCard";
-import Testimage from "../../../assets/images/AuthenticatedDivider.png";
 
 export const OverviewTemplate: React.FC = () => {
   const { t } = useTranslation();
