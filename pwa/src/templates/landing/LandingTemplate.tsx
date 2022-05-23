@@ -22,6 +22,7 @@ export const LandingTemplate: React.FC = () => {
         </div>
         <div className={styles.loginCards}>
           <HorizontalImageCard
+            layoutClassName={styles.card}
             iconOrImage={<img src={DigidImage} />}
             title={t("Login")}
             link={{
@@ -31,6 +32,7 @@ export const LandingTemplate: React.FC = () => {
             external
           />
           <HorizontalImageCard
+            layoutClassName={styles.card}
             iconOrImage={<UserIcon />}
             title={t("Login")}
             link={{

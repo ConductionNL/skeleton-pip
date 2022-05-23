@@ -12,3 +12,7 @@
   grid-gap: var(--nlportal-space-inline-xl);
   grid-template-columns: 1fr 1fr;
 }
+
+.container > .loginCards > .card {
+  background-color: var(--denhaag-color-grey-2);
+}
