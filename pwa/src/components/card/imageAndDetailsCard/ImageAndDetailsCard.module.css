@@ -10,7 +10,7 @@
 
 .date {
   color: var(--denhaag-color-grey-3);
-  font-size: var(--conduction-component-image-and-details-card-font-size-date);
+  font-size: var(--denhaag-unordered-list-marker-font-size);
 }
 
 .introduction {
