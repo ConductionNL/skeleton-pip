@@ -56,9 +56,9 @@ App\Entity\CollectionEntity:
     autoLoad: true
         
   pdcCollection:
-      name: pdc collection 
-      sourceType: GitHub
-      locationOAS: https://raw.githubusercontent.com/ConductionNL/PDC_publiccode/main/PDC_OAS.json
-      testDataLocation: https://raw.githubusercontent.com/ConductionNL/PDC_publiccode/main/data/PDC.json
-      loadTestData: true
-      autoLoad: true
+    name: pdc collection 
+    sourceType: GitHub
+    locationOAS: https://raw.githubusercontent.com/ConductionNL/PDC_publiccode/main/PDC_OAS.json
+    testDataLocation: https://raw.githubusercontent.com/ConductionNL/PDC_publiccode/main/data/PDC.json
+    loadTestData: true
+    autoLoad: true
