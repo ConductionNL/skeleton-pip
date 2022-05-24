@@ -87,7 +87,6 @@ export const nl = {
   "What steps can you expect": "Welke stappen kun je verwachten",
   Back: "Terug",
   "Login with your account": "Inloggen met je account",
-  //Marriage translations
   Form: "Formulier",
   "Next step": "Volgende stap",
   "Previous step": "Vorige stap",

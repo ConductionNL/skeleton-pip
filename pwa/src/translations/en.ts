@@ -87,7 +87,6 @@ export const en = {
   "What steps can you expect": "What steps can you expect",
   Back: "Back",
   "Login with your account": "Login with your account",
-  //Marriage translations
   Form: "Form",
   "Next step": "Next step",
   "Previous step": "Previous stap",

@@ -8,12 +8,12 @@ import { ExternalLinkIcon, ArrowRightIcon } from "@gemeente-denhaag/icons";
 interface HorizontalImageCardProps {
   iconOrImage: JSX.Element;
   title: string;
-  layoutClassName?: string;
-  external?: boolean;
   link: {
     label: string;
     href: string;
   };
+  layoutClassName?: string;
+  external?: boolean;
 }
 
 export const HorizontalImageCard: React.FC<HorizontalImageCardProps> = ({
@@ -25,8 +25,8 @@ export const HorizontalImageCard: React.FC<HorizontalImageCardProps> = ({
 }) => {
   return (
     <div className={clsx(styles.container, [layoutClassName && layoutClassName])} onClick={() => navigate(link.href)}>
-      <div className={styles.image}>{iconOrImage}</div>
-      <div className={styles.context}>
+      <div className={styles.imageOrIconContainer}>{iconOrImage}</div>
+      <div className={styles.link}>
         <div className={styles.title}>{title}</div>
         <Link icon={external ? <ExternalLinkIcon /> : <ArrowRightIcon />} iconAlign="start">
           {link.label}

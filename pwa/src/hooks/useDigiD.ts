@@ -17,9 +17,9 @@ export const useDigiD = () => {
     return true;
   };
 
-  const  getRedirectURL= (): string => {
+  const getRedirectURL = (): string => {
     return `${process.env.GATSBY_BASE_URL}/digid/login?returnUrl=${process.env.GATSBY_FRONTEND_URL}/callbacks/digid`;
   };
 
-  return { authenticate , getRedirectURL};
+  return { authenticate, getRedirectURL };
 };
