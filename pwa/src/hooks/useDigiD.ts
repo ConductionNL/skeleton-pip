@@ -12,14 +12,14 @@ export const useDigiD = () => {
     if (!undecodedToken) return false;
 
     const JWT: string = window.atob(undecodedToken);
-  
+
     API.setAuthentication(JWT);
     return true;
   };
 
-  return { authenticate };
-};
+  const getRedirectURL = (): string => {
+    return `${process.env.GATSBY_BASE_URL}/digid/login?returnUrl=${process.env.GATSBY_FRONTEND_URL}/callbacks/digid`;
+  };
 
-export const redirectToDigiD = () => {
-  location.href = `${process.env.GATSBY_BASE_URL}/digid/login?returnUrl=${process.env.GATSBY_FRONTEND_URL}/callbacks/digid`;
+  return { authenticate, getRedirectURL };
 };

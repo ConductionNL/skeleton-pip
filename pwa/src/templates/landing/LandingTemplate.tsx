@@ -1,10 +1,12 @@
 import * as React from "react";
 import { Container } from "../../components/container/Container";
-import { Card, Heading3, Paragraph } from "@gemeente-denhaag/components-react";
+import { Heading3, Paragraph } from "@gemeente-denhaag/components-react";
 import * as styles from "./LandingTemplate.module.css";
-import { navigate } from "gatsby";
 import { t } from "i18next";
-import { redirectToDigiD } from "../../hooks/useDigiD";
+import { HorizontalImageCard } from "../../components/card/HorizontalImageCard/HorizontalImageCard";
+import { UserIcon } from "@gemeente-denhaag/icons";
+import DigidImage from "../../assets/svgs/digid.svg";
+import { useDigiD } from "../../hooks/useDigiD";
 
 export const LandingTemplate: React.FC = () => {
   return (
@@ -18,10 +20,26 @@ export const LandingTemplate: React.FC = () => {
             )}
           </Paragraph>
         </div>
-
         <div className={styles.loginCards}>
-          <Card title={t("Login")} subTitle={t("Account")} onClick={() => navigate("/login")} />
-          <Card title={t("DigiDLogin")} subTitle={t("Account")} onClick={() => redirectToDigiD()} />
+          <HorizontalImageCard
+            layoutClassName={styles.card}
+            iconOrImage={<img src={DigidImage} />}
+            title={t("Login")}
+            link={{
+              href: useDigiD().getRedirectURL(),
+              label: t("Login with DigiD"),
+            }}
+            external
+          />
+          <HorizontalImageCard
+            layoutClassName={styles.card}
+            iconOrImage={<UserIcon />}
+            title={t("Login")}
+            link={{
+              href: "/login",
+              label: t("Login with your account"),
+            }}
+          />
         </div>
       </div>
     </Container>
