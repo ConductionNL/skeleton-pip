@@ -30,12 +30,3 @@
 .container > .services > .grid > .card {
   width: unset;
 }
-
-.test {
-  display: flex;
-  gap: 50px;
-}
-
-.test > * {
-  flex: 1;
-}
