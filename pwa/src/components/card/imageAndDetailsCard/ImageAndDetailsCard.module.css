@@ -1,26 +1,51 @@
 .container {
   cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--nlportal-document-border-radius);
+}
+
+.image {
+  height: var(--conduction-image-and-details-card-image-height);
+}
+
+.image > :first-child {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .content {
   display: flex;
   flex-direction: column;
+  padding-inline-start: var(--nlportal-space-inline-lg);
+  padding-inline-end: var(--nlportal-space-inline-lg);
+  padding-block-start: var(--nlportal-space-block-lg);
+  padding-block-end: var(--nlportal-space-block-lg);
+  border: var(--nlportal-document-border, 1px solid);
+}
+
+.content > *:not(:last-child) {
+  margin-block-end: var(--nlportal-space-block-md);
 }
 
 .title {
-  font-weight: var(--denhaag-menu-button-active-font-weight);
-  font-size: var(--denhaag-typography-scale-lg-font-size);
+  font-size: var(--denhaag-typography-scale-xl-font-size);
+  font-weight: var(--conduction-image-and-details-card-title-font-weight);
 }
 
-.date {
+.subHeader {
   color: var(--denhaag-color-grey-3);
-  font-size: var(--denhaag-unordered-list-marker-font-size);
+  font-size: var(--denhaag-typography-scale-s-font-size);
 }
 
 .introduction {
-  margin-top: var(--denhaag-space-block-md);
-  margin-bottom: var(--denhaag-space-block-md);
-  font-size: var(--denhaag-typography-scale-s-font-size);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: var(
+    --conduction-image-and-details-card-introduction-lines-clamp
+  );
+  -webkit-box-orient: vertical;
 }
 
 .link {

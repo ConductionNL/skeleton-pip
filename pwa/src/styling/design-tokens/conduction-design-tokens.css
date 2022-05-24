@@ -4,5 +4,8 @@
   --conduction-footer-height: 115px;
   --conduction-authenticated-logo-background: url(../../assets/svgs/MijnDenHaag.svg);
   --conduction-unauthenticated-logo-background: url(../../assets/svgs/DenHaag.svg);
-  --conduction-component-image-and-details-card-font-size-date: 18px;
+
+  --conduction-image-and-details-card-title-font-weight: bold;
+  --conduction-image-and-details-card-image-height: 250px;
+  --conduction-image-and-details-card-introduction-lines-clamp: 3;
 }

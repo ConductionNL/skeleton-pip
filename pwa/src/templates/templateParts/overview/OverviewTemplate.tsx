@@ -10,6 +10,7 @@ import { useQueryClient } from "react-query";
 import { useCase } from "../../../hooks/case";
 import Skeleton from "react-loading-skeleton";
 import { useMessage } from "../../../hooks/message";
+import { ImageAndDetailsCard } from "../../../components/card/imageAndDetailsCard/ImageAndDetailsCard";
 
 export const OverviewTemplate: React.FC = () => {
   const { t } = useTranslation();
@@ -51,6 +52,27 @@ export const OverviewTemplate: React.FC = () => {
   return (
     <div className={styles.container}>
       <Heading1>{t("Overview")}</Heading1>
+
+      <div className={styles.test}>
+        <ImageAndDetailsCard
+          image={
+            <img src="https://images.ctfassets.net/hrltx12pl8hq/7yQR5uJhwEkRfjwMFJ7bUK/dc52a0913e8ff8b5c276177890eb0129/offset_comp_772626-opt.jpg?fit=fill&w=800&h=300" />
+          }
+          title="Title"
+          subHeader="22-22-2222"
+          link={{ href: "/", label: "Label" }}
+          introduction="Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus."
+        />
+        <ImageAndDetailsCard
+          image={
+            <img src="https://d5nunyagcicgy.cloudfront.net/external_assets/hero_examples/hair_beach_v391182663/original.jpeg" />
+          }
+          title="Title"
+          subHeader="22-22-2222"
+          link={{ href: "/", label: "Label" }}
+          introduction="Lorem ipsum"
+        />
+      </div>
 
       <div className={styles.services}>
         <div className={styles.servicesHeading}>
