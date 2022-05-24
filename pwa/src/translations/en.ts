@@ -1,5 +1,5 @@
 export const en = {
-  Login: "Log in",
+  Login: "Login",
   Welcome: "Welcome",
   Logout: "Log out",
   Translation: "Nederlands",
@@ -86,6 +86,7 @@ export const en = {
   "More Information": "More Information",
   "What steps can you expect": "What steps can you expect",
   Back: "Back",
+  "Login with your account": "Login with your account",
   Form: "Form",
   "Next step": "Next step",
   "Previous step": "Previous stap",
