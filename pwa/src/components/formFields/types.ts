@@ -11,14 +11,3 @@ export interface IInputProps {
   disabled?: boolean;
   defaultValue?: string;
 }
-
-export interface ITextAreaProps {
-  name: string;
-  disabled?: boolean;
-  defaultValue?: string;
-}
-
-export interface ICheckboxProps {
-  label: string;
-  name: string;
-}

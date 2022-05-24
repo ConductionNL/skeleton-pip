@@ -1,0 +1,13 @@
+/* InputCheckboxCard */
+.card {
+  display: flex;
+  align-items: center;
+  border: var(--nlportal-document-border, 1px solid);
+  border-radius: var(--nlportal-document-border-radius);
+  padding: var(--nlportal-space-inline-lg);
+  cursor: pointer;
+}
+
+.card > :first-child {
+  width: fit-content;
+}

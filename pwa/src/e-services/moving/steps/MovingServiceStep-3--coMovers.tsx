@@ -1,11 +1,12 @@
 import * as React from "react";
-import { Link } from "@gemeente-denhaag/components-react";
+import { Divider, Link } from "@gemeente-denhaag/components-react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { FormStepTemplate } from "../../../templates/templateParts/formStep/FormStepTemplate";
 import { MovingServiceContext } from "../MovingServiceContext";
 import { InputCheckbox } from "../../../components/formFields";
+import { InputCheckboxCard } from "../../../components/formFields/checkbox/checkbox";
 
 interface MovingStepProps {
   setNextStep: () => void;
@@ -56,6 +57,14 @@ export const CoMoversStep: React.FC<MovingStepProps> = ({ setNextStep, setPrevio
           <InputCheckbox key={uuid} name={uuid} {...{ register, errors, label }} />
         ))}
 
+        <Divider />
+
+        <InputCheckboxCard
+          name="cardTest"
+          content={<CoMoverCardContent coMover={coMovers[0]} />}
+          {...{ register, errors }}
+        />
+
         <button type="submit">
           <Link icon={<ArrowRightIcon />} iconAlign="start">
             {t("Next step")}
@@ -64,6 +73,14 @@ export const CoMoversStep: React.FC<MovingStepProps> = ({ setNextStep, setPrevio
       </form>
     </FormStepTemplate>
   );
+};
+
+interface CoMoverCardContentProps {
+  coMover: ICoMover;
+}
+
+const CoMoverCardContent: React.FC<CoMoverCardContentProps> = ({ coMover: ICoMover }) => {
+  return <>hey</>;
 };
 
 const testCoMovers: ICoMover[] = [

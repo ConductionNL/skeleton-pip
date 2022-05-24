@@ -35,8 +35,8 @@ export const EndServiceTemplate: React.FC<EndServiceTemplateProps> = ({
 
       <Table>
         <TableBody>
-          {collectedData.map((data) => (
-            <TableRow className={styles.tableRow}>
+          {collectedData.map((data, idx) => (
+            <TableRow key={idx} className={styles.tableRow}>
               <TableHeader className={styles.tableHeader}>{data.label}</TableHeader>
               <TableCell className={styles.tableCell}>{data.value}</TableCell>
             </TableRow>

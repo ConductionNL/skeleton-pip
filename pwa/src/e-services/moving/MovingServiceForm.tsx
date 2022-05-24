@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 type TMovingFormServiceSteps = "date" | "newAdress" | "coMovers" | "confirm";
 
 export const MovingServiceForm: React.FC = () => {
-  const [step, setStep] = React.useState<TMovingFormServiceSteps>("date");
+  const [step, setStep] = React.useState<TMovingFormServiceSteps>("coMovers");
   const [formData, setFormData] = React.useState<IMovingServiceData>(movingServiceData);
 
   return (
