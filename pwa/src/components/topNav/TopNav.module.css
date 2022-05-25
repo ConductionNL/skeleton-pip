@@ -1,0 +1,21 @@
+.nav {
+  display: flex;
+}
+.primary {
+  display: flex;
+  font-weight: bold;
+}
+.secondary {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+}
+.li {
+  list-style-type: none;
+  border-style: solid;
+  flex: auto;
+}
+.li > a {
+  text-decoration: none;
+  color: white;
+}

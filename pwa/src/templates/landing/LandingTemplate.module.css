@@ -11,3 +11,9 @@
   grid-gap: var(--nlportal-space-inline-xl);
   grid-template-columns: 1fr 1fr;
 }
+.prim {
+  background-color: darkcyan;
+}
+.sec {
+  background-color: darkslategray;
+}

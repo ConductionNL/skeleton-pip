@@ -7,6 +7,9 @@ import { HorizontalImageCard } from "../../components/card/HorizontalImageCard/H
 import { UserIcon } from "@gemeente-denhaag/icons";
 import DigidImage from "../../assets/svgs/digid.svg";
 import { useDigiD } from "../../hooks/useDigiD";
+import { ITopNavItem, PrimaryTopNav, SecondaryTopNav } from "../../components/topNav/TopNav";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 
 export const LandingTemplate: React.FC = () => {
   return (
@@ -41,7 +44,27 @@ export const LandingTemplate: React.FC = () => {
             }}
           />
         </div>
+        <div className={styles.prim}>
+          <PrimaryTopNav items={PrimaryTopNavItems} />
+        </div>
+        <div className={styles.sec}>
+          <SecondaryTopNav items={SecondaryTopNavItems} />
+        </div>
       </div>
     </Container>
   );
 };
+
+const PrimaryTopNavItems: ITopNavItem[] = [
+  { label: "Home", href: "/" },
+  { label: "API's", href: "/apis" },
+  { label: "Events", href: "/events" },
+  { label: "Code", href: "/code" },
+  { label: "Over", href: "/over" },
+];
+
+const SecondaryTopNavItems: ITopNavItem[] = [
+  { label: "Developer", href: "/developer" },
+  { label: "Forum", href: "/forum" },
+  { label: "Gitlab", href: "/gitlab", icon: <FontAwesomeIcon icon={faInfoCircle} /> },
+];
