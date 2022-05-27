@@ -8,13 +8,13 @@
 
 .li {
   list-style-type: none;
-  padding-top: var(--conduction-navbar-padding);
-  padding-bottom: var(--conduction-navbar-padding);
+  padding-block-start: var(--conduction-navbar-padding);
+  padding-block-end: var(--conduction-navbar-padding);
 }
 
 .li > * {
   text-decoration: none;
-  color: white;
+  color: var(--conduction-navbar-color);
 }
 
 .primary {
