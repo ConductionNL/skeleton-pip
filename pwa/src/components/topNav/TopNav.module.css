@@ -1,21 +1,22 @@
-.nav {
+.ul {
   display: flex;
 }
-.primary {
-  display: flex;
-  font-weight: bold;
+
+.ul > * {
+  flex: 1;
 }
-.secondary {
-  display: flex;
-  margin: 0px;
-  padding: 0px;
-}
+
 .li {
   list-style-type: none;
-  border-style: solid;
-  flex: auto;
+  padding-top: var(--conduction-navbar-padding);
+  padding-bottom: var(--conduction-navbar-padding);
 }
-.li > a {
+
+.li > * {
   text-decoration: none;
   color: white;
+}
+
+.primary {
+  font-weight: bold;
 }

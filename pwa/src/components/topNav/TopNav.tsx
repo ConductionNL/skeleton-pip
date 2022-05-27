@@ -15,8 +15,8 @@ interface TopNavItemsProps {
 
 export const PrimaryTopNav: React.FC<TopNavItemsProps> = ({ items }) => {
   return (
-    <nav>
-      <ul className={styles.primary}>
+    <nav className={styles.primary}>
+      <ul className={styles.ul}>
         {items.map(({ label, href, icon }, idx) => (
           <li className={styles.li} key={idx} onClick={() => navigate(href)}>
             <Link icon={icon} iconAlign="start">
@@ -31,8 +31,8 @@ export const PrimaryTopNav: React.FC<TopNavItemsProps> = ({ items }) => {
 
 export const SecondaryTopNav: React.FC<TopNavItemsProps> = ({ items }) => {
   return (
-    <nav>
-      <ul className={styles.secondary}>
+    <nav className={styles.secondary}>
+      <ul className={styles.ul}>
         {items.map(({ label, href, icon }, idx) => (
           <li className={styles.li} key={idx} onClick={() => navigate(href)}>
             <Link icon={icon} iconAlign="start">
