@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: v2
 name: skeleton-pip
 description: A Helm chart for the Skeleton Gatsby Application
 
@@ -25,6 +25,6 @@ appVersion: 0.1.0
 dependencies:
   - name: commonground-gateway
     alias: gateway
-    version: 0.1.6
+    version: 0.1.7
     repository: https://raw.githubusercontent.com/ConductionNL/commonground-gateway/feature-cleanup/api/helm/
     condition: gateway.enabled
