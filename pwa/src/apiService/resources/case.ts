@@ -15,9 +15,9 @@ export default class Case {
 
   public getAll = async (): Promise<any> => {
     const {
-      data: { _embedded },
+      data: { results },
     } = await Send(this._instance, "GET", "/zaken");
 
-    return _embedded.zaken;
+    return results.zaken;
   };
 }
