@@ -49,7 +49,7 @@ export default class APIService {
   public get BaseClient(): AxiosInstance {
     return axios.create({
       //@ts-ignore
-      baseURL: window.GATSBY_API_URL,
+      baseURL: window.GATSBY_BASE_URL,
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
