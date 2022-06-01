@@ -35,6 +35,21 @@ export default class APIService {
     });
   }
 
+  public get JSONHAL(): AxiosInstance {
+    return axios.create({
+      //@ts-ignore
+      baseURL: window.GATSBY_API_URL,
+      headers: {
+        Accept: "application/json+hal",
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + this.JWT,
+      },
+      params: {
+        extend: "status",
+      },
+    });
+  }
+
   public get LoginClient(): AxiosInstance {
     return axios.create({
       //@ts-ignore
@@ -60,7 +75,7 @@ export default class APIService {
 
   // Resources
   public get Case(): Case {
-    return new Case(this.apiClient);
+    return new Case(this.JSONHAL);
   }
 
   public get Message(): Message {
