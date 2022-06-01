@@ -14,8 +14,8 @@ export const setEnv = () => {
     window.GATSBY_ME_URL = "https://gateway.commonground.nu/me";
     window.GATSBY_API_URL = "https://gateway.commonground.nu/api";
     window.GATSBY_ADMIN_URL = "https://gateway.commonground.nu/admin";
-    window.GATSBY_BASE_URL = "https://gateway.commonground.nu/";
-    window.GATSBY_FRONTEND_URL = "https://mijn.commenground.nu/";
+    window.GATSBY_BASE_URL = "https://gateway.commonground.nu";
+    window.GATSBY_FRONTEND_URL = "https://mijn.commonground.nu";
     window.GATSBY_ORGANIZATION = "";
     window.GATSBY_LOGIN_REDIRECT = "vault";
   }
