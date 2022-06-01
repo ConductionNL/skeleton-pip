@@ -11,7 +11,7 @@ export const setEnv = () => {
   }
 
   if (process.env.NODE_ENV === "production") {
-    window.GATSBY_ME_URL = "https://gateway.commonground.nu/api/users/me";
+    window.GATSBY_ME_URL = "https://gateway.commonground.nu/me";
     window.GATSBY_API_URL = "https://gateway.commonground.nu/api";
     window.GATSBY_ADMIN_URL = "https://gateway.commonground.nu/admin";
     window.GATSBY_BASE_URL = "https://gateway.commonground.nu/";
