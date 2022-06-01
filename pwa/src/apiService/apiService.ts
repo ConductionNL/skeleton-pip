@@ -44,9 +44,6 @@ export default class APIService {
         "Content-Type": "application/json",
         Authorization: "Bearer " + this.JWT,
       },
-      params: {
-        extend: "status",
-      },
     });
   }
 
