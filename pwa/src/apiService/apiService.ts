@@ -35,7 +35,7 @@ export default class APIService {
     });
   }
 
-  public get JSONHAL(): AxiosInstance {
+  public get halApiClient(): AxiosInstance {
     return axios.create({
       //@ts-ignore
       baseURL: window.GATSBY_API_URL,
@@ -75,7 +75,7 @@ export default class APIService {
 
   // Resources
   public get Case(): Case {
-    return new Case(this.JSONHAL);
+    return new Case(this.halApiClient);
   }
 
   public get Message(): Message {
