@@ -45,7 +45,7 @@ export default class APIService {
         Authorization: "Bearer " + this.JWT,
       },
       params: {
-        extend: "taxonomies",
+        extend: "taxonomies.openpubAudience",
       },
     });
   }
@@ -83,7 +83,7 @@ export default class APIService {
   }
 
   public get News(): News {
-    return new News(this.JSONHAL);
+    return new News(this.halApiClient);
   }
 
   // Services
