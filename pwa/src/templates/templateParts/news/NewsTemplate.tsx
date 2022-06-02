@@ -23,21 +23,16 @@ export const NewsTemplate: React.FC = () => {
         <>
           {!getNews.isLoading && (
             <div>
-              {console.log({ data: getNews.data })}
-
               {getNews.data?.map((newsItem) => (
-                <>
-                  {console.log(newsItem)}
-                  <NewsCard
-                    id={newsItem.id}
-                    title={newsItem.title}
-                    content={newsItem.content}
-                    date={newsItem.date}
-                    audiences={newsItem.audiences}
-                    types={newsItem.type}
-                    usages={newsItem.usage}
-                  />
-                </>
+                <NewsCard
+                  id={newsItem.id}
+                  title={newsItem.title}
+                  content={newsItem.content}
+                  date={newsItem.date}
+                  audiences={newsItem.audiences}
+                  types={newsItem.type}
+                  usages={newsItem.usage}
+                />
               ))}
             </div>
           )}

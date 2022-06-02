@@ -5,6 +5,11 @@ export default class News {
   private _instance: AxiosInstance;
 
   constructor(_instance: AxiosInstance) {
+    const params = ["taxonomies.openpubAudience", "taxonomies.openpubType", "taxonomies.openpubUsage"];
+    _instance.interceptors.request.use(function (config) {
+      return { ...config, params: { extend: params } };
+    });
+
     this._instance = _instance;
   }
 
