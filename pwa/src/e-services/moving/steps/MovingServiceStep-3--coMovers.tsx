@@ -54,7 +54,7 @@ export const CoMoversStep: React.FC<MovingStepProps> = ({ setNextStep, handleSet
   const handleSetPreviousStep = () => {
     const selectedCoMovers: string[] = [];
 
-    for (const [key, value] of Object.entries(getValues("uuid") )) {
+    for (const [key, value] of Object.entries(getValues() )) {
       value && selectedCoMovers.push(key);
     }
     setFormData({ ...formData, coMovers: selectedCoMovers});
