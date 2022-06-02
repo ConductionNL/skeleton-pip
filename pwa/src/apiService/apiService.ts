@@ -7,20 +7,20 @@ import Login from "./services/login";
 import Me from "./services/me";
 
 export default class APIService {
-  public JWT?: string;
-
   public removeAuthentication(): void {
     window.sessionStorage.removeItem("JWT");
-    this.JWT = undefined;
   }
 
   public setAuthentication(_JWT: string): void {
     window.sessionStorage.setItem("JWT", _JWT);
-    this.JWT = _JWT;
   }
 
   public get authenticated(): boolean {
-    return this.JWT ? true : false;
+    return window.sessionStorage.getItem("JWT") ? true : false;
+  }
+
+  private getJWT(): string | null {
+    return window.sessionStorage.getItem("JWT");
   }
 
   public get apiClient(): AxiosInstance {
@@ -30,7 +30,7 @@ export default class APIService {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: "Bearer " + this.JWT,
+        Authorization: "Bearer " + this.getJWT(),
       },
     });
   }
@@ -42,7 +42,7 @@ export default class APIService {
       headers: {
         Accept: "application/json+hal",
         "Content-Type": "application/json",
-        Authorization: "Bearer " + this.JWT,
+        Authorization: "Bearer " + this.getJWT(),
       },
       params: {
         extend: "taxonomies.openpubAudience",
@@ -68,7 +68,7 @@ export default class APIService {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: "Bearer " + this.JWT,
+        Authorization: "Bearer " + this.getJWT(),
       },
     });
   }
