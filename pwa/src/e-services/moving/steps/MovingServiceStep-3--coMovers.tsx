@@ -6,10 +6,11 @@ import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { FormStepTemplate } from "../../../templates/templateParts/formStep/FormStepTemplate";
 import { MovingServiceContext } from "../MovingServiceContext";
 import { InputCheckbox } from "../../../components/formFields";
+import { TMovingFormServiceSteps } from "../MovingServiceForm";
 
 interface MovingStepProps {
   setNextStep: () => void;
-  setPreviousStep: () => void;
+  handleSetStep: React.Dispatch<React.SetStateAction<TMovingFormServiceSteps>>;
 }
 
 interface ICoMover {
@@ -17,7 +18,7 @@ interface ICoMover {
   uuid: string;
 }
 
-export const CoMoversStep: React.FC<MovingStepProps> = ({ setNextStep, setPreviousStep }) => {
+export const CoMoversStep: React.FC<MovingStepProps> = ({ setNextStep, handleSetStep }) => {
   const [coMovers] = React.useState<ICoMover[]>(testCoMovers);
   const [formData, setFormData] = React.useContext(MovingServiceContext);
   const { t } = useTranslation();
@@ -26,6 +27,7 @@ export const CoMoversStep: React.FC<MovingStepProps> = ({ setNextStep, setPrevio
     register,
     handleSubmit,
     setValue,
+    getValues,
     formState: { errors },
   } = useForm();
 
@@ -49,8 +51,18 @@ export const CoMoversStep: React.FC<MovingStepProps> = ({ setNextStep, setPrevio
     setNextStep();
   };
 
+  const handleSetPreviousStep = () => {
+    const selectedCoMovers: string[] = [];
+
+    for (const [key, value] of Object.entries(getValues("uuid") )) {
+      value && selectedCoMovers.push(key);
+    }
+    setFormData({ ...formData, coMovers: selectedCoMovers});
+    handleSetStep("newAdress");
+  };
+
   return (
-    <FormStepTemplate title={t("Who will move with you?")} {...{ setPreviousStep }}>
+    <FormStepTemplate title={t("Who will move with you?")} setPreviousStep={handleSetPreviousStep}>
       <form onSubmit={handleSubmit(onSubmit)}>
         {coMovers.map(({ uuid, label }) => (
           <InputCheckbox key={uuid} name={uuid} {...{ register, errors, label }} />

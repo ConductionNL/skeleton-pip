@@ -1,9 +1,8 @@
 import * as React from "react";
 import { IMovingServiceData, movingServiceData, MovingServiceProvider } from "./MovingServiceContext";
 import { DateFormStep, NewAdressFormStep, CoMoversStep, ConfirmFormStep } from "./steps";
-import { useTranslation } from "react-i18next";
 
-type TMovingFormServiceSteps = "date" | "newAdress" | "coMovers" | "confirm";
+export type TMovingFormServiceSteps = "date" | "newAdress" | "coMovers" | "confirm";
 
 export const MovingServiceForm: React.FC = () => {
   const [step, setStep] = React.useState<TMovingFormServiceSteps>("date");
@@ -22,17 +21,15 @@ interface MovingServiceFormStepProps {
 }
 
 const MovingServiceFormStep: React.FC<MovingServiceFormStepProps> = ({ step, setStep }) => {
-  const { t } = useTranslation();
-
   switch (step) {
     case "date":
       return <DateFormStep setNextStep={() => setStep("newAdress")} />;
 
     case "newAdress":
-      return <NewAdressFormStep setNextStep={() => setStep("coMovers")} setPreviousStep={() => setStep("date")} />;
+      return <NewAdressFormStep setNextStep={() => setStep("coMovers")} handleSetStep={setStep} />;
 
     case "coMovers":
-      return <CoMoversStep setNextStep={() => setStep("confirm")} setPreviousStep={() => setStep("newAdress")} />;
+      return <CoMoversStep setNextStep={() => setStep("confirm")} handleSetStep={setStep} />;
 
     case "confirm":
       return <ConfirmFormStep setPreviousStep={() => setStep("coMovers")} />;
