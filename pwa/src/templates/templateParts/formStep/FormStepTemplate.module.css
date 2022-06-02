@@ -6,7 +6,7 @@
   margin-block-end: var(--nlportal-space-block-2xl);
 }
 
-.formContainer > form button {
+.formContainer > form > button {
   all: unset;
   display: flex;
   margin-inline-start: auto;
