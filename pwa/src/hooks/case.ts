@@ -4,7 +4,9 @@ import APIService from "../apiService/apiService";
 import APIContext from "../apiService/apiContext";
 
 export const useCase = (queryClient: QueryClient) => {
-  const API: APIService = React.useContext(APIContext);
+  const API: APIService | null = React.useContext(APIContext);
+
+  if (!API) return;
 
   const getOne = (caseId: string) =>
     useQuery<any, Error>(["cases", caseId], () => API.Case.getOne(caseId), {

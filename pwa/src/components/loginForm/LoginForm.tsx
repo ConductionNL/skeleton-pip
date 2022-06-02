@@ -6,10 +6,11 @@ import { Alert, Button, FormField, FormFieldInput, FormFieldLabel } from "@gemee
 import * as styles from "./LoginForm.module.css";
 import { useTranslation } from "react-i18next";
 import { InputPassword, InputText } from "../formFields/input";
+import APIService from "../../apiService/apiService";
 
 export const LoginForm: React.FC = () => {
   const { t } = useTranslation();
-  const API = React.useContext(APIContext);
+  const API: APIService | null = React.useContext(APIContext);
   const [loading, setLoading] = React.useState<boolean>(false);
   const [formError, setFormError] = React.useState<string>("");
 
@@ -23,13 +24,14 @@ export const LoginForm: React.FC = () => {
     setLoading(true);
     setFormError("");
 
-    handleLogin(data, API)
-      .catch((err) => {
-        setFormError(err.message);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    API &&
+      handleLogin(data, API)
+        .catch((err) => {
+          setFormError(err.message);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
   };
 
   return (
