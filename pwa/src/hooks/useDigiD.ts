@@ -3,7 +3,9 @@ import APIService from "../apiService/apiService";
 import APIContext from "../apiService/apiContext";
 
 export const useDigiD = () => {
-  const API: APIService = React.useContext(APIContext);
+  const API: APIService | null = React.useContext(APIContext);
+
+  if (!API) return;
 
   const authenticate = () => {
     const params = new URLSearchParams(location.search);
@@ -18,6 +20,7 @@ export const useDigiD = () => {
   };
 
   const getRedirectURL = (): string => {
+    // @ts-ignore
     return `${window.GATSBY_BASE_URL}/digid/login?returnUrl=${window.GATSBY_FRONTEND_URL}/callbacks/digid`;
   };
 
