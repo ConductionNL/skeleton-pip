@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Datepicker, FormFieldInput, FormFieldLabel, Link } from "@gemeente-denhaag/components-react";
+import { Datepicker, FormFieldLabel, Link } from "@gemeente-denhaag/components-react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
@@ -15,6 +15,8 @@ export const DateFormStep: React.FC<MovingStepProps> = ({ setNextStep }) => {
   const [formData, setFormData] = React.useContext(MovingServiceContext);
 
   const {
+    register,
+    control,
     handleSubmit,
     setValue,
     formState: { errors },
@@ -32,13 +34,10 @@ export const DateFormStep: React.FC<MovingStepProps> = ({ setNextStep }) => {
   return (
     <FormStepTemplate title={t("On what date are you moving?")}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <FormFieldInput>
-          <FormFieldLabel htmlFor="date">{t("Moving date")}</FormFieldLabel>
-          <Datepicker />
-        </FormFieldInput>
-
+        <FormFieldLabel htmlFor="date">{t("Moving date")}</FormFieldLabel>
+        <Datepicker placeholder={t("choose a date")} {...{ register, control, errors }} />
         <button type="submit">
-          <Link icon={<ArrowRightIcon />} iconAlign="start">
+          <Link icon={<ArrowRightIcon />} iconAlign="end">
             {t("Next step")}
           </Link>
         </button>
