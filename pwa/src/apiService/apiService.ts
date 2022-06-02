@@ -35,17 +35,17 @@ export default class APIService {
     });
   }
 
-  // public get JSONHAL(): AxiosInstance {
-  //   return axios.create({
-  //     //@ts-ignore
-  //     baseURL: window.GATSBY_API_URL,
-  //     headers: {
-  //       Accept: "application/json+hal",
-  //       "Content-Type": "application/json",
-  //       Authorization: "Bearer " + this.JWT,
-  //     },
-  //   });
-  // }
+  public get halApiClient(): AxiosInstance {
+    return axios.create({
+      //@ts-ignore
+      baseURL: window.GATSBY_API_URL,
+      headers: {
+        Accept: "application/json+hal",
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + this.JWT,
+      },
+    });
+  }
 
   public get LoginClient(): AxiosInstance {
     return axios.create({
@@ -72,7 +72,7 @@ export default class APIService {
 
   // Resources
   public get Case(): Case {
-    return new Case(this.apiClient);
+    return new Case(this.halApiClient);
   }
 
   public get Message(): Message {
