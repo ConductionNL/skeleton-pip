@@ -24,6 +24,8 @@ export default class News {
       _newsItem.audiences = newsItem._embedded.taxonomies._embedded.openpubAudience.map(
         (audience: any) => audience.name,
       );
+      _newsItem.type = newsItem._embedded.taxonomies._embedded.openpubType.map((type: any) => type.name);
+      _newsItem.usage = newsItem._embedded.taxonomies._embedded.openpubUsage.map((usage: any) => usage.name);
       return _newsItem;
     });
 

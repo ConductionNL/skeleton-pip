@@ -36,6 +36,8 @@ export default class APIService {
   }
 
   public get halApiClient(): AxiosInstance {
+    const params = ["taxonomies.openpubAudience", "taxonomies.openpubType", "taxonomies.openpubUsage"];
+
     return axios.create({
       //@ts-ignore
       baseURL: window.GATSBY_API_URL,
@@ -45,7 +47,7 @@ export default class APIService {
         Authorization: "Bearer " + this.getJWT(),
       },
       params: {
-        extend: "taxonomies.openpubAudience",
+        extend: params,
       },
     });
   }

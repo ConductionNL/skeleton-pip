@@ -7,12 +7,12 @@ export interface NewsCardProps {
   title: string;
   content: string;
   date: Date;
-  audiences: string;
-  type: string;
-  usage: string;
+  audiences: [];
+  types: [];
+  usages: [];
 }
 
-export const NewsCard: React.FC<NewsCardProps> = ({ id, title, content, date, audiences, type, usage }) => {
+export const NewsCard: React.FC<NewsCardProps> = ({ id, title, content, date, audiences, types, usages }) => {
   return (
     <div>
       <div className={styles.card}>
@@ -20,17 +20,22 @@ export const NewsCard: React.FC<NewsCardProps> = ({ id, title, content, date, au
           <Heading2>{title}</Heading2>
         </div>
         <div>
-            <Heading1>{audiences.name}</Heading1>
+          {audiences.map((audience: any) => (
+            <Heading1>{audience}</Heading1>
           ))}
-          <Heading1>{type}</Heading1>
-          <Heading1>{usage}</Heading1>
+          {types.map((type: any) => (
+            <Heading1>{type}</Heading1>
+          ))}
+          {usages.map((usage: any) => (
+            <Heading1>{usage}</Heading1>
+          ))}
         </div>
         <Paragraph>
           <div
             dangerouslySetInnerHTML={{
               __html: content,
             }}
-          />
+          ></div>
         </Paragraph>
         <a className={styles.date}>Geplaatst op: {date}</a>
       </div>
