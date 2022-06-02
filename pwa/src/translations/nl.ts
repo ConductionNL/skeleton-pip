@@ -121,4 +121,5 @@ export const nl = {
   "Information entered by you": "Door jou ingevulde gegevens",
   Confirm: "Bevestigen",
   "Login with DigiD": "Inloggen met DigiD",
+  News: "Nieuws",
 };

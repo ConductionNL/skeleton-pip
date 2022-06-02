@@ -2,7 +2,7 @@ import axios, { AxiosInstance, AxiosResponse } from "axios";
 
 import Case from "./resources/case";
 import Message from "./resources/message";
-
+import News from "./resources/news";
 import Login from "./services/login";
 import Me from "./services/me";
 
@@ -44,6 +44,9 @@ export default class APIService {
         "Content-Type": "application/json",
         Authorization: "Bearer " + this.JWT,
       },
+      params: {
+        extend: "taxonomies",
+      },
     });
   }
 
@@ -77,6 +80,10 @@ export default class APIService {
 
   public get Message(): Message {
     return new Message(this.apiClient);
+  }
+
+  public get News(): News {
+    return new News(this.JSONHAL);
   }
 
   // Services

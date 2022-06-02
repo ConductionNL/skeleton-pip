@@ -9,8 +9,10 @@ export default class Case {
   }
 
   public getOne = async (id: string): Promise<any> => {
-    const { data } = await Send(this._instance, "GET", `/zaken/${id}`);
-    return data;
+    const {
+      data: { _embedded },
+    } = await Send(this._instance, "GET", `/zaken/${id}`);
+    return _embedded.zaken;
   };
 
   public getAll = async (): Promise<any> => {
