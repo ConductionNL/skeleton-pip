@@ -65,7 +65,6 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
       {!getCase.isLoading && (
         <>
           <Heading1>{getCase.data.omschrijving}</Heading1>
-
           <MetaIconGridTemplate
             metaIcons={[
               { icon: <ArchiveIcon />, label: t("Case number"), value: getCase.data.identificatie ?? t("Unknown") },
@@ -74,7 +73,11 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
                 label: t("Application date"),
                 value: getCase.data.registratiedatum ?? t("Unknown"),
               },
-              { icon: <MegaphoneIcon />, label: t("Status"), value: getCase.data.status ?? t("Unknown") },
+              {
+                icon: <MegaphoneIcon />,
+                label: t("Status"),
+                value: getCase.data._embedded ? getCase.data._embedded.status.statustoelichting : t("Unknown"),
+              },
               { icon: <DocumentIcon />, label: t("Documents"), value: getCase.data.zaakobjecten ?? t("Unknown") },
             ]}
           />

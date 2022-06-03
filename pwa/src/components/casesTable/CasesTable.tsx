@@ -26,7 +26,9 @@ export const CasesTable: React.FC<CasesTableProps> = ({ cases }) => {
         {cases.map((_case) => (
           <TableRow key={_case.id} className={styles.contentRow}>
             <TableCell>{_case.omschrijving}</TableCell>
-            <TableCell>{_case.status}</TableCell>
+
+            <TableCell>{_case._embedded ? _case._embedded.status.statustoelichting : t("Unknown")}</TableCell>
+
             <TableCell>{translateDate(i18n.language, _case.startdatum)}</TableCell>
 
             <TableCell onClick={() => navigate(`/my-cases/${_case.id}`)}>
