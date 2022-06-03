@@ -29,7 +29,7 @@ export const CasesTable: React.FC<CasesTableProps> = ({ cases }) => {
             <TableCell>{_case.status}</TableCell>
             <TableCell>{translateDate(i18n.language, _case.startdatum)}</TableCell>
 
-            <TableCell onClick={() => navigate(`/my-cases/${_case.uuid}`)}>
+            <TableCell onClick={() => navigate(`/my-cases/${_case.id}`)}>
               <Link icon={<ArrowRightIcon />} iconAlign="start">
                 {t("View case")}
               </Link>

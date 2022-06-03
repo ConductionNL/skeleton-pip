@@ -6,13 +6,14 @@ import { InputNumber, InputText } from "../../../components/formFields";
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { FormStepTemplate } from "../../../templates/templateParts/formStep/FormStepTemplate";
 import { MovingServiceContext } from "../MovingServiceContext";
+import { TMovingFormServiceSteps } from "../MovingServiceForm";
 
 interface MovingStepProps {
   setNextStep: () => void;
-  setPreviousStep: () => void;
+  handleSetStep: React.Dispatch<React.SetStateAction<TMovingFormServiceSteps>>;
 }
 
-export const NewAdressFormStep: React.FC<MovingStepProps> = ({ setNextStep, setPreviousStep }) => {
+export const NewAdressFormStep: React.FC<MovingStepProps> = ({ setNextStep, handleSetStep }) => {
   const { t } = useTranslation();
   const [formData, setFormData] = React.useContext(MovingServiceContext);
 
@@ -20,6 +21,7 @@ export const NewAdressFormStep: React.FC<MovingStepProps> = ({ setNextStep, setP
     register,
     handleSubmit,
     setValue,
+    getValues,
     formState: { errors },
   } = useForm();
 
@@ -33,8 +35,13 @@ export const NewAdressFormStep: React.FC<MovingStepProps> = ({ setNextStep, setP
     setNextStep();
   };
 
+  const handleSetPreviousStep = () => {
+    setFormData({ ...formData, zipCode: getValues("zipCode"), houseNumber: getValues("houseNumber") });
+    handleSetStep("date");
+  };
+
   return (
-    <FormStepTemplate title={t("What is your new address?")} {...{ setPreviousStep }}>
+    <FormStepTemplate title={t("What is your new address?")} setPreviousStep={handleSetPreviousStep}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormFieldInput>
           <FormFieldLabel htmlFor="zipCode">{t("Zip code")}</FormFieldLabel>

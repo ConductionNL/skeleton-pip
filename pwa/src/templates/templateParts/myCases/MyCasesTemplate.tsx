@@ -51,7 +51,7 @@ export const MyCasesTemplate: React.FC = () => {
                 date={new Date(_case.startdatum)}
                 title={_case.omschrijving}
                 subTitle={_case.identificatie}
-                onClick={() => navigate(`/my-cases/${_case.uuid}`)}
+                onClick={() => navigate(`/my-cases/${_case.id}`)}
                 variant="case"
               />
             ))}
@@ -62,11 +62,11 @@ export const MyCasesTemplate: React.FC = () => {
           <div className={styles.grid}>
             {closedCases.map((_case) => (
               <Card
-                key={_case.uuid}
+                key={_case.id}
                 date={new Date(_case.startdatum)}
                 title={_case.omschrijving}
                 subTitle={_case.identificatie}
-                onClick={() => navigate(`/my-cases/${_case.uuid}`)}
+                onClick={() => navigate(`/my-cases/${_case.id}`)}
                 variant="case"
                 archived
               />
