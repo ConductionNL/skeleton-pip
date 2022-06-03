@@ -10,7 +10,7 @@ export const useCase = (queryClient: QueryClient) => {
 
   const getOne = (caseId: string) =>
     useQuery<any, Error>(["cases", caseId], () => API.Case.getOne(caseId), {
-      initialData: () => queryClient.getQueryData<any[]>("cases")?.find((_case) => _case.uuid === caseId),
+      initialData: () => queryClient.getQueryData<any[]>("cases")?.find((_case) => _case.id === caseId),
       onError: (error) => {
         throw new Error(error.message);
       },
