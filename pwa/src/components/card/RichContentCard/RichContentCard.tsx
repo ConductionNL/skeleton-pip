@@ -97,7 +97,7 @@ const ContentLink: React.FC<ContentLinkProps> = ({ title, subTitle, href }) => {
         <span className={styles.contentLink_subTitle}>{subTitle}</span>
       </div>
 
-      <div className={styles.contentLink_icon}>
+      <div>
         <ArrowRightIcon />
       </div>
     </Link>
