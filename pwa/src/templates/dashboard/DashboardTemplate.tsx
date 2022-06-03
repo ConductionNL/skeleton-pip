@@ -66,7 +66,6 @@ const Menu: React.FC = () => {
     { label: t("My messages"), href: "/my-messages", current: pathname.includes("my-messages"), icon: <InboxIcon /> },
     { label: t("My cases"), href: "/my-cases", current: pathname.includes("my-cases"), icon: <ArchiveIcon /> },
     { label: t("My account"), href: "/my-account", current: pathname.includes("my-account"), icon: <UserIcon /> },
-    { label: t("News"), href: "/news", current: pathname === "/news", icon: <MessageIcon /> },
   ];
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string): void => {
