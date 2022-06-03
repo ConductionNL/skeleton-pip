@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as styles from "./DashboardTemplate.module.css";
-import { GridIcon, InboxIcon, ArchiveIcon, UserIcon, ListIcon, MessageIcon } from "@gemeente-denhaag/icons";
+import { GridIcon, InboxIcon, ArchiveIcon, UserIcon, ListIcon } from "@gemeente-denhaag/icons";
 import { Sidenav, SidenavItem, SidenavLink, SidenavList } from "@gemeente-denhaag/sidenav";
 import { Container } from "../../components/container/Container";
 import { PrivateRoute } from "../../components/privateRoute/privateRoute";
