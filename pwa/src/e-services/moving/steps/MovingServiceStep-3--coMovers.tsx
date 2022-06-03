@@ -40,25 +40,22 @@ export const CoMoversStep: React.FC<MovingStepProps> = ({ setNextStep, handleSet
   }, [formData]);
 
   const onSubmit = (data: any): void => {
+    handleSetFormData(data);
+    setNextStep();
+  };
+
+  const handleSetPreviousStep = () => {
+    handleSetFormData(getValues());
+    handleSetStep("newAdress");
+  };
+
+  const handleSetFormData = (data: any): void => {
     const selectedCoMovers: string[] = [];
 
     for (const [key, value] of Object.entries(data)) {
       value && selectedCoMovers.push(key);
     }
-
     setFormData({ ...formData, coMovers: selectedCoMovers });
-
-    setNextStep();
-  };
-
-  const handleSetPreviousStep = () => {
-    const selectedCoMovers: string[] = [];
-
-    for (const [key, value] of Object.entries(getValues())) {
-      value && selectedCoMovers.push(key);
-    }
-    setFormData({ ...formData, coMovers: selectedCoMovers });
-    handleSetStep("newAdress");
   };
 
   return (
