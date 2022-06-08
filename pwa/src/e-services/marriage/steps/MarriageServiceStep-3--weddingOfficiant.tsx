@@ -6,11 +6,11 @@ import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { FormStepTemplate } from "../../../templates/templateParts/formStep/FormStepTemplate";
 import { MarriageServiceContext } from "../MarriageServiceContext";
 import { InputCheckbox } from "../../../components/formFields";
-import { TMovingFormServiceSteps } from "../MarriageServiceForm";
+import { TMarriageFormServiceSteps } from "../MarriageServiceForm";
 
 interface MovingStepProps {
   setNextStep: () => void;
-  handleSetStep: React.Dispatch<React.SetStateAction<TMovingFormServiceSteps>>;
+  handleSetStep: React.Dispatch<React.SetStateAction<TMarriageFormServiceSteps>>;
 }
 
 interface ICoMover {
@@ -46,7 +46,7 @@ export const CoMoversStep: React.FC<MovingStepProps> = ({ setNextStep, handleSet
 
   const handleSetPreviousStep = () => {
     handleSetFormData(getValues());
-    handleSetStep("newAdress");
+    handleSetStep("date");
   };
 
   const handleSetFormData = (data: any): void => {

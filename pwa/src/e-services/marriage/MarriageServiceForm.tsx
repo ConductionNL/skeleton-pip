@@ -1,11 +1,11 @@
 import * as React from "react";
 import { IMarriageServiceData, marriageServiceData, MarriageServiceProvider } from "./MarriageServiceContext";
-import { DateFormStep, NewAdressFormStep, CoMoversStep, ConfirmFormStep } from "./steps";
+import { SelectServiceFormStep, DateFormStep, CoMoversStep, ConfirmFormStep } from "./steps";
 
-export type TMarriageFormServiceSteps = "date" | "newAdress" | "coMovers" | "confirm";
+export type TMarriageFormServiceSteps = "selectService" | "date" | "coMovers" | "confirm";
 
 export const MarriageServiceForm: React.FC = () => {
-  const [step, setStep] = React.useState<TMarriageFormServiceSteps>("date");
+  const [step, setStep] = React.useState<TMarriageFormServiceSteps>("selectService");
   const [formData, setFormData] = React.useState<IMarriageServiceData>(marriageServiceData);
 
   return (
@@ -22,11 +22,11 @@ interface MarriageServiceFormStepProps {
 
 const MarriageServiceFormStep: React.FC<MarriageServiceFormStepProps> = ({ step, setStep }) => {
   switch (step) {
-    case "date":
-      return <DateFormStep setNextStep={() => setStep("newAdress")} />;
+    case "selectService":
+      return <SelectServiceFormStep setNextStep={() => setStep("date")} />;
 
-    case "newAdress":
-      return <NewAdressFormStep setNextStep={() => setStep("coMovers")} handleSetStep={setStep} />;
+    case "date":
+      return <DateFormStep setNextStep={() => setStep("coMovers")} handleSetStep={setStep} />;
 
     case "coMovers":
       return <CoMoversStep setNextStep={() => setStep("confirm")} handleSetStep={setStep} />;

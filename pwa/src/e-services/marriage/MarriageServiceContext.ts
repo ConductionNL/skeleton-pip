@@ -1,8 +1,8 @@
 import * as React from "react";
 
 export interface IMarriageServiceData {
+  selectService: string;
   date: string;
-  zipCode: string;
   houseNumber: string;
   coMovers: string[];
 }
