@@ -13,7 +13,6 @@ import {
 } from "@gemeente-denhaag/components-react";
 import { navigate } from "gatsby";
 import {
-  ChevronLeftIcon,
   ArchiveIcon,
   CalendarIcon,
   MegaphoneIcon,

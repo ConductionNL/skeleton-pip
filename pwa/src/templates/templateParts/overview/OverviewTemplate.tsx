@@ -29,6 +29,8 @@ export const OverviewTemplate: React.FC = () => {
   const _useMessage = useMessage();
   const getMessages = _useMessage.getAll();
 
+  const [array, setArray] = React.useState<any>([]);
+
   React.useEffect(() => {
     if (!getCases.isSuccess) return;
 
@@ -38,7 +40,7 @@ export const OverviewTemplate: React.FC = () => {
 
   React.useEffect(() => {
     if (!getMessages.isSuccess) return;
-
+    setArray(getMessages.data);
     const _messages: IMessageTableItem[] = getMessages.data.map((message) => ({
       organisation: message.bronorganisatie,
       date: message.registratiedatum,
@@ -47,6 +49,11 @@ export const OverviewTemplate: React.FC = () => {
 
     setMessages(_messages);
   }, [getMessages.isSuccess]);
+
+  React.useEffect(() => {
+    const length = array.length;
+    console.log(length);
+  });
 
   return (
     <div className={styles.container}>

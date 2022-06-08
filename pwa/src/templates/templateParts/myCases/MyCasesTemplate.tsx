@@ -6,11 +6,14 @@ import { useTranslation } from "react-i18next";
 import { useQueryClient } from "react-query";
 import { useCase } from "../../../hooks/case";
 import Skeleton from "react-loading-skeleton";
+import { Paginations } from "../../../components/denhaag-wrappers/paginations/Paginations";
 
 export const MyCasesTemplate: React.FC = () => {
   const [value, setValue] = React.useState(0);
   const [currentCases, setCurrentCases] = React.useState<any[]>([]);
   const [closedCases, setClosedCases] = React.useState<any[]>([]);
+  const [posts, setPosts] = React.useState<any[]>([]);
+  const [array, setArray] = React.useState<any>([]);
 
   const { t } = useTranslation();
 
@@ -20,11 +23,15 @@ export const MyCasesTemplate: React.FC = () => {
 
   React.useEffect(() => {
     if (!getCases.isSuccess) return;
-
+    setArray(getCases.data);
     setCurrentCases(getCases.data.filter((_case) => _case.archiefstatus === "nog_te_archiveren"));
     setClosedCases(getCases.data.filter((_case) => _case.archiefstatus !== "nog_te_archiveren"));
   }, [getCases.isSuccess]);
 
+  React.useEffect(() => {
+    const length = array.length;
+    console.log(length);
+  });
   return (
     <div className={styles.container}>
       <Heading1>{t("My cases")}</Heading1>
