@@ -4,6 +4,8 @@ import { useTranslation } from "react-i18next";
 import { NewsCard } from "../../../components/newsCard/NewsCard";
 import { useNews } from "../../../hooks/news";
 import Skeleton from "react-loading-skeleton";
+import { RichContentCard } from "../../../components/card";
+import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 
 export const NewsTemplate: React.FC = () => {
   const { t } = useTranslation();
@@ -13,7 +15,6 @@ export const NewsTemplate: React.FC = () => {
 
   React.useEffect(() => {
     if (!getNews.isSuccess) return;
-    console.log(getNews);
   }, [getNews.isSuccess]);
 
   return (
@@ -25,15 +26,34 @@ export const NewsTemplate: React.FC = () => {
           {!getNews.isLoading && (
             <div>
               {getNews.data?.map((newsItem) => (
-                <NewsCard
-                  id={newsItem.id}
-                  title={newsItem.title}
-                  content={newsItem.content}
-                  date={newsItem.date}
-                  audiences={newsItem.audiences}
-                  types={newsItem.type}
-                  usages={newsItem.usage}
-                />
+                <>
+                  <RichContentCard
+                    link={[{ label: newsItem.title, href: `/news/${newsItem.id}` }]}
+                    tags={[newsItem.audiences, newsItem.type, newsItem.usage]}
+                    labelsWithIcon={[{ label: newsItem.title, icon: <ArrowRightIcon /> }]}
+                    contentLinks={[
+                      {
+                        title: newsItem.title,
+                        subTitle: (
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: newsItem.content,
+                            }}
+                          ></div>
+                        ),
+                      },
+                    ]}
+                  />
+                  {/* <NewsCard
+                    id={newsItem.id}
+                    title={newsItem.title}
+                    content={newsItem.content}
+                    date={newsItem.date}
+                    audiences={newsItem.audiences}
+                    types={newsItem.type}
+                    usages={newsItem.usage}
+                  /> */}
+                </>
               ))}
             </div>
           )}
@@ -42,3 +62,15 @@ export const NewsTemplate: React.FC = () => {
     </div>
   );
 };
+
+const link = [{ label: "test", href: "test" }];
+const contentLinks = [
+  {
+    title: "Wijzig je wachtwoord!",
+    subTitle:
+      "Er zijn zwakke wachtwoorden gededecteerd door team beveiliging. Iedereen is verplicht zijn wachtwoord voor 15/08/2020 te wijzigingen anders wordt dit geautomatiseerd en moet je je account opnieuw ophalen.",
+    href: "test",
+  },
+];
+const tags = ["test1", "test2"];
+const icon = [{ label: "test", icon: <ArrowRightIcon /> }];
