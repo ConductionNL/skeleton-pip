@@ -1,25 +1,25 @@
 import * as React from "react";
-import { Link } from "@gemeente-denhaag/components-react";
+import { FormFieldInput, FormFieldLabel, Link } from "@gemeente-denhaag/components-react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { FormStepTemplate } from "../../../templates/templateParts/formStep/FormStepTemplate";
 import { MarriageServiceContext } from "../MarriageServiceContext";
-import { InputCheckbox } from "../../../components/formFields";
 import { TMarriageFormServiceSteps } from "../MarriageServiceForm";
+import { InputRadio } from "../../../components/formFields";
 
-interface MovingStepProps {
+interface MarriageStepProps {
   setNextStep: () => void;
   handleSetStep: React.Dispatch<React.SetStateAction<TMarriageFormServiceSteps>>;
 }
 
-interface ICoMover {
+interface IWeddingOfficiant {
   label: string;
-  uuid: string;
+  weddingOfficiantId: string;
 }
 
-export const CoMoversStep: React.FC<MovingStepProps> = ({ setNextStep, handleSetStep }) => {
-  const [coMovers] = React.useState<ICoMover[]>(testCoMovers);
+export const WeddingOfficiantStep: React.FC<MarriageStepProps> = ({ setNextStep, handleSetStep }) => {
+  const [weddingOfficiants] = React.useState<IWeddingOfficiant[]>(testWeddingOfficiants);
   const [formData, setFormData] = React.useContext(MarriageServiceContext);
   const { t } = useTranslation();
 
@@ -32,39 +32,46 @@ export const CoMoversStep: React.FC<MovingStepProps> = ({ setNextStep, handleSet
   } = useForm();
 
   React.useEffect(() => {
-    if (!formData.coMovers) return;
+    if (!formData.weddingOfficiant) return;
 
-    formData.coMovers.forEach((coMover) => {
-      setValue(coMover, true);
+    formData.weddingOfficiant.forEach((weddingOfficiant) => {
+      setValue(weddingOfficiant, true);
     });
   }, [formData]);
 
   const onSubmit = (data: any): void => {
     handleSetFormData(data);
-    setNextStep();
+    // setNextStep();
   };
 
   const handleSetPreviousStep = () => {
     handleSetFormData(getValues());
-    handleSetStep("date");
+    // handleSetStep("date");
   };
 
   const handleSetFormData = (data: any): void => {
-    const selectedCoMovers: string[] = [];
-
-    for (const [key, value] of Object.entries(data)) {
-      value && selectedCoMovers.push(key);
-    }
-    setFormData({ ...formData, coMovers: selectedCoMovers });
+    const selectedWeddingOfficiant: string = "";
+    console.log({ data });
+    // for (const [key, value] of Object.entries(data)) {
+    //   value && selectedWeddingOfficiant.push(key);
+    // }
+    // setFormData({ ...formData, weddingOfficiant: selectedWeddingOfficiant });
+    const names = ["hamid", "lennart"];
   };
 
   return (
-    <FormStepTemplate title={t("Who will move with you?")} setPreviousStep={handleSetPreviousStep}>
+    <FormStepTemplate title={t("Select a wedding officiant?")} setPreviousStep={handleSetPreviousStep}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        {coMovers.map(({ uuid, label }) => (
-          <InputCheckbox key={uuid} name={uuid} {...{ register, errors, label }} />
+        {testWeddingOfficiants.map(({label,weddingOfficiantId}) => (
+          <FormFieldInput key={weddingOfficiantId}>
+            <InputRadio
+              label={label}
+              name={weddingOfficiantId}
+              {...{ register, errors }}
+              validation={{ required: true }}
+            ></InputRadio>
+          </FormFieldInput>
         ))}
-
         <button type="submit">
           <Link icon={<ArrowRightIcon />} iconAlign="start">
             {t("Next step")}
@@ -75,8 +82,8 @@ export const CoMoversStep: React.FC<MovingStepProps> = ({ setNextStep, handleSet
   );
 };
 
-const testCoMovers: ICoMover[] = [
-  { label: "Co mover: 1", uuid: "df24af62-8aaf-4057-8ede-c12045e0cc74" },
-  { label: "Co mover: 2", uuid: "e293dff2-ae51-4606-86bd-36919c2e204f" },
-  { label: "Co mover: 3", uuid: "ef26907d-388b-430f-8e26-36a3c3c55fb9" },
+const testWeddingOfficiants: IWeddingOfficiant[] = [
+  { label: "Wedding Officiant: 1", weddingOfficiantId: "df24af62-8aaf-4057-8ede-c12045e0cc74" },
+  { label: "Wedding Officiant: 2", weddingOfficiantId: "e293dff2-ae51-4606-86bd-36919c2e204f" },
+  { label: "Wedding Officiant: 3", weddingOfficiantId: "ef26907d-388b-430f-8e26-36a3c3c55fb9" },
 ];

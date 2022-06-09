@@ -3,8 +3,14 @@ import * as React from "react";
 export interface IMarriageServiceData {
   selectService: string;
   date: string;
-  houseNumber: string;
-  coMovers: string[];
+  weddingOfficiant: string[];
+  weddingVenue: string[];
+  partner:{
+    firstName:string;
+    lastName:string,
+    phoneNumber:string;
+    eMaile:string;
+  };
 }
 
 export const marriageServiceData = {} as IMarriageServiceData;

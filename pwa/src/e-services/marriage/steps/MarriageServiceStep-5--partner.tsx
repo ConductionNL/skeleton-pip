@@ -2,18 +2,19 @@ import * as React from "react";
 import { FormFieldInput, FormFieldLabel, Link } from "@gemeente-denhaag/components-react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { InputDate } from "../../../components/formFields";
+import { InputNumber, InputText } from "../../../components/formFields";
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { FormStepTemplate } from "../../../templates/templateParts/formStep/FormStepTemplate";
 import { MarriageServiceContext } from "../MarriageServiceContext";
 import { TMarriageFormServiceSteps } from "../MarriageServiceForm";
 
-interface MovingStepProps {
+
+interface MarriageStepProps {
   setNextStep: () => void;
   handleSetStep: React.Dispatch<React.SetStateAction<TMarriageFormServiceSteps>>;
 }
 
-export const DateFormStep: React.FC<MovingStepProps> = ({ setNextStep, handleSetStep }) => {
+export const PartnerStep: React.FC<MarriageStepProps> = ({ setNextStep, handleSetStep }) => {
   const [formData, setFormData] = React.useContext(MarriageServiceContext);
   const { t } = useTranslation();
 
@@ -26,25 +27,34 @@ export const DateFormStep: React.FC<MovingStepProps> = ({ setNextStep, handleSet
   } = useForm();
 
   React.useEffect(() => {
-    setValue("date", formData.date);
+
+    setValue("firstName", formData.partner.firstName);
+    setValue("lastName", formData.partner.lastName);
+    setValue("lastName", formData.partner.lastName);
+    setValue("lastName", formData.partner.lastName);
   }, [formData]);
 
   const onSubmit = (data: any): void => {
-    setFormData({ ...formData, date: data.date });
+    setFormData({ ...formData, zipCode: data.zipCode, houseNumber: data.houseNumber });
     setNextStep();
   };
 
   const handleSetPreviousStep = () => {
-    setFormData({ ...formData, date: getValues("date") });
-    handleSetStep("selectService");
+    setFormData({ ...formData, zipCode: getValues("zipCode"), houseNumber: getValues("houseNumber") });
+    handleSetStep("date");
   };
 
   return (
-    <FormStepTemplate title={t("what date do you want to get married?")} setPreviousStep={handleSetPreviousStep}>
+    <FormStepTemplate title={t("Add your partner.")} setPreviousStep={handleSetPreviousStep}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormFieldInput>
-          <FormFieldLabel htmlFor="date">{t("Wedding date")}</FormFieldLabel>
-          <InputDate name="date" {...{ register, errors }} validation={{ required: true }} />
+          <FormFieldLabel htmlFor="zipCode">{t("Zip code")}</FormFieldLabel>
+          <InputText name="zipCode" {...{ register, errors }} validation={{ required: true }} />
+        </FormFieldInput>
+
+        <FormFieldInput>
+          <FormFieldLabel htmlFor="houseNumber">{t("House number")}</FormFieldLabel>
+          <InputNumber name="houseNumber" {...{ register, errors }} validation={{ required: true }} />
         </FormFieldInput>
 
         <button type="submit">

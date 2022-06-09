@@ -2,10 +2,11 @@ import * as React from "react";
 import { FormFieldInput, FormFieldLabel, Link } from "@gemeente-denhaag/components-react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { InputText } from "../../../components/formFields";
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { FormStepTemplate } from "../../../templates/templateParts/formStep/FormStepTemplate";
 import { MarriageServiceContext } from "../MarriageServiceContext";
+import { ISelectValue } from "../../../components/formFields/select/select";
+import { SelectSingle } from "../../../components/formFields";
 
 interface MarriageStepProps {
   setNextStep: () => void;
@@ -18,6 +19,7 @@ export const SelectServiceFormStep: React.FC<MarriageStepProps> = ({ setNextStep
   const {
     register,
     handleSubmit,
+    control,
     setValue,
     formState: { errors },
   } = useForm();
@@ -36,7 +38,12 @@ export const SelectServiceFormStep: React.FC<MarriageStepProps> = ({ setNextStep
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormFieldInput>
           <FormFieldLabel htmlFor="selectService">{t("Select service")}</FormFieldLabel>
-          <InputText name="selectService" {...{ register, errors }} validation={{ required: true }} />
+          <SelectSingle
+            options={selectService}
+            name="selectService"
+            {...{ errors, control, register }}
+            validation={{ required: true }}
+          />
         </FormFieldInput>
 
         <button type="submit">
@@ -48,3 +55,9 @@ export const SelectServiceFormStep: React.FC<MarriageStepProps> = ({ setNextStep
     </FormStepTemplate>
   );
 };
+
+const selectService: ISelectValue[] = [
+  { label: "Marriage", value: "marriage" },
+  { label: "Partnership", value: "partnership" },
+  { label: "Conversion", value: "conversion" },
+];
