@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as styles from "./MessageDetailTemplate.module.css";
 import { Divider, Heading3, Paragraph, Tab, TabContext, TabPanel, Tabs } from "@gemeente-denhaag/components-react";
-import { CalendarIcon, ChevronLeftIcon, SettingsIcon, StaffIcon, StarterIcon } from "@gemeente-denhaag/icons";
+import { CalendarIcon, SettingsIcon, StaffIcon, StarterIcon } from "@gemeente-denhaag/icons";
 import { useTranslation } from "react-i18next";
 import { MetaIconGridTemplate } from "../metaIconGrid/MetaIconGridTemplate";
 import { CasesTable } from "../../../components/casesTable/CasesTable";
