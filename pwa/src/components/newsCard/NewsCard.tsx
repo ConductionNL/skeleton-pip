@@ -1,43 +1,44 @@
 import * as React from "react";
 import * as styles from "./NewsCard.module.css";
-import { Heading2, Paragraph } from "@gemeente-denhaag/components-react";
+import { Heading1, Heading2, Paragraph } from "@gemeente-denhaag/components-react";
 
-export interface INewsCardItem {
+export interface NewsCardProps {
   id: string;
   title: string;
   content: string;
   date: Date;
-  image: string;
+  audiences: [];
+  types: [];
+  usages: [];
 }
 
-interface NewsCardProps {
-  news: INewsCardItem[];
-}
-
-export const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
+export const NewsCard: React.FC<NewsCardProps> = ({ id, title, content, date, audiences, types, usages }) => {
   return (
     <div>
-      {news.map((_news) => (
-        <div className={styles.card}>
-          <div className={styles.title}>
-            <Heading2>{_news.title}</Heading2>
-          </div>
+      <div className={styles.card}>
+        <div className={styles.title}>
+          <Heading2>{title}</Heading2>
+        </div>
+        <div>
+          {audiences.map((audience: any) => (
+            <Heading1>{audience}</Heading1>
+          ))}
+          {types.map((type: any) => (
+            <Heading1>{type}</Heading1>
+          ))}
+          {usages.map((usage: any) => (
+            <Heading1>{usage}</Heading1>
+          ))}
+        </div>
+        <Paragraph>
           <div
-            className={styles.image}
             dangerouslySetInnerHTML={{
-              __html: _news.image,
+              __html: content,
             }}
           ></div>
-          <Paragraph>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: _news.content,
-              }}
-            ></div>
-          </Paragraph>
-          <a className={styles.date}>Geplaatst op: {_news.date}</a>
-        </div>
-      ))}
+        </Paragraph>
+        <a className={styles.date}>Geplaatst op: {date}</a>
+      </div>
     </div>
   );
 };

@@ -94,7 +94,7 @@ export default class APIService {
   }
 
   public get News(): News {
-    return new News(this.apiClient);
+    return new News(this.halApiClient);
   }
 }
 

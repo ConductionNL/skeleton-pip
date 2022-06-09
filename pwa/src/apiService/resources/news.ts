@@ -5,14 +5,35 @@ export default class News {
   private _instance: AxiosInstance;
 
   constructor(_instance: AxiosInstance) {
+    const params = ["taxonomies.openpubAudience", "taxonomies.openpubType", "taxonomies.openpubUsage"];
+    _instance.interceptors.request.use(function (config) {
+      return { ...config, params: { extend: params } };
+    });
+
     this._instance = _instance;
   }
 
   public getAll = async (): Promise<any> => {
     const {
-      data: { results },
+      data: { _embedded },
     } = await Send(this._instance, "GET", "/nieuws");
 
-    return results;
+    const newsItems = _embedded.nieuws.map((newsItem: any) => {
+      const _newsItem: any = {
+        id: newsItem.id,
+        title: newsItem.title,
+        content: newsItem.content,
+        date: newsItem.date,
+      };
+
+      _newsItem.audiences = newsItem._embedded.taxonomies._embedded.openpubAudience.map(
+        (audience: any) => audience.name,
+      );
+      _newsItem.type = newsItem._embedded.taxonomies._embedded.openpubType.map((type: any) => type.name);
+      _newsItem.usage = newsItem._embedded.taxonomies._embedded.openpubUsage.map((usage: any) => usage.name);
+      return _newsItem;
+    });
+
+    return newsItems;
   };
 }
