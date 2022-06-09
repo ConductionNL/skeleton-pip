@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as styles from "./DashboardTemplate.module.css";
-import { GridIcon, InboxIcon, ArchiveIcon, UserIcon, ListIcon } from "@gemeente-denhaag/icons";
+import { GridIcon, InboxIcon, ArchiveIcon, UserIcon, ListIcon, MessageIcon, CoronaIcon } from "@gemeente-denhaag/icons";
 import { Sidenav, SidenavItem, SidenavLink, SidenavList } from "@gemeente-denhaag/sidenav";
 import { Container } from "../../components/container/Container";
 import { PrivateRoute } from "../../components/privateRoute/privateRoute";
@@ -66,6 +66,8 @@ const Menu: React.FC = () => {
     { label: t("My messages"), href: "/my-messages", current: pathname.includes("my-messages"), icon: <InboxIcon /> },
     { label: t("My cases"), href: "/my-cases", current: pathname.includes("my-cases"), icon: <ArchiveIcon /> },
     { label: t("My account"), href: "/my-account", current: pathname.includes("my-account"), icon: <UserIcon /> },
+    { label: t("Products"), href: "/products", current: pathname.includes("products"), icon: <CoronaIcon /> },
+    { label: t("News"), href: "/news", current: pathname .includes("news"), icon: <MessageIcon /> },
   ];
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string): void => {

@@ -4,6 +4,8 @@ import Case from "./resources/case";
 import Message from "./resources/message";
 import Login from "./services/login";
 import Me from "./services/me";
+import Product from "./resources/product";
+import News from "./resources/news";
 
 export default class APIService {
   public removeAuthentication(): void {
@@ -85,6 +87,14 @@ export default class APIService {
 
   public get Me(): Me {
     return new Me(this.BaseClient);
+  }
+
+  public get Product(): Product {
+    return new Product(this.apiClient);
+  }
+
+  public get News(): News {
+    return new News(this.apiClient);
   }
 }
 
