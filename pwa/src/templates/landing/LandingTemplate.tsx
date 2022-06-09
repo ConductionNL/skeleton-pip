@@ -25,7 +25,7 @@ export const LandingTemplate: React.FC = () => {
             iconOrImage={<img src={DigidImage} />}
             title={t("Login")}
             link={{
-              href: useDigiD().getRedirectURL(),
+              href: useDigiD().getRedirectURL() ?? "",
               label: t("Login with DigiD"),
             }}
             external
