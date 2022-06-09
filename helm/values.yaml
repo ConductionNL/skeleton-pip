@@ -7,13 +7,13 @@ pwa:
     pullPolicy: Always
     tag: "dev"
     # Overrides the image tag whose default is the chart appVersion.
-  apiUrl: "https://backend-bisc-dev.commonground.nu/api"
-  meUrl: "https://backend-bisc-dev.commonground.nu/api/users/me"
-  baseUrl: "https://backend-bisc-dev.commonground.nu"
-  frontendUrl: "https://admin-bisc-dev.commonground.nu"
+  apiUrl: "https://gateway.local/api"
+  meUrl: "https://gateway.local/api/users/me"
+  baseUrl: "https://gateway.local"
+  frontendUrl: "https://pip.local"
   organization: ""
   redirectUrl: "vault"
-  adminUrl: "https://backend-bisc-dev.commonground.nu/admin"
+  adminUrl: "https://gateway.local/admin"
 
 replicacount: 1
 
@@ -55,7 +55,7 @@ service:
 
 ingress:
   enabled: true
-  hostname: admin-bisc-dev.commonground.nu
+  hostname: pip.local
   path: ""
   pathType: ImplementationSpecific
   className: nginx
