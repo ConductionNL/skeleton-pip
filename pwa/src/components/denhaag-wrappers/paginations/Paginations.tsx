@@ -9,40 +9,43 @@
 import * as React from "react";
 import "./Paginations.css";
 import { Link } from "gatsby";
-import { Label } from "react-query/types/devtools/Explorer";
 
 interface PaginationsProps {
-  ariaLabel: {
+  pages: {
+    ariaLabel: string;
     label: string;
     href: string;
   }[];
-  nextNavigatie: string;
-  previousNavigatie: string;
+  nextPageHref: string;
+  previousPageHref: string;
 }
 
-export const Paginations: React.FC<PaginationsProps> = ({ ariaLabel, previousNavigatie, nextNavigatie }) => {
+export const Paginations: React.FC<PaginationsProps> = ({ pages, previousPageHref, nextPageHref }) => {
   return (
     <nav className="denhaag-pagination">
-      <PreviousPage navigatie={previousNavigatie} />
+      <PreviousPage href={previousPageHref} />
       <span className="denhaag-pagination__links" role="group">
-        {}
-        <Link aria-label="Page 1" className="denhaag-pagination__link" to={ariaLabel.href}>
-          {ariaLabel.label}
-        </Link>
+        {pages.map((page) => {
+          return (
+            <Link aria-label={page.ariaLabel} className="denhaag-pagination__link" to={page.href}>
+              {page.label}
+            </Link>
+          );
+        })}
       </span>
-      <NextPage navigatie={nextNavigatie} />
+      <NextPage href={nextPageHref} />
     </nav>
   );
 };
 
 interface PreviousPageProps {
-  navigatie: string;
+  href: string;
 }
-const PreviousPage: React.FC<PreviousPageProps> = ({ navigatie }) => (
+const PreviousPage: React.FC<PreviousPageProps> = ({ href }) => (
   <Link
     aria-label="Previous page"
     className="denhaag-pagination__link denhaag-pagination__link--arrow"
-    to={navigatie}
+    to={href}
     rel="prev"
   >
     <svg
@@ -63,13 +66,13 @@ const PreviousPage: React.FC<PreviousPageProps> = ({ navigatie }) => (
 );
 
 interface NextPageProps {
-  navigatie: string;
+  href: string;
 }
-const NextPage: React.FC<NextPageProps> = ({ navigatie }) => (
+const NextPage: React.FC<NextPageProps> = ({ href }) => (
   <Link
     aria-label="Next page"
     className="denhaag-pagination__link denhaag-pagination__link--arrow"
-    to={navigatie}
+    to={href}
     rel="next"
   >
     <svg

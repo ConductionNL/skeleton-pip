@@ -1,0 +1,10 @@
+.denhaag-pagination {
+  display: flex;
+  justify-content: center;
+  padding: var(--nlportal-space-inline-md);
+}
+
+.denhaag-pagination__link {
+  padding-right: var(--nlportal-space-inline-md);
+  text-decoration: none;
+}
