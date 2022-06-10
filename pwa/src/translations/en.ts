@@ -123,4 +123,5 @@ export const en = {
   "Information entered by you": "Information entered by you",
   Confirm: "Confirm",
   "Login with DigiD": "Login with DigiD",
+  "Personal Interaction Portal": "Personal Interaction Portal",
 };

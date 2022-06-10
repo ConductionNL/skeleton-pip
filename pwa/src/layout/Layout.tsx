@@ -1,5 +1,4 @@
 import * as React from "react";
-import "../styling/index.css";
 import * as styles from "./Layout.module.css";
 import "./../translations/i18n";
 import APIContext, { APIProvider } from "../apiService/apiContext";
@@ -15,8 +14,7 @@ import {
   UnauthenticatedFooterTemplate,
 } from "../templates/templateParts/footer/FooterTemplate";
 import { isLoggedIn } from "../services/auth";
-
-const { setEnv } = require("./../../static/env.js");
+import { Head } from "./Head";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -29,7 +27,6 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
   const [gatsbyContext, setGatsbyContext] = React.useState<IGatsbyContext>({ ...{ pageContext, location } });
 
   React.useEffect(() => {
-    setEnv();
     setAPI(new APIService());
   }, []);
 
@@ -42,15 +39,19 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
   }, [pageContext, location]);
 
   return (
-    <div className={styles.container}>
-      <GatsbyProvider value={gatsbyContext}>
-        <APIProvider value={API}>
-          <StylesProvider>
-            {isLoggedIn() ? <AuthenticatedLayout {...{ children }} /> : <UnauthenticatedLayout {...{ children }} />}
-          </StylesProvider>
-        </APIProvider>
-      </GatsbyProvider>
-    </div>
+    <>
+      <Head />
+
+      <div className={styles.container}>
+        <GatsbyProvider value={gatsbyContext}>
+          <APIProvider value={API}>
+            <StylesProvider>
+              {isLoggedIn() ? <AuthenticatedLayout {...{ children }} /> : <UnauthenticatedLayout {...{ children }} />}
+            </StylesProvider>
+          </APIProvider>
+        </GatsbyProvider>
+      </div>
+    </>
   );
 };
 
