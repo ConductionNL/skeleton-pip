@@ -3,7 +3,7 @@ entries:
   commonground-gateway:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-09T13:39:18.650829654+02:00"
+    created: "2022-06-09T16:06:18.8412077+02:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -13,8 +13,11 @@ entries:
       name: redis
       repository: https://charts.bitnami.com/bitnami
       version: 15.3.2
+    - name: rabbitmq
+      repository: https://charts.bitnami.com/bitnami
+      version: 9.0.1
     description: A Helm chart for Kubernetes
-    digest: 0f72c855cd9276b06a6eb82f4f5e1367c9eff7629de3c2671c52de6db1300d74
+    digest: 61176b210c41b7f1153021924af204988fb50a0dbef2ed51856d5b98543078f7
     name: commonground-gateway
     type: application
     urls:
@@ -23,7 +26,7 @@ entries:
   skeleton-pip:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-06-09T13:39:18.639122224+02:00"
+    created: "2022-06-09T16:06:18.8260822+02:00"
     dependencies:
     - alias: gateway
       condition: gateway.enabled
@@ -31,26 +34,10 @@ entries:
       repository: https://raw.githubusercontent.com/ConductionNL/commonground-gateway/feature-cleanup/api/helm/
       version: 0.1.7
     description: A Helm chart for the Skeleton Gatsby Application
-    digest: 48d8ed4538ca811dca4a470568fdf4a82971cabe72a4bc3e48cdd1373fa95f59
-    name: skeleton-pip
-    type: application
-    urls:
-    - skeleton-pip-0.1.1.tgz
-    version: 0.1.1
-  - apiVersion: v2
-    appVersion: 0.1.0
-    created: "2022-06-09T13:39:18.624401296+02:00"
-    dependencies:
-    - alias: gateway
-      condition: gateway.enabled
-      name: commonground-gateway
-      repository: https://raw.githubusercontent.com/ConductionNL/commonground-gateway/feature-cleanup/api/helm/
-      version: 0.1.7
-    description: A Helm chart for the Skeleton Gatsby Application
-    digest: 0e7a465de64d5746222ec4ce77867a569f117c5875adaeac20979cfd8b009e6e
+    digest: 5950d3089a7b74bca5e648c8a87170bfe96b92b39c76847ec5db71a52975b532
     name: skeleton-pip
     type: application
     urls:
     - skeleton-pip-0.1.0.tgz
     version: 0.1.0
-generated: "2022-06-09T13:39:18.600636899+02:00"
+generated: "2022-06-09T16:06:18.8110795+02:00"

@@ -6,8 +6,6 @@ import APIContext from "../apiService/apiContext";
 export const useMessage = () => {
   const API: APIService | null = React.useContext(APIContext);
 
-  if (!API) return;
-
   const getAll = () =>
     useQuery<any[], Error>("messages", API.Message.getAll, {
       onError: (error) => {

@@ -23,7 +23,7 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
-  const [API, setAPI] = React.useState<APIService | null>(React.useContext(APIContext));
+  const [API, setAPI] = React.useState<APIService>(React.useContext(APIContext));
   const [gatsbyContext, setGatsbyContext] = React.useState<IGatsbyContext>({ ...{ pageContext, location } });
 
   React.useEffect(() => {
@@ -35,10 +35,8 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
 
     const JWT = sessionStorage.getItem("JWT");
 
-    API && !API.authenticated && JWT && API.setAuthentication(JWT);
+    !API.authenticated && JWT && API.setAuthentication(JWT);
   }, [pageContext, location]);
-
-  if (!API) return <></>;
 
   return (
     <>

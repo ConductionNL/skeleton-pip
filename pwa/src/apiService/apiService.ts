@@ -2,7 +2,6 @@ import axios, { AxiosInstance, AxiosResponse } from "axios";
 
 import Case from "./resources/case";
 import Message from "./resources/message";
-
 import Login from "./services/login";
 import Me from "./services/me";
 

@@ -6,7 +6,7 @@ export default class Case {
 
   constructor(_instance: AxiosInstance) {
     _instance.interceptors.request.use(function (config) {
-      return { ...config, params: { extend: "status&extend[]=zaakType" } };
+      return { ...config, params: { extend: ["status"] } };
     });
 
     this._instance = _instance;

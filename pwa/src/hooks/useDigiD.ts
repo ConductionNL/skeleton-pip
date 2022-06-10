@@ -1,11 +1,10 @@
 import * as React from "react";
 import APIService from "../apiService/apiService";
 import APIContext from "../apiService/apiContext";
+import { isBrowser } from "../services/auth";
 
 export const useDigiD = () => {
   const API: APIService | null = React.useContext(APIContext);
-
-  if (!API) return;
 
   const authenticate = () => {
     const params = new URLSearchParams(location.search);
@@ -19,7 +18,9 @@ export const useDigiD = () => {
     return true;
   };
 
-  const getRedirectURL = (): string => {
+  const getRedirectURL = (): string | undefined => {
+    if (!isBrowser()) return;
+
     // @ts-ignore
     return `${window.GATSBY_BASE_URL}/digid/login?returnUrl=${window.GATSBY_FRONTEND_URL}/callbacks/digid`;
   };
