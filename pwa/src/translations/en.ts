@@ -125,4 +125,5 @@ export const en = {
   "Login with DigiD": "Login with DigiD",
   News: "News",
   Products: "Products",
+  "News Item": "News Item",
 };

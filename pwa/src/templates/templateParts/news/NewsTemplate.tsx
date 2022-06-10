@@ -1,16 +1,19 @@
 import * as React from "react";
 import { Heading1 } from "@gemeente-denhaag/components-react";
 import { useTranslation } from "react-i18next";
-import { NewsCard } from "../../../components/newsCard/NewsCard";
 import { useNews } from "../../../hooks/news";
 import Skeleton from "react-loading-skeleton";
 import { RichContentCard } from "../../../components/card";
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
+import { navigate } from "gatsby";
+import { useQueryClient } from "react-query";
 
 export const NewsTemplate: React.FC = () => {
   const { t } = useTranslation();
 
-  const _useNews = useNews();
+  const queryClient = useQueryClient();
+
+  const _useNews = useNews(queryClient);
   const getNews = _useNews.getAll();
 
   React.useEffect(() => {
@@ -26,7 +29,7 @@ export const NewsTemplate: React.FC = () => {
           {!getNews.isLoading && (
             <div>
               {getNews.data?.map((newsItem) => (
-                <>
+                <div onClick={() => navigate(`/news/${newsItem.id}`)}>
                   <RichContentCard
                     link={[{ label: newsItem.title, href: `/news/${newsItem.id}` }]}
                     tags={[newsItem.audiences, newsItem.type, newsItem.usage]}
@@ -53,7 +56,7 @@ export const NewsTemplate: React.FC = () => {
                     types={newsItem.type}
                     usages={newsItem.usage}
                   /> */}
-                </>
+                </div>
               ))}
             </div>
           )}

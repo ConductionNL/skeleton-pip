@@ -123,4 +123,5 @@ export const nl = {
   "Login with DigiD": "Inloggen met DigiD",
   News: "Nieuws",
   Products: "Producten",
+  "News Item": "Nieuwsitem",
 };

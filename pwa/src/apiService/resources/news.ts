@@ -13,6 +13,28 @@ export default class News {
     this._instance = _instance;
   }
 
+  public getOne = async (id: string): Promise<any> => {
+    const { data } = await Send(this._instance, "GET", `/nieuws/${id}`);
+    console.log(data);
+    const newsItems = data.nieuws.map((newsItem: any) => {
+      const _newsItem: any = {
+        id: newsItem.id,
+        title: newsItem.title,
+        content: newsItem.content,
+        date: newsItem.date,
+      };
+
+      _newsItem.audiences = newsItem._embedded.taxonomies._embedded.openpubAudience.map(
+        (audience: any) => audience.name,
+      );
+      _newsItem.type = newsItem._embedded.taxonomies._embedded.openpubType.map((type: any) => type.name);
+      _newsItem.usage = newsItem._embedded.taxonomies._embedded.openpubUsage.map((usage: any) => usage.name);
+      return _newsItem;
+    });
+
+    return newsItems;
+  };
+
   public getAll = async (): Promise<any> => {
     const {
       data: { _embedded },
