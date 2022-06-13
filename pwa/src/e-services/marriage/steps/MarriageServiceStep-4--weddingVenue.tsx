@@ -1,11 +1,12 @@
 import * as React from "react";
-import { Link } from "@gemeente-denhaag/components-react";
+import { FormFieldInput, Link } from "@gemeente-denhaag/components-react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { FormStepTemplate } from "../../../templates/templateParts/formStep/FormStepTemplate";
 import { MarriageServiceContext } from "../MarriageServiceContext";
 import { TMarriageFormServiceSteps } from "../MarriageServiceForm";
+import { InputRadio } from "../../../components/formFields";
 
 interface MarriageStepProps {
   setNextStep: () => void;
@@ -49,42 +50,22 @@ export const WeddingVenueStep: React.FC<MarriageStepProps> = ({ setNextStep, han
   };
 
   const handleSetFormData = (data: any): void => {
-    const selectedWeddingVenue: string[] = [];
-
-    for (const [key, value] of Object.entries(data)) {
-      value && selectedWeddingVenue.push(key);
-    }
-    setFormData({ ...formData, weddingVenue: selectedWeddingVenue });
+    setFormData({ ...formData, weddingVenue: data.weddingVenueId });
   };
 
   return (
     <FormStepTemplate title={t("Select a wedding venue?")} setPreviousStep={handleSetPreviousStep}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <fieldset aria-describedby="description" className="denhaag-form-field" role="radiogroup">
-          <legend className="denhaag-form-field__label">{t("Wedding venue")}</legend>
-          <div className="denhaag-form-field__input">
-            {weddingVenue.map(({ weddingVenueId, label }) => (
-              <label className="denhaag-form-control-label">
-                <span className="denhaag-form-control-label__input">
-                  <span className="denhaag-radio">
-                    <input
-                      className="denhaag-radio__input"
-                      {...{ register, errors, label }}
-                      id={weddingVenueId}
-                      name="radio"
-                      type="radio"
-                      value={label}
-                    />
-                    <span className="denhaag-radio__icon">
-                      <span className="denhaag-radio__icon-inner" />
-                    </span>
-                  </span>
-                </span>
-                <span className="denhaag-form-control-label__label">{label}</span>
-              </label>
-            ))}
-          </div>
-        </fieldset>
+        {weddingVenue.map(({ label, weddingVenueId }) => (
+          <FormFieldInput key={weddingVenueId}>
+            <InputRadio
+              label={label}
+              name={weddingVenueId}
+              {...{ register, errors }}
+              validation={{ required: true }}
+            ></InputRadio>
+          </FormFieldInput>
+        ))}
 
         <button type="submit">
           <Link icon={<ArrowRightIcon />} iconAlign="start">

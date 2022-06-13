@@ -117,6 +117,7 @@ export const en = {
   "Marriage date":"Marriage date",
   "Zip code": "Zip code",
   "House number": "House number",
+  "First name":"First name",
   "On what date are you moving?": "On what date are you moving?",
   "Select service":"Select service",
   "wedding date":"wedding date",

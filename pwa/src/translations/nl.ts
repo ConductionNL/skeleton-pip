@@ -116,6 +116,7 @@ export const nl = {
   "Zip code": "Postcode",
   "what date do you want to get married?":"welke datum wil u trouwen?",
   "House number": "Huisnummer",
+  "First name":"Voornaam",
   "wedding date":"trouwdatum",
   "Select a wedding officiant?":"Trouwambtenaar selecteren?",
   "Wedding officiant":"Trouwambtenaar",

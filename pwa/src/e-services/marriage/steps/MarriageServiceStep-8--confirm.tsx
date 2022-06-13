@@ -23,11 +23,11 @@ export const ConfirmFormStep: React.FC<MovingStepProps> = ({ setPreviousStep }) 
   const getCollectedData = (): ICollectedData[] => {
     const collectedData: ICollectedData[] = [
       { label: t("Zip code"), value: formData.selectService },
-      { label: t("Moving date"), value: formData.date },
+      { label: t("date"), value: formData.date },
       { label: t("House number"), value: formData.houseNumber },
       {
         label: t("Who will move with you?"),
-        value: formData.coMovers.join(", "),
+        value: formData.additionalProducts.join(", "),
       },
     ];
 

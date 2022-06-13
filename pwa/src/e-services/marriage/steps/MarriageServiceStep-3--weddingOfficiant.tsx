@@ -41,12 +41,12 @@ export const WeddingOfficiantStep: React.FC<MarriageStepProps> = ({ setNextStep,
 
   const onSubmit = (data: any): void => {
     handleSetFormData(data);
-    // setNextStep();
+    setNextStep();
   };
 
   const handleSetPreviousStep = () => {
     handleSetFormData(getValues());
-    // handleSetStep("date");
+    handleSetStep("date");
   };
 
   const handleSetFormData = (data: any): void => {
@@ -56,13 +56,12 @@ export const WeddingOfficiantStep: React.FC<MarriageStepProps> = ({ setNextStep,
     //   value && selectedWeddingOfficiant.push(key);
     // }
     // setFormData({ ...formData, weddingOfficiant: selectedWeddingOfficiant });
-    const names = ["hamid", "lennart"];
   };
 
   return (
     <FormStepTemplate title={t("Select a wedding officiant?")} setPreviousStep={handleSetPreviousStep}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        {testWeddingOfficiants.map(({label,weddingOfficiantId}) => (
+        {testWeddingOfficiants.map(({ label, weddingOfficiantId }) => (
           <FormFieldInput key={weddingOfficiantId}>
             <InputRadio
               label={label}

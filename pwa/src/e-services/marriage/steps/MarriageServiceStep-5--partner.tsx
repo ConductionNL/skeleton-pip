@@ -8,7 +8,6 @@ import { FormStepTemplate } from "../../../templates/templateParts/formStep/Form
 import { MarriageServiceContext } from "../MarriageServiceContext";
 import { TMarriageFormServiceSteps } from "../MarriageServiceForm";
 
-
 interface MarriageStepProps {
   setNextStep: () => void;
   handleSetStep: React.Dispatch<React.SetStateAction<TMarriageFormServiceSteps>>;
@@ -27,20 +26,19 @@ export const PartnerStep: React.FC<MarriageStepProps> = ({ setNextStep, handleSe
   } = useForm();
 
   React.useEffect(() => {
-
     setValue("firstName", formData.partner.firstName);
     setValue("lastName", formData.partner.lastName);
-    setValue("lastName", formData.partner.lastName);
-    setValue("lastName", formData.partner.lastName);
+    setValue("phoneNumber", formData.partner.phoneNumber);
+    setValue("eMaile", formData.partner.eMaile);
   }, [formData]);
 
   const onSubmit = (data: any): void => {
-    setFormData({ ...formData, zipCode: data.zipCode, houseNumber: data.houseNumber });
+    setFormData({ ...formData, partner: data.partner });
     setNextStep();
   };
 
   const handleSetPreviousStep = () => {
-    setFormData({ ...formData, zipCode: getValues("zipCode"), houseNumber: getValues("houseNumber") });
+    setFormData({ ...formData, partner: getValues("partner") });
     handleSetStep("date");
   };
 
@@ -48,13 +46,23 @@ export const PartnerStep: React.FC<MarriageStepProps> = ({ setNextStep, handleSe
     <FormStepTemplate title={t("Add your partner.")} setPreviousStep={handleSetPreviousStep}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormFieldInput>
-          <FormFieldLabel htmlFor="zipCode">{t("Zip code")}</FormFieldLabel>
-          <InputText name="zipCode" {...{ register, errors }} validation={{ required: true }} />
+          <FormFieldLabel htmlFor="firstName">{t("First name")}</FormFieldLabel>
+          <InputText name="firstName" {...{ register, errors }} validation={{ required: true }} />
         </FormFieldInput>
 
         <FormFieldInput>
-          <FormFieldLabel htmlFor="houseNumber">{t("House number")}</FormFieldLabel>
-          <InputNumber name="houseNumber" {...{ register, errors }} validation={{ required: true }} />
+          <FormFieldLabel htmlFor="lastName">{t("Last name")}</FormFieldLabel>
+          <InputNumber name="lastName" {...{ register, errors }} validation={{ required: true }} />
+        </FormFieldInput>
+
+        <FormFieldInput>
+          <FormFieldLabel htmlFor="phoneNumber">{t("Phone number")}</FormFieldLabel>
+          <InputNumber name="phoneNumber" {...{ register, errors }} validation={{ required: true }} />
+        </FormFieldInput>
+
+        <FormFieldInput>
+          <FormFieldLabel htmlFor="eMaile">{t("Email address")}</FormFieldLabel>
+          <InputNumber name="eMaile" {...{ register, errors }} validation={{ required: true }} />
         </FormFieldInput>
 
         <button type="submit">
