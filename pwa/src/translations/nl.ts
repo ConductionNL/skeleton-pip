@@ -124,4 +124,5 @@ export const nl = {
   News: "Nieuws",
   Products: "Producten",
   "News Item": "Nieuwsitem",
+  "Read more": "Lees meer",
 };

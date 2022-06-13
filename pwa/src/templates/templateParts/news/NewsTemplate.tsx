@@ -3,10 +3,10 @@ import { Heading1 } from "@gemeente-denhaag/components-react";
 import { useTranslation } from "react-i18next";
 import { useNews } from "../../../hooks/news";
 import Skeleton from "react-loading-skeleton";
-import { RichContentCard } from "../../../components/card";
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { navigate } from "gatsby";
 import { useQueryClient } from "react-query";
+import { DetailsCard } from "@conduction/components";
 
 export const NewsTemplate: React.FC = () => {
   const { t } = useTranslation();
@@ -29,33 +29,14 @@ export const NewsTemplate: React.FC = () => {
           {!getNews.isLoading && (
             <div>
               {getNews.data?.map((newsItem) => (
-                <div onClick={() => navigate(`/news/${newsItem.id}`)}>
-                  <RichContentCard
-                    link={[{ label: newsItem.title, href: `/news/${newsItem.id}` }]}
-                    tags={[newsItem.audiences, newsItem.type, newsItem.usage]}
-                    labelsWithIcon={[{ label: newsItem.title, icon: <ArrowRightIcon /> }]}
-                    contentLinks={[
-                      {
-                        title: newsItem.title,
-                        subTitle: (
-                          <div
-                            dangerouslySetInnerHTML={{
-                              __html: newsItem.content,
-                            }}
-                          ></div>
-                        ),
-                      },
-                    ]}
-                  />
-                  {/* <NewsCard
-                    id={newsItem.id}
+                <div key={newsItem.id} onClick={() => navigate(`/news/${newsItem.id}`)}>
+                  <DetailsCard
                     title={newsItem.title}
-                    content={newsItem.content}
-                    date={newsItem.date}
-                    audiences={newsItem.audiences}
-                    types={newsItem.type}
-                    usages={newsItem.usage}
-                  /> */}
+                    introduction={""}
+                    link={{ label: t("Read more") + "...", href: `/news/${newsItem.id}` }}
+                    tags={[newsItem.audiences, newsItem.type, newsItem.usage]}
+                    subHeader={newsItem.date}
+                  />
                 </div>
               ))}
             </div>
@@ -65,15 +46,3 @@ export const NewsTemplate: React.FC = () => {
     </div>
   );
 };
-
-const link = [{ label: "test", href: "test" }];
-const contentLinks = [
-  {
-    title: "Wijzig je wachtwoord!",
-    subTitle:
-      "Er zijn zwakke wachtwoorden gededecteerd door team beveiliging. Iedereen is verplicht zijn wachtwoord voor 15/08/2020 te wijzigingen anders wordt dit geautomatiseerd en moet je je account opnieuw ophalen.",
-    href: "test",
-  },
-];
-const tags = ["test1", "test2"];
-const icon = [{ label: "test", icon: <ArrowRightIcon /> }];

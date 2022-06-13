@@ -126,4 +126,5 @@ export const en = {
   News: "News",
   Products: "Products",
   "News Item": "News Item",
+  "Read more": "Read more",
 };

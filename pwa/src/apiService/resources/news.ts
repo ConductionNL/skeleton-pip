@@ -5,9 +5,11 @@ export default class News {
   private _instance: AxiosInstance;
 
   constructor(_instance: AxiosInstance) {
-    const params = ["taxonomies.openpubAudience", "taxonomies.openpubType", "taxonomies.openpubUsage"];
     _instance.interceptors.request.use(function (config) {
-      return { ...config, params: { extend: params } };
+      return {
+        ...config,
+        params: { extend: ["taxonomies.openpubAudience", "taxonomies.openpubType", "taxonomies.openpubUsage"] },
+      };
     });
 
     this._instance = _instance;
@@ -15,31 +17,24 @@ export default class News {
 
   public getOne = async (id: string): Promise<any> => {
     const { data } = await Send(this._instance, "GET", `/nieuws/${id}`);
-    console.log(data);
-    const newsItems = data.nieuws.map((newsItem: any) => {
-      const _newsItem: any = {
-        id: newsItem.id,
-        title: newsItem.title,
-        content: newsItem.content,
-        date: newsItem.date,
-      };
+    const newsItem: any = {
+      id: data.id,
+      title: data.title,
+      content: data.content,
+      date: data.date,
+    };
 
-      _newsItem.audiences = newsItem._embedded.taxonomies._embedded.openpubAudience.map(
-        (audience: any) => audience.name,
-      );
-      _newsItem.type = newsItem._embedded.taxonomies._embedded.openpubType.map((type: any) => type.name);
-      _newsItem.usage = newsItem._embedded.taxonomies._embedded.openpubUsage.map((usage: any) => usage.name);
-      return _newsItem;
-    });
+    newsItem.audiences = data._embedded.taxonomies._embedded.openpubAudience.map((audience: any) => audience.name);
+    newsItem.type = data._embedded.taxonomies._embedded.openpubType.map((type: any) => type.name);
+    newsItem.usage = data._embedded.taxonomies._embedded.openpubUsage.map((usage: any) => usage.name);
 
-    return newsItems;
+    return newsItem;
   };
 
   public getAll = async (): Promise<any> => {
     const {
       data: { _embedded },
     } = await Send(this._instance, "GET", "/nieuws");
-
     const newsItems = _embedded.nieuws.map((newsItem: any) => {
       const _newsItem: any = {
         id: newsItem.id,
