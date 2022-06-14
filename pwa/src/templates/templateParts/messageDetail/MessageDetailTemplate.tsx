@@ -9,6 +9,8 @@ import { useQueryClient } from "react-query";
 import { useCase } from "../../../hooks/case";
 import Skeleton from "react-loading-skeleton";
 import { translateDate } from "../../../services/dateFormat";
+import { useMessage } from "../../../hooks/message";
+import * as _ from "lodash";
 
 interface MessageDetailTemplateProps {
   messageId: string;
@@ -25,6 +27,9 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
   const _useCase = useCase(queryClient);
   const getCases = _useCase.getAll();
 
+  const _useMessage = useMessage(queryClient);
+  const getMessage = _useMessage.getOne(messageId);
+
   React.useEffect(() => {
     if (!getCases.isSuccess) return;
 
@@ -34,32 +39,28 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
 
   return (
     <div className={styles.container}>
-      <MetaIconGridTemplate
-        metaIcons={[
-          { icon: <StarterIcon />, label: t("Initiator"), value: "Gemeente" },
-          { icon: <StaffIcon />, label: t("Collaborator"), value: "H. van de Ren" },
-          { icon: <SettingsIcon />, label: t("Organization"), value: "252852369" },
-          { icon: <CalendarIcon />, label: t("Registration date"), value: translateDate(i18n.language, new Date()) },
-        ]}
-      />
+      {!getMessage.isLoading && (
+        <>
+          <MetaIconGridTemplate
+            metaIcons={[
+              { icon: <StarterIcon />, label: t("Initiator"), value: _.upperFirst(getMessage.data.initiatiefnemer) },
+              { icon: <StaffIcon />, label: t("Collaborator"), value: "H. van de Ren" },
+              { icon: <SettingsIcon />, label: t("Organization"), value: getMessage.data.bronorganisatie },
+              {
+                icon: <CalendarIcon />,
+                label: t("Registration date"),
+                value: translateDate(i18n.language, getMessage.data.registratiedatum),
+              },
+            ]}
+          />
 
-      <Divider />
+          <Divider />
 
-      <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo.
-        Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet
-        risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus
-        porttitor.
-        <br /> <br />
-        Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes,
-        nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor
-        fringilla.
-        <br /> <br />
-        Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-        auctor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam quis risus eget urna mollis ornare vel eu
-        leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sociis natoque penatibus et magnis dis
-        parturient montes, nascetur ridiculus mus.
-      </Paragraph>
+          <Paragraph>{getMessage.data.tekst}</Paragraph>
+        </>
+      )}
+
+      {getMessage.isLoading && <Skeleton height="200px" />}
 
       <Divider />
 
@@ -75,10 +76,10 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
           <Tab label={t("Closed cases")} value={1} />
         </Tabs>
 
-        {getCases.isLoading && <Skeleton height="100px" />}
-
         <TabPanel value="0">{!getCases.isLoading && <CasesTable cases={currentCases} />}</TabPanel>
         <TabPanel value="1">{!getCases.isLoading && <CasesTable cases={closedCases} />}</TabPanel>
+
+        {getCases.isLoading && <Skeleton height="100px" />}
       </TabContext>
     </div>
   );
