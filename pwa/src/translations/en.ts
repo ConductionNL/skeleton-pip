@@ -124,7 +124,8 @@ export const en = {
   Confirm: "Confirm",
   "Login with DigiD": "Login with DigiD",
   News: "News",
-  Products: "Products",
   "News Item": "News Item",
   "Read more": "Read more",
+  Products: "Products",
+  Product: "Product",
 };

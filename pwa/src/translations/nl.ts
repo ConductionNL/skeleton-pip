@@ -122,7 +122,8 @@ export const nl = {
   Confirm: "Bevestigen",
   "Login with DigiD": "Inloggen met DigiD",
   News: "Nieuws",
-  Products: "Producten",
   "News Item": "Nieuwsitem",
   "Read more": "Lees meer",
+  Products: "Producten",
+  Product: "Product",
 };

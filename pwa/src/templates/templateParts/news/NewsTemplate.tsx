@@ -3,7 +3,6 @@ import { Heading1 } from "@gemeente-denhaag/components-react";
 import { useTranslation } from "react-i18next";
 import { useNews } from "../../../hooks/news";
 import Skeleton from "react-loading-skeleton";
-import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { navigate } from "gatsby";
 import { useQueryClient } from "react-query";
 import { DetailsCard } from "@conduction/components";
@@ -22,27 +21,25 @@ export const NewsTemplate: React.FC = () => {
 
   return (
     <div>
-      <div>
-        <Heading1>{t("News")}</Heading1>
-        {getNews.isLoading && <Skeleton height="100px" />}
-        <>
-          {!getNews.isLoading && (
-            <div>
-              {getNews.data?.map((newsItem) => (
-                <div key={newsItem.id} onClick={() => navigate(`/news/${newsItem.id}`)}>
-                  <DetailsCard
-                    title={newsItem.title}
-                    introduction={""}
-                    link={{ label: t("Read more") + "...", href: `/news/${newsItem.id}` }}
-                    tags={[newsItem.audiences, newsItem.type, newsItem.usage]}
-                    subHeader={newsItem.date}
-                  />
-                </div>
-              ))}
-            </div>
-          )}
-        </>
-      </div>
+      <Heading1>{t("News")}</Heading1>
+      {getNews.isLoading && <Skeleton height="100px" />}
+      <>
+        {!getNews.isLoading && (
+          <div>
+            {getNews.data?.map((newsItem) => (
+              <div key={newsItem.id} onClick={() => navigate(`/news/${newsItem.id}`)}>
+                <DetailsCard
+                  title={newsItem.title}
+                  introduction={""}
+                  link={{ label: t("Read more") + "...", href: `/news/${newsItem.id}` }}
+                  tags={[newsItem.audiences, newsItem.type, newsItem.usage]}
+                  subHeader={newsItem.date}
+                />
+              </div>
+            ))}
+          </div>
+        )}
+      </>
     </div>
   );
 };
