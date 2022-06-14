@@ -20,6 +20,7 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
   const [currentCasesTab, setCurrentCasesTab] = React.useState<number>(0);
   const [currentCases, setCurrentCases] = React.useState<any[]>([]);
   const [closedCases, setClosedCases] = React.useState<any[]>([]);
+  const [employeeName, setEmployeeName] = React.useState<string>("");
   const { t, i18n } = useTranslation();
 
   const queryClient = useQueryClient();
@@ -37,6 +38,14 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
     setClosedCases(getCases.data.filter((_case) => _case.archiefstatus !== "nog_te_archiveren"));
   }, [getCases.isSuccess]);
 
+  React.useEffect(() => {
+    if (!getMessage.isSuccess) return;
+
+    const e = getMessage.data.medewerkerNaam;
+
+    setEmployeeName(`${e.voorletters || ""} ${e.achternaamVoorvoegsel || ""} ${e.achternaam || ""}`);
+  }, [getMessage.isSuccess]);
+
   return (
     <div className={styles.container}>
       {!getMessage.isLoading && (
@@ -44,7 +53,7 @@ export const MessageDetailTemplate: React.FC<MessageDetailTemplateProps> = ({ me
           <MetaIconGridTemplate
             metaIcons={[
               { icon: <StarterIcon />, label: t("Initiator"), value: _.upperFirst(getMessage.data.initiatiefnemer) },
-              { icon: <StaffIcon />, label: t("Collaborator"), value: "H. van de Ren" },
+              { icon: <StaffIcon />, label: t("Collaborator"), value: employeeName },
               { icon: <SettingsIcon />, label: t("Organization"), value: getMessage.data.bronorganisatie },
               {
                 icon: <CalendarIcon />,
