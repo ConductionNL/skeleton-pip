@@ -5,13 +5,16 @@ import { useTranslation } from "react-i18next";
 import { IMessageTableItem, MessagesTable } from "../../../components/messagesTable/MessagesTable";
 import { useMessage } from "../../../hooks/message";
 import Skeleton from "react-loading-skeleton";
+import { useQueryClient } from "react-query";
 
 export const MyMessagesTemplate: React.FC = () => {
   const [messages, setMessages] = React.useState<IMessageTableItem[]>([]);
   const [currentMessagesTab, setCurrentMessagesTab] = React.useState<number>(0);
   const { t } = useTranslation();
 
-  const _useMessage = useMessage();
+  const queryClient = useQueryClient();
+
+  const _useMessage = useMessage(queryClient);
   const getMessages = _useMessage.getAll();
 
   React.useEffect(() => {
