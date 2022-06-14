@@ -26,7 +26,7 @@ export const OverviewTemplate: React.FC = () => {
   const _useCase = useCase(queryClient);
   const getCases = _useCase.getAll();
 
-  const _useMessage = useMessage();
+  const _useMessage = useMessage(queryClient);
   const getMessages = _useMessage.getAll();
 
   React.useEffect(() => {
