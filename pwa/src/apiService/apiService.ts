@@ -75,7 +75,7 @@ export default class APIService {
   }
 
   public get Message(): Message {
-    return new Message(this.apiClient);
+    return new Message(this.halApiClient);
   }
 
   // Services
