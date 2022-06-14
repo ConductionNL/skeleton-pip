@@ -5,9 +5,7 @@ export default class Message {
   private _instance: AxiosInstance;
 
   constructor(_instance: AxiosInstance) {
-    _instance.interceptors.request.use(function (config) {
-      return { ...config, params: { extend: ["medewerkerIdentificatie"] } };
-    });
+    _instance.interceptors.request.use((config) => ({ ...config, params: { extend: ["medewerkerIdentificatie"] } }));
 
     this._instance = _instance;
   }
