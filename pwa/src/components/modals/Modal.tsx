@@ -39,9 +39,5 @@ export const Modal: React.FC<ModalProps> = ({ description, infoLink, title, labe
     </div>
   );
 
-  return isShown ? (
-    ReactDOM.createPortal(modal, document.body)
-  ) : (
-    <Button onClick={() => setIsShown(true)}>Open PopUp</Button>
-  );
+  return isShown ? ReactDOM.createPortal(modal, document.body) : null;
 };
