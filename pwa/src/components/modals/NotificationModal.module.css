@@ -4,7 +4,7 @@
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--conduction-overlay-background-color);
   z-index: 500;
 }
 
@@ -14,13 +14,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 700;
-  width: inherit;
+  max-width: var(--conduction-modal-width-default);
   outline: 0;
 }
 
 .modal {
   z-index: 100;
-  background: white;
+  background: var(--conduction-modal-background-color);
   position: relative;
   margin: auto;
   border-radius: 8px;
@@ -41,5 +41,5 @@
 
 .button {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }

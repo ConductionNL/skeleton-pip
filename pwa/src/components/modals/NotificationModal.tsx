@@ -1,9 +1,11 @@
 import * as React from "react";
-import * as styles from "./Modal.module.css";
+import * as styles from "./NotificationModal.module.css";
 import ReactDOM from "react-dom";
 import { Button, Heading3, Paragraph } from "@gemeente-denhaag/components-react";
 
 export interface ModalProps {
+  isShown: boolean;
+  hide: () => void;
   title: string;
   description: string;
   labelCloseButton: string;
@@ -11,9 +13,15 @@ export interface ModalProps {
   infoLink?: string;
 }
 
-export const Modal: React.FC<ModalProps> = ({ description, infoLink, title, labelOpenButton, labelCloseButton }) => {
-  const [isShown, setIsShown] = React.useState<boolean>(true);
-
+export const NotificationModal: React.FC<ModalProps> = ({
+  description,
+  infoLink,
+  title,
+  labelOpenButton,
+  labelCloseButton,
+  hide,
+  isShown,
+}) => {
   const modal = (
     <div>
       <div className={styles.overlay} />
@@ -28,7 +36,7 @@ export const Modal: React.FC<ModalProps> = ({ description, infoLink, title, labe
               </Paragraph>
             </div>
             <div className={styles.button}>
-              <Button variant="secondary-action" onClick={() => setIsShown(false)}>
+              <Button variant="secondary-action" onClick={hide}>
                 {labelCloseButton}
               </Button>
               <Button>{labelOpenButton}</Button>
@@ -40,4 +48,13 @@ export const Modal: React.FC<ModalProps> = ({ description, infoLink, title, labe
   );
 
   return isShown ? ReactDOM.createPortal(modal, document.body) : null;
+};
+
+export const toggleNotificationModal = () => {
+  const [isShown, setIsShown] = React.useState<boolean>(false);
+  const toggle = () => setIsShown(!isShown);
+  return {
+    isShown,
+    toggle,
+  };
 };

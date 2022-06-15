@@ -7,9 +7,15 @@ import { HorizontalImageCard } from "../../components/card";
 import { UserIcon } from "@gemeente-denhaag/icons";
 import DigidImage from "../../assets/svgs/digid.svg";
 import { useDigiD } from "../../hooks/useDigiD";
-import { Modal } from "../../components/modals/Modal";
+import { toggleNotificationModal, NotificationModal } from "../../components/modals/NotificationModal";
 
 export const LandingTemplate: React.FC = () => {
+  const { isShown, toggle } = toggleNotificationModal();
+
+  React.useEffect(() => {
+    toggle();
+  }, []);
+
   return (
     <Container>
       <div className={styles.container}>
@@ -40,7 +46,9 @@ export const LandingTemplate: React.FC = () => {
             }}
           />
         </div>
-        <Modal
+        <NotificationModal
+          isShown={isShown}
+          hide={toggle}
           title={"Cookie Voorkeuren"}
           description={
             "Deze website maakt gebruik van cookies." +
@@ -49,7 +57,7 @@ export const LandingTemplate: React.FC = () => {
           }
           labelCloseButton={"Afwijzen"}
           labelOpenButton={"Sta cookies toe"}
-          infoLink="sredgde\gvsdgvbsdbgsdrgbdsrfbdsrfb"
+          infoLink="https://autoriteitpersoonsgegevens.nl/nl/onderwerpen/internet-telefoon-tv-en-post/cookies"
         />
       </div>
     </Container>
