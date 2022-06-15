@@ -1,0 +1,45 @@
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 500;
+}
+
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 700;
+  width: inherit;
+  outline: 0;
+}
+
+.modal {
+  z-index: 100;
+  background: white;
+  position: relative;
+  margin: auto;
+  border-radius: 8px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.content > * {
+  padding-inline-start: var(--nlportal-space-inline-md);
+  padding-inline-end: var(--nlportal-space-inline-md);
+  padding-block-start: var(--nlportal-space-block-md);
+  padding-block-end: var(--nlportal-space-block-md);
+}
+
+.button {
+  display: flex;
+  justify-content: space-around;
+}

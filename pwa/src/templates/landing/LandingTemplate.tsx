@@ -7,6 +7,7 @@ import { HorizontalImageCard } from "../../components/card";
 import { UserIcon } from "@gemeente-denhaag/icons";
 import DigidImage from "../../assets/svgs/digid.svg";
 import { useDigiD } from "../../hooks/useDigiD";
+import { Modal } from "../../components/modals/Modal";
 
 export const LandingTemplate: React.FC = () => {
   return (
@@ -39,6 +40,17 @@ export const LandingTemplate: React.FC = () => {
             }}
           />
         </div>
+        <Modal
+          title={"Cookie Voorkeuren"}
+          description={
+            "Deze website maakt gebruik van cookies." +
+            " We gebruiken cookies om de inhoud te personaliseren en om het " +
+            "verkeer op onze website te analyseren. "
+          }
+          labelCloseButton={"Afwijzen"}
+          labelOpenButton={"Sta cookies toe"}
+          infoLink="sredgde\gvsdgvbsdbgsdrgbdsrfbdsrfb"
+        />
       </div>
     </Container>
   );
