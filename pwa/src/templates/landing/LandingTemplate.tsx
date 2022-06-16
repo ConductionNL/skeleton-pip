@@ -12,6 +12,10 @@ import { toggleNotificationModal, NotificationModal } from "../../components/mod
 export const LandingTemplate: React.FC = () => {
   const { isShown, toggle } = toggleNotificationModal();
 
+  const handleClick = () => {
+    toggle();
+  };
+
   React.useEffect(() => {
     toggle();
   }, []);
@@ -53,11 +57,12 @@ export const LandingTemplate: React.FC = () => {
           description={
             "Deze website maakt gebruik van cookies." +
             " We gebruiken cookies om de inhoud te personaliseren en om het " +
-            "verkeer op onze website te analyseren. "
+            "verkeer op onze website te analyseren."
           }
-          labelCloseButton={"Afwijzen"}
-          labelOpenButton={"Sta cookies toe"}
+          labelSecondaryButton={"Afwijzen"}
+          PrimaryButton={{ label: "Accepteren", handleClick: handleClick }}
           infoLink="https://autoriteitpersoonsgegevens.nl/nl/onderwerpen/internet-telefoon-tv-en-post/cookies"
+          layoutClassName={styles.notification}
         />
       </div>
     </Container>
