@@ -1,47 +1,60 @@
 import * as React from "react";
 import * as styles from "./NotificationModal.module.css";
 import ReactDOM from "react-dom";
-import { Button, Heading3, Paragraph } from "@gemeente-denhaag/components-react";
+import { Button, Heading3, Link, Paragraph } from "@gemeente-denhaag/components-react";
+import clsx from "clsx";
+import { CloseIcon, ArrowRightIcon } from "@gemeente-denhaag/icons";
+import { useTranslation } from "react-i18next";
 
 export interface ModalProps {
-  isShown: boolean;
-  hide: () => void;
   title: string;
   description: string;
-  labelCloseButton: string;
-  labelOpenButton: string;
   infoLink?: string;
+  labelSecondaryButton: string;
+  PrimaryButton: {
+    label: string;
+    handleClick(): any;
+  };
+  layoutClassName?: string;
+  isShown: boolean;
+  hide: () => void;
 }
 
 export const NotificationModal: React.FC<ModalProps> = ({
+  title,
   description,
   infoLink,
-  title,
-  labelOpenButton,
-  labelCloseButton,
-  hide,
+  PrimaryButton,
+  labelSecondaryButton,
+  layoutClassName,
   isShown,
+  hide,
 }) => {
+  const { t } = useTranslation();
+
   const modal = (
-    <div>
-      <div className={styles.overlay} />
-      <div className={styles.container}>
-        <div className={styles.modal}>
-          <div className={styles.content}>
-            <Heading3>{title}</Heading3>
-            <div>
-              <Paragraph>
-                {description}
-                {infoLink ? <a href={infoLink}>Meer infomatie</a> : <></>}
-              </Paragraph>
-            </div>
-            <div className={styles.button}>
-              <Button variant="secondary-action" onClick={hide}>
-                {labelCloseButton}
-              </Button>
-              <Button>{labelOpenButton}</Button>
-            </div>
+    <div
+      className={clsx(
+        styles.container,
+        layoutClassName ? [layoutClassName && layoutClassName] : styles.defaultContainer,
+      )}
+    >
+      <div className={styles.modal}>
+        <Heading3>{title}</Heading3>
+        <div>
+          <Paragraph>
+            {description} {infoLink ? <Link href={infoLink}>{t("More Information")}</Link> : <></>}
+          </Paragraph>
+        </div>
+        <div className={styles.buttons}>
+          <div onClick={hide}>
+            <Link icon={<CloseIcon />} iconAlign="start">
+              {labelSecondaryButton}
+            </Link>
           </div>
+          <Button icon={<ArrowRightIcon />} onClick={PrimaryButton.handleClick}>
+            {PrimaryButton.label}
+          </Button>
         </div>
       </div>
     </div>
