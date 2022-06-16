@@ -15,6 +15,7 @@ import {
   UnauthenticatedFooterTemplate,
 } from "../templates/templateParts/footer/FooterTemplate";
 import { isLoggedIn } from "../services/auth";
+import { NotificationTemplate } from "../templates/templateParts/notification/NotificationTemplate";
 
 const { setEnv } = require("./../../static/env.js");
 
@@ -67,6 +68,8 @@ const AuthenticatedLayout: React.FC<AuthenticatedLayoutProps> = ({ children }) =
   <>
     <AuthenticatedHeaderTemplate layoutClassName={styles.authenticatedHeader} />
     <div className={styles.pageContent}>{children}</div>
+
+    <NotificationTemplate />
     <AuthenticatedFooterTemplate />
   </>
 );
