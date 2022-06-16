@@ -11,6 +11,7 @@ on:
       - master
       - staging
       - development
+      - hackathon/notifications
 
 jobs:
   build:
@@ -43,6 +44,12 @@ jobs:
           echo "APP_ENV=latest">> $GITHUB_ENV
           echo "APP_BUILD=latest">> $GITHUB_ENV
           echo "set APP_ENV to $APP_ENV"
+      - name: Setting APP_ENV to prod
+        if: contains( github.ref, 'hackathon/notifications' ) || contains( github.base_ref, 'hackathon/notifications' )
+        run: |
+          echo "APP_ENV=hackathon-notifications">> $GITHUB_ENV
+          echo "APP_BUILD=hackathon-notifications">> $GITHUB_ENV
+          echo "set APP_ENV to $APP_ENV"
       - name: Setting APP_ENV to stag
         if: contains( github.ref, 'staging' ) || contains( github.base_ref, 'staging' )
         run: |
@@ -66,13 +73,13 @@ jobs:
       - name: Login to Container Registry
         id: containerregistry-login
         run: |
-         if [ "${{ secrets.GITHUB_TOKEN }}" != "" ]; then
-           echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u $(cut -d'/' -f1 <<< $GITHUB_REPOSITORY) --password-stdin
-           echo "##[set-output name=success;]true"
-         else
-           echo "##[set-output name=success;]false"
-         fi
-      - if: steps.containerregistry-login.outputs.success == 'true' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/staging' || github.ref == 'refs/heads/development')
+          if [ "${{ secrets.GITHUB_TOKEN }}" != "" ]; then
+            echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u $(cut -d'/' -f1 <<< $GITHUB_REPOSITORY) --password-stdin
+            echo "##[set-output name=success;]true"
+          else
+            echo "##[set-output name=success;]false"
+          fi
+      - if: steps.containerregistry-login.outputs.success == 'true' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/staging' || github.ref == 'refs/heads/development' || github.ref == 'refs/heads/hackathon/notifications')
         name: Push to Container Registry
         run: docker-compose push
 
