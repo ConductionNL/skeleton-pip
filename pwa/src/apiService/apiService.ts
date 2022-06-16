@@ -2,6 +2,7 @@ import axios, { AxiosInstance, AxiosResponse } from "axios";
 
 import Case from "./resources/case";
 import Message from "./resources/message";
+import Notification from "./resources/notification";
 import Login from "./services/login";
 import Me from "./services/me";
 
@@ -76,6 +77,10 @@ export default class APIService {
 
   public get Message(): Message {
     return new Message(this.halApiClient);
+  }
+
+  public get Notification(): Notification {
+    return new Notification(this.apiClient);
   }
 
   // Services
