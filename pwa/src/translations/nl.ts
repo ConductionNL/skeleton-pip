@@ -121,4 +121,28 @@ export const nl = {
   "Information entered by you": "Door jou ingevulde gegevens",
   Confirm: "Bevestigen",
   "Login with DigiD": "Inloggen met DigiD",
+  Close: "Sluiten",
+  "Case closed": "Zaak gesloten",
+  "This case is closed, click below for more information": "Deze zaak is gesloten, klik hieronder voor meer informatie",
+  "Case created": "Zaak aangemaakt",
+  "This case is created, click below for more information":
+    "Deze zaak is aangemaakt, klik hieronder voor meer informatie",
+  "Case modified": "Zaak gewijzigd",
+  "This case is modified, click below for more information":
+    "Deze zaak is gewijzigd, klik hieronder voor meer informatie",
+  "Case status modified": "Zaak status gewijzigd",
+  "The status of this case is modified, click below for more information":
+    "De status van deze zaak is gewijzigd, klik hieronder voor meer informatie",
+  "Case contact moment created": "Zaak contactmoment aangemaakt",
+  "This case received a new message, click below for more information":
+    "Deze zaak heeft een nieuw bericht ontvangen, klik hieronder voor meer informatie",
+  "This case's contact moment modified": "Zaak contactmoment gewijzigd",
+  "This case has a modified contact moment, click below for more information":
+    "Deze zaak heeft een geüpdatet contactmoment, klik hieronder voor meer informatie",
+  "Case's contact moment status modified": "Zaak contactmoment status gewijzigd",
+  "This case has a modified contact moment status, click below for more information":
+    "Deze zaak heeft een gewijzigd contactmoment status, klik hieronder voor meer informatie",
+  "Case publication created": "Zaak publicatie aangemaakt",
+  "This case received a new publication, click below for more information":
+    "Deze zaak heeft een nieuwe publicatie, klik hieronder voor meer informatie",
 };

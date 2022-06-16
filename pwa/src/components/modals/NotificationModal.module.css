@@ -4,12 +4,13 @@
 }
 
 .modal {
-  background: var(--denhaag-color-grey-1);
-  padding-inline-start: var(--nlportal-space-inline-md);
-  padding-inline-end: var(--nlportal-space-inline-md);
-  padding-block-start: var(--nlportal-space-block-md);
-  padding-block-end: var(--nlportal-space-block-md);
-  box-shadow: 0px 0px 13px 6px rgba(0, 0, 0, 0.5);
+  background: var(--denhaag-color-warmgrey-1);
+  padding-inline-start: var(--nlportal-space-inline-lg);
+  padding-inline-end: var(--nlportal-space-inline-lg);
+  padding-block-start: var(--nlportal-space-block-lg);
+  padding-block-end: var(--nlportal-space-block-lg);
+  box-shadow: 0px 0px 6px 6px rgb(0 0 0 / 15%);
+  border-radius: var(--nlportal-document-border-radius);
 }
 
 .modal > *:not(:last-child) {
@@ -23,5 +24,24 @@
 }
 
 .buttons > *:not(:last-child) {
-  padding-inline-end: var(--nlportal-space-inline-md);
+  margin-inline-end: var(--nlportal-space-inline-md);
+}
+
+.cssanimation {
+  animation-duration: 200ms;
+  animation-fill-mode: both;
+}
+
+.fadeInBottom {
+  animation-name: fadeInBottom;
+}
+
+@keyframes fadeInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+  }
 }

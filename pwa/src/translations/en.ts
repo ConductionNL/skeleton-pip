@@ -123,4 +123,27 @@ export const en = {
   "Information entered by you": "Information entered by you",
   Confirm: "Confirm",
   "Login with DigiD": "Login with DigiD",
+  Close: "Close",
+
+  "Case closed": "Case closed",
+  "This case is closed, click below for more information": "This case is closed, click below for more information",
+  "Case created": "Case created",
+  "This case is created, click below for more information": "This case is created, click below for more information",
+  "Case modified": "Case modified",
+  "This case is modified, click below for more information": "This case is modified, click below for more information",
+  "Case status modified": "Case status modified",
+  "The status of this case is modified, click below for more information":
+    "The status of this case is modified, click below for more information",
+  "Case contact moment created": "Case contact moment created",
+  "This case received a new message, click below for more information":
+    "This case received a new message, click below for more information",
+  "This case's contact moment modified": "This case's contact moment modified",
+  "This case has a modified contact moment, click below for more information":
+    "This case has a modified contact moment, click below for more information",
+  "Case's contact moment status modified": "Case's contact moment status modified",
+  "This case has a modified contact moment status, click below for more information":
+    "This case has a modified contact moment status, click below for more information",
+  "Case publication created": "Case publication created",
+  "This case received a new publication, click below for more information":
+    "This case received a new publication, click below for more information",
 };

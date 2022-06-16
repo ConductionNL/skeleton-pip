@@ -3,12 +3,16 @@ import * as styles from "./NotificationTemplate.module.css";
 
 import APIContext from "../../../apiService/apiContext";
 import APIService from "../../../apiService/apiService";
-import { NotificationModal } from "../../../components/modals/NotificationModal";
+import { NotificationModal, toggleNotificationModal } from "../../../components/modals/NotificationModal";
+import { navigate } from "gatsby";
+import { useTranslation } from "react-i18next";
 
 export const NotificationTemplate: React.FC = () => {
   const API: APIService = React.useContext(APIContext);
   const [notifications, setNotifications] = React.useState<any>([]);
   const [currentNotification, setCurrentNotification] = React.useState<any>(null);
+  const { toggle, isShown } = toggleNotificationModal();
+  const { t } = useTranslation();
 
   React.useEffect(() => {
     const interval = setInterval(
@@ -16,7 +20,7 @@ export const NotificationTemplate: React.FC = () => {
         API.Notification.getAll().then((res) => {
           res.length !== notifications.length && setNotifications(res);
         }),
-      10000,
+      5000,
     );
 
     return () => clearInterval(interval);
@@ -25,7 +29,9 @@ export const NotificationTemplate: React.FC = () => {
   React.useEffect(() => {
     if (!notifications.length) return;
 
-    const { title, description } = getContentFromType(notifications[0].type);
+    toggle();
+
+    const { title, description } = getContentFromType(notifications[0].type, t);
 
     setCurrentNotification({
       title: title,
@@ -37,54 +43,58 @@ export const NotificationTemplate: React.FC = () => {
 
   return (
     <NotificationModal
-      isShown
-      hide={() => {
-        console.log("close");
+      isShown={isShown}
+      hide={toggle}
+      primaryButton={{
+        label: t("View case"),
+        handleClick: () => {
+          navigate("/my-cases");
+          toggle();
+        },
       }}
-      labelCloseButton="Close"
-      labelOpenButton="Open"
       title={currentNotification.title}
       description={currentNotification.description}
+      layoutClassName={styles.notification}
     />
   );
 };
 
-const getContentFromType = (type: string) => {
+const getContentFromType = (type: string, t: any) => {
   let title = "";
   let description = "";
 
   switch (type) {
-    case "nl.vng.zaken.gesloten":
-      title = "Zaak gesloten";
-      description = "Deze zaak is gesloten, klik hieronder voor meer informatie.";
+    case "nl.vng.zaken.zaak_gesloten":
+      title = t("Case closed");
+      description = t("This case is closed, click below for more information");
       break;
     case "nl.vng.zaken.aangemaakt":
-      title = "Zaak aangemaakt";
-      description = "Deze zaak is aangemaakt, klik hieronder voor meer informatie.";
+      title = t("Case created");
+      description = t("This case is created, click below for more information");
       break;
     case "nl.vng.zaken.gewijzigd":
-      title = "Zaak gewijzigd";
-      description = "Deze zaak is gewijzigd, klik hieronder voor meer informatie.";
+      title = t("Case modified");
+      description = t("This case is modified, click below for more information");
       break;
     case "nl.vng.zaken.status_gewijzigd":
-      title = "Zaak status gewijzigd";
-      description = "De status van deze zaak is gewijzigd, klik hieronder voor meer informatie.";
+      title = t("Case status modified");
+      description = t("The status of this case is modified, click below for more information");
       break;
     case "nl.vng.klanten.contactmoment_aangemaakt":
-      title = "Zaak contactmoment aangemaakt";
-      description = "Deze zaak heeft een nieuw bericht ontvangen, klik hieronder voor meer informatie.";
+      title = t("Case contact moment created");
+      description = t("This case received a new message, click below for more information");
       break;
     case "nl.vng.klanten.contactmoment_gewijzigd":
-      title = "Zaak contactmoment gewijzigd";
-      description = "Deze zaak heeft een geüpdatet contactmoment, klik hieronder voor meer informatie.";
+      title = t("This case's contact moment modified");
+      description = t("This case has a modified contact moment, click below for more information");
       break;
     case "nl.vng.klanten.contactmoment_statuswijziging":
-      title = "Zaak contactmoment status gewijzigd";
-      description = "Deze zaak heeft een gewijzigd contactmoment status, klik hieronder voor meer informatie.";
+      title = t("Case's contact moment status modified");
+      description = t("This case has a modified contact moment status, click below for more information");
       break;
     case "nl.vng.publicaties.publicatie_aangemaakt":
-      title = "Zaak publicatie aangemaakt";
-      description = "Deze zaak heeft een nieuwe publicatie, klik hieronder voor meer informatie.";
+      title = t("Case publication created");
+      description = t("This case received a new publication, click below for more information");
       break;
   }
 
