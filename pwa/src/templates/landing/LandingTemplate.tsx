@@ -59,8 +59,7 @@ export const LandingTemplate: React.FC = () => {
             " We gebruiken cookies om de inhoud te personaliseren en om het " +
             "verkeer op onze website te analyseren."
           }
-          labelSecondaryButton={"Afwijzen"}
-          PrimaryButton={{ label: "Accepteren", handleClick: handleClick }}
+          primaryButton={{ label: "Accepteren", handleClick: handleClick }}
           infoLink="https://autoriteitpersoonsgegevens.nl/nl/onderwerpen/internet-telefoon-tv-en-post/cookies"
           layoutClassName={styles.notification}
         />
