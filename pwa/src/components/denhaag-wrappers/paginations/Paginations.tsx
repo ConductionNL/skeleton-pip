@@ -9,25 +9,35 @@
 import * as React from "react";
 import "./Paginations.css";
 import { Link } from "gatsby";
+import clsx from "clsx";
 
-interface PaginationsProps {
+interface PaginationProps {
   pages: {
     ariaLabel: string;
     label: string;
     href: string;
+    current: boolean;
   }[];
-  nextPageHref: string;
-  previousPageHref: string;
 }
 
-export const Paginations: React.FC<PaginationsProps> = ({ pages, previousPageHref, nextPageHref }) => {
+export const Paginations: React.FC<PaginationProps> = ({ pages }) => {
+  const currentPageIndex = pages.findIndex((page) => page.current);
+
+  const nextPageHref = pages[currentPageIndex + 1] ? pages[currentPageIndex + 1].href : null;
+  const previousPageHref = pages[currentPageIndex - 1] ? pages[currentPageIndex - 1].href : null;
+
   return (
     <nav className="denhaag-pagination">
       <PreviousPage href={previousPageHref} />
       <span className="denhaag-pagination__links" role="group">
-        {pages.map((page) => {
+        {pages.map((page, idx) => {
           return (
-            <Link aria-label={page.ariaLabel} className="denhaag-pagination__link" to={page.href}>
+            <Link
+              key={idx}
+              aria-label={page.ariaLabel}
+              className={clsx("denhaag-pagination__link", page.current && "denhaag-pagination__link--current")}
+              to={page.href}
+            >
               {page.label}
             </Link>
           );
@@ -39,12 +49,15 @@ export const Paginations: React.FC<PaginationsProps> = ({ pages, previousPageHre
 };
 
 interface PreviousPageProps {
-  href: string;
+  href: null | string;
 }
 const PreviousPage: React.FC<PreviousPageProps> = ({ href }) => (
   <Link
     aria-label="Previous page"
-    className="denhaag-pagination__link denhaag-pagination__link--arrow"
+    className={clsx(
+      "denhaag-pagination__link denhaag-pagination__link--arrow",
+      !href && "denhaag-pagination__link--disabled",
+    )}
     to={href}
     rel="prev"
   >
@@ -66,12 +79,15 @@ const PreviousPage: React.FC<PreviousPageProps> = ({ href }) => (
 );
 
 interface NextPageProps {
-  href: string;
+  href: null | string;
 }
 const NextPage: React.FC<NextPageProps> = ({ href }) => (
   <Link
     aria-label="Next page"
-    className="denhaag-pagination__link denhaag-pagination__link--arrow"
+    className={clsx(
+      "denhaag-pagination__link denhaag-pagination__link--arrow",
+      !href && "denhaag-pagination__link--disabled",
+    )}
     to={href}
     rel="next"
   >
