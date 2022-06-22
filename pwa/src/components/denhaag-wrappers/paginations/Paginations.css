@@ -8,3 +8,7 @@
   padding-right: var(--nlportal-space-inline-md);
   text-decoration: none;
 }
+
+.denhaag-pagination__link--current {
+font-weight: bold;
+}
