@@ -83,7 +83,7 @@ export const en = {
   "1st Registration": "1st Registration",
   "Birth registration": "Birth registration",
   Case: "Case",
-  "More Information": "More Information",
+  "More Information": "More information",
   "What steps can you expect": "What steps can you expect",
   Back: "Back",
   "Login with your account": "Login with your account",
@@ -123,4 +123,9 @@ export const en = {
   "Information entered by you": "Information entered by you",
   Confirm: "Confirm",
   "Login with DigiD": "Login with DigiD",
+  Close: "Close",
+  "Allow cookies": "Allow cookies",
+  "Cookie preference": "Cookie preference",
+  "This website uses cookies. We use cookies to personalize content and to analyze traffic on our website.":
+    "This website uses cookies. We use cookies to personalize content and to analyze traffic on our website.",
 };

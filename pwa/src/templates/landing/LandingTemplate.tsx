@@ -2,18 +2,24 @@ import * as React from "react";
 import { Container } from "../../components/container/Container";
 import { Heading3, Paragraph } from "@gemeente-denhaag/components-react";
 import * as styles from "./LandingTemplate.module.css";
-import { t } from "i18next";
 import { HorizontalImageCard } from "../../components/card";
 import { UserIcon } from "@gemeente-denhaag/icons";
 import DigidImage from "../../assets/svgs/digid.svg";
 import { useDigiD } from "../../hooks/useDigiD";
-import { toggleNotificationModal, NotificationModal } from "../../components/modals/NotificationModal";
+import { toggleNotificationModal, NotificationModal } from "@conduction/components";
+import { useTranslation } from "react-i18next";
 
 export const LandingTemplate: React.FC = () => {
-  const { isShown, toggle } = toggleNotificationModal();
+  const { t } = useTranslation();
+
+  const { isShown, show, hide } = toggleNotificationModal();
+
+  const handleClick = () => {
+    console.log("Cookies Accepted");
+  };
 
   React.useEffect(() => {
-    toggle();
+    show();
   }, []);
 
   return (
@@ -47,17 +53,18 @@ export const LandingTemplate: React.FC = () => {
           />
         </div>
         <NotificationModal
-          isShown={isShown}
-          hide={toggle}
-          title={"Cookie Voorkeuren"}
-          description={
-            "Deze website maakt gebruik van cookies." +
-            " We gebruiken cookies om de inhoud te personaliseren en om het " +
-            "verkeer op onze website te analyseren. "
-          }
-          labelCloseButton={"Afwijzen"}
-          labelOpenButton={"Sta cookies toe"}
-          infoLink="https://autoriteitpersoonsgegevens.nl/nl/onderwerpen/internet-telefoon-tv-en-post/cookies"
+          {...{ hide, isShown }}
+          title={t("Cookie preference")}
+          description={t(
+            "This website uses cookies. We use cookies to personalize content and to analyze traffic on our website.",
+          )}
+          primaryButton={{ label: t("Allow cookies"), handleClick: handleClick }}
+          closeButton={{ label: t("Close") }}
+          layoutClassName={styles.notification}
+          infoLink={{
+            label: t("More Information"),
+            link: "https://autoriteitpersoonsgegevens.nl/nl/onderwerpen/internet-telefoon-tv-en-post/cookies",
+          }}
         />
       </div>
     </Container>

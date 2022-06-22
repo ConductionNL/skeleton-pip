@@ -42,15 +42,15 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
   }, [pageContext, location]);
 
   return (
-    <div className={styles.container}>
-      <GatsbyProvider value={gatsbyContext}>
-        <APIProvider value={API}>
-          <StylesProvider>
+    <StylesProvider>
+      <div id="stylesContainer" className={styles.container}>
+        <GatsbyProvider value={gatsbyContext}>
+          <APIProvider value={API}>
             {isLoggedIn() ? <AuthenticatedLayout {...{ children }} /> : <UnauthenticatedLayout {...{ children }} />}
-          </StylesProvider>
-        </APIProvider>
-      </GatsbyProvider>
-    </div>
+          </APIProvider>
+        </GatsbyProvider>
+      </div>
+    </StylesProvider>
   );
 };
 
