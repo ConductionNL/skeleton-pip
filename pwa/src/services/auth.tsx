@@ -17,8 +17,8 @@ export const handleLogin = async (data: IUnvalidatedUser, API: APIService) => {
   });
 };
 
-export const isLoggedIn = (): boolean | void => {
-  if (!isBrowser()) return;
+export const isLoggedIn = (): boolean => {
+  if (!isBrowser()) return false;
 
   return !!window.sessionStorage.getItem("JWT");
 };

@@ -1,9 +1,8 @@
 import * as React from "react";
-import { Container } from "../../components/container/Container";
+import { Container, HorizontalImageCard } from "@conduction/components";
 import { Heading3, Paragraph } from "@gemeente-denhaag/components-react";
 import * as styles from "./LandingTemplate.module.css";
 import { t } from "i18next";
-import { HorizontalImageCard } from "../../components/card";
 import { UserIcon } from "@gemeente-denhaag/icons";
 import DigidImage from "../../assets/svgs/digid.svg";
 import { useDigiD } from "../../hooks/useDigiD";

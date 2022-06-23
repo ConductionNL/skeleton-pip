@@ -21,14 +21,13 @@ import {
   ArrowRightIcon,
 } from "@gemeente-denhaag/icons";
 import { MetaIconGridTemplate } from "../metaIconGrid/MetaIconGridTemplate";
-import { StatusSteps } from "../../../components/statusSteps/StatusSteps";
-import { DownloadCard } from "../../../components/card";
+import { DownloadCard, StatusSteps } from "@conduction/components";
 import { useTranslation } from "react-i18next";
 import { useCase } from "../../../hooks/case";
 import { useQueryClient } from "react-query";
 import Skeleton from "react-loading-skeleton";
-import { IMessageTableItem, MessagesTable } from "../../../components/messagesTable/MessagesTable";
-import { MessageForm } from "../../../components/MessageForm/MessageForm";
+import { IMessageTableItem, MessagesTable } from "../messagesTable/MessagesTable";
+import { MessageForm } from "../MessageForm/MessageForm";
 import { useMessage } from "../../../hooks/message";
 
 interface CaseDetailTemplateProps {
@@ -127,6 +126,7 @@ export const CaseDetailTemplate: React.FC<CaseDetailTemplateProps> = ({ caseId }
               layoutClassName={styles.downloadCard}
               icon={<DocumentIcon />}
               label="Bezwaar maken overige zaken - DigiD.pdf"
+              downloadLabel={t("Download")}
               sizeKb="134"
             />
           </div>

@@ -5,7 +5,7 @@ import { Table, TableBody, TableCell, TableHeader, TableRow } from "@gemeente-de
 import { useTranslation } from "react-i18next";
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { navigate } from "gatsby";
-import { translateDate } from "../../services/dateFormat";
+import { translateDate } from "../../../services/dateFormat";
 
 export interface IMessageTableItem {
   organisation: string;
