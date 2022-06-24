@@ -6,13 +6,13 @@ import { HorizontalImageCard } from "../../components/card";
 import { UserIcon } from "@gemeente-denhaag/icons";
 import DigidImage from "../../assets/svgs/digid.svg";
 import { useDigiD } from "../../hooks/useDigiD";
-import { toggleNotificationModal, NotificationModal } from "@conduction/components";
+import { NotificationPopUpControler, NotificationPopUp } from "@conduction/components";
 import { useTranslation } from "react-i18next";
 
 export const LandingTemplate: React.FC = () => {
   const { t } = useTranslation();
 
-  const { isShown, show, hide } = toggleNotificationModal();
+  const { isShown, show, hide } = NotificationPopUpControler();
 
   const handleClick = () => {
     console.log("Cookies Accepted");
@@ -52,7 +52,7 @@ export const LandingTemplate: React.FC = () => {
             }}
           />
         </div>
-        <NotificationModal
+        <NotificationPopUp
           {...{ hide, isShown }}
           title={t("Cookie preference")}
           description={t(
