@@ -20,6 +20,6 @@
 }
 
 .iconsSidenav {
-  height: 24px;
-  width: 24px;
+  height: var(--conduction-sidenav-icon-size);
+  width: var(--conduction-sidenav-icon-size);
 }
