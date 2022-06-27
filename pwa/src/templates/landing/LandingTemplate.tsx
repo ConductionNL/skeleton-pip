@@ -6,16 +6,23 @@ import { HorizontalImageCard } from "../../components/card";
 import { UserIcon } from "@gemeente-denhaag/icons";
 import DigidImage from "../../assets/svgs/digid.svg";
 import { useDigiD } from "../../hooks/useDigiD";
-import { NotificationPopUpControler, NotificationPopUp } from "@conduction/components";
 import { useTranslation } from "react-i18next";
+import { NotificationPopUp as _NotificationPopUp } from "@conduction/components";
 
 export const LandingTemplate: React.FC = () => {
   const { t } = useTranslation();
 
-  const { isShown, show, hide } = NotificationPopUpControler();
+  const NotificationPopUpController = _NotificationPopUp.controller;
+  const NotificationPopUp = _NotificationPopUp.NotificationPopUp;
 
-  const handleClick = () => {
+  const { isVisible, show, hide } = NotificationPopUpController();
+
+  const handleClickPrimaryButton = () => {
     console.log("Cookies Accepted");
+  };
+
+  const handleClickSecondaryButton = () => {
+    console.log("Close Button");
   };
 
   React.useEffect(() => {
@@ -52,19 +59,26 @@ export const LandingTemplate: React.FC = () => {
             }}
           />
         </div>
+
         <NotificationPopUp
-          {...{ hide, isShown }}
+          {...{ hide, isVisible }}
           title={t("Cookie preference")}
-          description={t(
-            "This website uses cookies. We use cookies to personalize content and to analyze traffic on our website.",
-          )}
-          primaryButton={{ label: t("Allow cookies"), handleClick: handleClick }}
-          closeButton={{ label: t("Close") }}
+          description={
+            <>
+              {t(
+                "This website uses cookies. We use cookies to personalize content and to analyze traffic on our website.",
+              )}{" "}
+              <a
+                href="https://autoriteitpersoonsgegevens.nl/nl/onderwerpen/internet-telefoon-tv-en-post/cookies"
+                target={"_blank"}
+              >
+                {t("More Information")}
+              </a>
+            </>
+          }
+          primaryButton={{ label: t("Allow cookies"), handleClick: handleClickPrimaryButton }}
+          secondaryButton={{ label: t("Close"), handleClick: handleClickSecondaryButton }}
           layoutClassName={styles.notification}
-          infoLink={{
-            label: t("More Information"),
-            link: "https://autoriteitpersoonsgegevens.nl/nl/onderwerpen/internet-telefoon-tv-en-post/cookies",
-          }}
         />
       </div>
     </Container>
