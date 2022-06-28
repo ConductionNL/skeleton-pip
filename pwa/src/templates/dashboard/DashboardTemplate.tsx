@@ -7,6 +7,7 @@ import { navigate } from "gatsby";
 import { useTranslation } from "react-i18next";
 import { Breadcrumbs, Container, PrivateRoute } from "@conduction/components";
 import { isLoggedIn } from "../../services/auth";
+import { OpengemeentenIconGezicht, OpengemeentenIconNieuwsbrief } from "@opengemeenten/iconset-react";
 
 export const DashboardTemplate: React.FC = ({ children }) => {
   const { t } = useTranslation();
@@ -62,9 +63,19 @@ const Menu: React.FC = () => {
       current: pathname.includes("self-services"),
       icon: <ListIcon />,
     },
-    { label: t("My messages"), href: "/my-messages", current: pathname.includes("my-messages"), icon: <InboxIcon /> },
+    {
+      label: t("My messages"),
+      href: "/my-messages",
+      current: pathname.includes("my-messages"),
+      icon: <OpengemeentenIconNieuwsbrief className={styles.iconsSidenav} />,
+    },
     { label: t("My cases"), href: "/my-cases", current: pathname.includes("my-cases"), icon: <ArchiveIcon /> },
-    { label: t("My account"), href: "/my-account", current: pathname.includes("my-account"), icon: <UserIcon /> },
+    {
+      label: t("My account"),
+      href: "/my-account",
+      current: pathname.includes("my-account"),
+      icon: <OpengemeentenIconGezicht className={styles.iconsSidenav} />,
+    },
   ];
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string): void => {
