@@ -4,7 +4,7 @@ import { Divider, Heading3, Paragraph, Tab, TabContext, TabPanel, Tabs } from "@
 import { CalendarIcon, SettingsIcon, StaffIcon, StarterIcon } from "@gemeente-denhaag/icons";
 import { useTranslation } from "react-i18next";
 import { MetaIconGridTemplate } from "../metaIconGrid/MetaIconGridTemplate";
-import { CasesTable } from "../casesTable/CasesTable";
+import { CasesTable } from "../casesTable/CasesTableTemplate";
 import { useQueryClient } from "react-query";
 import { useCase } from "../../../hooks/case";
 import Skeleton from "react-loading-skeleton";

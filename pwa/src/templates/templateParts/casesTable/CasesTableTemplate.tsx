@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as styles from "./MessagesTable.module.css";
+import * as styles from "./CasesTableTemplate.module.css";
 import { Link } from "@gemeente-denhaag/components-react";
 import { Table, TableBody, TableCell, TableHeader, TableRow } from "@gemeente-denhaag/table";
 import { useTranslation } from "react-i18next";
@@ -7,35 +7,33 @@ import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { navigate } from "gatsby";
 import { translateDate } from "../../../services/dateFormat";
 
-export interface IMessageTableItem {
-  organisation: string;
-  date: Date;
-  id: string;
+interface CasesTableProps {
+  cases: any[];
 }
 
-interface MessagesTableProps {
-  messages: IMessageTableItem[];
-}
-
-export const MessagesTable: React.FC<MessagesTableProps> = ({ messages }) => {
+export const CasesTable: React.FC<CasesTableProps> = ({ cases }) => {
   const { t, i18n } = useTranslation();
 
   return (
     <Table>
       <TableBody>
         <TableRow>
-          <TableHeader>{t("Organisation")}</TableHeader>
+          <TableHeader>{t("Title")}</TableHeader>
+          <TableHeader>{t("Status")}</TableHeader>
           <TableHeader>{t("Date")}</TableHeader>
           <TableHeader />
         </TableRow>
-        {messages.map(({ organisation, date, id }) => (
-          <TableRow key={id} className={styles.contentRow}>
-            <TableCell>{organisation}</TableCell>
-            <TableCell>{translateDate(i18n.language, date)}</TableCell>
+        {cases.map((_case) => (
+          <TableRow key={_case.id} className={styles.contentRow}>
+            <TableCell>{_case.omschrijving}</TableCell>
 
-            <TableCell onClick={() => navigate(`/my-messages/${id}`)}>
+            <TableCell>{_case._embedded ? _case._embedded.status.statustoelichting : t("Unknown")}</TableCell>
+
+            <TableCell>{translateDate(i18n.language, _case.startdatum)}</TableCell>
+
+            <TableCell onClick={() => navigate(`/my-cases/${_case.id}`)}>
               <Link icon={<ArrowRightIcon />} iconAlign="start">
-                {t("View message")}
+                {t("View case")}
               </Link>
             </TableCell>
           </TableRow>

@@ -16,16 +16,8 @@ export const LandingTemplate: React.FC = () => {
 
   const { isVisible, show, hide } = NotificationPopUpController();
 
-  const handleClickPrimaryButton = () => {
-    console.log("Cookies Accepted");
-  };
-
-  const handleClickSecondaryButton = () => {
-    console.log("Close Button");
-  };
-
   React.useEffect(() => {
-    show();
+    show(); // initiates the pop-up
   }, []);
 
   return (
@@ -74,8 +66,8 @@ export const LandingTemplate: React.FC = () => {
               </a>
             </>
           }
-          primaryButton={{ label: t("Allow cookies"), handleClick: handleClickPrimaryButton }}
-          secondaryButton={{ label: t("Close"), handleClick: handleClickSecondaryButton }}
+          primaryButton={{ label: t("Allow cookies"), handleClick: () => {} }}
+          secondaryButton={{ label: t("Close"), handleClick: () => {} }}
           layoutClassName={styles.notification}
         />
       </div>

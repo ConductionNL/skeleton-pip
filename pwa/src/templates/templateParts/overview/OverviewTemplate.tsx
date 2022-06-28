@@ -4,8 +4,8 @@ import { Heading1, Heading3, Link, Tab, TabContext, TabPanel, Tabs, Card } from 
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { useTranslation } from "react-i18next";
 import { navigate } from "gatsby";
-import { CasesTable } from "../casesTable/CasesTable";
-import { IMessageTableItem, MessagesTable } from "../messagesTable/MessagesTable";
+import { CasesTable } from "../casesTable/CasesTableTemplate";
+import { IMessageTableItem, MessagesTable } from "../messagesTable/MessagesTableTemplate";
 import { useQueryClient } from "react-query";
 import { useCase } from "../../../hooks/case";
 import Skeleton from "react-loading-skeleton";

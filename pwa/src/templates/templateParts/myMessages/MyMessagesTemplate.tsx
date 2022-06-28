@@ -2,7 +2,7 @@ import * as React from "react";
 import * as styles from "./MyMessagesTemplate.module.css";
 import { Heading1, Tab, TabContext, TabPanel, Tabs } from "@gemeente-denhaag/components-react";
 import { useTranslation } from "react-i18next";
-import { IMessageTableItem, MessagesTable } from "../messagesTable/MessagesTable";
+import { IMessageTableItem, MessagesTable } from "../messagesTable/MessagesTableTemplate";
 import { useMessage } from "../../../hooks/message";
 import Skeleton from "react-loading-skeleton";
 import { useQueryClient } from "react-query";

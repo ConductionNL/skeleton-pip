@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { handleLogin } from "../../../services/auth";
 import APIContext from "../../../apiService/apiContext";
 import { Alert, Button, FormField, FormFieldInput, FormFieldLabel } from "@gemeente-denhaag/components-react";
-import * as styles from "./LoginForm.module.css";
+import * as styles from "./LoginFormTemplate.module.css";
 import { useTranslation } from "react-i18next";
 import { InputPassword, InputText } from "@conduction/components";
 import APIService from "../../../apiService/apiService";

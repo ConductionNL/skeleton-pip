@@ -26,8 +26,8 @@ import { useTranslation } from "react-i18next";
 import { useCase } from "../../../hooks/case";
 import { useQueryClient } from "react-query";
 import Skeleton from "react-loading-skeleton";
-import { IMessageTableItem, MessagesTable } from "../messagesTable/MessagesTable";
-import { MessageForm } from "../MessageForm/MessageForm";
+import { IMessageTableItem, MessagesTable } from "../messagesTable/MessagesTableTemplate";
+import { MessageForm } from "../MessageForm/MessageFormTemplate";
 import { useMessage } from "../../../hooks/message";
 
 interface CaseDetailTemplateProps {
