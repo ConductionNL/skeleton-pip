@@ -2,7 +2,7 @@ import * as React from "react";
 import { useForm } from "react-hook-form";
 import { Button, FormField, FormFieldInput, FormFieldLabel } from "@gemeente-denhaag/components-react";
 import { useTranslation } from "react-i18next";
-import { Textarea } from "../formFields";
+import { Textarea } from "@conduction/components";
 
 export const MessageForm: React.FC = () => {
   const { t } = useTranslation();

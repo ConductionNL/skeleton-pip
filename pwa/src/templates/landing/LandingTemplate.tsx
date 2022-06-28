@@ -1,19 +1,23 @@
 import * as React from "react";
-import { Container } from "../../components/container/Container";
+import { Container, HorizontalImageCard } from "@conduction/components";
 import { Heading3, Paragraph } from "@gemeente-denhaag/components-react";
 import * as styles from "./LandingTemplate.module.css";
-import { t } from "i18next";
-import { HorizontalImageCard } from "../../components/card";
 import { UserIcon } from "@gemeente-denhaag/icons";
 import DigidImage from "../../assets/svgs/digid.svg";
 import { useDigiD } from "../../hooks/useDigiD";
-import { toggleNotificationModal, NotificationModal } from "../../components/modals/NotificationModal";
+import { useTranslation } from "react-i18next";
+import { NotificationPopUp as _NotificationPopUp } from "@conduction/components";
 
 export const LandingTemplate: React.FC = () => {
-  const { isShown, toggle } = toggleNotificationModal();
+  const { t } = useTranslation();
+
+  const NotificationPopUpController = _NotificationPopUp.controller;
+  const NotificationPopUp = _NotificationPopUp.NotificationPopUp;
+
+  const { isVisible, show, hide } = NotificationPopUpController();
 
   React.useEffect(() => {
-    toggle();
+    show(); // initiates the pop-up
   }, []);
 
   return (
@@ -46,18 +50,25 @@ export const LandingTemplate: React.FC = () => {
             }}
           />
         </div>
-        <NotificationModal
-          isShown={isShown}
-          hide={toggle}
-          title={"Cookie Voorkeuren"}
+        <NotificationPopUp
+          {...{ hide, isVisible }}
+          title={t("Cookie preference")}
           description={
-            "Deze website maakt gebruik van cookies." +
-            " We gebruiken cookies om de inhoud te personaliseren en om het " +
-            "verkeer op onze website te analyseren. "
+            <>
+              {t(
+                "This website uses cookies. We use cookies to personalize content and to analyze traffic on our website.",
+              )}{" "}
+              <a
+                href="https://autoriteitpersoonsgegevens.nl/nl/onderwerpen/internet-telefoon-tv-en-post/cookies"
+                target={"_blank"}
+              >
+                {t("More Information")}
+              </a>
+            </>
           }
-          labelCloseButton={"Afwijzen"}
-          labelOpenButton={"Sta cookies toe"}
-          infoLink="https://autoriteitpersoonsgegevens.nl/nl/onderwerpen/internet-telefoon-tv-en-post/cookies"
+          primaryButton={{ label: t("Allow cookies"), handleClick: () => {} }}
+          secondaryButton={{ label: t("Close"), handleClick: () => {} }}
+          layoutClassName={styles.notification}
         />
       </div>
     </Container>

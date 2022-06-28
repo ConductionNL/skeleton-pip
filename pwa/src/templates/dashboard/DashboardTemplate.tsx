@@ -2,12 +2,11 @@ import * as React from "react";
 import * as styles from "./DashboardTemplate.module.css";
 import { GridIcon, InboxIcon, ArchiveIcon, UserIcon, ListIcon } from "@gemeente-denhaag/icons";
 import { Sidenav, SidenavItem, SidenavLink, SidenavList } from "@gemeente-denhaag/sidenav";
-import { Container } from "../../components/container/Container";
-import { PrivateRoute } from "../../components/privateRoute/privateRoute";
 import { GatsbyContext } from "../../context/gatsby";
 import { navigate } from "gatsby";
 import { useTranslation } from "react-i18next";
-import { Breadcrumbs } from "../../components/denhaag-wrappers/breadcrumbs/Breadcrumbs";
+import { Breadcrumbs, Container, PrivateRoute } from "@conduction/components";
+import { isLoggedIn } from "../../services/auth";
 import { OpengemeentenIconGezicht, OpengemeentenIconNieuwsbrief } from "@opengemeenten/iconset-react";
 
 export const DashboardTemplate: React.FC = ({ children }) => {
@@ -22,7 +21,7 @@ export const DashboardTemplate: React.FC = ({ children }) => {
   const translatedCrumbs = crumbs.map((crumb: any) => ({ ...crumb, crumbLabel: t(crumb.crumbLabel) }));
 
   return (
-    <PrivateRoute>
+    <PrivateRoute authenticated={isLoggedIn()}>
       <Container>
         <div className={styles.container}>
           <div className={styles.menu}>

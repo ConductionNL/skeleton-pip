@@ -1,8 +1,9 @@
 import * as React from "react";
 import * as styles from "./MetaIconGridTemplate.module.css";
-import { MetaIcon, MetaIconProps } from "../../../components/metaIcon/MetaIcon";
 import { Divider } from "@gemeente-denhaag/components-react";
 import clsx from "clsx";
+import { MetaIcon } from "@conduction/components";
+import { MetaIconProps } from "@conduction/components/lib/components/metaIcon/MetaIcon";
 
 interface MetaIconGridTemplateProps {
   metaIcons: MetaIconProps[];
