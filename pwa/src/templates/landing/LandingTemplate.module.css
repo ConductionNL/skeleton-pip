@@ -15,6 +15,6 @@
 .notification {
   position: fixed;
   max-width: var(--pip-notification-popup-width);
-  right: var(--pip-popup-position-right-50);
-  bottom: var(--pip-popup-position-bottom-50);
+  right: var(--pip-popup-position-right);
+  bottom: var(--pip-popup-position-bottom);
 }
