@@ -18,7 +18,15 @@
   --conduction-tag-font-size: 12px;
 
   --conduction-content-link-font-size: 14px;
-  
+
   --conduction-navbar-padding: 10px;
   --conduction-navbar-color: #ffffff;
+
+  --conduction-modal-width-s: 300px;
+  --conduction-modal-width-default: 500px;
+  --conduction-modal-width-lg: 800px;
+  --conduction-modal-width-xl: 1140px;
+  --conduction-modal-background-color: white;
+
+  --conduction-overlay-background-color: rgba(0, 0, 0, 0.3);
 }
