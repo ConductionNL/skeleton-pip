@@ -3,16 +3,24 @@ import * as styles from "./NotificationTemplate.module.css";
 
 import APIContext from "../../../apiService/apiContext";
 import APIService from "../../../apiService/apiService";
-import { NotificationModal, toggleNotificationModal } from "../../../components/modals/NotificationModal";
+import { NotificationPopUp as _NotificationPopUp } from "@conduction/components";
 import { navigate } from "gatsby";
 import { useTranslation } from "react-i18next";
 
 export const NotificationTemplate: React.FC = () => {
+  const { t } = useTranslation();
   const API: APIService = React.useContext(APIContext);
   const [notifications, setNotifications] = React.useState<any>([]);
   const [currentNotification, setCurrentNotification] = React.useState<any>(null);
-  const { toggle, isShown } = toggleNotificationModal();
-  const { t } = useTranslation();
+
+  const NotificationPopUpController = _NotificationPopUp.controller;
+  const NotificationPopUp = _NotificationPopUp.NotificationPopUp;
+
+  const { isVisible, show, hide } = NotificationPopUpController();
+
+  const onHandle = () => {
+    hide(), setTimeout(() => show(), 200);
+  };
 
   React.useEffect(() => {
     const interval = setInterval(
@@ -29,7 +37,7 @@ export const NotificationTemplate: React.FC = () => {
   React.useEffect(() => {
     if (!notifications.length) return;
 
-    toggle();
+    isVisible ? onHandle() : show();
 
     const { title, description } = getContentFromType(notifications[0].type, t);
 
@@ -42,18 +50,16 @@ export const NotificationTemplate: React.FC = () => {
   if (!currentNotification) return <></>;
 
   return (
-    <NotificationModal
-      isShown={isShown}
-      hide={toggle}
+    <NotificationPopUp
+      {...{ hide, isVisible }}
+      title={currentNotification.title}
+      description={currentNotification.description}
       primaryButton={{
         label: t("View case"),
         handleClick: () => {
           navigate("/my-cases");
-          toggle();
         },
       }}
-      title={currentNotification.title}
-      description={currentNotification.description}
       layoutClassName={styles.notification}
     />
   );

@@ -122,6 +122,10 @@ export const nl = {
   Confirm: "Bevestigen",
   "Login with DigiD": "Inloggen met DigiD",
   Close: "Sluiten",
+  "Allow cookies": "Sta cookies toe",
+  "Cookie preference": "Cookie voorkeuren",
+  "This website uses cookies. We use cookies to personalize content and to analyze traffic on our website.":
+    "Deze website maakt gebruik van cookies. We gebruiken cookies om de inhoud te personaliseren en om het verkeer op onze website te analyseren.",
   "Case closed": "Zaak gesloten",
   "This case is closed, click below for more information": "Deze zaak is gesloten, klik hieronder voor meer informatie",
   "Case created": "Zaak aangemaakt",

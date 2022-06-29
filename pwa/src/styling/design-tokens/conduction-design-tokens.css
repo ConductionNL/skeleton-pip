@@ -22,12 +22,9 @@
   --conduction-navbar-padding: 10px;
   --conduction-navbar-color: #ffffff;
 
-  --conduction-modal-width-s: 300px;
-  --conduction-modal-width-default: 500px;
-  --conduction-modal-width-lg: 800px;
-  --conduction-modal-width-xl: 1140px;
-  --conduction-modal-background-color: white;
-
-  --conduction-overlay-background-color: rgba(0, 0, 0, 0.3);
   --conduction-sidenav-icon-size: 24px;
+
+  --pip-notification-popup-width: 500px;
+  --pip-popup-position-right: 50px;
+  --pip-popup-position-bottom: 50px;
 }

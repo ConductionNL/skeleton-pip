@@ -124,7 +124,10 @@ export const en = {
   Confirm: "Confirm",
   "Login with DigiD": "Login with DigiD",
   Close: "Close",
-
+  "Allow cookies": "Allow cookies",
+  "Cookie preference": "Cookie preference",
+  "This website uses cookies. We use cookies to personalize content and to analyze traffic on our website.":
+    "This website uses cookies. We use cookies to personalize content and to analyze traffic on our website.",
   "Case closed": "Case closed",
   "This case is closed, click below for more information": "This case is closed, click below for more information",
   "Case created": "Case created",
