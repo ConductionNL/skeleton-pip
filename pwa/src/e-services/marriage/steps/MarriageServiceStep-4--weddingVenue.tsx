@@ -6,7 +6,7 @@ import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { FormStepTemplate } from "../../../templates/templateParts/formStep/FormStepTemplate";
 import { MarriageServiceContext } from "../MarriageServiceContext";
 import { TMarriageFormServiceSteps } from "../MarriageServiceForm";
-import { InputRadio } from "../../../components/formFields";
+import {InputCheckbox} from "@conduction/components";
 
 interface MarriageStepProps {
   setNextStep: () => void;
@@ -58,12 +58,12 @@ export const WeddingVenueStep: React.FC<MarriageStepProps> = ({ setNextStep, han
       <form onSubmit={handleSubmit(onSubmit)}>
         {weddingVenue.map(({ label, weddingVenueId }) => (
           <FormFieldInput key={weddingVenueId}>
-            <InputRadio
+            <InputCheckbox
               label={label}
               name={weddingVenueId}
               {...{ register, errors }}
               validation={{ required: true }}
-            ></InputRadio>
+            ></InputCheckbox>
           </FormFieldInput>
         ))}
 

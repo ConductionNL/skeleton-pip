@@ -6,7 +6,8 @@ import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { FormStepTemplate } from "../../../templates/templateParts/formStep/FormStepTemplate";
 import { MarriageServiceContext } from "../MarriageServiceContext";
 import { TMarriageFormServiceSteps } from "../MarriageServiceForm";
-import { InputRadio } from "../../../components/formFields";
+import {InputCheckbox} from "@conduction/components";
+import {InputRadio} from "../../../../../../conduction-components.git/lib/components/formFields";
 
 interface MarriageStepProps {
   setNextStep: () => void;

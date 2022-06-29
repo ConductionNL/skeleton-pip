@@ -5,8 +5,7 @@ import { useTranslation } from "react-i18next";
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { FormStepTemplate } from "../../../templates/templateParts/formStep/FormStepTemplate";
 import { MarriageServiceContext } from "../MarriageServiceContext";
-import { ISelectValue } from "../../../components/formFields/select/select";
-import { SelectSingle } from "../../../components/formFields";
+import {SelectSingle} from "@conduction/components";
 
 interface MarriageStepProps {
   setNextStep: () => void;
@@ -56,8 +55,9 @@ export const SelectServiceFormStep: React.FC<MarriageStepProps> = ({ setNextStep
   );
 };
 
-const selectService: ISelectValue[] = [
+const selectService = [
   { label: "Marriage", value: "marriage" },
   { label: "Partnership", value: "partnership" },
   { label: "Conversion", value: "conversion" },
 ];
+

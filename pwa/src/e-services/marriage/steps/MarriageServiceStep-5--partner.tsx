@@ -2,11 +2,11 @@ import * as React from "react";
 import { FormFieldInput, FormFieldLabel, Link } from "@gemeente-denhaag/components-react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { InputNumber, InputText } from "../../../components/formFields";
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { FormStepTemplate } from "../../../templates/templateParts/formStep/FormStepTemplate";
 import { MarriageServiceContext } from "../MarriageServiceContext";
 import { TMarriageFormServiceSteps } from "../MarriageServiceForm";
+import {InputNumber, InputText} from "@conduction/components";
 
 interface MarriageStepProps {
   setNextStep: () => void;
