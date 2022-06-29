@@ -14,7 +14,7 @@
 
 .notification {
   position: fixed;
-  max-width: var(--conduction-modal-width-default);
-  right: 50px;
-  bottom: 50px;
+  max-width: var(--pip-notification-popup-width);
+  right: var(--pip-popup-position-right);
+  bottom: var(--pip-popup-position-bottom);
 }
