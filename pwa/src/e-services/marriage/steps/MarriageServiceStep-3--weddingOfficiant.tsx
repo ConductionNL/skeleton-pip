@@ -7,7 +7,6 @@ import { FormStepTemplate } from "../../../templates/templateParts/formStep/Form
 import { MarriageServiceContext } from "../MarriageServiceContext";
 import { TMarriageFormServiceSteps } from "../MarriageServiceForm";
 import {InputCheckbox} from "@conduction/components";
-import {InputRadio} from "../../../../../../conduction-components.git/lib/components/formFields";
 
 interface MarriageStepProps {
   setNextStep: () => void;
@@ -64,12 +63,12 @@ export const WeddingOfficiantStep: React.FC<MarriageStepProps> = ({ setNextStep,
       <form onSubmit={handleSubmit(onSubmit)}>
         {testWeddingOfficiants.map(({ label, weddingOfficiantId }) => (
           <FormFieldInput key={weddingOfficiantId}>
-            <InputRadio
+            <InputCheckbox
               label={label}
               name={weddingOfficiantId}
               {...{ register, errors }}
               validation={{ required: true }}
-            ></InputRadio>
+            ></InputCheckbox>
           </FormFieldInput>
         ))}
         <button type="submit">

@@ -78,10 +78,6 @@ export default class APIService {
     return new Message(this.halApiClient);
   }
 
-  public get Component(): Component {
-    return new Component(this.apiClient);
-  }
-
   // Services
   public get Login(): Login {
     return new Login(this.LoginClient);
