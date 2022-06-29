@@ -6,7 +6,7 @@ import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { FormStepTemplate } from "../../../templates/templateParts/formStep/FormStepTemplate";
 import { MarriageServiceContext } from "../MarriageServiceContext";
 import { TMarriageFormServiceSteps } from "../MarriageServiceForm";
-import {InputCheckbox} from "@conduction/components";
+import { InputRadio } from "@conduction/components";
 
 interface MarriageStepProps {
   setNextStep: () => void;
@@ -40,33 +40,30 @@ export const WeddingVenueStep: React.FC<MarriageStepProps> = ({ setNextStep, han
   }, [formData]);
 
   const onSubmit = (data: any): void => {
-    handleSetFormData(data);
+    setFormData({ ...formData, weddingVenue: data.weddingVenue });
+    console.log("setNextStep");
     setNextStep();
   };
 
   const handleSetPreviousStep = () => {
-    handleSetFormData(getValues());
+    setFormData({ ...formData, weddingVenue: getValues("weddingVenue") });
     handleSetStep("weddingOfficiant");
-  };
-
-  const handleSetFormData = (data: any): void => {
-    setFormData({ ...formData, weddingVenue: data.weddingVenueId });
   };
 
   return (
     <FormStepTemplate title={t("Select a wedding venue?")} setPreviousStep={handleSetPreviousStep}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        {weddingVenue.map(({ label, weddingVenueId }) => (
-          <FormFieldInput key={weddingVenueId}>
-            <InputCheckbox
+        <FormFieldInput>
+          {weddingVenue.map(({ label, weddingVenueId }) => (
+            <InputRadio
               label={label}
+              value={label}
+              key={weddingVenueId}
               name={weddingVenueId}
               {...{ register, errors }}
-              validation={{ required: true }}
-            ></InputCheckbox>
-          </FormFieldInput>
-        ))}
-
+            />
+          ))}
+        </FormFieldInput>
         <button type="submit">
           <Link icon={<ArrowRightIcon />} iconAlign="start">
             {t("Next step")}

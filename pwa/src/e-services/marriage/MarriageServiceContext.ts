@@ -9,22 +9,14 @@ export interface IMarriageServiceData {
     firstName: string;
     lastName: string;
     phoneNumber: string;
-    eMaile: string;
+    email: string;
   };
   witnesses: {
-    witnessFirst: {
-      firstName: string;
-      lastName: string;
-      phoneNumber: string;
-      eMaile: string;
-    };
-    witnessSecond: {
-      firstName: string;
-      lastName: string;
-      phoneNumber: string;
-      eMaile: string;
-    };
-  };
+    firstName: string;
+    lastName: string;
+    phoneNumber: string;
+    email: string;
+  }[];
   additionalProducts: string[];
 }
 

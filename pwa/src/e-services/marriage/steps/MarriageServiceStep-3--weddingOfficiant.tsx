@@ -6,7 +6,7 @@ import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { FormStepTemplate } from "../../../templates/templateParts/formStep/FormStepTemplate";
 import { MarriageServiceContext } from "../MarriageServiceContext";
 import { TMarriageFormServiceSteps } from "../MarriageServiceForm";
-import {InputCheckbox} from "@conduction/components";
+import { InputRadio } from "@conduction/components";
 
 interface MarriageStepProps {
   setNextStep: () => void;
@@ -40,37 +40,30 @@ export const WeddingOfficiantStep: React.FC<MarriageStepProps> = ({ setNextStep,
   }, [formData]);
 
   const onSubmit = (data: any): void => {
-    handleSetFormData(data);
+    setFormData({ ...formData, weddingOfficiant: data.weddingOfficiant });
+    console.log(setNextStep);
     setNextStep();
   };
 
   const handleSetPreviousStep = () => {
-    handleSetFormData(getValues());
+    setFormData({ ...formData, weddingOfficiant: getValues("weddingOfficiant") });
     handleSetStep("date");
-  };
-
-  const handleSetFormData = (data: any): void => {
-    const selectedWeddingOfficiant: string = "";
-    console.log({ data });
-    // for (const [key, value] of Object.entries(data)) {
-    //   value && selectedWeddingOfficiant.push(key);
-    // }
-    // setFormData({ ...formData, weddingOfficiant: selectedWeddingOfficiant });
   };
 
   return (
     <FormStepTemplate title={t("Select a wedding officiant?")} setPreviousStep={handleSetPreviousStep}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        {testWeddingOfficiants.map(({ label, weddingOfficiantId }) => (
-          <FormFieldInput key={weddingOfficiantId}>
-            <InputCheckbox
+        <FormFieldInput>
+          {weddingOfficiants.map(({ label, weddingOfficiantId }) => (
+            <InputRadio
+              key={weddingOfficiantId}
+              value={label}
+              name="weddingOfficiantId"
               label={label}
-              name={weddingOfficiantId}
               {...{ register, errors }}
-              validation={{ required: true }}
-            ></InputCheckbox>
-          </FormFieldInput>
-        ))}
+            />
+          ))}
+        </FormFieldInput>
         <button type="submit">
           <Link icon={<ArrowRightIcon />} iconAlign="start">
             {t("Next step")}

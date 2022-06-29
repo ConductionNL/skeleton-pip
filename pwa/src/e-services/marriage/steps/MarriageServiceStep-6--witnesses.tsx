@@ -26,19 +26,20 @@ export const WitnessesStep: React.FC<MarriageStepProps> = ({ setNextStep, handle
   } = useForm();
 
   React.useEffect(() => {
-    setValue("firstName", formData.partner.firstName);
-    setValue("lastName", formData.partner.lastName);
-    setValue("phoneNumber", formData.partner.phoneNumber);
-    setValue("eMaile", formData.partner.eMaile);
+    if (!formData.witnesses) return;
+
+    formData.witnesses.forEach((witnesses) => {
+      return setValue(witnesses, true);
+    });
   }, [formData]);
 
   const onSubmit = (data: any): void => {
-    setFormData({ ...formData, partner: data.partner });
+
     setNextStep();
   };
 
   const handleSetPreviousStep = () => {
-    setFormData({ ...formData, partner: getValues("partner") });
+
     handleSetStep("date");
   };
 

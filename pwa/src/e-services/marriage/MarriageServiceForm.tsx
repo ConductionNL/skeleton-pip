@@ -19,6 +19,7 @@ export const MarriageServiceForm: React.FC = () => {
   const [step, setStep] = React.useState<TMarriageFormServiceSteps>("selectService");
   const [formData, setFormData] = React.useState<IMarriageServiceData>(marriageServiceData);
 
+  console.log(setStep)
   return (
     <MarriageServiceProvider value={[formData, setFormData]}>
       <MarriageServiceFormStep {...{ step, setStep }} />
