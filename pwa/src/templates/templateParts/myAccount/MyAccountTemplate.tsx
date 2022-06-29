@@ -4,7 +4,7 @@ import { Heading1, Heading3, Link } from "@gemeente-denhaag/components-react";
 import { Table, TableBody, TableRow, TableCell, TableHeader } from "@gemeente-denhaag/table";
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { useTranslation } from "react-i18next";
-import { EditableTableRow } from "../../../components/editableTableRow/EditableTableRow";
+import { EditableTableRow } from "@conduction/components";
 import dateFormat from "dateformat";
 import { navigate } from "gatsby";
 
@@ -29,16 +29,22 @@ export const MyAccountTemplate: React.FC = () => {
         <Table>
           <TableBody>
             <EditableTableRow
-              inputType="email"
-              handleSave={handleSaveEmail}
               thead={t("Email address")}
               value="jane@doe.com"
+              saveLabel={t("Save")}
+              cancelLabel={t("Cancel")}
+              editLabel={t("Edit")}
+              inputType="email"
+              handleSave={handleSaveEmail}
             />
             <EditableTableRow
-              inputType="text"
-              handleSave={handleSavePhoneNumber}
               thead={t("Phone number")}
               value="060 000 00 00"
+              saveLabel={t("Save")}
+              cancelLabel={t("Cancel")}
+              editLabel={t("Edit")}
+              inputType="text"
+              handleSave={handleSavePhoneNumber}
             />
           </TableBody>
         </Table>

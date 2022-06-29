@@ -1,9 +1,8 @@
 import * as React from "react";
 import * as styles from "./FooterTemplate.module.css";
-import { Container } from "../../../components/container/Container";
+import { Container, ImageDivider } from "@conduction/components";
 import { List, ListItem, ListSubheader } from "@gemeente-denhaag/list";
 import { navigate } from "gatsby";
-import { ImageDivider } from "../../../components/imageDivider/imageDivider";
 import AuthenticatedDividerImage from "./../../../assets/images/AuthenticatedDivider.png";
 import UnauthenticatedDividerImage from "./../../../assets/images/UnauthenticatedFooterDivider.png";
 import { useTranslation } from "react-i18next";
