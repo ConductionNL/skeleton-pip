@@ -2,16 +2,19 @@ import * as React from "react";
 import * as styles from "./MyMessagesTemplate.module.css";
 import { Heading1, Tab, TabContext, TabPanel, Tabs } from "@gemeente-denhaag/components-react";
 import { useTranslation } from "react-i18next";
-import { IMessageTableItem, MessagesTable } from "../../../components/messagesTable/MessagesTable";
+import { IMessageTableItem, MessagesTable } from "../messagesTable/MessagesTableTemplate";
 import { useMessage } from "../../../hooks/message";
 import Skeleton from "react-loading-skeleton";
+import { useQueryClient } from "react-query";
 
 export const MyMessagesTemplate: React.FC = () => {
   const [messages, setMessages] = React.useState<IMessageTableItem[]>([]);
   const [currentMessagesTab, setCurrentMessagesTab] = React.useState<number>(0);
   const { t } = useTranslation();
 
-  const _useMessage = useMessage();
+  const queryClient = useQueryClient();
+
+  const _useMessage = useMessage(queryClient);
   const getMessages = _useMessage.getAll();
 
   React.useEffect(() => {

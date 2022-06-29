@@ -11,3 +11,10 @@
   grid-gap: var(--nlportal-space-inline-xl);
   grid-template-columns: 1fr 1fr;
 }
+
+.notification {
+  position: fixed;
+  max-width: var(--pip-notification-popup-width);
+  right: var(--pip-popup-position-right);
+  bottom: var(--pip-popup-position-bottom);
+}

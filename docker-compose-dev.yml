@@ -2,7 +2,7 @@ version: "3.4"
 
 services:
     php: &php
-        image: ghcr.io/conductionnl/commonground-gateway-php:mergeCleanup
+        image: ghcr.io/conductionnl/commonground-gateway-php:cleanup
         depends_on:
             - db
         volumes:
@@ -26,7 +26,7 @@ services:
             - "82:80"
 
     api: &nginx
-        image: ghcr.io/conductionnl/commonground-gateway-nginx:mergeCleanup
+        image: ghcr.io/conductionnl/commonground-gateway-nginx:cleanup
         depends_on:
             - php
         ports:

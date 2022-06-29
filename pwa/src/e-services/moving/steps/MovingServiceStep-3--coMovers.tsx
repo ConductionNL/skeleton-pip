@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { FormStepTemplate } from "../../../templates/templateParts/formStep/FormStepTemplate";
 import { MovingServiceContext } from "../MovingServiceContext";
-import { InputCheckbox } from "../../../components/formFields";
+import { InputCheckbox } from "@conduction/components";
 import { TMovingFormServiceSteps } from "../MovingServiceForm";
 
 interface MovingStepProps {

@@ -2,12 +2,12 @@ import * as React from "react";
 import * as styles from "./DashboardTemplate.module.css";
 import { GridIcon, InboxIcon, ArchiveIcon, UserIcon, ListIcon, MessageIcon, CoronaIcon } from "@gemeente-denhaag/icons";
 import { Sidenav, SidenavItem, SidenavLink, SidenavList } from "@gemeente-denhaag/sidenav";
-import { Container } from "../../components/container/Container";
-import { PrivateRoute } from "../../components/privateRoute/privateRoute";
 import { GatsbyContext } from "../../context/gatsby";
 import { navigate } from "gatsby";
 import { useTranslation } from "react-i18next";
-import { Breadcrumbs } from "../../components/denhaag-wrappers/breadcrumbs/Breadcrumbs";
+import { Breadcrumbs, Container, PrivateRoute } from "@conduction/components";
+import { isLoggedIn } from "../../services/auth";
+import { OpengemeentenIconGezicht, OpengemeentenIconNieuwsbrief } from "@opengemeenten/iconset-react";
 
 export const DashboardTemplate: React.FC = ({ children }) => {
   const { t } = useTranslation();
@@ -21,7 +21,7 @@ export const DashboardTemplate: React.FC = ({ children }) => {
   const translatedCrumbs = crumbs.map((crumb: any) => ({ ...crumb, crumbLabel: t(crumb.crumbLabel) }));
 
   return (
-    <PrivateRoute>
+    <PrivateRoute authenticated={isLoggedIn()}>
       <Container>
         <div className={styles.container}>
           <div className={styles.menu}>
@@ -63,11 +63,21 @@ const Menu: React.FC = () => {
       current: pathname.includes("self-services"),
       icon: <ListIcon />,
     },
-    { label: t("My messages"), href: "/my-messages", current: pathname.includes("my-messages"), icon: <InboxIcon /> },
+    {
+      label: t("My messages"),
+      href: "/my-messages",
+      current: pathname.includes("my-messages"),
+      icon: <OpengemeentenIconNieuwsbrief className={styles.iconsSidenav} />,
+    },
     { label: t("My cases"), href: "/my-cases", current: pathname.includes("my-cases"), icon: <ArchiveIcon /> },
-    { label: t("My account"), href: "/my-account", current: pathname.includes("my-account"), icon: <UserIcon /> },
+    {
+      label: t("My account"),
+      href: "/my-account",
+      current: pathname.includes("my-account"),
+      icon: <OpengemeentenIconGezicht className={styles.iconsSidenav} />,
+    },
     { label: t("Products"), href: "/products", current: pathname.includes("products"), icon: <CoronaIcon /> },
-    { label: t("News"), href: "/news", current: pathname .includes("news"), icon: <MessageIcon /> },
+    { label: t("News"), href: "/news", current: pathname.includes("news"), icon: <MessageIcon /> },
   ];
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string): void => {

@@ -1,11 +1,11 @@
 import * as React from "react";
-import * as styles from "./CasesTable.module.css";
+import * as styles from "./CasesTableTemplate.module.css";
 import { Link } from "@gemeente-denhaag/components-react";
 import { Table, TableBody, TableCell, TableHeader, TableRow } from "@gemeente-denhaag/table";
 import { useTranslation } from "react-i18next";
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { navigate } from "gatsby";
-import { translateDate } from "../../services/dateFormat";
+import { translateDate } from "../../../services/dateFormat";
 
 interface CasesTableProps {
   cases: any[];

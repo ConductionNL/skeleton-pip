@@ -83,7 +83,7 @@ export const nl = {
   "1st Registration": "1e Inschrijving",
   "Birth registration": "Geboorte aangifte",
   Case: "Zaak",
-  "More Information": "Meer Informatie",
+  "More Information": "Meer informatie",
   "What steps can you expect": "Welke stappen kun je verwachten",
   Back: "Terug",
   "Login with your account": "Inloggen met je account",
@@ -126,4 +126,9 @@ export const nl = {
   "Read more": "Lees meer",
   Products: "Producten",
   Product: "Product",
+  Close: "Sluiten",
+  "Allow cookies": "Sta cookies toe",
+  "Cookie preference": "Cookie voorkeuren",
+  "This website uses cookies. We use cookies to personalize content and to analyze traffic on our website.":
+    "Deze website maakt gebruik van cookies. We gebruiken cookies om de inhoud te personaliseren en om het verkeer op onze website te analyseren.",
 };
