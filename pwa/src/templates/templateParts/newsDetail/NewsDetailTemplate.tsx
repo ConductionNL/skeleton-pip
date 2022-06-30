@@ -4,15 +4,16 @@ import { useTranslation } from "react-i18next";
 import { useNews } from "../../../hooks/news";
 import { useQueryClient } from "react-query";
 import Skeleton from "react-loading-skeleton";
-import { Heading2, Paragraph } from "@gemeente-denhaag/components-react";
+import { Divider, Heading1, Paragraph } from "@gemeente-denhaag/components-react";
 import { Tag } from "@conduction/components";
+import { translateDate } from "../../../services/dateFormat";
 
 interface NewsDetailTemplateProps {
   newsId: string;
 }
 
 export const NewsDetailTemplate: React.FC<NewsDetailTemplateProps> = ({ newsId }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const queryClient = useQueryClient();
 
@@ -25,32 +26,33 @@ export const NewsDetailTemplate: React.FC<NewsDetailTemplateProps> = ({ newsId }
 
   return (
     <div>
-      {getNews.isLoading && <Skeleton height="100px" />}
-      <>
-        {!getNews.isLoading && (
-          <div>
-            <div>
-              <div className={styles.title}>
-                <Heading2>{getNews.data.title}</Heading2>
-              </div>
-              <div className={styles.tags}>
-                <Tag tag={getNews.data.audiences} />
-                <Tag tag={getNews.data.type} />
-                <Tag tag={getNews.data.usage} />
-              </div>
+      {!getNews.isLoading && (
+        <div className={styles.content}>
+          <Heading1>{getNews.data.title}</Heading1>
+          <Paragraph>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: getNews.data.content,
+              }}
+            ></div>
+          </Paragraph>
 
-              <Paragraph>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: getNews.data.content,
-                  }}
-                ></div>
-              </Paragraph>
-              <a className={styles.date}>Geplaatst op: {getNews.data.date}</a>
+          <Divider />
+          
+          <div className={styles.bottom}>
+            <div className={styles.tags}>
+              <Tag tag={getNews.data.audiences} />
+              <Tag tag={getNews.data.type} />
+              <Tag tag={getNews.data.usage} />
             </div>
+            <span className={styles.date}>
+              {t("Posted")}: {translateDate(i18n.language, getNews.data.date)}
+            </span>
           </div>
-        )}
-      </>
+        </div>
+      )}
+
+      {getNews.isLoading && <Skeleton height="100px" />}
     </div>
   );
 };

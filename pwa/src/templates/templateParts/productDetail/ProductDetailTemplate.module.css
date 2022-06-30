@@ -1,0 +1,7 @@
+.content > :not(:last-child) {
+  margin-block-end: var(--nlportal-space-block-2xl);
+}
+
+.date {
+  font-size: var(--conduction-font-size-md);
+}

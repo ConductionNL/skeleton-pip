@@ -3,7 +3,7 @@ import { PageProps } from "gatsby";
 import { DashboardTemplate } from "../../../templates/dashboard/DashboardTemplate";
 import { NewsDetailTemplate } from "../../../templates/templateParts/newsDetail/NewsDetailTemplate";
 
-const CurrentCasesPage: React.FC<PageProps> = (props: PageProps) => {
+const NewsDetailPage: React.FC<PageProps> = (props: PageProps) => {
   return (
     <DashboardTemplate>
       <NewsDetailTemplate newsId={props.params.newsId} />
@@ -11,4 +11,4 @@ const CurrentCasesPage: React.FC<PageProps> = (props: PageProps) => {
   );
 };
 
-export default CurrentCasesPage;
+export default NewsDetailPage;

@@ -7,8 +7,8 @@ export const useProduct = (queryClient: QueryClient) => {
   const API: APIService = React.useContext(APIContext);
 
   const getOne = (productId: string) =>
-    useQuery<any, Error>(["product", productId], () => API.Product.getOne(productId), {
-      initialData: () => queryClient.getQueryData<any[]>("product")?.find((_product) => _product.id === productId),
+    useQuery<any, Error>(["products", productId], () => API.Product.getOne(productId), {
+      initialData: () => queryClient.getQueryData<any[]>("products")?.find((_product) => _product.id === productId),
       onError: (error) => {
         throw new Error(error.message);
       },

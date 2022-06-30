@@ -1,14 +1,16 @@
-.title > h2 {
-  margin-block-start: var(--nlportal-space-block-4xl);
+.content > :not(:last-child) {
   margin-block-end: var(--nlportal-space-block-2xl);
 }
-.image > img {
-  max-width: 450px;
-  height: auto;
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
 }
-.date {
-  font-size: medium;
-}
+
 .tags > *:not(:last-child) {
   margin-inline-end: var(--nlportal-space-inline-md);
+}
+
+.date {
+  font-size: var(--conduction-font-size-md);
 }
