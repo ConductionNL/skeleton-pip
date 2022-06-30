@@ -6,7 +6,7 @@ import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { FormStepTemplate } from "../../../templates/templateParts/formStep/FormStepTemplate";
 import { MarriageServiceContext } from "../MarriageServiceContext";
 import { TMarriageFormServiceSteps } from "../MarriageServiceForm";
-import {InputNumber, InputText} from "@conduction/components";
+import { InputEmail, InputNumber, InputText } from "@conduction/components";
 
 interface MarriageStepProps {
   setNextStep: () => void;
@@ -26,14 +26,14 @@ export const PartnerStep: React.FC<MarriageStepProps> = ({ setNextStep, handleSe
   } = useForm();
 
   React.useEffect(() => {
-    setValue("firstName", formData.partner.firstName);
-    setValue("lastName", formData.partner.lastName);
-    setValue("phoneNumber", formData.partner.phoneNumber);
-    setValue("eMaile", formData.partner.eMaile);
+    setValue("partner", formData.partner);
   }, [formData]);
 
   const onSubmit = (data: any): void => {
-    setFormData({ ...formData, partner: data.partner });
+    setFormData({
+      ...formData,
+      partner: { firstName: data.firstName, lastName: data.lastName, phoneNumber: data.phoneNumber, email: data.email },
+    });
     setNextStep();
   };
 
@@ -52,7 +52,7 @@ export const PartnerStep: React.FC<MarriageStepProps> = ({ setNextStep, handleSe
 
         <FormFieldInput>
           <FormFieldLabel htmlFor="lastName">{t("Last name")}</FormFieldLabel>
-          <InputNumber name="lastName" {...{ register, errors }} validation={{ required: true }} />
+          <InputText name="lastName" {...{ register, errors }} validation={{ required: true }} />
         </FormFieldInput>
 
         <FormFieldInput>
@@ -61,8 +61,8 @@ export const PartnerStep: React.FC<MarriageStepProps> = ({ setNextStep, handleSe
         </FormFieldInput>
 
         <FormFieldInput>
-          <FormFieldLabel htmlFor="eMaile">{t("Email address")}</FormFieldLabel>
-          <InputNumber name="eMaile" {...{ register, errors }} validation={{ required: true }} />
+          <FormFieldLabel htmlFor="email">{t("Email address")}</FormFieldLabel>
+          <InputEmail name="email" {...{ register, errors }} validation={{ required: true }} />
         </FormFieldInput>
 
         <button type="submit">

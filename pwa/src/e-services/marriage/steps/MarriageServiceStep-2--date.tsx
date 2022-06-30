@@ -8,12 +8,12 @@ import { MarriageServiceContext } from "../MarriageServiceContext";
 import { TMarriageFormServiceSteps } from "../MarriageServiceForm";
 import {InputDate} from "@conduction/components";
 
-interface MovingStepProps {
+interface MarriageStepProps {
   setNextStep: () => void;
   handleSetStep: React.Dispatch<React.SetStateAction<TMarriageFormServiceSteps>>;
 }
 
-export const DateFormStep: React.FC<MovingStepProps> = ({ setNextStep, handleSetStep }) => {
+export const DateFormStep: React.FC<MarriageStepProps> = ({ setNextStep, handleSetStep }) => {
   const [formData, setFormData] = React.useContext(MarriageServiceContext);
   const { t } = useTranslation();
 

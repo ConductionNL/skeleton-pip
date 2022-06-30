@@ -41,7 +41,6 @@ export const WeddingOfficiantStep: React.FC<MarriageStepProps> = ({ setNextStep,
 
   const onSubmit = (data: any): void => {
     setFormData({ ...formData, weddingOfficiant: data.weddingOfficiant });
-    console.log(setNextStep);
     setNextStep();
   };
 

@@ -32,6 +32,7 @@ export const WeddingVenueStep: React.FC<MarriageStepProps> = ({ setNextStep, han
   } = useForm();
 
   React.useEffect(() => {
+    console.log(formData)
     if (!formData.weddingVenue) return;
 
     formData.weddingVenue.forEach((weddingVenue) => {
@@ -76,6 +77,6 @@ export const WeddingVenueStep: React.FC<MarriageStepProps> = ({ setNextStep, han
 
 const testWeddingVenue: IWeddingVenue[] = [
   { label: "Rotterdam: 1", weddingVenueId: "df24af62-8aaf-4057-8ede-c12045e0cc74" },
-  { label: "Amsterdam Officiant: 2", weddingVenueId: "e293dff2-ae51-4606-86bd-36919c2e204f" },
-  { label: "Utrecht : 3", weddingVenueId: "ef26907d-388b-430f-8e26-36a3c3c55fb9" },
+  { label: "Amsterdam: 2", weddingVenueId: "e293dff2-ae51-4606-86bd-36919c2e204f" },
+  { label: "Utrecht: 3", weddingVenueId: "ef26907d-388b-430f-8e26-36a3c3c55fb9" },
 ];
