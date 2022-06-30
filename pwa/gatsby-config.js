@@ -61,6 +61,22 @@ module.exports = {
             pathname: "/self-services/moving/form",
             crumbLabel: "Form",
           },
+          {
+            pathname: "/products",
+            crumbLabel: "Products",
+          },
+          {
+            pathname: "/news",
+            crumbLabel: "News",
+          },
+          {
+            pathname: "/news/[newsId]",
+            crumbLabel: "News Item",
+          },
+          {
+            pathname: "/products/[productId]",
+            crumbLabel: "Product",
+          },
         ],
       },
     },

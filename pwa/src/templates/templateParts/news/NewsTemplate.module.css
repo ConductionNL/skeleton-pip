@@ -1,0 +1,7 @@
+.content *:not(:last-child) {
+  margin-block-end: var(--nlportal-space-block-lg);
+}
+
+.content > .heading {
+  margin-block-end: var(--nlportal-space-block-4xl);
+}

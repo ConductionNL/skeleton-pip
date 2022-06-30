@@ -121,9 +121,15 @@ export const nl = {
   "Information entered by you": "Door jou ingevulde gegevens",
   Confirm: "Bevestigen",
   "Login with DigiD": "Inloggen met DigiD",
+  News: "Nieuws",
+  "News Item": "Nieuwsbericht",
+  "Read more": "Lees meer",
+  Products: "Producten",
+  Product: "Product",
   Close: "Sluiten",
   "Allow cookies": "Sta cookies toe",
   "Cookie preference": "Cookie voorkeuren",
   "This website uses cookies. We use cookies to personalize content and to analyze traffic on our website.":
     "Deze website maakt gebruik van cookies. We gebruiken cookies om de inhoud te personaliseren en om het verkeer op onze website te analyseren.",
+  Posted: "Geplaatst op",
 };

@@ -123,9 +123,15 @@ export const en = {
   "Information entered by you": "Information entered by you",
   Confirm: "Confirm",
   "Login with DigiD": "Login with DigiD",
+  News: "News",
+  "News Item": "News item",
+  "Read more": "Read more",
+  Products: "Products",
+  Product: "Product",
   Close: "Close",
   "Allow cookies": "Allow cookies",
   "Cookie preference": "Cookie preference",
   "This website uses cookies. We use cookies to personalize content and to analyze traffic on our website.":
     "This website uses cookies. We use cookies to personalize content and to analyze traffic on our website.",
+  Posted: "Posted",
 };
