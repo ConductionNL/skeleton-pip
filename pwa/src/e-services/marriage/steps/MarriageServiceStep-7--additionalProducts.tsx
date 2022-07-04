@@ -32,11 +32,7 @@ export const AdditionalProductsStep: React.FC<MarriageStepProps> = ({ setNextSte
   } = useForm();
 
   React.useEffect(() => {
-    if (!formData.additionalProducts) return;
-
-    formData.additionalProducts.forEach((additionalProducts) => {
-      setValue(additionalProducts, true);
-    });
+    setValue("additionalProducts", formData.additionalProducts);
   }, [formData]);
 
   const onSubmit = (data: any): void => {
@@ -53,10 +49,9 @@ export const AdditionalProductsStep: React.FC<MarriageStepProps> = ({ setNextSte
     <FormStepTemplate title={t("Select a additional products?")} setPreviousStep={handleSetPreviousStep}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormFieldInput>
-          {additionalProducts.map(({ label, ProductsId }) => (
+          {additionalProducts.map(({ label }) => (
             <InputRadio
-              key={ProductsId}
-              name={ProductsId}
+              name="additionalProducts"
               label={label}
               {...{ register, errors }}
               value={label}

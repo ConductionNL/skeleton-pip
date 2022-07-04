@@ -32,15 +32,12 @@ export const WeddingOfficiantStep: React.FC<MarriageStepProps> = ({ setNextStep,
   } = useForm();
 
   React.useEffect(() => {
-    if (!formData.weddingOfficiant) return;
-
-    formData.weddingOfficiant.forEach((weddingOfficiant) => {
-      setValue(weddingOfficiant, true);
-    });
+    setValue("weddingOfficiant", formData.weddingOfficiant);
   }, [formData]);
 
   const onSubmit = (data: any): void => {
     setFormData({ ...formData, weddingOfficiant: data.weddingOfficiant });
+    console.log(data)
     setNextStep();
   };
 
@@ -53,13 +50,13 @@ export const WeddingOfficiantStep: React.FC<MarriageStepProps> = ({ setNextStep,
     <FormStepTemplate title={t("Select a wedding officiant?")} setPreviousStep={handleSetPreviousStep}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormFieldInput>
-          {weddingOfficiants.map(({ label, weddingOfficiantId }) => (
+          {weddingOfficiants.map(({ label }) => (
             <InputRadio
-              key={weddingOfficiantId}
               value={label}
-              name="weddingOfficiantId"
+              name="weddingOfficiant"
               label={label}
               {...{ register, errors }}
+              validation={{ required: true }}
             />
           ))}
         </FormFieldInput>

@@ -6,7 +6,7 @@ import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { FormStepTemplate } from "../../../templates/templateParts/formStep/FormStepTemplate";
 import { MarriageServiceContext } from "../MarriageServiceContext";
 import { TMarriageFormServiceSteps } from "../MarriageServiceForm";
-import { InputNumber, InputText } from "@conduction/components";
+import { InputEmail, InputNumber, InputText } from "@conduction/components";
 
 interface MarriageStepProps {
   setNextStep: () => void;
@@ -27,71 +27,67 @@ export const WitnessesStep: React.FC<MarriageStepProps> = ({ setNextStep, handle
 
   React.useEffect(() => {
     setValue("witnesses", formData.witnesses);
+    // debugger
   }, [formData]);
 
   const onSubmit = (data: any): void => {
-    handleSetFormData(data);
+    console.log(data);
+
     setNextStep();
   };
 
   const handleSetPreviousStep = () => {
-    handleSetFormData(getValues());
+
     handleSetStep("partner");
   };
 
-  const handleSetFormData = (data: any): void => {
-
-    console.log(data);
-    // setFormData({ ...formData, witnesses:[{ },{}]});
-  };
 
   return (
     <FormStepTemplate title={t("Add your witnesses.")} setPreviousStep={handleSetPreviousStep}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        {witnesses.map }
-        <form title="first" name="first">
+        <fieldset>
           <FormFieldInput>
             <FormFieldLabel htmlFor="firstName">{t("First name")}</FormFieldLabel>
             <InputText name="firstName" {...{ register, errors }} validation={{ required: true }} />
           </FormFieldInput>
 
-          <FormFieldInput>
-            <FormFieldLabel htmlFor="lastName">{t("Last name")}</FormFieldLabel>
-            <InputText name="lastName" {...{ register, errors }} validation={{ required: true }} />
-          </FormFieldInput>
+          {/*<FormFieldInput>*/}
+          {/*  <FormFieldLabel htmlFor="lastName">{t("Last name")}</FormFieldLabel>*/}
+          {/*  <InputText name="lastName" {...{ register, errors }} validation={{ required: true }} />*/}
+          {/*</FormFieldInput>*/}
 
-          <FormFieldInput>
-            <FormFieldLabel htmlFor="phoneNumber">{t("Phone number")}</FormFieldLabel>
-            <InputNumber name="phoneNumber" {...{ register, errors }} validation={{ required: true }} />
-          </FormFieldInput>
+          {/*<FormFieldInput>*/}
+          {/*  <FormFieldLabel htmlFor="phoneNumber">{t("Phone number")}</FormFieldLabel>*/}
+          {/*  <InputNumber name="phoneNumber" {...{ register, errors }} validation={{ required: true }} />*/}
+          {/*</FormFieldInput>*/}
 
-          <FormFieldInput>
-            <FormFieldLabel htmlFor="email">{t("Email address")}</FormFieldLabel>
-            <InputNumber name="email" {...{ register, errors }} validation={{ required: true }} />
-          </FormFieldInput>
-        </form>
+          {/*<FormFieldInput>*/}
+          {/*  <FormFieldLabel htmlFor="email">{t("Email address")}</FormFieldLabel>*/}
+          {/*  <InputEmail name="email" {...{ register, errors }} validation={{ required: true }} />*/}
+          {/*</FormFieldInput>*/}
+        </fieldset>
 
-        <form title="second" name="second" >
+        <fieldset  >
           <FormFieldInput>
             <FormFieldLabel htmlFor="firstName">{t("First name")}</FormFieldLabel>
             <InputText name="firstName" {...{ register, errors }} validation={{ required: true }} />
           </FormFieldInput>
 
-          <FormFieldInput>
-            <FormFieldLabel htmlFor="lastName">{t("Last name")}</FormFieldLabel>
-            <InputText name="lastName" {...{ register, errors }} validation={{ required: true }} />
-          </FormFieldInput>
+          {/*<FormFieldInput>*/}
+          {/*  <FormFieldLabel htmlFor="lastName">{t("Last name")}</FormFieldLabel>*/}
+          {/*  <InputText name="lastName" {...{ register, errors }} validation={{ required: true }} />*/}
+          {/*</FormFieldInput>*/}
 
-          <FormFieldInput>
-            <FormFieldLabel htmlFor="phoneNumber">{t("Phone number")}</FormFieldLabel>
-            <InputNumber name="phoneNumber" {...{ register, errors }} validation={{ required: true }} />
-          </FormFieldInput>
+          {/*<FormFieldInput>*/}
+          {/*  <FormFieldLabel htmlFor="phoneNumber">{t("Phone number")}</FormFieldLabel>*/}
+          {/*  <InputNumber name="phoneNumber" {...{ register, errors }} validation={{ required: true }} />*/}
+          {/*</FormFieldInput>*/}
 
-          <FormFieldInput>
-            <FormFieldLabel htmlFor="email">{t("Email address")}</FormFieldLabel>
-            <InputNumber name="email" {...{ register, errors }} validation={{ required: true }} />
-          </FormFieldInput>
-        </form>
+          {/*<FormFieldInput>*/}
+          {/*  <FormFieldLabel htmlFor="email">{t("Email address")}</FormFieldLabel>*/}
+          {/*  <InputEmail name="email" {...{ register, errors }} validation={{ required: true }} />*/}
+          {/*</FormFieldInput>*/}
+        </fieldset>
 
         <button type="submit">
           <Link icon={<ArrowRightIcon />} iconAlign="start">
