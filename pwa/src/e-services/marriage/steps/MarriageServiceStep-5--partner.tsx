@@ -26,7 +26,10 @@ export const PartnerStep: React.FC<MarriageStepProps> = ({ setNextStep, handleSe
   } = useForm();
 
   React.useEffect(() => {
-    setValue("partner", formData.partner);
+    setValue("firstName", formData.partner.firstName);
+    setValue("lastName", formData.partner.lastName);
+    setValue("phoneNumber", formData.partner.phoneNumber);
+    setValue("email", formData.partner.email);
   }, [formData]);
 
   const onSubmit = (data: any): void => {
@@ -38,8 +41,16 @@ export const PartnerStep: React.FC<MarriageStepProps> = ({ setNextStep, handleSe
   };
 
   const handleSetPreviousStep = () => {
-    setFormData({ ...formData, partner: getValues("partner") });
-    handleSetStep("date");
+    setFormData({
+      ...formData,
+      partner: {
+        firstName: getValues("firstName"),
+        lastName: getValues("lastName"),
+        phoneNumber: getValues("phoneNumber"),
+        email: getValues("email"),
+      },
+    });
+    handleSetStep("weddingVenue");
   };
 
   return (
